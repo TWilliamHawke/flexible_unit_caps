@@ -14,7 +14,7 @@ function Flexible_unit_caps:set_unit_tooltip(string_end)
 
     local supply_text = self:construct_unit_supply_text(unit_name, nil, function(unit_group)
       local units_in_army = self:get_units_count_in_army(self.selected_character:military_force(), unit_group);
-      local units_in_queue = self:get_queued_units_count(unit_group);
+      local units_in_queue = self:get_queued_units_from_cache(unit_group);
       local unit_index = units_in_army + units_in_queue + 1;
 
       return units_in_army, units_in_queue, unit_index;

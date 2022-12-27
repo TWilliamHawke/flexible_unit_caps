@@ -4,7 +4,7 @@ function Flexible_unit_caps:add_ai_listeners()
   "FactionTurnStart",
   function(context)
     local faction = context:faction()
-    return not faction:is_human() and not self:faction_is_horde(faction) and not (faction:culture() == "wh2_dlc09_tmb_tomb_kings")
+    return not faction:is_human() and cm:faction_has_campaign_feature(faction:name(), "additional_army_upkeep")
   end,  
   -- true,
   function(context) 

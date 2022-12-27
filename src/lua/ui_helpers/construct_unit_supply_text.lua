@@ -5,10 +5,10 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, unit, unit_cou
   if (lord_cost == nil) then
     if(unit ~= nil) then
       lord_cost = self:get_unknown_unit_supply(unit);
-      basic_cost = lord_cost;
     else
-      return self:get_unknown_text();
+      lord_cost = self:get_unit_cost_from_key(unit_name);
     end;
+    basic_cost = lord_cost;
   end;
 
   local unit_group = self:get_unit_caps_group(unit_name);

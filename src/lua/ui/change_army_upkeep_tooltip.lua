@@ -1,9 +1,15 @@
-function Flexible_unit_caps:change_army_tooltip()
+function Flexible_unit_caps:change_army_upkeep_tooltip()
   local component = find_uicomponent(core:get_ui_root(), "units_panel", "dy_upkeep");
   
+  if not cm then return end
+  local ui_manager = cm:get_campaign_ui_manager();
+  if not ui_manager then return end
+  if not ui_manager:is_panel_open("units_panel") then return end
   if not component then return end;
   if not self.selected_character then return end;
+  if self.selected_character:is_null_interface() then return end;
   if not self.selected_character:has_military_force() then return end;
+  if not self.selected_character:faction():is_human() then return end;
 
   local faction = self.selected_character:faction();
   local supply_balance = self:get_supply_balance(faction);
@@ -16,6 +22,7 @@ function Flexible_unit_caps:change_army_tooltip()
   local char_list = force:character_list();
   local army_discounts = {};
   local skills_discounts = {};
+  
   
   for j = 0, char_list:num_items() - 1 do
     local char = char_list:item_at(j);

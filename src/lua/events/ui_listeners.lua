@@ -161,11 +161,11 @@ function Flexible_unit_caps:add_ui_listeners()
     end,
     function(context)
       if string.find(context.string, "QueuedLandUnit") then
-        cm:remove_callback(self.debounce_callback_key)
+        cm:remove_callback(self.ui_debounce_key)
         cm:callback(function()
           self:log("UNIT REMOVED FROM QUEUE")
           self:set_army_panel_tooltips();
-        end, 0.2, self.debounce_callback_key);
+        end, 0.2, self.ui_debounce_key);
       end
     end,
     true
@@ -200,11 +200,11 @@ function Flexible_unit_caps:add_ui_listeners()
         return
       end
 
-      cm:remove_callback(self.debounce_callback_key)
+      cm:remove_callback(self.ui_debounce_key)
       cm:callback(function()
         self:log("UNIT ADDED TO QUEUE")
         self:set_army_panel_tooltips();
-      end, 0.2, self.debounce_callback_key);
+      end, 0.2, self.ui_debounce_key);
     end,
     true
   );
@@ -219,10 +219,10 @@ function Flexible_unit_caps:add_ui_listeners()
 
       cm:callback(function()
         self:log("BUILDING BROWSER OPEN")
-
-        local building_list2 = find_uicomponent(core:get_ui_root(), "building_browser", "category_list");
-
-        for _, building_category in uic_pairs(building_list2) do
+        local chain_list = "cyclic_chain_list" or "chain_list";
+        --cm:faction_has_campaign_feature(faction:name(), "additional_army_upkeep")
+        local building_categories = find_uicomponent(core:get_ui_root(), "building_browser", "category_list");
+        for _, building_category in uic_pairs(building_categories) do
           local building_chain_list = find_uicomponent(building_category, "chain_list");
 
           if (building_chain_list) then
@@ -231,8 +231,7 @@ function Flexible_unit_caps:add_ui_listeners()
 
               local building_list = find_uicomponent(chain, "slot_parent");
               for ___, building in uic_pairs(building_list) do
-                local turns_corner = find_uicomponent(building, "turns_corner")
-                self:set_building_tooltip(turns_corner, building:Id())
+                self:replace_dev_points_text(building)
               end
             end --of second child loop
           end --of chain list check
@@ -265,9 +264,27 @@ function Flexible_unit_caps:add_ui_listeners()
       return self:player_faction_has_suply_lines();
     end,
     function()
+      cm:remove_callback(self.ui_debounce_key)
+      self:log("any PANEL Closed")
+
       cm:callback(function()
         self:set_army_panel_tooltips();
-      end, 0.2);
+        self:change_army_upkeep_tooltip();
+
+      end, 0.5, self.ui_debounce_key);
+
+    end,
+    true
+  )
+
+  core:add_listener(
+    "fluc_any_panel_closed",
+    "PanelClosedCampaign",
+    function(context)
+      return context.string == "units_panel"
+    end,
+    function()
+      self.selected_character = nil;
 
     end,
     true
@@ -284,11 +301,12 @@ function Flexible_unit_caps:add_ui_listeners()
       self.selected_character = context:character();
       local faction = self.selected_character:faction()
       if not self:faction_has_supply_lines(faction) then return end
-      self:log("ARMY SELECTED")
+      self:log("ARMY SELECTED");
 
       cm:callback(function()
         self:set_finance_button_tooltip(faction)
         self:set_army_panel_tooltips();
+        self:change_army_upkeep_tooltip();
       end, 0.2);
 
     end,

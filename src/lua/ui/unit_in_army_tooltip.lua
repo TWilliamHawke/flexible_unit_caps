@@ -23,7 +23,7 @@ function Flexible_unit_caps:set_unit_in_army_tooltip(component)
       function(unit_group)
         local units_in_army, unit_index = self:get_units_count_in_army(self.selected_character:military_force(), unit_group, index);
 
-        local units_in_queue = self:get_queued_units_count(unit_group);
+        local units_in_queue = self:get_queued_units_from_cache(unit_group);
 
         return units_in_army, units_in_queue, unit_index;
       end);

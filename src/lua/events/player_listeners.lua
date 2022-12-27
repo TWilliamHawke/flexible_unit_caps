@@ -190,16 +190,19 @@ core:add_listener(
   "UnitDisbanded",
   function(context)
     local faction = context:unit():faction()
-    return (self:factionChecker(faction))
+    return self:faction_has_supply_lines(faction)
   end,
   function(context)
-    if self.block_scripts then return end;
     local faction_name = context:unit():faction():name();
-    self.block_scripts = faction_name;
+
+    if context:unit():has_unit_commander() then
+      self.selected_character = nil;
+    end;
+
+    cm:remove_callback(self.disband_debounce_key)
 
     cm:callback(function()
-      if not self.block_scripts then return end;
-      local faction = cm:get_faction(self.block_scripts);
+      local faction = cm:get_faction(faction_name);
 
       if faction then
 
@@ -207,9 +210,8 @@ core:add_listener(
         self:log("UNIT DISBANDED");
         self:apply_upkeep_penalty(faction);
         self:calculate_supply_balance(faction);
-        self.block_scripts = false;
       end;
-    end, 0.2);
+    end, 0.2, self.disband_debounce_key);
 
   end,
   true

@@ -2,6 +2,13 @@ function Flexible_unit_caps:set_army_panel_tooltips()
   if not cm then return end
   local ui_manager = cm:get_campaign_ui_manager();
   if not ui_manager then return end
+  if not ui_manager:is_panel_open("units_panel") then return end
+  if not self.selected_character then return end;
+  if self.selected_character:is_null_interface() then return end;
+  if not self.selected_character:faction():is_human() then return end;
+  if not self.selected_character:has_military_force() then return end;
+
+  self:create_queued_units_cache();
 
   local function apply_callback_to_children(component, callback)
     if not component then return end
@@ -10,9 +17,7 @@ function Flexible_unit_caps:set_army_panel_tooltips()
     end
   end
 
-  if not (ui_manager:is_panel_open("units_panel")) then return end
   local unitList = find_uicomponent(core:get_ui_root(), "units_panel", "main_units_panel", "units");
-  self:change_army_tooltip()
 
   if not unitList then return end
 
