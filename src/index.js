@@ -1,30 +1,34 @@
-const mainFs = require('fs');
-const dir = __dirname;
+const fs = require('fs');
+const path = require("path");
 
 
 const walkSync = function(dir, filelist) {
-  const files = mainFs.readdirSync(dir);
+  const files = fs.readdirSync(dir);
   filelist = filelist || [];
   
   files.forEach(file => {
-    if (mainFs.statSync(dir + file).isDirectory()) {
-      filelist = walkSync(dir + file + '/', filelist);
+    const filePath = path.join(dir, file);
+
+    if (fs.statSync(filePath).isDirectory()) {
+      filelist = walkSync(filePath, filelist);
     } else {
-      filelist.push(dir + file);
+      filelist.push(filePath);
     }
   });
   return filelist;
 };
 
 const write = () => {
-  const namespaceFolder = dir + '/lua/';
-  const files = walkSync(namespaceFolder);
+  const sourceDir = path.join(process.cwd(), "src");
+  const files = walkSync(sourceDir);
   let data = ''
   for(file of files) {
-    const fileBody = mainFs.readFileSync(file, { encoding: 'utf8' });
+    const fileBody = fs.readFileSync(file, { encoding: 'utf8' });
     data = data.concat("\n\n" + fileBody);
   }
-  mainFs.writeFileSync(dir + '/bundle.lua', data);
+
+  const targetDir = path.join(process.cwd(), "bundle.lua");
+  fs.writeFileSync(targetDir, data);
 }
 
 write()
