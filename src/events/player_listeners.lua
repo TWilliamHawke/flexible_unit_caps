@@ -207,6 +207,30 @@ function Flexible_unit_caps:add_player_listeners()
   );
 
   core:add_listener(
+    "fluc_army_loaned",
+    "CharacterLoanedEvent",
+    function()
+      return true;
+    end,
+    ---@param context CharacterLoanedEvent | CharacterEvent
+    function(context)
+      self:log("Army loaned")
+      local force = context:character():military_force();
+      if not force then return end;
+      local faction = context:original_faction();
+      if faction and faction:is_human() then return end
+
+      if force:has_effect_bundle(self.loaned_army_effect) then return end;
+
+      local force_cqi = force:command_queue_index();
+
+      cm:apply_effect_bundle_to_force(self.loaned_army_effect, force_cqi, 0);
+      self:log("Effect applied")
+    end,
+    true
+  );
+
+  core:add_listener(
     "fluc_UNIT_DISBANDED",
     "UnitDisbanded",
     function(context)

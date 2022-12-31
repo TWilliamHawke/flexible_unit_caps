@@ -19,7 +19,9 @@ function Flexible_unit_caps:check_army_type(force, is_upkeep_check)
     return false;
   elseif force:has_effect_bundle("wh2_dlc12_bundle_underempire_army_spawn") then
     return false;
+  elseif force:has_effect_bundle(self.loaned_army_effect) then
+    return false;
   else
     return true;
-  end;
-end;
+  end
+end

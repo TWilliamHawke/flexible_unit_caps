@@ -3,14 +3,15 @@ function Flexible_unit_caps:set_army_panel_tooltips()
   local ui_manager = cm:get_campaign_ui_manager();
   if not ui_manager then return end
   if not ui_manager:is_panel_open("units_panel") then return end
-  if not self.selected_character then return end;
-  if self.selected_character:is_null_interface() then return end;
-  if not self.selected_character:faction():is_human() then return end;
-  if not self.selected_character:has_military_force() then return end;
+  if not self.selected_character then return end
+  if self.selected_character:is_null_interface() then return end
+  if not self.selected_character:faction():is_human() then return end
+  if not self.selected_character:has_military_force() then return end
+  if self.selected_character:military_force():has_effect_bundle(self.loaned_army_effect) then return end
 
   self:create_queued_units_cache();
 
-    ---@param component UIC
+  ---@param component UIC
   ---@param callback function
   local function apply_callback_to_children(component, callback)
     if not component then return end

@@ -14,7 +14,7 @@ function Flexible_unit_caps:get_supply_balance(faction)
 
   local army_supply, ogre_camps_supply = self:get_armies_total_cost(faction);
 
-  local region_supply, buildings_supply = self:get_building_var(faction);
+  local region_supply, buildings_supply = self:get_regions_supply(faction);
   local total_balance = region_supply + buildings_supply + ogre_camps_supply - army_supply;
 
   return total_balance, region_supply, buildings_supply, ogre_camps_supply, -army_supply

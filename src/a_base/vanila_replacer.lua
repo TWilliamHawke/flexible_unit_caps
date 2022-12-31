@@ -1,4 +1,3 @@
----@diagnostic disable-next-line: lowercase-global
 function apply_upkeep_penalty(faction)
   local upkeep_penalty_effect_bundle_key = "wh3_main_bundle_force_additional_army_upkeep";
 	

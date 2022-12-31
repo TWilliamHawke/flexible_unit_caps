@@ -2,7 +2,7 @@
 ---@param faction FACTION_SCRIPT_INTERFACE
 ---@return integer
 ---@return integer
-function Flexible_unit_caps:get_building_var(faction)
+function Flexible_unit_caps:get_regions_supply(faction)
   local supply_form_regions = 0
   local supply_from_buildings = 0;
   local regions_list = faction:region_list()

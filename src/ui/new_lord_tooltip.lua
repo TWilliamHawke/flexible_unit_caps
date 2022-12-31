@@ -13,7 +13,7 @@ function Flexible_unit_caps:set_new_lord_tooltip(component)
   local supply_balance = self:get_supply_balance(faction)
 
   local force_list = faction:military_force_list();
-  local current_army_count = self:get_army_count(force_list)
+  local current_army_count = self:get_armies_count(force_list)
   local future_army_count = current_army_count + 1
   local supply_decreasing = math.min(current_army_count, self.max_balance_per_army)
 

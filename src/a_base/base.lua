@@ -2,6 +2,7 @@ Flexible_unit_caps = {
     log_level = 1; -- 0=none, 1=player, 2=player and ai, 3=debug
     ui_debounce_key = "fluc_ui_debounce",
     disband_debounce_key = "fluc_disband_debounce",
+    loaned_army_effect = "FLUC_loaned_army",
     --main
     selected_character = nil,
     ai_supply_enabled = false,

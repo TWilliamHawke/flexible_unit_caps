@@ -7,6 +7,8 @@ const walkSync = function(dir, filelist) {
   filelist = filelist || [];
   
   files.forEach(file => {
+    if(file.includes(".js")) return;
+    
     const filePath = path.join(dir, file);
 
     if (fs.statSync(filePath).isDirectory()) {
