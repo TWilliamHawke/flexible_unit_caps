@@ -1,7 +1,12 @@
+---@type table<string, { [1]: group_unit_cap, [2]: ai_replacer }>
 Flexible_unit_caps.unit_group_caps = {
-  fluc_all_archers = { 6, "" },
-  fluc_all_artillery = { 4, "" },
-  fluc_all_spearmen = { 10, "" },
+  fluc_all_cavalry = { 8, "" },
+  fluc_all_chariots_war_machines = { 8, "" },
+  fluc_all_flying_units = { 8, "" },
+  fluc_all_long_range = { 8, "" }, -- includes artillery
+  fluc_all_short_range = { 8, "" },
+  fluc_all_missiles = { 10, "" },
+  fluc_all_rare_creatures = { 8, "" }, --single entities
   fluc_brt_artillery = { 4, "wh_main_brt_inf_men_at_arms" },
   fluc_brt_flying = { 4, "wh_dlc07_brt_inf_battle_pilgrims_0" },
   fluc_brt_grail = { 4, "wh_dlc07_brt_inf_foot_squires_0" },
@@ -125,7 +130,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_hef_phoenix_guard = { 6, "wh2_dlc15_hef_inf_silverin_guard_0" },
   fluc_hef_phoenixes = { 4, "wh2_main_hef_mon_great_eagle" },
   fluc_hef_reavers = { 4, "wh2_main_hef_inf_spearmen_0" },
-  fluc_hef_sea_guard = { 6, "wh2_main_hef_inf_spearmen_0" },
+  fluc_hef_sea_guard = { 8, "wh2_main_hef_inf_spearmen_0" },
   fluc_hef_silver_helms = { 4, "wh2_main_hef_inf_spearmen_0" },
   fluc_hef_stealth_archers = { 6, "wh2_main_hef_inf_lothern_sea_guard_0" },
   fluc_hef_spearmen = { 10, "" },
@@ -336,5 +341,5 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_chs_greater_daemons = { 4, "" }, --player only
   fluc_chs_furies = { 6, "" }, --player only
   fluc_chs_soul_grinder = { 4, "" }, --player only
-  fluc_unknown = { 15, ""}
+  fluc_unknown = { 15, "" }
 }

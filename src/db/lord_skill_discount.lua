@@ -1,6 +1,9 @@
 --lord name from lords_aliases.lua
 --unit group name from localisation table
 --skills key from db/character_skills_tables
+---@alias lord_skill_data {[1]: number, [2]:string, [3]:string| nil}
+
+---@type table<string, table<string, lord_skill_data >>
 Flexible_unit_caps.lord_skills_discount = {
   --empire
   Hunter = {
@@ -19,7 +22,7 @@ Flexible_unit_caps.lord_skills_discount = {
     fluc_emp_ulric_cult = { -2, "ulric_cult_of_ulric_stats" },
   },
   Elspeth = {
-    fluc_all_artillery = { -2, "mixu_emp_elspeth_von_draken_special_guns_of_nuln" },
+    fluc_emp_artillery = { -2, "mixu_emp_elspeth_von_draken_special_guns_of_nuln" },
     fluc_emp_artillery_wagon = { -2, "mixu_emp_elspeth_von_draken_special_guns_of_nuln" },
   },
   Helborg = {

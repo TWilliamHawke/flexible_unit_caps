@@ -1,12 +1,12 @@
 ---@param unit_name string
 ---@param unit UNIT_SCRIPT_INTERFACE | nil
----@param unit_count_callback function
+---@param unit_count_callback fun(unit_group: string) : number, number, number
 ---@return string
 function Flexible_unit_caps:construct_unit_supply_text(unit_name, unit, unit_count_callback)
   local lord_cost, basic_cost = self:get_unit_supply_params(unit_name, self.selected_character);
   local consume_text_key = unit == nil and "SRW_unit_consume_future" or "SRW_unit_consume_present";
 
-  if (lord_cost == nil) then
+  if (lord_cost == nil or basic_cost == nil) then
     if(unit ~= nil) then
       lord_cost = self:get_unknown_unit_supply(unit);
     else
@@ -15,9 +15,10 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, unit, unit_cou
     basic_cost = lord_cost;
   end;
 
-  local unit_group = self:get_unit_caps_group(unit_name);
+
+  local unit_group, parent_unit_group = self:get_unit_caps_group(unit_name);
   local group_capacity = self:get_unit_max_capacity(unit_group, self.selected_character);
-  local units_in_army, units_in_queue, unit_index = unit_count_callback(unit_group); ---@type number, number, number
+  local units_in_army, units_in_queue, unit_index = unit_count_callback(unit_group);
 
   local unit_cost_with_cap = self:apply_unit_cap(lord_cost, unit_index, group_capacity);
   
@@ -53,13 +54,12 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, unit, unit_cou
   supply_text = string.gsub(supply_text, "SRW_consume", self:get_localised_string(consume_text_key));
 
   --SECOND LINE
-  local unit_group_text = self:get_localised_string("SRW_this_army")..self:get_localised_string(unit_group);
-
-  if(units_in_queue > 0) then
-    units_in_army = units_in_army.."(+"..units_in_queue..")";
+  local unit_group_text = self:construct_unit_group_text(units_in_army, units_in_queue, unit_group);
+  
+  if parent_unit_group ~= "" then
+    local units_in_army_p, units_in_queue_p = unit_count_callback(parent_unit_group);
+    unit_group_text = unit_group_text.."\n"..self:construct_unit_group_text(units_in_army_p, units_in_queue_p, parent_unit_group)
   end;
-
-  unit_group_text = unit_group_text..": ["..units_in_army.."/"..group_capacity.."]";
 
   return string.gsub(supply_text, "SRW_Cost", tostring(unit_cost_with_cap))..unit_group_text.."\n";
 end;

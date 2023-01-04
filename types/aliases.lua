@@ -1,0 +1,3 @@
+---@alias ai_replacer string
+---@alias group_unit_cap number
+---@alias Units_group_data table<string, {unit_cap: integer, units_count:integer}>

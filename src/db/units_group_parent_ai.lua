@@ -1,3 +1,4 @@
+---@type table<string, string>
 Flexible_unit_caps.unit_caps_group_overwriting = {
   fluc_skv_lightning = "fluc_skv_artillery",
   fluc_skv_mortars = "fluc_skv_artillery",

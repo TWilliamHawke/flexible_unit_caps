@@ -1,4 +1,5 @@
-Flexible_unit_caps.unit_caps_groups_player = {
+---@type table<string, string>
+Flexible_unit_caps.units_group_parent_player = {
   fluc_kho_marauder = "fluc_chs_marauder",
   fluc_kho_furies = "fluc_chs_furies",
   fluc_kho_horsemen = "fluc_chs_horsemen",
@@ -55,5 +56,30 @@ Flexible_unit_caps.unit_caps_groups_player = {
   fluc_nur_knights = "fluc_chs_knights",
   fluc_nur_soul_grinder = "fluc_chs_soul_grinder",
   fluc_nur_spawn = "fluc_chs_spawn",
+  fluc_ogr_mournfang = "fluc_all_cavalry",
+  fluc_ogr_giant = "fluc_all_rare_creatures",
+  fluc_ogr_crushers = "fluc_all_cavalry",
+  fluc_ogr_stonehorn = "fluc_all_rare_creatures",
+  fluc_ogr_leadbelchers = "fluc_all_long_range",
+  fluc_ogr_artillery = "fluc_all_long_range",
+  fluc_lzd_teranodons = "fluc_all_flying_units",
+  fluc_lzd_ripperdactyl = "fluc_all_flying_units",
+  fluc_lzd_coatl = "fluc_all_flying_units",
+  fluc_lzd_cold_one = "fluc_all_cavalry",
+  fluc_lzd_carnosaurs = "fluc_all_rare_creatures",
+  fluc_lzd_dread_saurian = "fluc_all_rare_creatures",
+  fluc_lzd_stegadons = "fluc_all_rare_creatures",
+  fluc_lzd_troglodons = "fluc_all_rare_creatures",
+  fluc_hef_archers = "fluc_all_missiles",
+  fluc_hef_chariots = "fluc_all_chariots_war_machines",
+  fluc_hef_dragons = "fluc_all_flying_units",
+  fluc_hef_dragon_princes = "fluc_all_cavalry",
+  fluc_hef_lion_chariots = "fluc_all_chariots_war_machines",
+  fluc_hef_phoenixes = "fluc_all_flying_units",
+  fluc_hef_reavers = "fluc_all_cavalry",
+  fluc_hef_eagles = "fluc_all_flying_units",
+  fluc_hef_silver_helms = "fluc_all_cavalry",
+  fluc_hef_stealth_archers = "fluc_all_missiles",
+  fluc_hef_avelorn = "fluc_all_missiles",
 
 }

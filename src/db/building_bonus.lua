@@ -1,5 +1,6 @@
 --keys from db/building_levels_tables
 --only red and blue buildings
+---@type table<string, number>
 Flexible_unit_caps.building_unit_bonus = {
   --wef
     -- ["wh_dlc05_wef_spellsingers_1"] = 2,

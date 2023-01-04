@@ -10,7 +10,7 @@ function Flexible_unit_caps:set_unit_in_army_tooltip(component)
     local unit_number = component_name:match("(%d+)")
 
     if unit_number == "0" then return end;
-  --LoanTurnsRemaining
+
     --we need unit from selected army
     local index = tonumber(unit_number) + self:get_num_of_agents_in_army(unit_list)
     if (index >= unit_list:num_items()) then return end;

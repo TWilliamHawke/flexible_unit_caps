@@ -1,5 +1,6 @@
 --uses in lord_skill_discount.lua instead of lord id
 --keys from db/agent_subtypes_tables
+---@type table<string, string>
 Flexible_unit_caps.lord_aliases = {
   --vcounts
   ["pro02_vmp_isabella_von_carstein"] = "Isabella",

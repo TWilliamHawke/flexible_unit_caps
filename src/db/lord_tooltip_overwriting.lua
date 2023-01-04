@@ -1,5 +1,6 @@
 --uses in army upkeep tooltip
 --values is keys for text/db/supply_lines_units_groups.loc
+---@type table<string, table<string, string>>
 Flexible_unit_caps.army_upkeep_tooltip_overwriting = {
   Elspeth = {
     fluc_emp_artillery_wagon = "fluc_grn_artillery",

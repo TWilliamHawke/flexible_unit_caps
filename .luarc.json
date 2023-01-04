@@ -8,8 +8,8 @@
         ".vscode",
         "src/lua/db/**",
         "src/unused/**",
-        "other/**",
-        "bundle.lua",
+        //"other/**",
+        "./bundle.lua",
         "lib/**/**.lua"
     ],
     "workspace.library": [
