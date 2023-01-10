@@ -70,6 +70,7 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_lzd_dread_saurian = "fluc_all_rare_creatures",
   fluc_lzd_stegadons = "fluc_all_rare_creatures",
   fluc_lzd_troglodons = "fluc_all_rare_creatures",
+  fluc_lzd_bastiladons = "fluc_all_rare_creatures",
   fluc_hef_archers = "fluc_all_missiles",
   fluc_hef_chariots = "fluc_all_chariots_war_machines",
   fluc_hef_dragons = "fluc_all_flying_units",

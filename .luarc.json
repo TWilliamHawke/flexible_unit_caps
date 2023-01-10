@@ -1,10 +1,10 @@
 {
-    "Lua.diagnostics.disable": [
+    "diagnostics.disable": [
         "cast-local-type",
         "lowercase-global",
         "missing-return"
     ],
-    "Lua.workspace.ignoreDir": [
+    "workspace.ignoreDir": [
         ".vscode",
         "src/lua/db/**",
         "src/unused/**",

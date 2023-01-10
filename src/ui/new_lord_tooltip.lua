@@ -1,6 +1,6 @@
 ---@param component UIC
 function Flexible_unit_caps:set_new_lord_tooltip(component)
-  if not self.enable_supply_balance or (self.max_balance_per_army == 0) then
+  if not self.enable_supply_balance then
     return
   end;
   
@@ -15,7 +15,7 @@ function Flexible_unit_caps:set_new_lord_tooltip(component)
   local force_list = faction:military_force_list();
   local current_army_count = self:get_armies_count(force_list)
   local future_army_count = current_army_count + 1
-  local supply_decreasing = math.min(current_army_count, self.max_balance_per_army)
+  local supply_decreasing = future_army_count
 
   local current_supply_penalty = 0
   if supply_balance < 0 then

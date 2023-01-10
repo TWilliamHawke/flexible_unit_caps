@@ -7,31 +7,31 @@ function Flexible_unit_caps:get_unit_max_capacity(unit_group, lord)
   local lord_name = lord:character_subtype_key();
   local lord_alias = self.lord_aliases[lord_name];
 
-  if(Flexible_unit_caps.unit_group_caps[unit_group]) then
-    max_capacity = Flexible_unit_caps.unit_group_caps[unit_group][1];
-  end;
+  if self.unit_group_caps[unit_group] then
+    max_capacity = self.unit_group_caps[unit_group][1];
+  end
 
   max_capacity = max_capacity * self.player_unit_cap_mult;
 
-  if(self.group_discount[lord_name] and self.group_discount[lord_name][unit_group]) then
-    lord_factor = lord_factor - self.group_discount[lord_name][unit_group];
-  end;
+  if (self.lord_supply_change[lord_name] and self.lord_supply_change[lord_name][unit_group]) then
+    lord_factor = lord_factor - self.lord_supply_change[lord_name][unit_group].change;
+  end
 
-  if(lord_alias and self.lord_skills_discount[lord_alias]) then
-    local lord_skill_data = self.lord_skills_discount[lord_alias][unit_group];
+  if (lord_alias and self.skill_supply_change[lord_alias]) then
+    local lord_skill_data = self.skill_supply_change[lord_alias][unit_group];
 
-    if(lord_skill_data ~= nil) then
-      local bonus_skill = lord_skill_data[2] or "fluc_skill"
-      local bonus_skill2 = lord_skill_data[3] or "fluc_skill"
+    if (lord_skill_data ~= nil) then
+      local bonus_skill = lord_skill_data[3] or "fluc_skill";
+      local bonus_skill2 = lord_skill_data[4] or "fluc_skill";
       if lord:has_skill(bonus_skill) or lord:has_skill(bonus_skill2) then
         lord_factor = lord_factor - lord_skill_data[1];
-      end;
-    end;
-  end;
+      end
+    end
+  end
 
-  -- -1 => +50%
-  -- -2 => +100%
+  -- lord_factor == -1 => +50%
+  -- lord_factor == -2 => +100%
   max_capacity = math.floor(max_capacity * (1 + lord_factor * self.LORD_FACTOR_CAP_MULT));
 
   return math.max(max_capacity, self.MIN_UNIT_CAP);
-end;
+end

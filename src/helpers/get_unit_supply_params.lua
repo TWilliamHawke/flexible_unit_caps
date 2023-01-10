@@ -23,21 +23,21 @@ function Flexible_unit_caps:get_unit_supply_params(unit_name, lord)
   local lord_name = lord:character_subtype_key();
   local lord_discount = 0;
 
-  if self.group_discount[lord_name] ~= nil then
-    lord_discount = self.group_discount[lord_name][unit_group] or 0;
+  if self.lord_supply_change[lord_name] and self.lord_supply_change[lord_name][unit_group] then
+    lord_discount = self.lord_supply_change[lord_name][unit_group].change or 0;
   end;
 
   local lord_alias = self.lord_aliases[lord_name]
   self:logDebug("LORD AND UNIT TYPE CHECKED");
 
-  if lord_alias ~= nil and self.lord_skills_discount[lord_alias] ~= nil then
-    local lord_skill_data = self.lord_skills_discount[lord_alias][unit_group];
+  if lord_alias ~= nil and self.skill_supply_change[lord_alias] ~= nil then
+    local lord_skill_data = self.skill_supply_change[lord_alias][unit_group];
 
     if lord_skill_data ~= nil then
       local potential_discount = lord_skill_data[1] or 0;
 
-      local bonus_skill = lord_skill_data[2] or "fluc_skill"
-      local bonus_skill2 = lord_skill_data[3] or "fluc_skill"
+      local bonus_skill = lord_skill_data[3] or "fluc_skill"
+      local bonus_skill2 = lord_skill_data[4] or "fluc_skill"
       if lord:has_skill(bonus_skill) or lord:has_skill(bonus_skill2) then
         lord_discount = lord_discount + potential_discount;
       end

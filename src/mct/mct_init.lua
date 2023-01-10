@@ -38,10 +38,6 @@ function Flexible_unit_caps:mct_init(context)
   self.max_balance_per_buildings = max_balance_per_building_cfg:get_finalized_setting()
   max_balance_per_building_cfg:set_uic_visibility(self.enable_supply_balance)
 
-  local max_balance_per_army_cfg = supply_lines_rw:get_option_by_key("balance_per_army")
-  self.max_balance_per_army = tonumber(max_balance_per_army_cfg:get_finalized_setting())
-  max_balance_per_army_cfg:set_uic_visibility(self.enable_supply_balance)
-
   local big_empire_penalty_cfg = supply_lines_rw:get_option_by_key("big_empire_penalty")
   self.big_empire_penalty_start = tonumber(big_empire_penalty_cfg:get_finalized_setting())
   big_empire_penalty_cfg:set_uic_visibility(self.enable_supply_balance)

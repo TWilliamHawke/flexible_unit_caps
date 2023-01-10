@@ -26,9 +26,12 @@ function Flexible_unit_caps:set_army_panel_tooltips()
 
   for _, unit_card in uic_pairs(unitList) do
     local component_id = unit_card:Id();
+    
 
     if string.find(component_id, "QueuedLandUnit") then
       self:set_queued_unit_tooltip(unit_card);
+    -- elseif string.find(component_id, "temp_merc_") then
+    --   self:set_queued_unit_tooltip(unit_card, "temp_merc_"); --dont work now
     elseif string.find(component_id, "LandUnit") then
       self:set_unit_in_army_tooltip(unit_card);
     elseif string.find(component_id, "AgentUnit") then

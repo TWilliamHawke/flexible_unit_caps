@@ -40,12 +40,6 @@ end;
 ---@param faction FACTION_SCRIPT_INTERFACE
 ---@return integer
 function Flexible_unit_caps:get_agents_supply(faction)
-
-  if self.basic_agent_supply == 0 then
-    return 0;
-  end;
-
-
   local char_list = faction:character_list();
 
   local agents_supply = 0;

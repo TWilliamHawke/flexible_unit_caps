@@ -1,3 +1,6 @@
+---@param lord_key string
+---@param unit_group string
+---@param value integer
 function Flexible_caps_api:add_unit_group_discount(lord_key, unit_group, value)
   if (type(value) ~= "number" or value == nil) then
     self:log("ERROR: Third argument in add_unit_group_discount method should be a number")
@@ -14,9 +17,9 @@ function Flexible_caps_api:add_unit_group_discount(lord_key, unit_group, value)
     return;
   end;
 
-  if(Flexible_unit_caps.group_discount[lord_key]) then
-    Flexible_unit_caps.group_discount[lord_key][unit_group] = value;
+  if(Flexible_unit_caps.lord_supply_change[lord_key]) then
+    Flexible_unit_caps.lord_supply_change[lord_key][unit_group] = { change = value, hidden = false };
   else
-    Flexible_unit_caps.group_discount[lord_key] = {[unit_group] = value}
+    Flexible_unit_caps.lord_supply_change[lord_key] = { [unit_group] = { change = value, hidden = false } }
   end;
 end;

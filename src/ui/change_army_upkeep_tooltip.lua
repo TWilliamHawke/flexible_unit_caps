@@ -20,36 +20,37 @@ function Flexible_unit_caps:change_army_upkeep_tooltip()
   local lord_name = self.selected_character:character_subtype_key();
   local lord_alias = self.lord_aliases[lord_name] or "empty";
   local char_list = force:character_list();
-  local army_discounts = {};
-  local skills_discounts = {};
+  local army_discounts = {}; ---@type table<string, integer>
+  local skills_discounts = {}; ---@type table<string, integer>
 
 
   for j = 0, char_list:num_items() - 1 do
     local char = char_list:item_at(j);
 
-    if (char:character_subtype_key() ~= lord_name) then
+    if char:character_subtype_key() ~= lord_name then
       army_supply = army_supply + self:get_this_agent_supply(char);
     end
   end
 
-  if (self.group_discount[lord_name]) then
-    for key, value in pairs(self.group_discount[lord_name]) do
-      local group_key = self.army_upkeep_tooltip_overwriting[lord_name] and
-          self.army_upkeep_tooltip_overwriting[lord_name][key] or key;
-      army_discounts[group_key] = value;
+  if self.lord_supply_change[lord_name] then
+    for key, data in pairs(self.lord_supply_change[lord_name]) do
+      if not data.hidden and data.change then
+        army_discounts[key] = data.change;
+      end
     end --of loop
   end
 
-  if (self.lord_skills_discount[lord_alias]) then
-    for key, value in pairs(self.lord_skills_discount[lord_alias]) do
-      local skill1 = value[2] or "empty";
-      local skill2 = value[3] or "empty";
+  if self.skill_supply_change[lord_alias] then
+    for key, value in pairs(self.skill_supply_change[lord_alias]) do
+      local is_hidden = value[2];
 
-      ---@diagnostic disable-next-line: redundant-parameter
-      if (self.selected_character:has_skill(skill1) or self.selected_character:has_skill(skill2)) then
-        local group_key = self.army_upkeep_tooltip_overwriting[lord_name] and
-            self.army_upkeep_tooltip_overwriting[lord_name][key] or key;
-        skills_discounts[group_key] = value[1];
+      if not is_hidden then
+        local skill1 = value[3] or "empty";
+        local skill2 = value[4] or "empty";
+
+        if (self.selected_character:has_skill(skill1) or self.selected_character:has_skill(skill2)) then
+          skills_discounts[key] = value[1];
+        end
       end
     end --of loop
   end

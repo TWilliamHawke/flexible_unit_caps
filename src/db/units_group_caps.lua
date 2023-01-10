@@ -1,5 +1,6 @@
 ---@type table<string, { [1]: group_unit_cap, [2]: ai_replacer }>
 Flexible_unit_caps.unit_group_caps = {
+  fluc_unknown = { 15, "" }, --
   fluc_all_cavalry = { 8, "" },
   fluc_all_chariots_war_machines = { 8, "" },
   fluc_all_flying_units = { 8, "" },
@@ -7,6 +8,8 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_all_short_range = { 8, "" },
   fluc_all_missiles = { 10, "" },
   fluc_all_rare_creatures = { 8, "" }, --single entities
+  fluc_tmb_tomb_kings = { 8, "" }, --allied
+  --Bretonnia(ai only)
   fluc_brt_artillery = { 4, "wh_main_brt_inf_men_at_arms" },
   fluc_brt_flying = { 4, "wh_dlc07_brt_inf_battle_pilgrims_0" },
   fluc_brt_grail = { 4, "wh_dlc07_brt_inf_foot_squires_0" },
@@ -17,6 +20,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_brt_realm = { 4, "wh_main_brt_cav_mounted_yeomen_0" },
   fluc_brt_squires = { 6, "wh_main_brt_inf_men_at_arms" },
   fluc_brt_yeomen = { 6, "wh_main_brt_inf_spearmen_at_arms" },
+  --Vampire Coast
   fluc_cst_artillery = { 4, "wh2_dlc11_cst_inf_zombie_gunnery_mob_2" },
   fluc_cst_beasts = { 6, "" },
   fluc_cst_corpses = { 4, "wh2_dlc11_cst_inf_zombie_deckhands_mob_0" },
@@ -33,6 +37,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_cst_syreens = { 6, "wh2_dlc11_cst_inf_depth_guard_0" },
   fluc_cst_terrorgheist = { 6, "wh2_dlc11_cst_inf_depth_guard_0" },
   fluc_cst_sartosa = { 6, "" },
+  --Dark Elves
   fluc_def_artillery = { 4, "wh2_main_def_inf_black_ark_corsairs_1" },
   fluc_def_bleakswords = { 8, "" },
   fluc_def_black_guard = { 6, "wh2_main_def_inf_dreadspears_0" },
@@ -53,6 +58,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_def_shades = { 6, "wh2_main_def_inf_darkshards_0" },
   fluc_def_sisters = { 6, "wh2_main_def_inf_bleakswords_0" },
   fluc_def_witch_elves = { 6, "wh2_main_def_inf_bleakswords_0" },
+  --Dwarfs
   fluc_dwf_artillery = { 6, "wh_main_dwf_inf_miners_1" },
   fluc_dwf_artillery_classic = { 4, "" }, --replaced
   fluc_dwf_artillery_fire = { 4, "" }, --replaced
@@ -74,6 +80,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_dwf_thunderers = { 6, "wh_main_dwf_inf_miners_1" },
   fluc_dwf_war_machines = { 4, "wh_main_dwf_inf_dwarf_warrior_0" },
   fluc_dwf_warriors = { 10, "" },
+  -- Empire
   fluc_emp_archers = { 6, "wh_main_emp_inf_spearmen_0" },
   fluc_emp_artillery = { 4, "wh2_dlc13_emp_veh_war_wagon_0" },
   fluc_emp_artillery_wagon = { 4, "" }, --replaced
@@ -100,6 +107,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_emp_tank = { 4, "wh_main_emp_inf_greatswords" },
   fluc_emp_ulric_cult = { 6, "" },
   fluc_emp_wagon = { 4, "wh_main_emp_inf_spearmen_1" },
+  --Greenskins
   fluc_grn_arachnarok = { 4, "wh_main_grn_mon_trolls" },
   fluc_grn_artillery = { 4, "wh_main_grn_inf_orc_boyz" },
   fluc_grn_big_uns = { 6, "wh_main_grn_inf_orc_boyz" },
@@ -118,6 +126,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_grn_trolls = { 6, "wh_main_grn_inf_orc_boyz" },
   fluc_grn_wagon = { 4, "" }, --overwrited
   fluc_grn_wyverns = { 4, "" }, --overwrited
+  --Hight Elves
   fluc_hef_avelorn = { 4, "wh2_main_hef_inf_lothern_sea_guard_1" },
   fluc_hef_archers = { 6, "wh2_main_hef_inf_spearmen_0" },
   fluc_hef_chariots = { 4, "wh2_main_hef_inf_spearmen_0" },
@@ -137,6 +146,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_hef_swordmasters = { 6, "wh2_dlc15_hef_inf_rangers_0" },
   fluc_hef_swordsmen = { 10, "wh2_main_hef_inf_spearmen_0" },
   fluc_hef_trees = { 6, "wh2_dlc15_hef_inf_rangers_0" },
+  --Lizardmen
   fluc_lzd_bastiladons = { 4, "wh2_main_lzd_cav_cold_ones_feral_0" },
   fluc_lzd_carnosaurs = { 4, "wh2_main_lzd_inf_saurus_spearmen_1" },
   fluc_lzd_chameleons = { 6, "wh2_main_lzd_inf_skink_cohort_1" },
@@ -153,6 +163,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_lzd_temple_guards = { 6, "wh2_main_lzd_inf_saurus_spearmen_1" },
   fluc_lzd_teranodons = { 6, "wh2_main_lzd_inf_skink_cohort_1" },
   fluc_lzd_troglodons = { 4, "wh2_main_lzd_inf_skink_cohort_1" },
+  --Norsca
   fluc_nor_berserkers = { 6, "" },
   fluc_nor_dinos = { 4, "wh_main_nor_mon_chaos_warhounds_0" },
   fluc_nor_chariots = { 4, "wh_dlc08_nor_inf_marauder_spearman_0" },
@@ -166,6 +177,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_nor_skinwolves = { 4, "wh_main_nor_mon_chaos_warhounds_0" },
   fluc_nor_trolls = { 6, "wh_main_nor_inf_chaos_marauders_0" },
   fluc_skv_abomination = { 4, "wh2_main_skv_inf_stormvermin_0" },
+  --Skaven
   fluc_skv_artillery = { 6, "wh2_main_skv_inf_night_runners_0" },
   fluc_skv_brood_horror = { 4, "wh2_dlc16_skv_mon_wolf_rats_0" },
   fluc_skv_catapults = { 0, "" }, --overwrited by fluc_skv_artillery
@@ -189,6 +201,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_skv_warp_grinder = { 4, "wh2_main_skv_inf_clanrats_1" },
   fluc_skv_warpfire_thrower = { 4, "wh2_main_skv_inf_clanrats_1" },
   fluc_skv_wolf_rats = { 6, "wh2_main_skv_inf_clanrats_0" },
+  --Vampire counts
   fluc_vmp_black_knights = { 4, "wh_main_vmp_inf_skeleton_warriors_0" },
   fluc_vmp_blood_knights = { 4, "wh_main_vmp_cav_black_knights_0" },
   fluc_vmp_crypt_horrors = { 6, "wh_main_vmp_inf_crypt_ghouls" },
@@ -207,6 +220,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_vmp_vargheists = { 4, "wh_main_vmp_mon_fell_bats" },
   fluc_vmp_varghulf = { 4, "wh_main_vmp_mon_dire_wolves" },
   fluc_vmp_zombies = { 10, "" },
+  --Wood elves
   fluc_wef_archers = { 8, "wh_dlc05_wef_inf_eternal_guard_0" },
   fluc_wef_dragons = { 4, "wh_dlc05_wef_mon_great_eagle_0" },
   fluc_wef_dryads = { 8, "" },
@@ -221,6 +235,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_wef_wardancers = { 8, "wh_dlc05_wef_inf_wardancers_0" },
   fluc_wef_waywatchers = { 6, "wh_dlc05_wef_inf_wardancers_0" },
   fluc_wef_zoats = { 4, "wh_dlc05_wef_inf_wildwood_rangers_0" },
+  --Kislev
   fluc_ksl_kossars = { 10, "" },
   fluc_ksl_armored_kossars = { 8, "wh3_main_ksl_inf_kossars_0" },
   fluc_ksl_horse_raiders = { 6, "wh3_main_ksl_inf_kossars_0" },
@@ -233,6 +248,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_ksl_elemental = { 4, "wh3_main_ksl_mon_snow_leopard_0" },
   fluc_ksl_ice_guard = { 6, "wh3_main_ksl_inf_kossars_0" },
   fluc_ksl_bear_riders = { 4, "wh3_main_ksl_cav_horse_raiders_0" },
+  --Ogres
   fluc_ogr_ogres = { 10, "" },
   fluc_ogr_gnoblars = { 10, "" },
   fluc_ogr_gorgers = { 6, "wh3_main_ogr_mon_sabretusk_pack_0" },
@@ -246,6 +262,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_ogr_stonehorn = { 4, "wh3_main_ogr_mon_sabretusk_pack_0" },
   fluc_ogr_artillery = { 4, "wh3_main_ogr_inf_ogres_0" },
   fluc_cth_artillery = { 4, "wh3_main_cth_inf_iron_hail_gunners_0" },
+  --Cathay
   fluc_cth_peasants = { 10, "" },
   fluc_cth_jade_warriors = { 8, "wh3_main_cth_inf_peasant_spearmen_1" },
   fluc_cth_archers = { 6, "wh3_main_cth_inf_peasant_spearmen_1" },
@@ -257,6 +274,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_cth_gunners = { 4, "wh3_main_cth_inf_peasant_archers_0" },
   fluc_cth_longma = { 4, "wh3_main_cth_cav_jade_lancers_0" },
   fluc_cth_terracotta = { 4, "wh3_main_cth_inf_jade_warriors_0" },
+  --Khorne
   fluc_kho_marauder = { 10, "" },
   fluc_kho_furies = { 6, "" },
   fluc_kho_horsemen = { 6, "wh3_dlc20_chs_inf_chaos_marauders_mkho" },
@@ -273,6 +291,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_kho_khornataurs = { 4, "wh3_main_kho_inf_chaos_warriors_1" },
   fluc_kho_soul_grinder = { 4, "wh3_dlc20_chs_inf_forsaken_mkho" },
   fluc_kho_spawn = { 6, "wh3_dlc20_chs_inf_forsaken_mkho" },
+  --Slaanesh
   fluc_sla_marauder = { 10, "" },
   fluc_sla_furies = { 6, "" },
   fluc_sla_horsemen = { 6, "wh3_dlc20_chs_inf_chaos_marauders_msla" },
@@ -289,6 +308,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_sla_seekers = { 4, "wh3_dlc20_chs_inf_chaos_marauders_msla" },
   fluc_sla_soul_grinder = { 4, "wh3_dlc20_chs_inf_forsaken_msla" },
   fluc_sla_spawn = { 6, "wh3_dlc20_chs_inf_forsaken_msla" },
+  --Nurgle
   fluc_nur_marauder = { 10, "" },
   fluc_nur_nurglings = { 10, "" },
   fluc_nur_furies = { 6, "" },
@@ -306,6 +326,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_nur_beasts = { 4, "wh3_dlc20_chs_inf_chaos_marauders_mnur" },
   fluc_nur_soul_grinder = { 4, "wh3_main_nur_inf_forsaken_0" },
   fluc_nur_spawn = { 6, "wh3_main_nur_inf_forsaken_0" },
+  --Tzeench
   fluc_tze_marauder = { 10, "" },
   fluc_tze_blue_horrors = { 10, "" },
   fluc_tze_furies = { 6, "" },
@@ -323,6 +344,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_tze_beasts = { 4, "wh3_dlc20_chs_inf_chaos_marauders_mtze" },
   fluc_tze_soul_grinder = { 4, "wh3_main_tze_inf_forsaken_0" },
   fluc_tze_spawn = { 6, "wh3_main_tze_inf_forsaken_0" },
+  --Chaos Warriors
   fluc_chs_marauder = { 10, "" },
   fluc_chs_giants = { 4, "wh_main_chs_inf_chaos_warriors_0" },
   fluc_chs_champions = { 4, "wh_main_chs_inf_chaos_warriors_0" },
@@ -341,5 +363,4 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_chs_greater_daemons = { 4, "" }, --player only
   fluc_chs_furies = { 6, "" }, --player only
   fluc_chs_soul_grinder = { 4, "" }, --player only
-  fluc_unknown = { 15, "" }
 }

@@ -18,10 +18,7 @@ function Flexible_unit_caps:get_armies_total_cost(faction)
     if self:check_army_type(force) then
 
       armies_total_cost = armies_total_cost + army_cost;
-
-      if army_cost < self.max_balance_per_army then
-        army_cost = army_cost + 1
-      end
+      army_cost = army_cost + 1
     end --of army check
   end --of force list loop
 
