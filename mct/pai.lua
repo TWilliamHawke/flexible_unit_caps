@@ -133,7 +133,6 @@ local function get_pai_params()
   end
 end
 
----comment
 ---@param faction FACTION_SCRIPT_INTERFACE
 ---@param tier integer
 local function replace_personality(faction, tier)

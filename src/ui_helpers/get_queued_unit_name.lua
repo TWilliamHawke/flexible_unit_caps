@@ -6,9 +6,9 @@ function Flexible_unit_caps:get_queued_unit_name(ui_component)
 
   local ok, err = pcall(function()
     local unit_info = find_uicomponent(core:get_ui_root(), "hud_campaign", "unit_information_parent",
-                                       "unit_info_panel_holder_parent", "unit_info_panel_holder");
+      "unit_info_panel_holder_parent", "unit_info_panel_holder");
     queued_unit_name = string.gsub(string.gsub(unit_info:GetContextObjectId("CcoUnitDetails"), "RecruitmentUnit_", ""),
-    "_%d+_%d+_%d+_%d+$", "");
+      "_%d+_%d+_%d+_%d+$", "");
 
   end);
 
@@ -20,4 +20,4 @@ function Flexible_unit_caps:get_queued_unit_name(ui_component)
   ui_component:SimulateMouseOff();
 
   return queued_unit_name;
-end;
+end

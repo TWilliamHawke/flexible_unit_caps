@@ -14,7 +14,7 @@ function Flexible_unit_caps:add_ui_listeners()
         cm:remove_callback(self.ui_debounce_key)
         cm:callback(function()
           self:log("UNIT REMOVED FROM QUEUE")
-          self:set_army_panel_tooltips();
+          self:set_all_army_panel_tooltips();
         end, 0.2, self.ui_debounce_key);
       end
     end,
@@ -31,7 +31,7 @@ function Flexible_unit_caps:add_ui_listeners()
       if string.find(context.string, "option") then
         cm:callback(function()
           self:log("ALLIES UNITS PANEL SWITCHED")
-          self:set_army_panel_tooltips();
+          self:set_all_army_panel_tooltips();
         end, 0.2);
       end
     end,
@@ -54,7 +54,7 @@ function Flexible_unit_caps:add_ui_listeners()
       cm:remove_callback(self.ui_debounce_key)
       cm:callback(function()
         self:log("UNIT ADDED TO QUEUE")
-        self:set_army_panel_tooltips();  
+        self:set_all_army_panel_tooltips();  
       end, 0.2, self.ui_debounce_key);
     end,
     true
@@ -101,7 +101,7 @@ function Flexible_unit_caps:add_ui_listeners()
     function()
       cm:callback(function()
         self:log("RECRUITMENT PANEL OPEN")
-        self:set_army_panel_tooltips();
+        self:set_all_army_panel_tooltips();
       end, 0.2);
 
     end,
@@ -118,7 +118,7 @@ function Flexible_unit_caps:add_ui_listeners()
       cm:remove_callback(self.ui_debounce_key)
 
       cm:callback(function()
-        self:set_army_panel_tooltips();
+        self:set_all_army_panel_tooltips();
         self:change_army_upkeep_tooltip();
 
       end, 0.5, self.ui_debounce_key);
@@ -172,7 +172,7 @@ function Flexible_unit_caps:add_ui_listeners()
 
       cm:callback(function()
         self:set_finance_button_tooltip(faction)
-        self:set_army_panel_tooltips();
+        self:set_all_army_panel_tooltips();
         self:change_army_upkeep_tooltip();
       end, 0.2);
 
@@ -193,7 +193,7 @@ function Flexible_unit_caps:add_ui_listeners()
       cm:callback(function()
         self:log("Unit upgraded");
         self:set_finance_button_tooltip(faction)
-        self:set_army_panel_tooltips();
+        self:set_all_army_panel_tooltips();
         self:change_army_upkeep_tooltip();
       end, 0.2, self.ui_debounce_key);
 

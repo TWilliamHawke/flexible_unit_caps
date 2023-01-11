@@ -1,4 +1,6 @@
 ---@alias ai_replacer string
 ---@alias group_unit_cap number
 ---@alias Units_group_data table<string, {unit_cap: integer, units_count:integer}>
----@alias uits_cache table<string, table<string, integer> | { count: integer }>
+---@alias Queued_units_props { count: integer }
+---@alias Force_units_props Queued_units_props | { cap: integer}
+---@class UnitsCache<T>: { [string] : table<string, integer> | T }

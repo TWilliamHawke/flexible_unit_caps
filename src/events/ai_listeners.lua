@@ -4,6 +4,7 @@ function Flexible_unit_caps:add_ai_listeners()
   "FactionTurnStart",
   function(context)
     local faction = context:faction()
+---@diagnostic disable-next-line: undefined-field
     return not faction:is_human() and cm:faction_has_campaign_feature(faction:name(), "additional_army_upkeep")
   end,  
   -- true,

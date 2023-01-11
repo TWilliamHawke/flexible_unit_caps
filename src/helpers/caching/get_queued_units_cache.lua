@@ -1,16 +1,19 @@
-function Flexible_unit_caps:create_queued_units_cache()
-  self.queued_units_cache = {};
-  local units_holder = find_uicomponent(core:get_ui_root(), "main_units_panel", "units");
-  if not units_holder then return end
+---@param units_holder UIC
+---@return UnitsCache<Queued_units_props>
+function Flexible_unit_caps:get_queued_units_cache(units_holder)
+  local cache = {}; ---@type UnitsCache<Queued_units_props>
+  if not units_holder then return cache end
 
+  ---@param unit_group string
+  ---@param component_name string
   local function add_unit_group_to_cache(unit_group, component_name)
-    if not self.queued_units_cache[unit_group] then
-      self.queued_units_cache[unit_group] = { count = 0 };
+    if not cache[unit_group] then
+      cache[unit_group] = { count = 0 };
     end
 
-    local count = self.queued_units_cache[unit_group].count + 1;
-    self.queued_units_cache[unit_group][component_name] = count;
-    self.queued_units_cache[unit_group].count = count;
+    local count = cache[unit_group].count + 1;
+    cache[unit_group][component_name] = count;
+    cache[unit_group].count = count;
   end;
 
   local function iterate_through_queue(prefix)
@@ -35,5 +38,5 @@ function Flexible_unit_caps:create_queued_units_cache()
 
   iterate_through_queue("QueuedLandUnit ");
   --iterate_through_queue("temp_merc_");
-
+  return cache;
 end

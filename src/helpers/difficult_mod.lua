@@ -1,13 +1,13 @@
 --calculate upkeep modificator
-function Flexible_unit_caps:get_player_upkeep_mult()
+function Flexible_unit_caps:get_player_upkeep_mod()
   if self.player_supply_custom_mult == -1 then
-    self:set_player_upkeep_mult();
+    self:set_player_upkeep_mod();
   end
 
   return self.player_supply_custom_mult
 end;
 
-function Flexible_unit_caps:set_player_upkeep_mult()
+function Flexible_unit_caps:set_player_upkeep_mod()
   local difficulty = cm:model():combined_difficulty_level();
   self.player_supply_custom_mult = 2;				-- easy
   

@@ -1,5 +1,5 @@
 ---@param component UIC
-function Flexible_unit_caps:set_unit_in_army_tooltip(component)
+function Flexible_unit_caps:set_tooltip_for_unit_in_army(component)
     if not self.selected_character then return end;
     if not self.selected_character:faction():is_human() then return end;
     if not self.selected_character:has_military_force() then return end;
@@ -22,9 +22,10 @@ function Flexible_unit_caps:set_unit_in_army_tooltip(component)
 
     local supply_text = self:construct_unit_supply_text(unit_name, unit,
       function(unit_group)
-        local units_in_army, unit_index = self:get_units_count_in_army(self.selected_character:military_force(), unit_group, index);
+        local units_in_army, unit_index = self:get_units_count_from_cache(
+          self.selected_force_units_cache, unit_group, tostring(index));
 
-        local units_in_queue = self:get_queued_units_from_cache(unit_group);
+        local units_in_queue = self:get_units_count_from_cache(self.queued_units_cache, unit_group);
 
         return units_in_army, units_in_queue, unit_index;
       end);

@@ -1,4 +1,4 @@
-function Flexible_unit_caps:change_army_upkeep_tooltip()
+function Flexible_unit_caps:set_tooltip_for_army_upkeep()
   local component = find_uicomponent(core:get_ui_root(), "units_panel", "dy_upkeep");
 
   if not cm then return end

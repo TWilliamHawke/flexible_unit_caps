@@ -13,7 +13,6 @@ function Flexible_unit_caps:get_unit_supply_params(unit_name, lord)
 
   local base_unit_cost = unit_data[1] or 0;
   base_unit_cost = base_unit_cost + self.basic_unit_supply;
-  self:logDebug("BASE UNIT COST TAKEN");
 
   if not lord then
     return base_unit_cost, base_unit_cost
@@ -28,7 +27,6 @@ function Flexible_unit_caps:get_unit_supply_params(unit_name, lord)
   end;
 
   local lord_alias = self.lord_aliases[lord_name]
-  self:logDebug("LORD AND UNIT TYPE CHECKED");
 
   if lord_alias ~= nil and self.skill_supply_change[lord_alias] ~= nil then
     local lord_skill_data = self.skill_supply_change[lord_alias][unit_group];
@@ -43,8 +41,6 @@ function Flexible_unit_caps:get_unit_supply_params(unit_name, lord)
       end
     end
   end
-
-  self:logDebug("LORD SKILL CHECKED");
 
   local unit_cost = base_unit_cost
   if lord_discount ~= 0 then

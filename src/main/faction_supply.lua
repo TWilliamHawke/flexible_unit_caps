@@ -3,7 +3,7 @@
 ---@return integer
 ---@return integer
 function Flexible_unit_caps:get_player_faction_supply(faction)
-  local upkeep_mult = self:get_player_upkeep_mult();
+  local upkeep_mult = self:get_player_upkeep_mod();
   local faction_supply_points = self:get_agents_supply(faction);
   local force_list = faction:military_force_list();
   local supply_balance = self:get_supply_balance(faction);

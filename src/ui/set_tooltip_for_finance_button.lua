@@ -1,5 +1,5 @@
 ---@param faction FACTION_SCRIPT_INTERFACE
-function Flexible_unit_caps:set_finance_button_tooltip(faction)
+function Flexible_unit_caps:set_tooltip_for_finance_button(faction)
   self:logDebug("--------");
   self:logDebug("SET TREASURY TOOLTIP FUNCTION IS STARTED");
   
