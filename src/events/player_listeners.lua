@@ -141,7 +141,7 @@ function Flexible_unit_caps:add_player_listeners()
         self:log("APPLY UPKEEP (NEW FORCE)");
         self:apply_upkeep_penalty(faction);
         self:reapply_supply_balance_effect(faction);
-        self:set_finance_button_tooltip(faction);
+        self:set_tooltip_for_finance_button(faction);
       end, 0.1);
     end,
     true
@@ -160,7 +160,7 @@ function Flexible_unit_caps:add_player_listeners()
       self:log("SETTLEMENT CAPTURED")
       local faction = context:region():owning_faction();
       self:reapply_supply_balance_effect(faction)
-      self:set_finance_button_tooltip(faction);
+      self:set_tooltip_for_finance_button(faction);
     end,
     true
   );
@@ -180,7 +180,7 @@ function Flexible_unit_caps:add_player_listeners()
       self:log("AGENT Recruted")
       local faction = context:character():faction();
       self:apply_upkeep_penalty(faction)
-      self:set_finance_button_tooltip(faction);
+      self:set_tooltip_for_finance_button(faction);
     end,
     true
   );
@@ -199,7 +199,7 @@ function Flexible_unit_caps:add_player_listeners()
 
       if faction:is_human() and faction:culture() == "wh3_main_ogr_ogre_kingdoms" then
         self:reapply_supply_balance_effect(faction)
-        self:set_finance_button_tooltip(faction);
+        self:set_tooltip_for_finance_button(faction);
 
       end
     end,

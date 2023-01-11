@@ -1,7 +1,7 @@
 function apply_upkeep_penalty(faction)
   local upkeep_penalty_effect_bundle_key = "wh3_main_bundle_force_additional_army_upkeep";
 	
-	Flexible_unit_caps:set_finance_button_tooltip(faction);
+	Flexible_unit_caps:set_tooltip_for_finance_button(faction);
 
 	local mf_list = faction:military_force_list();
 	

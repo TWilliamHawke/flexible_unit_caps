@@ -1,14 +1,15 @@
 ---@param unit_name string
 ---@param lord CHARACTER_SCRIPT_INTERFACE
----@return nil|integer
----@return nil|integer
+---@return integer
+---@return integer
 function Flexible_unit_caps:get_unit_supply_params(unit_name, lord)
   self:logDebug("GET SUPPLY PARAMS FUNCTION IS STARTED");
 
   local unit_data = self.units_data[unit_name];
 
   if unit_data == nil then
-    return nil, nil;
+    local unit_supply = self:get_unit_cost_from_key(unit_name);
+    return unit_supply, unit_supply;
   end;
 
   local base_unit_cost = unit_data[1] or 0;
@@ -48,7 +49,7 @@ function Flexible_unit_caps:get_unit_supply_params(unit_name, lord)
     self:logDebug(unit_name.." in "..lord_name.." army costs "..tostring(unit_cost).." points");
   end
 
-  if self:army_is_black_ark(lord_name) and unit_cost ~= 0 then
+  if self:army_is_black_ark(lord_name) then
     unit_cost = 0
   end
 

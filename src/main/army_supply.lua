@@ -27,7 +27,7 @@ function Flexible_unit_caps:get_army_supply(force, supply_penalty)
         unit_groups[unit_group] = {unit_cap, 1};
       end;
 
-      local lord_cost, base_cost = self:get_unit_supply_params(key, commander);
+      local lord_cost, base_cost = self:get_unit_supply_params_from_unit(unit, commander);
 
       if self:army_is_black_ark(character) then
         base_cost = base_cost or self:get_unknown_unit_supply(unit);

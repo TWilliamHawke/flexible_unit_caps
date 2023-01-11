@@ -119,7 +119,7 @@ function Flexible_unit_caps:add_ui_listeners()
 
       cm:callback(function()
         self:set_all_army_panel_tooltips();
-        self:change_army_upkeep_tooltip();
+        self:set_tooltip_for_army_upkeep();
 
       end, 0.5, self.ui_debounce_key);
 
@@ -171,9 +171,9 @@ function Flexible_unit_caps:add_ui_listeners()
       self:log("ARMY SELECTED");
 
       cm:callback(function()
-        self:set_finance_button_tooltip(faction)
+        self:set_tooltip_for_finance_button(faction)
         self:set_all_army_panel_tooltips();
-        self:change_army_upkeep_tooltip();
+        self:set_tooltip_for_army_upkeep();
       end, 0.2);
 
     end,
@@ -192,9 +192,9 @@ function Flexible_unit_caps:add_ui_listeners()
       
       cm:callback(function()
         self:log("Unit upgraded");
-        self:set_finance_button_tooltip(faction)
+        self:set_tooltip_for_finance_button(faction)
         self:set_all_army_panel_tooltips();
-        self:change_army_upkeep_tooltip();
+        self:set_tooltip_for_army_upkeep();
       end, 0.2, self.ui_debounce_key);
 
     end,

@@ -3,9 +3,9 @@
 function Flexible_unit_caps:set_tooltip_for_new_unit(string_end)
   ---@param component UIC
   return function(component)
-    if not self.selected_character then return end;
-    if not self.selected_character:faction():is_human() then return end;
-    if not self.selected_character:has_military_force() then return end;
+    if not self.selected_character then return end
+    if not self.selected_character:faction():is_human() then return end
+    if not self.selected_character:has_military_force() then return end
 
     self:logDebug("--------");
     self:logDebug("SET UNIT TOOLTIP FUNCTION IS STARTED");
@@ -29,4 +29,4 @@ function Flexible_unit_caps:set_tooltip_for_new_unit(string_end)
 
     self:logDebug("SET UNIT TOOLTIP FUNCTION IS FINISHED");
   end;
-end;
+end
