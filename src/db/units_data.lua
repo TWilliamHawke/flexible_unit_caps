@@ -177,8 +177,8 @@ Flexible_unit_caps.units_data = {
     ["wh3_main_sla_veh_exalted_seeker_chariot_0"]  = { 2, "fluc_sla_war_machines"},
     ["wh3_main_sla_veh_hellflayer_0"]  = { 2, "fluc_sla_war_machines"},
     ["wh3_main_sla_veh_seeker_chariot_0"]  = { 2, "fluc_sla_war_machines"},
+    ["wh3_main_sla_mon_fiends_of_slaanesh_0"]  = { 2, "fluc_sla_fiends"},
     --elite
-    ["wh3_main_sla_mon_fiends_of_slaanesh_0"]  = { 3, "fluc_sla_fiends"},
     ["wh3_main_sla_cav_heartseekers_of_slaanesh_0"]  = { 3, "fluc_sla_seekers"},
     ["wh3_main_sla_inf_daemonette_1"]  = { 3, "fluc_sla_exalted_daemons"},
     ["wh3_dlc20_chs_cav_chaos_knights_msla"]  = { 3, "fluc_sla_knights"},

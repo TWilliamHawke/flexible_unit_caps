@@ -46,9 +46,5 @@ function Flexible_unit_caps:get_force_units_cache(force)
     end
   end
 
-  for group, data in pairs(units_group_data) do
-    self:logCore(group .. " count: " .. data.count .. ", cap: " .. data.cap)
-  end
-
   return units_group_data
 end

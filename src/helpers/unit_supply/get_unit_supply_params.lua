@@ -49,9 +49,6 @@ function Flexible_unit_caps:get_unit_supply_params(unit_name, lord)
     self:logDebug(unit_name.." in "..lord_name.." army costs "..tostring(unit_cost).." points");
   end
 
-  if self:army_is_black_ark(lord_name) then
-    unit_cost = 0
-  end
 
   return unit_cost, base_unit_cost
 end

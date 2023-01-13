@@ -1,20 +1,21 @@
----@param base_cost number
----@param unit_pos number
----@param unit_cap number
----@return number
-function Flexible_unit_caps:apply_unit_cap(base_cost, unit_pos, unit_cap)
+---@param base_cost integer
+---@param lord_cost integer
+---@param unit_pos integer
+---@param unit_cap integer
+---@return integer
+function Flexible_unit_caps:apply_unit_cap(base_cost, lord_cost, unit_pos, unit_cap)
   if (unit_pos <= unit_cap) then
-    return base_cost;
+    return lord_cost;
   end
 
-  local cost_mult = math.floor(unit_pos / unit_cap);
+  local cost_mult = math.floor((unit_pos - 1) / unit_cap);
 
-  if (base_cost == 0) then
-    base_cost = 1;
-    cost_mult = cost_mult - 1;
-  end;
+  if base_cost == 0 then
+    return cost_mult;
+  end
 
-  
   local cost_add = math.min(base_cost, unit_pos % unit_cap);
-  return base_cost * cost_mult + cost_add;
+  local base_cost_with_cap = base_cost * cost_mult + cost_add;
+
+  return math.max(base_cost_with_cap - (base_cost - lord_cost), 0)
 end

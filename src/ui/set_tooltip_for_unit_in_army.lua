@@ -20,7 +20,7 @@ function Flexible_unit_caps:set_tooltip_for_unit_in_army(component)
 
   local unit_name = unit:unit_key();
 
-  local supply_text = self:construct_unit_supply_text(unit_name, unit,
+  local supply_text = self:construct_unit_supply_text(unit_name, "SRW_unit_consume_present",
     function(unit_group)
       local units_in_army, unit_index = self:get_units_count_from_cache(
         self.selected_force_units_cache, unit_group, tostring(index));
@@ -28,6 +28,9 @@ function Flexible_unit_caps:set_tooltip_for_unit_in_army(component)
       local units_in_queue = self:get_units_count_from_cache(self.queued_units_cache, unit_group);
 
       return units_in_army, units_in_queue, unit_index;
+    end,
+    function ()
+      return self:get_unit_supply_params_from_unit(unit, self.selected_character);
     end);
 
   self:finalize_unit_tooltip(component, supply_text, "||")
