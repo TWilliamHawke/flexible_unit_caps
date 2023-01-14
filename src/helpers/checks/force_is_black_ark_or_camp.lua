@@ -1,6 +1,6 @@
 ---@param force MILITARY_FORCE_SCRIPT_INTERFACE
 ---@return boolean
-function Flexible_unit_caps:army_is_black_ark_or_camp(force)
+function Flexible_unit_caps:force_is_black_ark_or_camp(force)
   local lord_name = force:general_character():character_subtype_key();
   local force_type = force:force_type():key();
 

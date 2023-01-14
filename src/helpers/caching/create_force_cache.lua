@@ -1,6 +1,6 @@
 ---@param force MILITARY_FORCE_SCRIPT_INTERFACE
 ---@return UnitsCache<Force_units_props>
-function Flexible_unit_caps:get_force_units_cache(force)
+function Flexible_unit_caps:create_force_cache(force)
   local units_group_data = {}; ---@type UnitsCache<Force_units_props>
   local commander = force:general_character();
   local unit_list = force:unit_list();

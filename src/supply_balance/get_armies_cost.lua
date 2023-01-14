@@ -15,7 +15,7 @@ function Flexible_unit_caps:get_armies_total_cost(faction)
       ogre_camps_supply = ogre_camps_supply + 3;
     end
 
-    if self:check_army_type(force) then
+    if self:force_needs_supply(force, self.no_balance_lords) then
 
       armies_total_cost = armies_total_cost + army_cost;
       army_cost = army_cost + 1

@@ -16,7 +16,7 @@ function Flexible_unit_caps:get_player_faction_supply(faction)
   for i = 0, force_list:num_items() - 1 do
       local force = force_list:item_at(i);
 
-      if self:check_army_type(force, true) then
+      if self:force_needs_supply(force) then
         local army_supply = self:get_army_supply(force, supply_penalty);
         faction_supply_points = faction_supply_points + army_supply;
       end; --of army check

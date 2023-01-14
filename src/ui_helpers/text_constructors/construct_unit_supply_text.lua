@@ -6,7 +6,7 @@
 function Flexible_unit_caps:construct_unit_supply_text(unit_name, consume_text_key, unit_count_callback, unit_cost_callback)
   local lord_cost, base_cost = unit_cost_callback();
 
-  if self:army_is_black_ark_or_camp(self.selected_character:military_force()) then
+  if self:force_is_black_ark_or_camp(self.selected_character:military_force()) then
     lord_cost = 0;
   end
 
@@ -15,6 +15,15 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, consume_text_k
   local units_in_army, units_in_queue, unit_index = unit_count_callback(unit_group);
 
   local unit_cost_with_cap = self:apply_unit_cap(base_cost, lord_cost, unit_index, group_capacity);
+
+  if parent_unit_group ~= "" then
+    local _, _, unit_index_p = unit_count_callback(parent_unit_group);
+    local group_capacity_p = self:get_unit_max_capacity(parent_unit_group, self.selected_character);
+
+    local unit_supply_p = self:apply_unit_cap(base_cost, lord_cost, unit_index_p, group_capacity_p);
+    unit_cost_with_cap = math.max(unit_cost_with_cap, unit_supply_p)
+  end
+
 
   local start_text_key = "SRW_unit_supply_cost_zero";
   if unit_cost_with_cap == 1 then

@@ -1,7 +1,7 @@
 ---@param force MILITARY_FORCE_SCRIPT_INTERFACE
----@param is_upkeep_check boolean|nil
+---@param excluded_lords table<string, boolean> | nil
 ---@return boolean
-function Flexible_unit_caps:check_army_type(force, is_upkeep_check)
+function Flexible_unit_caps:force_needs_supply(force, excluded_lords)
   --garrisons check
   if force:is_armed_citizenry() then
     return false;
@@ -13,7 +13,9 @@ function Flexible_unit_caps:check_army_type(force, is_upkeep_check)
   local force_general = force:general_character():character_subtype_key();
   local force_type = force:force_type():key();
 
-  if self.no_balance_lords[force_general] == 1 and not is_upkeep_check then
+  if excluded_lords and excluded_lords[force_general] then
+    return false;
+  elseif excluded_lords and self:force_is_black_ark_or_camp(force) then
     return false;
   elseif self.forcetype_exclusions[force_type] then
     return false;

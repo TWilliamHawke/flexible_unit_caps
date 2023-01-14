@@ -7,11 +7,13 @@ function Flexible_unit_caps:set_all_army_panel_tooltips()
   if self.selected_character:is_null_interface() then return end
   if not self.selected_character:faction():is_human() then return end
   if not self.selected_character:has_military_force() then return end
-  if self.selected_character:military_force():has_effect_bundle(self.loaned_army_effect) then return end
+  local force = self.selected_character:military_force();
+  if force:has_effect_bundle(self.loaned_army_effect) then return end
+  if not self:force_needs_supply(force) then return end;
   local units_holder = find_uicomponent(core:get_ui_root(), "main_units_panel", "units");
 
   self.queued_units_cache = self:get_queued_units_cache(units_holder);
-  self.selected_force_units_cache = self:get_force_units_cache(self.selected_character:military_force())
+  self.selected_force_units_cache = self:create_force_cache(self.selected_character:military_force())
 
   local unitList = find_uicomponent(core:get_ui_root(), "units_panel", "main_units_panel", "units");
 

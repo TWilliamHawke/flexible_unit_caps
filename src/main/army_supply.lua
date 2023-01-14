@@ -7,9 +7,9 @@ function Flexible_unit_caps:get_army_supply(force, supply_penalty)
   local lord = force:general_character();
   local this_army_supply = self.basic_lord_supply + supply_penalty;
   local lord_name = lord:character_subtype_key()
-  local unit_groups = {};
   self:log("--------");
   self:log("Lord of this army is " .. lord_name);
+  local unit_cache = self:create_force_cache(force);
 
   for j = 0, unit_list:num_items() - 1 do
     local unit = unit_list:item_at(j);
@@ -19,21 +19,24 @@ function Flexible_unit_caps:get_army_supply(force, supply_penalty)
     if unit:unit_class() == "com" then
       unit_supply = 0;
     else
-      local unit_group = self:get_unit_caps_group(key);
-      if (unit_groups[unit_group] ~= nil) then
-        unit_groups[unit_group][2] = unit_groups[unit_group][2] + 1;
-      else
-        local unit_cap = self:get_unit_max_capacity(unit_group, lord);
-        unit_groups[unit_group] = { unit_cap, 1 };
-      end
+      local unit_group, parent_group = self:get_unit_caps_group(key);
+      local unit_cap = self:get_unit_cap_from_cache(unit_cache, unit_group, lord);
+      local _, unit_index = self:get_units_count_from_cache(unit_cache, unit_group, tostring(j))
 
       local lord_cost, base_cost = self:get_unit_supply_params_from_unit(unit, lord);
 
-      if self:army_is_black_ark_or_camp(force) then
+      if self:force_is_black_ark_or_camp(force) then
         lord_cost = 0;
       end
 
-      unit_supply = self:apply_unit_cap(base_cost, lord_cost, unit_groups[unit_group][2], unit_groups[unit_group][1]);
+      unit_supply = self:apply_unit_cap(base_cost, lord_cost, unit_index, unit_cap);
+
+      if parent_group ~= "" then
+        local unit_cap_p = self:get_unit_cap_from_cache(unit_cache, parent_group, lord);
+        local _, unit_index_p = self:get_units_count_from_cache(unit_cache, parent_group, tostring(j))
+        local unit_supply_p = self:apply_unit_cap(base_cost, lord_cost, unit_index_p, unit_cap_p);
+        unit_supply = math.max(unit_supply, unit_supply_p)
+      end
     end
 
     if (unit_supply > 0) then

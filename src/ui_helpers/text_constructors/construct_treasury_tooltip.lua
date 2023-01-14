@@ -13,7 +13,7 @@ function Flexible_unit_caps:construct_treasury_tooltip(faction)
   for i = 0, force_list:num_items() - 1 do
     local force = force_list:item_at(i);
 
-    if self:check_army_type(force, false) then
+    if self:force_needs_supply(force, self.no_balance_lords) then
       armies_count = armies_count + 1;
     end
   end
