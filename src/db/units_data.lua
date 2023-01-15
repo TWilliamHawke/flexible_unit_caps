@@ -1,6 +1,6 @@
 --units id from db/main_units_tables
 --unit group key from ./units_group_overwriting.lua
-
+--TODO add chaos furies and forest units
 ---@type table<string, {[1]: number, [2]: string}>
 Flexible_unit_caps.units_data = {
   --Kislev

@@ -1,7 +1,7 @@
 ---@type table<string, table<string, { change: integer, hidden: boolean }>>
 Flexible_unit_caps.lord_supply_change = {
   --empire
-  emp_karl_franz = {
+  wh_main_emp_karl_franz = {
     fluc_emp_greatswords = { change = -2, hidden = false },
     fluc_emp_reiksguard = { change = -2, hidden = false },
   },
@@ -9,11 +9,11 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_emp_huntsmen = { change = -2, hidden = false },
     fluc_emp_archers = { change = -2, hidden = false },
   },
-  dlc04_emp_volkmar = {
+  wh_dlc04_emp_volkmar = {
     fluc_emp_knights_emp = { change = -2, hidden = false },
     fluc_emp_free_company = { change = -1, hidden = false },
   },
-  emp_balthasar_gelt = {
+  wh_main_emp_balthasar_gelt = {
     fluc_emp_artillery = { change = -1, hidden = false },
     fluc_emp_artillery_wagon = { change = -1, hidden = true },
   },
@@ -37,7 +37,7 @@ Flexible_unit_caps.lord_supply_change = {
   emp_aldebrand_ludenhof = {
     fluc_emp_handgunners = { change = -2, hidden = false },
   },
-  dlc03_emp_boris_todbringer = {
+  wh_dlc03_emp_boris_todbringer = {
     fluc_emp_archers = { change = -2, hidden = false },
     fluc_emp_crossbowmen = { change = -2, hidden = false },
     fluc_emp_flagellants = { change = -2, hidden = false },
@@ -73,10 +73,10 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_emp_taal_cult = { change = -2, hidden = false },
     fluc_emp_rhya = { change = -2, hidden = false },
   },
-  dwf_ungrim_ironfist = {
+  wh_main_dwf_ungrim_ironfist = {
     fluc_dwf_slayers = { change = -2, hidden = false },
   },
-  dwf_thorgrim_grudgebearer = {
+  wh_main_dwf_thorgrim_grudgebearer = {
     fluc_dwf_longbeards = { change = -2, hidden = false },
     fluc_dwf_hammerers = { change = -2, hidden = false },
   },
@@ -118,20 +118,20 @@ Flexible_unit_caps.lord_supply_change = {
   dwf_bloodline_grimm_burloksson = {
     fluc_dwf_flying_machine = { change = -2, hidden = false },
   },
-  grn_grimgor_ironhide = {
+  wh_main_grn_grimgor_ironhide = {
     fluc_grn_black_orcs = { change = -2, hidden = false },
     fluc_grn_big_uns = { change = -2, hidden = false },
     fluc_grn_big_uns_boar = { change = -2, hidden = true },
   },
-  grn_azhag_the_slaughterer = {
+  wh_main_grn_azhag_the_slaughterer = {
     fluc_grn_wyverns = { change = -2, hidden = false },
   },
-  dlc06_grn_skarsnik = {
+  wh_dlc06_grn_skarsnik = {
     fluc_grn_night_goblins = { change = -2, hidden = false },
     fluc_grn_goblins = { change = -2, hidden = true },
     fluc_grn_goblin_riderz = { change = -2, hidden = false },
   },
-  dlc06_grn_wurrzag_da_great_prophet = {
+  wh_dlc06_grn_wurrzag_da_great_prophet = {
     fluc_grn_savage = { change = -2, hidden = false },
     fluc_grn_savage_boar = { change = -2, hidden = true },
   },
@@ -169,13 +169,13 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_grn_big_uns = { change = -2, hidden = false },
     fluc_grn_chariots = { change = -2, hidden = false },
   },
-  vmp_mannfred_von_carstein = {
+  wh_main_vmp_mannfred_von_carstein = {
     fluc_vmp_black_knights = { change = -2, hidden = false },
   },
-  dlc04_vmp_helman_ghorst = {
+  wh_dlc04_vmp_helman_ghorst = {
     fluc_vmp_grave_guard = { change = -2, hidden = false },
   },
-  pro02_vmp_isabella_von_carstein = {
+  wh_pro02_vmp_isabella_von_carstein = {
     fluc_vmp_vampiress = { change = -2, hidden = false },
   },
   wh2_dlc11_vmp_bloodline_lahmian = {

@@ -13,7 +13,6 @@ function Flexible_unit_caps:get_regions_supply(faction)
     end
 
     local slot_list = regions_list:item_at(i):slot_list();
-
     for j = 0, slot_list:num_items() - 1 do
       if not slot_list:is_empty() then
         if slot_list:item_at(j):has_building() then
@@ -33,3 +32,5 @@ function Flexible_unit_caps:get_regions_supply(faction)
 
   return supply_form_regions, supply_from_buildings
 end
+
+--TODO add building max supply depend on climate

@@ -23,7 +23,7 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep()
   local army_discounts = {}; ---@type table<string, integer>
   local skills_discounts = {}; ---@type table<string, integer>
 
-
+--TODO add queued units suppy
   for j = 0, char_list:num_items() - 1 do
     local char = char_list:item_at(j);
 

@@ -1,6 +1,6 @@
 ---@param units_holder UIC
 ---@return UnitsCache<Queued_units_props>
-function Flexible_unit_caps:get_queued_units_cache(units_holder)
+function Flexible_unit_caps:create_queued_units_cache(units_holder)
   local cache = {}; ---@type UnitsCache<Queued_units_props>
   if not units_holder then return cache end
 

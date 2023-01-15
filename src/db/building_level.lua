@@ -1,5 +1,4 @@
---keys from db/building_levels_tables
---only red and blue buildings
+-- TODO split garrison buildings
 ---@type table<string, number>
 Flexible_unit_caps.building_unit_bonus = {
   --wef

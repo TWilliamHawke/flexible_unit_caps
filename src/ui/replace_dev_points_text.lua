@@ -20,3 +20,6 @@ function Flexible_unit_caps:replace_dev_points_text(ui_component)
 ---@diagnostic disable-next-line: undefined-field
   dev_points_text:SetText(tostring(supply_balance_change));
 end;
+
+--TODO replace with custom icon
+--XXX not forget about climate max value

@@ -54,3 +54,7 @@ function Flexible_unit_caps:construct_treasury_tooltip(faction)
   self:logDebug("Constructor IS FINISHED");
   return tooltip_text
 end
+
+--TODO add garrison text
+--TODO add localisation for supply_balance categories
+--BUG remove \n\n\n for wood elves

@@ -28,7 +28,7 @@ const write = () => {
     const fileBody = fs.readFileSync(file, { encoding: 'utf8' });
     data = data.concat("\n\n" + fileBody);
   }
-
+//
   const targetDir = path.join(process.cwd(), "bundle.lua");
   fs.writeFileSync(targetDir, data);
 }

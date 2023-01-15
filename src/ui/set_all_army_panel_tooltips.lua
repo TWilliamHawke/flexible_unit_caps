@@ -12,12 +12,13 @@ function Flexible_unit_caps:set_all_army_panel_tooltips()
   if not self:force_needs_supply(force) then return end;
   local units_holder = find_uicomponent(core:get_ui_root(), "main_units_panel", "units");
 
-  self.queued_units_cache = self:get_queued_units_cache(units_holder);
+  self.queued_units_cache = self:create_queued_units_cache(units_holder);
   self.selected_force_units_cache = self:create_force_cache(self.selected_character:military_force())
 
   local unitList = find_uicomponent(core:get_ui_root(), "units_panel", "main_units_panel", "units");
 
   if not unitList then return end
+--TODO add tooltip for lord unit card
 
   for _, unit_card in uic_pairs(unitList) do
     local component_id = unit_card:Id();

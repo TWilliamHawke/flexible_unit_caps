@@ -26,3 +26,5 @@ function Flexible_unit_caps:set_agent_tooltip(component)
 
   self:finalize_unit_tooltip(component, self:form_yellow_line(supply_text), "\n")
 end
+
+--BUG fix agent card tooltip

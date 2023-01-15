@@ -1,5 +1,8 @@
 ---@type table<string, { [1]: group_unit_cap, [2]: ai_replacer }>
 Flexible_unit_caps.unit_group_caps = {
+  --TODO add tomb kings groups
+  --TODO update groups for most factions (incl parents)
+  --TODO add localisation for new groups
   fluc_unknown = { 15, "" }, --
   fluc_all_cavalry = { 8, "" },
   fluc_all_chariots_war_machines = { 8, "" },

@@ -1,54 +1,27 @@
 function Flexible_unit_caps:mct_init(context)
   local mct = context:mct()
-  local supply_lines_rw = mct:get_mod_by_key("supply_lines_rw")
+  local fluc_mct = mct:get_mod_by_key("flexible_unit_caps")
+  local settings = fluc_mct:get_settings() ---@type Fluc_mct_config
 
+  self.player_supply_custom_mult = settings.a_player_effect;
+  self.ai_supply_mult = settings.c_ai_effect;
+  self.log_level = settings.f_enable_logging;
+  self.basic_lord_supply = settings.b_lord_supply;
+  self.basic_unit_supply = settings.a_unit_supply;
+  self.use_harsh_mode = settings.b_unit_caps_penalty == "harsh";
 
-  local a_player_enable = supply_lines_rw:get_option_by_key("a_player_enable")
-  local is_player_enable =  a_player_enable:get_finalized_setting()
+  local player_cap = tonumber(settings.a_player_unit_caps);
+  local ai_cap = tonumber(settings.c_ai_unit_caps);
 
-  local b_player_effect = supply_lines_rw:get_option_by_key("b_player_effect")
-  self.player_supply_custom_mult =  b_player_effect:get_finalized_setting()
-  b_player_effect:set_uic_visibility(is_player_enable)
+  self.player_unit_cap_mult = player_cap == -1 and -1 or player_cap / 100;
+  self.ai_unit_cap_mult = ai_cap == -1 and -1 or ai_cap / 100;
 
+  local supply_balance_diff = tonumber(settings.a_supply_balance_diff);
 
-  if not is_player_enable then
-    self.player_supply_custom_mult = 0
-  end;
+  self.enable_supply_balance = supply_balance_diff > 0 and true or false;
+  self.walls_reduces_balance = supply_balance_diff > 1 and true or false;
+  self.big_empire_penalty_start = supply_balance_diff > 2 and 50 or 999;
 
-  local d_ai_enable = supply_lines_rw:get_option_by_key("d_ai_enable")
-  local is_ai_enable = d_ai_enable:get_finalized_setting()
+  self:logDebug("Ai supply now is " .. tostring(self.ai_supply_mult));
 
-  local e_ai_effect = supply_lines_rw:get_option_by_key("e_ai_effect")
-  self.ai_supply_mult = e_ai_effect:get_finalized_setting()
-  e_ai_effect:set_uic_visibility(is_ai_enable)
-
-  local f_enable_logging = supply_lines_rw:get_option_by_key("f_enable_logging")
-  self.log_level = f_enable_logging:get_finalized_setting()
-
-  local c_c_unit_supply = supply_lines_rw:get_option_by_key("c_c_unit_supply")
-  self.basic_unit_supply = c_c_unit_supply:get_finalized_setting()
-
-  local c_d_lord_supply = supply_lines_rw:get_option_by_key("c_d_lord_supply")
-  self.basic_lord_supply = c_d_lord_supply:get_finalized_setting()
-
-  local enable_supply_balance_cfg = supply_lines_rw:get_option_by_key("balance_enable")
-  self.enable_supply_balance = enable_supply_balance_cfg:get_finalized_setting()
-
-  local max_balance_per_building_cfg = supply_lines_rw:get_option_by_key("balance_per_building")
-  self.max_balance_per_buildings = max_balance_per_building_cfg:get_finalized_setting()
-  max_balance_per_building_cfg:set_uic_visibility(self.enable_supply_balance)
-
-  local big_empire_penalty_cfg = supply_lines_rw:get_option_by_key("big_empire_penalty")
-  self.big_empire_penalty_start = tonumber(big_empire_penalty_cfg:get_finalized_setting())
-  big_empire_penalty_cfg:set_uic_visibility(self.enable_supply_balance)
-
-  local big_city_penalty_cfg = supply_lines_rw:get_option_by_key("big_city_penalty")
-  self.big_city_penalty = tonumber(big_city_penalty_cfg:get_finalized_setting())
-  big_city_penalty_cfg:set_uic_visibility(self.enable_supply_balance)
-
-  if not is_ai_enable then
-    self.ai_supply_mult = 0
-  end;
-  self:logDebug("Ai supply now is "..tostring(self.ai_supply_mult));
-
-end;
+end

@@ -62,3 +62,5 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, consume_text_k
 
   return string.gsub(supply_text, "SRW_Cost", tostring(unit_cost_with_cap)) .. unit_group_text .. "\n";
 end
+
+--TODO replace all srw_ prefixes with fluc_

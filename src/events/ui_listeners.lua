@@ -60,6 +60,7 @@ function Flexible_unit_caps:add_ui_listeners()
     true
   );
 
+  --TODO add construction menu event
   core:add_listener(
     "fluc_building_browser_open",
     "PanelOpenedCampaign",

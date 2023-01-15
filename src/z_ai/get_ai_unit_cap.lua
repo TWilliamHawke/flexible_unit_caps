@@ -10,3 +10,5 @@ function Flexible_unit_caps:get_ai_unit_caps(unit_group)
   max_capacity = math.floor(max_capacity * self.ai_unit_cap_mult);
   return max_capacity;
 end;
+
+--TODO implement lenear interpolation if mult < 1

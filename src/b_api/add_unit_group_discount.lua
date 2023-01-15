@@ -23,3 +23,5 @@ function Flexible_caps_api:add_unit_group_discount(lord_key, unit_group, value)
     Flexible_unit_caps.lord_supply_change[lord_key] = { [unit_group] = { change = value, hidden = false } }
   end;
 end;
+
+-- TODO add unit_group method
