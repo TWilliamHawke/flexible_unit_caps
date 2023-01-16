@@ -244,7 +244,7 @@ function Flexible_unit_caps:add_player_listeners()
         self.selected_character = nil;
       end
 
-      cm:remove_callback(self.disband_debounce_key)
+      cm:remove_callback(self.main_debounce_key)
 
       cm:callback(function()
         local faction = cm:get_faction(faction_name);
@@ -256,7 +256,7 @@ function Flexible_unit_caps:add_player_listeners()
           self:apply_upkeep_penalty(faction);
           self:reapply_supply_balance_effect(faction);
         end
-      end, 0.2, self.disband_debounce_key);
+      end, 0.2, self.main_debounce_key);
 
     end,
     true

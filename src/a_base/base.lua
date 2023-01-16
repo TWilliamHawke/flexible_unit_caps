@@ -1,7 +1,7 @@
 Flexible_unit_caps = {
     log_level = 0; -- 0=none, 1=player, 2=player and ai, 3=debug
-    ui_debounce_key = "fluc_ui_debounce",
-    disband_debounce_key = "fluc_disband_debounce",
+    ui_debounce_key = "fluc_debounce_ui",
+    main_debounce_key = "fluc_debounce_main",
     loaned_army_effect = "FLUC_loaned_army",
     --main
     ai_supply_mult = 0,
@@ -19,7 +19,7 @@ Flexible_unit_caps = {
     ai_unit_cap_mult = 1.25,
     use_harsh_mode = false,
     MIN_UNIT_CAP = 1, --const
-    LORD_FACTOR_CAP_MULT = -0.5, --transform supply discount into unit cap
+    LORD_FACTOR_CAP_MULT = -0.3, --transform supply discount into unit cap
     --Cached values
     selected_character = nil,
     ui_faction_check = nil,

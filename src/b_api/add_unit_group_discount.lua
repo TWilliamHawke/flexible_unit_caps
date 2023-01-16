@@ -24,4 +24,4 @@ function Flexible_caps_api:add_unit_group_discount(lord_key, unit_group, value)
   end;
 end;
 
--- TODO add unit_group method
+-- TODO add add_unit_group method

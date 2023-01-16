@@ -2,7 +2,7 @@
 ---@param lord CHARACTER_SCRIPT_INTERFACE
 ---@return integer
 function Flexible_unit_caps:get_unit_max_capacity(unit_group, lord)
-  if self.player_unit_cap_mult == -1 then
+  if self.player_unit_cap_mult <= 0 then
     return 20;
   end
 
@@ -15,7 +15,7 @@ function Flexible_unit_caps:get_unit_max_capacity(unit_group, lord)
     max_capacity = self.unit_group_caps[unit_group][1];
   end
 
-  max_capacity = max_capacity * self.player_unit_cap_mult;
+  max_capacity = self:apply_linear_interpolation(max_capacity, self.player_unit_cap_mult)
 
   if (self.lord_supply_change[lord_name] and self.lord_supply_change[lord_name][unit_group]) then
     lord_factor = lord_factor + self.lord_supply_change[lord_name][unit_group].change;
@@ -33,11 +33,11 @@ function Flexible_unit_caps:get_unit_max_capacity(unit_group, lord)
     end
   end
 
-  -- lord_factor == -1 => +50%
-  -- lord_factor == -2 => +100%
-  max_capacity = math.floor(max_capacity * (1 + lord_factor * self.LORD_FACTOR_CAP_MULT));
+  -- lord_factor == -1 => +50% or +1
+  -- lord_factor == -2 => +100% or +2
+  local unit_cap_lord_add = math.max(max_capacity * lord_factor * self.LORD_FACTOR_CAP_MULT, lord_factor * -1)
 
-  return math.max(max_capacity, self.MIN_UNIT_CAP);
+  max_capacity = max_capacity + unit_cap_lord_add;
+
+  return self:round_unit_cap(max_capacity);
 end
-
---TODO implement lenear interpolation if mult < 1

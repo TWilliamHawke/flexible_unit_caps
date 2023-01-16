@@ -14,4 +14,4 @@ function Flexible_unit_caps:finalize_unit_tooltip(component, supply_text, regexp
   component:SetTooltipText(final_text, true)
 
 end
--- TODO fix multiply text bug
+-- TODO fix multiply tooltip text bug

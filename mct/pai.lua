@@ -309,7 +309,7 @@ core:add_listener(
   "MctInitialized",
   true,
   function(context)
-    init_mcm(context)
+    --init_mcm(context)
   end,
   true
 )
@@ -319,8 +319,8 @@ core:add_listener(
   "MctFinalized",
   true,
   function(context)
-    init_mcm(context)
-    finalize_mcm()
+    --init_mcm(context)
+    --finalize_mcm()
   end,
   true
 )
