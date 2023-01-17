@@ -6,5 +6,5 @@ function Flexible_caps_api:add_garrison_building(building_key)
   end;
 
 
-  Flexible_unit_caps.building_unit_bonus[building_key] = -1;
+  Flexible_unit_caps.garrison_buildings[building_key] = true;
 end;

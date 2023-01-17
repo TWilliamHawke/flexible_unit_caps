@@ -44,7 +44,7 @@ function Flexible_unit_caps:add_ui_listeners()
     function()
       return cm:get_campaign_ui_manager():is_panel_open("recruitment_options");
     end,
-        ---@param context any
+    ---@param context any
     function(context)
       if not string.find(context.string, "_recruitable")
           and not string.find(context.string, "_mercenary") then
@@ -54,7 +54,7 @@ function Flexible_unit_caps:add_ui_listeners()
       cm:remove_callback(self.ui_debounce_key)
       cm:callback(function()
         self:log("UNIT ADDED TO QUEUE")
-        self:set_all_army_panel_tooltips();  
+        self:set_all_army_panel_tooltips();
       end, 0.2, self.ui_debounce_key);
     end,
     true
@@ -72,7 +72,14 @@ function Flexible_unit_caps:add_ui_listeners()
       local chain_list_key = player_culture == "wh3_main_nur_nurgle" and "cyclic_chain_list" or "chain_list"
 
       cm:callback(function()
-        self:log("BUILDING BROWSER OPEN")
+        local climate_penalty = 0;
+        local superchains = find_uicomponent(core:get_ui_root(), "building_browser", "building_superchains")
+
+        if superchains then
+          local region_key = superchains:GetContextObjectId("CcoCampaignSettlement")
+          climate_penalty = self:get_climate_penalty(region_key, cm:get_local_faction())
+        end
+
         local building_categories = find_uicomponent(core:get_ui_root(), "building_browser", "category_list");
 
         for _, building_category in uic_pairs(building_categories) do
@@ -83,7 +90,7 @@ function Flexible_unit_caps:add_ui_listeners()
               local building_list = find_uicomponent(chain, "slot_parent");
 
               for _, building in uic_pairs(building_list) do
-                self:replace_dev_points_text(building)
+                self:replace_dev_points_text(building, climate_penalty);
               end
             end --of second child loop
           end --of chain list check
@@ -190,7 +197,7 @@ function Flexible_unit_caps:add_ui_listeners()
       local faction = context:unit():faction()
       if not self:faction_has_supply_lines(faction) then return end
       cm:remove_callback(self.ui_debounce_key)
-      
+
       cm:callback(function()
         self:log("Unit upgraded");
         self:set_tooltip_for_finance_button(faction)
@@ -202,6 +209,8 @@ function Flexible_unit_caps:add_ui_listeners()
     true
   )
 
-  
+
 
 end
+
+--TODO add new lord button tooltip

@@ -18,7 +18,7 @@ function Flexible_unit_caps:set_all_army_panel_tooltips()
   local unitList = find_uicomponent(core:get_ui_root(), "units_panel", "main_units_panel", "units");
 
   if not unitList then return end
---TODO add tooltip for lord unit card
+--TODO add tooltip for lord card
 
   for _, unit_card in uic_pairs(unitList) do
     local component_id = unit_card:Id();

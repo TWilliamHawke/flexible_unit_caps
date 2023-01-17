@@ -99,3 +99,5 @@ log_level:set_default_value(0)
 log_level:slider_set_step_size(1)
 log_level:set_text(loc_prefix.."f_enable_logging_text", true)
 log_level:set_tooltip_text(loc_prefix.."f_enable_logging_tt", true)
+
+-- TODO add tooltips

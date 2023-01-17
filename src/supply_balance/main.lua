@@ -5,19 +5,20 @@
 ---@return integer
 ---@return integer
 ---@return integer
+---@return integer
 function Flexible_unit_caps:get_supply_balance(faction)
   local culture = faction:subculture();
 
   if not self.enable_supply_balance or culture == "wh_dlc05_sc_wef_wood_elves" then
-    return 0, 0, 0, 0, 0;
+    return 0, 0, 0, 0, 0, 0;
   end
 
   local army_supply, ogre_camps_supply = self:get_armies_total_cost(faction);
 
-  local region_supply, buildings_supply = self:get_regions_supply(faction);
-  local total_balance = region_supply + buildings_supply + ogre_camps_supply - army_supply;
+  local region_supply, buildings_supply, garrisons_supply = self:get_regions_supply(faction);
+  local total_balance = region_supply + buildings_supply + ogre_camps_supply + garrisons_supply - army_supply;
 
-  return total_balance, region_supply, buildings_supply, ogre_camps_supply, -army_supply
+  return total_balance, region_supply, buildings_supply, ogre_camps_supply, -army_supply, garrisons_supply
 end
 
 ---main script used in listeners

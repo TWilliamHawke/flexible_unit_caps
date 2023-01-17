@@ -1,25 +1,22 @@
 ---@param ui_component UIC
-function Flexible_unit_caps:replace_dev_points_text(ui_component)
-  --"CcoBuildingLevelRecord"
+---@param climate_penalty integer
+function Flexible_unit_caps:replace_dev_points_text(ui_component, climate_penalty)
+
   local building_id = string.gsub(ui_component:Id(), "CcoBuildingLevelRecord", "");
-  local supply_balance_change = self.building_unit_bonus[building_id]
-  if not supply_balance_change then return end;
+  local supply_balance_change = self:get_bulding_supply_balance(building_id, climate_penalty);
+
+  if supply_balance_change == 0 then return end
+
   local dev_points = find_uicomponent(ui_component, "dev_points");
-  if not dev_points then return end;
-  dev_points:SetVisible(true);
-  
-
   local dev_points_text = find_uicomponent(dev_points, "dy_num_points_required");
-  supply_balance_change = math.min(supply_balance_change, self.max_balance_per_buildings)
+  if not dev_points or not dev_points_text then return end
 
-  if supply_balance_change > 0 then
-    supply_balance_change = "+"..supply_balance_change
-  end
-
+  dev_points:SetVisible(true);
   dev_points_text:SetVisible(true);
----@diagnostic disable-next-line: undefined-field
-  dev_points_text:SetText(tostring(supply_balance_change));
-end;
+
+  ---@diagnostic disable-next-line: undefined-field
+  dev_points_text:SetText(self:try_add_plus(supply_balance_change));
+end
 
 --TODO replace with custom icon
---XXX not forget about climate max value
+--TODO add tooltips for mct options
