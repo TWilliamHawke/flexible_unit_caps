@@ -1,35 +1,36 @@
 function Flexible_unit_caps:set_all_army_panel_tooltips()
-  if not cm then return end
   local ui_manager = cm:get_campaign_ui_manager();
-  if not ui_manager then return end
   if not ui_manager:is_panel_open("units_panel") then return end
-  if not self.selected_character then return end
-  if self.selected_character:is_null_interface() then return end
-  if not self.selected_character:faction():is_human() then return end
-  if not self.selected_character:has_military_force() then return end
-  local force = self.selected_character:military_force();
+
+  local units_panel = find_uicomponent(core:get_ui_root(), "units_panel")
+  local unitList = find_uicomponent(units_panel, "main_units_panel", "units");
+  if not unitList or not units_panel then return end
+
+  local character_cqi = units_panel:GetContextObjectId("CcoCampaignCharacter")
+  local character = cm:get_character_by_cqi(tonumber(character_cqi) or -1);
+  if character:is_null_interface() then return end;
+
+  if not character:faction():is_human() then return end
+  if not character:has_military_force() then return end
+  local force = character:military_force();
   if force:has_effect_bundle(self.loaned_army_effect) then return end
   if not self:force_needs_supply(force) then return end;
-  local units_holder = find_uicomponent(core:get_ui_root(), "main_units_panel", "units");
 
-  self.queued_units_cache = self:create_queued_units_cache(units_holder);
-  self.selected_force_units_cache = self:create_force_cache(self.selected_character:military_force())
+  self.queued_units_cache = self:create_queued_units_cache(unitList);
+  self.selected_force_units_cache = self:create_force_cache(force);
 
-  local unitList = find_uicomponent(core:get_ui_root(), "units_panel", "main_units_panel", "units");
 
-  if not unitList then return end
 --TODO add tooltip for lord card
 
   for _, unit_card in uic_pairs(unitList) do
     local component_id = unit_card:Id();
-
 
     if string.find(component_id, "QueuedLandUnit") then
       self:set_tooltip_for_unit_in_queue(unit_card);
       -- elseif string.find(component_id, "temp_merc_") then
       --   self:set_queued_unit_tooltip(unit_card, "temp_merc_"); --dont work now
     elseif string.find(component_id, "LandUnit") then
-      self:set_tooltip_for_unit_in_army(unit_card);
+      self:set_tooltip_for_unit_in_army(unit_card, character);
     elseif string.find(component_id, "AgentUnit") then
       self:set_agent_tooltip(unit_card);
     end

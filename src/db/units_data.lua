@@ -1,6 +1,5 @@
---units id from db/main_units_tables
---unit group key from ./units_group_overwriting.lua
 --TODO add chaos furies and forest units
+--TODO reduce ror supply
 ---@type table<string, {[1]: number, [2]: string}>
 Flexible_unit_caps.units_data = {
   --Kislev
@@ -921,19 +920,19 @@ Flexible_unit_caps.units_data = {
     ["wh_main_grn_cav_forest_goblin_spider_riders_1"]  = { 0, "fluc_grn_goblin_riderz"},
     ["wh_main_grn_cav_goblin_wolf_riders_0"]  = { 0, "fluc_grn_goblin_riderz"},
     ["wh_main_grn_cav_goblin_wolf_riders_1"]  = { 0, "fluc_grn_goblin_riderz"},
-    ["wh_main_grn_cav_savage_orc_boar_boyz"]  = { 0, "fluc_grn_boyz"},
+    ["wh_main_grn_cav_savage_orc_boar_boyz"]  = { 0, "fluc_grn_savage_boar"},
     ["wh_dlc06_grn_inf_nasty_skulkers_0"]  = { 0, "fluc_grn_goblins"},
     ["wh_dlc06_grn_inf_squig_herd_0"]  = { 0, "fluc_grn_squig"},
     ["wh_dlc06_grn_mon_spider_hatchlings_0"]  = { 0, "fluc_grn_goblin_riderz"},
-    ["wh_main_grn_inf_goblin_archers"]  = { 0, "fluc_grn_goblins"},
+    ["wh_main_grn_inf_goblin_archers"]  = { 0, "fluc_grn_goblin_archers"},
     ["wh_main_grn_inf_goblin_spearmen"]  = { 0, "fluc_grn_goblins"},
-    ["wh_main_grn_inf_orc_arrer_boyz"]  = { 0, "fluc_grn_boyz"},
+    ["wh_main_grn_inf_orc_arrer_boyz"]  = { 0, "fluc_grn_orc_archers"},
     ["wh_main_grn_inf_orc_boyz"]  = { 0, "fluc_grn_boyz"},
     ["wh_main_grn_inf_savage_orcs"]  = { 0, "fluc_grn_savage"},
     ["wh_main_grn_cav_orc_boar_boyz"]  = { 0, "fluc_grn_big_uns_boar"},
     ["wh2_dlc15_grn_veh_snotling_pump_wagon_0"]  = { 0, "fluc_grn_wagon"},
     ["wh_dlc06_grn_inf_squig_explosive_0"]  = { 0, "fluc_grn_squig"},
-    ["wh_main_grn_inf_savage_orc_arrer_boyz"]  = { 0, "fluc_grn_savage"},
+    ["wh_main_grn_inf_savage_orc_arrer_boyz"]  = { 0, "fluc_grn_orc_archers"},
     -- special
     ["wh_main_grn_cav_goblin_wolf_chariot"]  = { 1, "fluc_grn_goblin_riderz"},
     ["wh2_dlc15_grn_cav_forest_goblin_spider_riders_waaagh_0"]  = { 1, "fluc_grn_goblin_riderz"},
@@ -945,8 +944,8 @@ Flexible_unit_caps.units_data = {
     ["wh_main_grn_inf_orc_big_uns"]  = { 1, "fluc_grn_big_uns"},
     ["wh_main_grn_inf_night_goblin_fanatics"]  = { 1, "fluc_grn_night_goblins"},
     ["wh_main_grn_inf_night_goblins"]  = { 0, "fluc_grn_night_goblins"},
-    ["wh_main_grn_inf_night_goblin_archers"]  = { 1, "fluc_grn_night_goblins"},
-    ["wh_main_grn_inf_night_goblin_fanatics_1"]  = { 1, "fluc_grn_night_goblins"},
+    ["wh_main_grn_inf_night_goblin_archers"]  = { 1, "fluc_grn_goblin_archers"},
+    ["wh_main_grn_inf_night_goblin_fanatics_1"]  = { 1, "fluc_grn_goblin_archers"},
     ["wh_main_grn_mon_trolls"]  = { 1, "fluc_grn_trolls"},
     -- rare
     ["wh_main_grn_cav_orc_boar_chariot"]  = { 2, "fluc_grn_chariots"},
@@ -966,21 +965,21 @@ Flexible_unit_caps.units_data = {
     ["wh_dlc15_grn_mon_arachnarok_spider_waaagh_0"]  = { 4, "fluc_grn_arachnarok"},
     
     -- ROR
-    ["wh2_dlc15_grn_veh_snotling_pump_wagon_ror_0"]  = { 1, "fluc_grn_wagon"},
-    ["wh_dlc06_grn_cav_deff_creepers_0"]  = { 1, "fluc_grn_goblin_riderz"},
-    ["wh_dlc06_grn_cav_mogrubbs_marauders_0"]  = { 1, "fluc_grn_goblin_riderz"},
-    ["wh_dlc06_grn_cav_moon_howlers_0"]  = { 1, "fluc_grn_goblin_riderz"},
-    ["wh_dlc06_grn_cav_teef_robbers_0"]  = { 2, "fluc_grn_goblin_riderz"},
-    ["wh_dlc06_grn_cav_broken_tusks_mob_0"]  = { 2, "fluc_grn_big_uns_boar"},
-    ["wh_dlc06_grn_cav_durkits_squigs_0"]  = { 2, "fluc_grn_squig"},
-    ["wh_dlc06_grn_inf_da_eight_peaks_loonies_0"]  = { 2, "fluc_grn_night_goblins"},
+    ["wh2_dlc15_grn_veh_snotling_pump_wagon_ror_0"]  = { 0, "fluc_grn_wagon"},
+    ["wh_dlc06_grn_cav_deff_creepers_0"]  = { 0, "fluc_grn_goblin_riderz"},
+    ["wh_dlc06_grn_cav_mogrubbs_marauders_0"]  = { 0, "fluc_grn_goblin_riderz"},
+    ["wh_dlc06_grn_cav_moon_howlers_0"]  = { 0, "fluc_grn_goblin_riderz"},
+    ["wh_dlc06_grn_cav_teef_robbers_0"]  = { 1, "fluc_grn_goblin_riderz"},
+    ["wh_dlc06_grn_cav_broken_tusks_mob_0"]  = { 1, "fluc_grn_big_uns_boar"},
+    ["wh_dlc06_grn_cav_durkits_squigs_0"]  = { 1, "fluc_grn_squig"},
+    ["wh_dlc06_grn_inf_da_eight_peaks_loonies_0"]  = { 1, "fluc_grn_night_goblins"},
     ["wh_dlc06_grn_inf_da_warlords_boyz_0"]  = { 1, "fluc_grn_night_goblins"},
-    ["wh_dlc06_grn_inf_da_rusty_arrers_0"]  = { 2, "fluc_grn_night_goblins"},
-    ["wh2_dlc15_grn_mon_river_trolls_ror_0"]  = { 3, "fluc_grn_trolls"},
-    ["wh_dlc06_grn_inf_krimson_killerz_0"]  = { 3, "fluc_grn_black_orcs"},
+    ["wh_dlc06_grn_inf_da_rusty_arrers_0"]  = { 1, "fluc_grn_goblin_archers"},
+    ["wh2_dlc15_grn_mon_river_trolls_ror_0"]  = { 2, "fluc_grn_trolls"},
+    ["wh_dlc06_grn_inf_krimson_killerz_0"]  = { 2, "fluc_grn_black_orcs"},
     ["wh_dlc06_grn_art_hammer_of_gork_0"]  = { 3, "fluc_grn_artillery"},
-    ["wh2_dlc15_grn_mon_rogue_idol_ror_0"]  = { 5, "fluc_grn_giants"},
-    ["wh_dlc06_grn_mon_venom_queen_0"]  = { 5, "fluc_grn_arachnarok"},
+    ["wh2_dlc15_grn_mon_rogue_idol_ror_0"]  = { 4, "fluc_grn_giants"},
+    ["wh_dlc06_grn_mon_venom_queen_0"]  = { 4, "fluc_grn_arachnarok"},
   --Vampire counts
     ["wh_dlc04_vmp_veh_corpse_cart_0"]  = { 0, "fluc_vmp_machines"},
     ["wh_dlc04_vmp_veh_corpse_cart_1"]  = { 0, "fluc_vmp_machines"},
@@ -1984,7 +1983,7 @@ Flexible_unit_caps.units_data = {
     --ws
     ["ws_inf_big_stabba"]  = { 0, "none"},
     ["ws_inf_da_immortulz"]  = { 3, "fluc_grn_black_orcs"},
-    ["ws_inf_forest_goblin_archers"]  = { 0, "fluc_grn_goblins"},
+    ["ws_inf_forest_goblin_archers"]  = { 0, "fluc_grn_goblin_archers"},
     ["ws_inf_forest_goblins"]  = { 0, "fluc_grn_goblins"},
     ["ws_inf_night_goblin_netters"]  = { 0, "fluc_grn_night_goblins"},
     ["ws_inf_orc_stikka_boyz"]  = { 0, "fluc_grn_boyz"},
@@ -2428,7 +2427,7 @@ Flexible_unit_caps.units_data = {
     --grn
     ["Stabba_Stickpokers"]  = { 1, "fluc_grn_night_goblins"}, --ni gobb
     ["Grokkamobs"]  = { 1, "fluc_grn_savage_boar"}, --savage boars
-    ["Harboth"]  = { 0, "fluc_grn_boyz"}, -- orc arrers
+    ["Harboth"]  = { 0, "fluc_grn_orc_archers"}, -- orc arrers
     ["Frik"]  = { 1, "fluc_grn_squig"}, -- squig
     ["grn_bouncers"]  = { 1, "fluc_grn_squig"}, --squig
     ["Drillaz"]  = { 2, "fluc_grn_black_orcs"}, -- bl orcs
@@ -2846,7 +2845,7 @@ Flexible_unit_caps.units_data = {
     ["grn_great_wyvern"]  = { 4, "fluc_grn_wyverns"},
     ["grn_ledge_endz"]  = { 3, "fluc_grn_boyz"},
     ["grn_ledge_endz_bow"]  = { 3, "fluc_grn_boyz"},
-    ["grn_legion_bow"]  = { 1, "fluc_grn_goblins"},
+    ["grn_legion_bow"]  = { 1, "fluc_grn_goblin_archers"},
     ["grn_legion_chariot"]  = { 1, "fluc_grn_goblin_riderz"},
     ["grn_legion_chariot_1"]  = { 2, "fluc_grn_goblin_riderz"},
     ["grn_legion_spear"]  = { 1, "fluc_grn_goblins"},

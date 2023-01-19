@@ -79,5 +79,16 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_hef_silver_helms = "fluc_all_cavalry",
   fluc_hef_stealth_archers = "fluc_all_missiles",
   fluc_hef_avelorn = "fluc_all_missiles",
-
+  fluc_grn_arachnarok = "fluc_all_rare_creatures",
+  fluc_grn_artillery = "fluc_all_long_range",
+  fluc_grn_chariots = "fluc_all_chariots_war_machines",
+  fluc_grn_big_uns_boar = "fluc_all_cavalry",
+  fluc_grn_black_orcs = "fluc_all_heavy_infantry",
+  fluc_grn_giants = "fluc_all_rare_creatures",
+  fluc_grn_goblin_riderz = "fluc_all_cavalry",
+  fluc_grn_goblin_archers = "fluc_all_missiles",
+  fluc_grn_orc_archers = "fluc_all_missiles",
+  fluc_grn_other_monsters = "fluc_all_rare_creatures",
+  fluc_grn_savage_boar = "fluc_all_cavalry",
+  fluc_grn_wyverns = "fluc_all_rare_creatures",
 }

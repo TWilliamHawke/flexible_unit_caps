@@ -30,33 +30,26 @@ function Flexible_unit_caps:construct_treasury_tooltip(faction)
 
   local supply_balance_text = ""
 
-  if self.enable_supply_balance and not (culture == "wh_dlc05_sc_wef_wood_elves") then
-    supply_balance_text = self:get_localised_string("SRW_supply_balance_text");
-    if (region_supply ~= 0) then
-      supply_balance_text = supply_balance_text ..
-          self:get_localised_string("fluc_supply_source_settlements") .. self:try_add_plus(region_supply);
+  local function add_supply_source(text, loc_key, value, is_final_string)
+    if value ~= 0 or is_final_string then
+      return text .. self:get_localised_string(loc_key) .. self:try_add_plus(value);
+    else
+      return text;
     end
-    if (buildings_supply ~= 0) then
-      supply_balance_text = supply_balance_text ..
-          self:get_localised_string("fluc_supply_source_military") .. self:try_add_plus(buildings_supply);
-    end
-    if (garrisons_supply ~= 0) then
-      supply_balance_text = supply_balance_text ..
-          self:get_localised_string("fluc_supply_source_garrisons") .. self:try_add_plus(garrisons_supply);
-    end
-    if (army_supply ~= 0) then
-      supply_balance_text = supply_balance_text ..
-          self:get_localised_string("fluc_supply_source_forces") .. self:try_add_plus(army_supply);
-    end
-    if (ogre_camps_supply ~= 0) then
-      supply_balance_text = supply_balance_text ..
-          self:get_localised_string("fluc_supply_source_camps") .. self:try_add_plus(ogre_camps_supply);
-    end
-    supply_balance_text = supply_balance_text ..
-        self:get_localised_string("fluc_supply_source_total") .. self:try_add_plus(supply_balance);
   end
 
-  local tooltip_text = self:get_localised_string("SRW_treasury_tooltip_main") .. "\n" .. supply_balance_text .. "\n" ..
+  if self.enable_supply_balance and not (culture == "wh_dlc05_sc_wef_wood_elves") then
+    supply_balance_text = self:get_localised_string("SRW_supply_balance_text");
+    supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_settlements", region_supply);
+    supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_military", buildings_supply);
+    supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_garrisons", garrisons_supply);
+    supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_forces", army_supply);
+    supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_camps", ogre_camps_supply);
+    supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_total", supply_balance, true);
+  end
+
+  local tooltip_text = self:get_localised_string("SRW_treasury_tooltip_main") ..
+      "\n" .. supply_balance_text .. "\n" ..
       supply_text ..
       self:get_localised_string("SRW_treasury_tooltip_upkeep") .. tostring(upkeep_percent) .. "%";
 

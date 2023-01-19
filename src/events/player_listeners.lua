@@ -224,7 +224,7 @@ function Flexible_unit_caps:add_player_listeners()
 
       local force_cqi = force:command_queue_index();
 
-      cm:apply_effect_bundle_to_force(self.loaned_army_effect, force_cqi, 0);
+      cm:apply_effect_bundle_to_force(self.loaned_army_effect, tostring(force_cqi), 0);
       self:log("Effect applied")
     end,
     true

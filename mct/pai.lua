@@ -28,10 +28,6 @@ local PAI_EFFECTS_VALUES = {
   ["growth_per_level"] = 25,
   ["horde_growth_per_level"] = 5,
   ["horde_growth_first_turn"] = -5,
-  ["building_per_level"] = 5,
-  ["building_first_turn"] = -5,
-  ["recruitment_per_level"] = -5,
-  ["recruitment_first_turn"] = -5,
 }
 
 -- research buff doesn't apply for tomb kings
@@ -39,8 +35,6 @@ local PAI_EFFECTS_VALUES = {
 local PAI_EFFECTS_DB = {
   { "upkeep", "wh_main_effect_force_all_campaign_upkeep", "faction_to_force_own" },
   { "growth", "wh_main_effect_province_growth_building", "faction_to_province_own" },
-  { "building", "wh_main_effect_building_construction_cost_mod", "faction_to_province_own" },
-  { "recruitment", "wh_main_effect_force_all_campaign_recruitment_cost_all", "faction_to_province_own" },
   { "unit_exp", "wh3_dlc20_effect_xp_gain_all_units", "faction_to_force_own" },
   { "lord_exp", "wh3_main_effect_character_campaign_experience_mod", "faction_to_character_own" },
   { "horde_growth", "wh_main_effect_hordebuilding_growth_core", "faction_to_force_own" },
@@ -251,6 +245,23 @@ core:add_listener(
   end,
   true
 );
+
+core:add_listener(
+  "PAI_Potential_test",
+  "SettlementSelected",
+  ---@param context SettlementSelected
+  ---@return boolean
+  function(context)
+    return enable_debug and not context:garrison_residence():faction():is_human();
+  end,
+  ---@param context SettlementSelected
+  function(context)
+    local faction = context:garrison_residence():faction();
+    cm:faction_set_potential_modifier(faction, 500);
+    PAILOG("done for "..faction:name())
+  end,
+  true
+)
 
 core:add_listener(
   "PAI_FactionTurnStart_test",

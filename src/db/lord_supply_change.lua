@@ -128,17 +128,20 @@ Flexible_unit_caps.lord_supply_change = {
   },
   wh_dlc06_grn_skarsnik = {
     fluc_grn_night_goblins = { change = -2, hidden = false },
-    fluc_grn_goblins = { change = -2, hidden = true },
-    fluc_grn_goblin_riderz = { change = -2, hidden = false },
+    fluc_grn_goblins = { change = -1, hidden = true },
+    fluc_grn_goblin_archers = { change = -1, hidden = true },
+    fluc_grn_goblin_riderz = { change = -1, hidden = false },
   },
   wh_dlc06_grn_wurrzag_da_great_prophet = {
     fluc_grn_savage = { change = -2, hidden = false },
     fluc_grn_savage_boar = { change = -2, hidden = true },
+    fluc_grn_orc_archers = { change = -2, hidden = true },
   },
   wh2_dlc15_grn_grom_the_paunch = {
     fluc_grn_wagon = { change = -2, hidden = false },
     fluc_grn_goblins = { change = -2, hidden = false },
     fluc_grn_goblin_riderz = { change = -2, hidden = true },
+    fluc_grn_goblin_archers = { change = -2, hidden = true },
   },
   wh2_dlc15_grn_orc_warboss_oglok = {
     fluc_grn_big_uns_boar = { change = -2, hidden = false },

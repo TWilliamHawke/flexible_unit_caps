@@ -1,15 +1,19 @@
 ---@param component UIC
-function Flexible_unit_caps:set_tooltip_for_unit_in_army(component)
-  if not self.selected_character then return end
-  if not self.selected_character:faction():is_human() then return end
-  if not self.selected_character:has_military_force() then return end
+---@param character CHARACTER_SCRIPT_INTERFACE
+function Flexible_unit_caps:set_tooltip_for_unit_in_army(component, character)
+  local waagh_marker = find_uicomponent(component, "waaagh_unit_marker")
+  if waagh_marker and waagh_marker:Visible() then
+    local supply_text = self:get_localised_string("SRW_unit_supply_cost_zero");
+    self:finalize_unit_tooltip(component, self:form_yellow_line(supply_text), "||")
+    return;
+  end
 
   local component_name = component:Id()
-  local force = self.selected_character:military_force()
-  local unit_list = force:unit_list()
   local unit_number = component_name:match("(%d+)")
-
   if unit_number == "0" then return end
+
+  local force = character:military_force();
+  local unit_list = force:unit_list()
 
   --we need unit from selected army
   local index = tonumber(unit_number) + self:get_num_of_agents_in_army(unit_list)
@@ -19,6 +23,7 @@ function Flexible_unit_caps:set_tooltip_for_unit_in_army(component)
   if not unit then return end
 
   local unit_name = unit:unit_key();
+  self:logCore(unit_name)
 
   local supply_text = self:construct_unit_supply_text(unit_name, "SRW_unit_consume_present",
     function(unit_group)
@@ -29,8 +34,8 @@ function Flexible_unit_caps:set_tooltip_for_unit_in_army(component)
 
       return units_in_army, units_in_queue, unit_index;
     end,
-    function ()
-      return self:get_unit_supply_params_from_unit(unit, self.selected_character);
+    function()
+      return self:get_unit_supply_params_from_unit(unit, character);
     end);
 
   self:finalize_unit_tooltip(component, supply_text, "||")
