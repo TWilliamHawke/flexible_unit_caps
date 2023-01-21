@@ -17,17 +17,21 @@ function Flexible_unit_caps:set_tooltip_for_new_unit(string_end, lord)
       local units_in_army = self:get_units_count_from_cache(self.selected_force_units_cache, unit_group);
       local units_in_queue = self:get_units_count_from_cache(self.queued_units_cache, unit_group);
       local unit_index = units_in_army + units_in_queue + 1;
-      local group_capacity = self:get_unit_cap_from_cache(self.selected_force_units_cache, unit_group);
+      local group_capacity, is_found = self:get_unit_cap_from_cache(self.selected_force_units_cache, unit_group);
 
+      if not is_found then
+        local supply_change = self:get_supply_change_from_cache(self.supply_change_cache, unit_group)
+        group_capacity = self:get_unit_max_capacity(unit_group, supply_change);
+      end
       return unit_index, group_capacity;
     end,
-  function ()
-    local base_supply, lord_supply = self:get_unit_supply_params(unit_name, lord);
-    if self:force_is_black_ark_or_camp(lord:military_force()) then
-      lord_supply = 0;
-    end
-    return base_supply, lord_supply;
-  end);
+      function()
+        local base_supply, lord_supply = self:get_unit_supply_params(unit_name, self.supply_change_cache);
+        if self:force_is_black_ark_or_camp(lord:military_force()) then
+          lord_supply = 0;
+        end
+        return base_supply, lord_supply;
+      end);
 
     self:logDebug("SET SUPPLY TEXT FUNCTION IS FINISHED");
 

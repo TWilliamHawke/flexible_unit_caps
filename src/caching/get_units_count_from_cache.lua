@@ -1,4 +1,4 @@
----@param cache UnitsCache<Queued_units_props>
+---@param cache UnitsCache
 ---@param unit_group string
 ---@param component_name string | nil
 ---@return number

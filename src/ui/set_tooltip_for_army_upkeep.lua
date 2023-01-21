@@ -10,10 +10,8 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord)
 
   local army_supply = self:get_army_supply(force, supply_penalty);
   local lord_name = lord:character_subtype_key();
-  local lord_alias = self.lord_aliases[lord_name] or "empty";
   local char_list = force:character_list();
-  local army_discounts = {}; ---@type table<string, integer>
-  local skills_discounts = {}; ---@type table<string, integer>
+  local supply_changes = self:create_supply_change_cache(lord)
 
 --TODO add queued units suppy
   for j = 0, char_list:num_items() - 1 do
@@ -24,52 +22,19 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord)
     end
   end
 
-  if self.lord_supply_change[lord_name] then
-    for key, data in pairs(self.lord_supply_change[lord_name]) do
-      if not data.hidden and data.change then
-        army_discounts[key] = data.change;
-      end
-    end --of loop
-  end
-
-  if self.skill_supply_change[lord_alias] then
-    for key, value in pairs(self.skill_supply_change[lord_alias]) do
-      local is_hidden = value[2];
-
-      if not is_hidden then
-        local skill1 = value[3] or "empty";
-        local skill2 = value[4] or "empty";
-
-        if (lord:has_skill(skill1) or lord:has_skill(skill2)) then
-          skills_discounts[key] = value[1];
-        end
-      end
-    end --of loop
-  end
-
-  --concat tables
-  for key, value in pairs(skills_discounts) do
-    if (army_discounts[key] == nil) then
-      army_discounts[key] = value;
-    else
-      army_discounts[key] = army_discounts[key] + value;
-    end
-  end
-
   --construct tooltip
   local tooltip_text = self:get_localised_string("SRW_army_suply_cost");
   tooltip_text = string.gsub(tooltip_text, "SRW_Cost", tostring(army_supply));
 
   local units_list_text = "";
 
-  for group_key, value in pairs(army_discounts) do
-    if group_key ~= "" and value ~= 0 then
-      ----value > 0 ? "+1" : "-1"
-      local valueText = value > 0 and "+" .. tostring(value) or tostring(value);
+  for group_key, data in pairs(supply_changes) do
+    local value = data.change
+    if not data.isHidden and data.change ~= 0 then
       local groupText = self:get_localised_string(group_key);
-      --its like a ||= b
-      groupText = groupText == "" and group_key:sub(4, -1) or groupText;
-      units_list_text = units_list_text .. "\n[[col:yellow]]" .. groupText .. ":[[/col]] " .. valueText;
+
+      groupText = groupText == "" and group_key or groupText;
+      units_list_text = units_list_text .. "\n[[col:yellow]]" .. groupText .. ":[[/col]] " .. self:try_add_plus(value);
     end
   end
 

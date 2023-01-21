@@ -17,7 +17,7 @@ function Flexible_unit_caps:set_tooltip_for_unit_in_queue(component, lord)
     return unit_index, group_capacity;
 end,
   function ()
-    local base_supply, lord_supply = self:get_unit_supply_params(unit_name, lord);
+    local base_supply, lord_supply = self:get_unit_supply_params(unit_name, self.supply_change_cache);
     if self:force_is_black_ark_or_camp(lord:military_force()) then
       lord_supply = 0;
     end

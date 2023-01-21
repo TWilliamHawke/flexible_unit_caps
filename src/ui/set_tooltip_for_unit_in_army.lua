@@ -33,7 +33,7 @@ function Flexible_unit_caps:set_tooltip_for_unit_in_army(component, lord)
       return unit_index, group_capacity;
     end,
     function()
-      local base_supply, lord_supply = self:get_unit_supply_params_from_unit(unit, lord);
+      local base_supply, lord_supply = self:get_unit_supply_params_from_unit(unit, self.supply_change_cache);
       if self:force_is_black_ark_or_camp(force) then
         lord_supply = 0;
       end

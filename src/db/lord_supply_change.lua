@@ -12,6 +12,7 @@ Flexible_unit_caps.lord_supply_change = {
   wh_dlc04_emp_volkmar = {
     fluc_emp_knights_emp = { change = -2, hidden = false },
     fluc_emp_free_company = { change = -2, hidden = false },
+    fluc_emp_flagellants = { change = -2, hidden = false },
   },
   wh_main_emp_balthasar_gelt = {
     fluc_emp_artillery = { change = -2, hidden = false },

@@ -1,9 +1,12 @@
 ---@alias ai_replacer string
 ---@alias group_unit_cap number
 ---@alias Units_group_data table<string, {unit_cap: integer, units_count:integer}>
----@alias Queued_units_props { count: integer }
----@alias Force_units_props Queued_units_props | { cap: integer}
----@class UnitsCache<T>: { [string] : table<string, integer> | T }
+---@alias Force_units_props { cap: integer, count: integer}
+---@alias UnitsCache { [string] : table<string, integer> | Force_units_props }
+
+---@alias Supply_change_cache table<string, {change:integer, isHidden: boolean}>
+
+
 ---@class Fluc_mct_config
 ---@field  a_player_effect integer
 ---@field a_player_unit_caps integer

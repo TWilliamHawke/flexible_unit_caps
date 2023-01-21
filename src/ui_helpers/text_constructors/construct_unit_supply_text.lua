@@ -1,9 +1,9 @@
 ---@param unit_name string
----@param consume_text_key string
+---@param text_key string
 ---@param unit_count_callback fun(unit_group: string) : number, number
 ---@param unit_cost_callback fun() : number, number
 ---@return string
-function Flexible_unit_caps:construct_unit_supply_text(unit_name, consume_text_key, unit_count_callback, unit_cost_callback)
+function Flexible_unit_caps:construct_unit_supply_text(unit_name, text_key, unit_count_callback, unit_cost_callback)
 
   local lord_cost, base_cost = unit_cost_callback();
   local unit_group, parent_unit_group = self:get_unit_group(unit_name);
@@ -11,11 +11,15 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, consume_text_k
 
   local unit_cost_with_cap = self:apply_unit_cap(base_cost, lord_cost, unit_index, group_capacity);
 
-  if parent_unit_group ~= "" then
-    local unit_index_p, group_capacity_p = unit_count_callback(parent_unit_group);
+  local unit_group_text = self:construct_unit_group_text(unit_group, group_capacity);
 
-    local unit_supply_p = self:apply_unit_cap(base_cost, lord_cost, unit_index_p, group_capacity_p);
-    unit_cost_with_cap = math.max(unit_cost_with_cap, unit_supply_p)
+  if parent_unit_group ~= "" then
+    local unit_index, group_capacity = unit_count_callback(parent_unit_group);
+
+    local unit_supply = self:apply_unit_cap(base_cost, lord_cost, unit_index, group_capacity);
+    unit_cost_with_cap = math.max(unit_cost_with_cap, unit_supply)
+    unit_group_text = unit_group_text ..
+        "\n" .. self:construct_unit_group_text(parent_unit_group, group_capacity);
   end
 
 
@@ -43,15 +47,7 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, consume_text_k
     supply_text = self:form_yellow_line(supply_text);
   end
 
-  supply_text = string.gsub(supply_text, "SRW_consume", self:get_localised_string(consume_text_key));
-
-  --SECOND LINE
-  local unit_group_text = self:construct_unit_group_text(unit_group);
-
-  if parent_unit_group ~= "" then
-    unit_group_text = unit_group_text ..
-        "\n" .. self:construct_unit_group_text(parent_unit_group);
-  end
+  supply_text = string.gsub(supply_text, "SRW_consume", self:get_localised_string(text_key));
 
   return string.gsub(supply_text, "SRW_Cost", tostring(unit_cost_with_cap)) .. unit_group_text .. "\n";
 end

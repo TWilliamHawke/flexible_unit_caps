@@ -9,7 +9,8 @@ function Flexible_unit_caps:get_army_supply(force, supply_penalty)
   local lord_name = lord:character_subtype_key()
   self:log("--------");
   self:log("Lord of this army is " .. lord_name);
-  local unit_cache = self:create_force_cache(force);
+  local supply_change_cache = self:create_supply_change_cache(lord);
+  local unit_cache = self:create_force_cache(force, supply_change_cache);
 
   for j = 0, unit_list:num_items() - 1 do
     local unit = unit_list:item_at(j);
@@ -23,7 +24,7 @@ function Flexible_unit_caps:get_army_supply(force, supply_penalty)
       local unit_cap = self:get_unit_cap_from_cache(unit_cache, unit_group);
       local _, unit_index = self:get_units_count_from_cache(unit_cache, unit_group, tostring(j))
 
-      local lord_cost, base_cost = self:get_unit_supply_params_from_unit(unit, lord);
+      local lord_cost, base_cost = self:get_unit_supply_params_from_unit(unit, supply_change_cache);
 
       if self:force_is_black_ark_or_camp(force) then
         lord_cost = 0;

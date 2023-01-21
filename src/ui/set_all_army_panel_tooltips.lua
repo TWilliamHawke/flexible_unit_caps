@@ -6,9 +6,9 @@ function Flexible_unit_caps:set_all_army_panel_tooltips(lord)
   local force = lord:military_force();
   if not self:force_needs_supply(force) then return end;
 
-  self.queued_units_cache = self:create_queued_units_cache(unitList);
-  self.selected_force_units_cache = self:create_force_cache(force);
-
+  self.supply_change_cache = self:create_supply_change_cache(lord);
+  self.queued_units_cache = self:create_queued_units_cache(unitList, self.supply_change_cache);
+  self.selected_force_units_cache = self:create_force_cache(force, self.supply_change_cache);
 
 --TODO add tooltip for lord card
 

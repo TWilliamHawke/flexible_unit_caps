@@ -24,8 +24,9 @@ Flexible_unit_caps = {
     ui_faction_check = nil,
     block_scripts = false,
     game_lang = nil,
-    queued_units_cache = {}, ---@type UnitsCache<Queued_units_props>
-    selected_force_units_cache = {} ---@type UnitsCache<Force_units_props>
+    queued_units_cache = {}, ---@type UnitsCache
+    selected_force_units_cache = {}, ---@type UnitsCache
+    supply_change_cache = {} ---@type Supply_change_cache
 }
 
 --TODO check config without mct
