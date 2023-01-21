@@ -23,7 +23,7 @@ function Flexible_unit_caps:create_force_cache(force)
 
     if unit:unit_class() ~= "com" then
       local key = unit:unit_key();
-      local unit_group, parent_group = self:get_unit_caps_group(key);
+      local unit_group, parent_group = self:get_unit_group(key);
 
       if unit_group ~= "" then
         add_to_group_data(unit_group, j)

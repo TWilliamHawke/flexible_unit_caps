@@ -1,11 +1,10 @@
 ---@param component UIC
-function Flexible_unit_caps:set_agent_tooltip(component)
-  if not self.selected_character then return end
-  if not self.selected_character:faction():is_human() then return end
+---@param character CHARACTER_SCRIPT_INTERFACE
+function Flexible_unit_caps:set_agent_tooltip(component, character)
   local agent_supply_cost = 0;
 
-  if self.selected_character:has_military_force() then
-    local charlist = self.selected_character:military_force():character_list()
+  if character:has_military_force() then
+    local charlist = character:military_force():character_list()
     local agent_number = component:Id():match("(%d+)") or 0
     if (tonumber(agent_number) >= charlist:num_items()) then return end
 
@@ -15,8 +14,8 @@ function Flexible_unit_caps:set_agent_tooltip(component)
     self:logDebug("Character # " .. tostring(agent_number) .. " is " .. tostring(character:character_subtype_key()))
     agent_supply_cost = self:get_this_agent_supply(character);
   else
-    self:logDebug("Selected agent rank is " .. tostring(self.selected_character:rank()))
-    agent_supply_cost = self:get_this_agent_supply(self.selected_character);
+    self:logDebug("Selected agent rank is " .. tostring(character:rank()))
+    agent_supply_cost = self:get_this_agent_supply(character);
   end
 
 

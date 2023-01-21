@@ -5,17 +5,17 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_emp_greatswords = { change = -2, hidden = false },
     fluc_emp_reiksguard = { change = -2, hidden = false },
   },
-  wh2_dlc13_emp_cha_markus_wulfhart_0 = {
+  wh2_dlc13_emp_cha_markus_wulfhart = {
     fluc_emp_huntsmen = { change = -2, hidden = false },
     fluc_emp_archers = { change = -2, hidden = false },
   },
   wh_dlc04_emp_volkmar = {
     fluc_emp_knights_emp = { change = -2, hidden = false },
-    fluc_emp_free_company = { change = -1, hidden = false },
+    fluc_emp_free_company = { change = -2, hidden = false },
   },
   wh_main_emp_balthasar_gelt = {
-    fluc_emp_artillery = { change = -1, hidden = false },
-    fluc_emp_artillery_wagon = { change = -1, hidden = true },
+    fluc_emp_artillery = { change = -2, hidden = false },
+    fluc_emp_artillery_wagon = { change = -2, hidden = true },
   },
   ulric_grandmaster = {
     fluc_emp_knight_white_wolf = { change = -2, hidden = false },

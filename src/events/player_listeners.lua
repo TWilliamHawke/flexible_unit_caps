@@ -240,10 +240,6 @@ function Flexible_unit_caps:add_player_listeners()
     function(context)
       local faction_name = context:unit():faction():name();
 
-      if context:unit():has_unit_commander() then
-        self.selected_character = nil;
-      end
-
       cm:remove_callback(self.main_debounce_key)
 
       cm:callback(function()

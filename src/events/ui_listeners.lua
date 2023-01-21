@@ -14,8 +14,11 @@ function Flexible_unit_caps:add_ui_listeners()
         cm:remove_callback(self.ui_debounce_key)
         cm:callback(function()
           self:log("UNIT REMOVED FROM QUEUE")
-          self:set_all_army_panel_tooltips();
-        end, 0.2, self.ui_debounce_key);
+          local character = self:get_character_from_unit_panel();
+          if character and character:has_military_force() then
+            self:set_all_army_panel_tooltips(character);
+          end
+          end, 0.2, self.ui_debounce_key);
       end
     end,
     true
@@ -31,8 +34,11 @@ function Flexible_unit_caps:add_ui_listeners()
       if string.find(context.string, "option") then
         cm:callback(function()
           self:log("ALLIES UNITS PANEL SWITCHED")
-          self:set_all_army_panel_tooltips();
-        end, 0.2);
+          local character = self:get_character_from_unit_panel();
+          if character and character:has_military_force() then
+            self:set_all_army_panel_tooltips(character);
+          end
+          end, 0.2);
       end
     end,
     true
@@ -54,7 +60,10 @@ function Flexible_unit_caps:add_ui_listeners()
       cm:remove_callback(self.ui_debounce_key)
       cm:callback(function()
         self:log("UNIT ADDED TO QUEUE")
-        self:set_all_army_panel_tooltips();
+        local character = self:get_character_from_unit_panel();
+        if character and character:has_military_force() then
+          self:set_all_army_panel_tooltips(character);
+        end
       end, 0.2, self.ui_debounce_key);
     end,
     true
@@ -109,59 +118,38 @@ function Flexible_unit_caps:add_ui_listeners()
     function()
       cm:callback(function()
         self:log("RECRUITMENT PANEL OPEN")
-        self:set_all_army_panel_tooltips();
+        local character = self:get_character_from_unit_panel();
+        if character and character:has_military_force() then
+          self:set_all_army_panel_tooltips(character);
+        end
       end, 0.2);
 
     end,
     true
   )
 
+  --BUG doesnt work??
   core:add_listener(
     "fluc_any_panel_closed",
     "PanelClosedCampaign",
     function()
       return self:player_faction_has_suply_lines();
     end,
-    function(context)
+    function()
       cm:remove_callback(self.ui_debounce_key)
 
       cm:callback(function()
-        self:set_all_army_panel_tooltips();
-        self:set_tooltip_for_army_upkeep();
+        local character = self:get_character_from_unit_panel();
+        if character and character:has_military_force() then
+          self:set_tooltip_for_army_upkeep(character);
+          self:set_all_army_panel_tooltips(character);
+        end
 
       end, 0.5, self.ui_debounce_key);
 
     end,
     true
   )
-
-  core:add_listener(
-    "fluc_any_panel_closed",
-    "PanelClosedCampaign",
-    function(context)
-      return context.string == "units_panel"
-    end,
-    function()
-      self.selected_character = nil;
-
-    end,
-    true
-  )
-
-  core:add_listener(
-    "fluc_non_player_Character_Selected",
-    "CharacterSelected",
-    ---@param context CharacterSelected
-    ---@return boolean
-    function(context)
-      return not context:character():faction():is_human();
-    end,
-    function()
-      self.selected_character = nil;
-    end,
-    true
-  )
-
 
   core:add_listener(
     "fluc_Character_Selected",
@@ -173,15 +161,18 @@ function Flexible_unit_caps:add_ui_listeners()
     end,
     ---@param context CharacterSelected
     function(context)
-      self.selected_character = context:character();
-      local faction = self.selected_character:faction()
+      local faction = context:character():faction()
       if not self:faction_has_supply_lines(faction) then return end
       self:log("ARMY SELECTED");
 
       cm:callback(function()
-        self:set_tooltip_for_finance_button(faction)
-        self:set_all_army_panel_tooltips();
-        self:set_tooltip_for_army_upkeep();
+        self:set_tooltip_for_finance_button(faction);
+        local character = self:get_character_from_unit_panel();
+        if character and character:has_military_force() then
+          self:set_tooltip_for_army_upkeep(character);
+          self:set_all_army_panel_tooltips(character);
+        end
+
       end, 0.2);
 
     end,
@@ -201,8 +192,11 @@ function Flexible_unit_caps:add_ui_listeners()
       cm:callback(function()
         self:log("Unit upgraded");
         self:set_tooltip_for_finance_button(faction)
-        self:set_all_army_panel_tooltips();
-        self:set_tooltip_for_army_upkeep();
+        local character = self:get_character_from_unit_panel();
+        if character and character:has_military_force() then
+          self:set_tooltip_for_army_upkeep(character);
+          self:set_all_army_panel_tooltips(character);
+        end
       end, 0.2, self.ui_debounce_key);
 
     end,

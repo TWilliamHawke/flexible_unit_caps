@@ -21,7 +21,6 @@ Flexible_unit_caps = {
     MIN_UNIT_CAP = 1,
     LORD_FACTOR_CAP_MULT = -0.3, --transform supply discount into unit cap
   --Cached values
-    selected_character = nil,
     ui_faction_check = nil,
     block_scripts = false,
     game_lang = nil,

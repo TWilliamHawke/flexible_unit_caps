@@ -23,7 +23,7 @@ function Flexible_unit_caps:create_queued_units_cache(units_holder)
     while (ui_component) do
       local component_name = ui_component:Id();
       local queued_unit_name = self:get_queued_unit_name(ui_component);
-      local queued_unit_group, parent_group = self:get_unit_caps_group(queued_unit_name);
+      local queued_unit_group, parent_group = self:get_unit_group(queued_unit_name);
 
       add_unit_group_to_cache(queued_unit_group, component_name);
 

@@ -19,8 +19,8 @@ function Flexible_unit_caps:get_army_supply(force, supply_penalty)
     if unit:unit_class() == "com" then
       unit_supply = 0;
     else
-      local unit_group, parent_group = self:get_unit_caps_group(key);
-      local unit_cap = self:get_unit_cap_from_cache(unit_cache, unit_group, lord);
+      local unit_group, parent_group = self:get_unit_group(key);
+      local unit_cap = self:get_unit_cap_from_cache(unit_cache, unit_group);
       local _, unit_index = self:get_units_count_from_cache(unit_cache, unit_group, tostring(j))
 
       local lord_cost, base_cost = self:get_unit_supply_params_from_unit(unit, lord);
@@ -32,7 +32,7 @@ function Flexible_unit_caps:get_army_supply(force, supply_penalty)
       unit_supply = self:apply_unit_cap(base_cost, lord_cost, unit_index, unit_cap);
 
       if parent_group ~= "" then
-        local unit_cap_p = self:get_unit_cap_from_cache(unit_cache, parent_group, lord);
+        local unit_cap_p = self:get_unit_cap_from_cache(unit_cache, parent_group);
         local _, unit_index_p = self:get_units_count_from_cache(unit_cache, parent_group, tostring(j))
         local unit_supply_p = self:apply_unit_cap(base_cost, lord_cost, unit_index_p, unit_cap_p);
         unit_supply = math.max(unit_supply, unit_supply_p)

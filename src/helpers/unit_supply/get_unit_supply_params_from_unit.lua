@@ -1,7 +1,7 @@
 ---@param unit UNIT_SCRIPT_INTERFACE
 ---@param lord CHARACTER_SCRIPT_INTERFACE
----@return integer
----@return integer
+---@return integer base_supply_cost
+---@return integer lord_supply_cost
 function Flexible_unit_caps:get_unit_supply_params_from_unit(unit, lord)
   local unit_name = unit:unit_key();
 

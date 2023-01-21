@@ -124,3 +124,4 @@ Flexible_unit_caps.lord_aliases = {
 -- wh3_main_kho_skarbrand
 -- wh3_main_sla_nkari
 -- wh3_main_tze_kairos
+--TODO remove aliases for mist lords
