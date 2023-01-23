@@ -29,12 +29,7 @@ function Flexible_caps_api:add_lord_skill_discount(lord_key, unit_group, value, 
     return;
   end
 
-  local lord_alias = Flexible_unit_caps.lord_aliases[lord_key];
-
-  if (lord_alias == nil) then
-    Flexible_unit_caps.lord_aliases[lord_key] = lord_key;
-    lord_alias = lord_key;
-  end
+  local lord_alias = Flexible_unit_caps.lord_aliases[lord_key] or lord_key
 
   if Flexible_unit_caps.skill_supply_change[lord_alias] ~= nil then
     Flexible_unit_caps.skill_supply_change[lord_alias][unit_group] = { value, false, lord_skill_key }

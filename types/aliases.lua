@@ -4,7 +4,7 @@
 ---@alias Force_units_props { cap: integer, count: integer}
 ---@alias UnitsCache { [string] : table<string, integer> | Force_units_props }
 
----@alias Supply_change_cache table<string, {change:integer, isHidden: boolean}>
+---@alias Supply_change_cache table<string, {change:integer, isHidden: boolean}> | { ark_or_camp: boolean }
 
 
 ---@class Fluc_mct_config

@@ -8,5 +8,5 @@ function Flexible_unit_caps:mct_finalize()
     self:reapply_supply_balance_effect(faction);
   end
 
-  self:logCore("Player supply now is "..tostring(self.player_supply_custom_mult));
+  self:log("Player supply now is "..tostring(self.player_supply_custom_mult));
 end;

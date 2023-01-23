@@ -1,10 +1,13 @@
----@param lord CHARACTER_SCRIPT_INTERFACE
+---@param force MILITARY_FORCE_SCRIPT_INTERFACE
 ---@return Supply_change_cache cache
-function Flexible_unit_caps:create_supply_change_cache(lord)
+function Flexible_unit_caps:create_supply_change_cache(force)
   local cache = {}; ---@type Supply_change_cache
+  local lord = force:general_character();
+
+  cache.ark_or_camp = self:force_is_black_ark_or_camp(force)
 
   local lord_name = lord:character_subtype_key();
-  local lord_alias = self.lord_aliases[lord_name] or "empty";
+  local lord_alias = self.lord_aliases[lord_name] or lord_name;
   local skills_supply_changes = {}; ---@type Supply_change_cache
 
   if self.lord_supply_change[lord_name] then

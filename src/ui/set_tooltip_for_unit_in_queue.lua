@@ -15,14 +15,7 @@ function Flexible_unit_caps:set_tooltip_for_unit_in_queue(component, lord)
     local group_capacity = self:get_unit_cap_from_cache(self.queued_units_cache, unit_group);
 
     return unit_index, group_capacity;
-end,
-  function ()
-    local base_supply, lord_supply = self:get_unit_supply_params(unit_name, self.supply_change_cache);
-    if self:force_is_black_ark_or_camp(lord:military_force()) then
-      lord_supply = 0;
-    end
-    return base_supply, lord_supply;
-  end);
+end);
 
   self:logDebug("CONSTRUCT SUPPLY TEXT FUNCTION IS FINISHED");
 

@@ -262,3 +262,4 @@ function Flexible_unit_caps:add_player_listeners()
 end
 
 --TODO replace click event with unit recruitment debounce
+--TODO check events conditions

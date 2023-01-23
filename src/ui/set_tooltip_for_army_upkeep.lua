@@ -11,7 +11,6 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord)
   local army_supply = self:get_army_supply(force, supply_penalty);
   local lord_name = lord:character_subtype_key();
   local char_list = force:character_list();
-  local supply_changes = self:create_supply_change_cache(lord)
 
 --TODO add queued units suppy
   for j = 0, char_list:num_items() - 1 do
@@ -28,9 +27,9 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord)
 
   local units_list_text = "";
 
-  for group_key, data in pairs(supply_changes) do
-    local value = data.change
-    if not data.isHidden and data.change ~= 0 then
+  for group_key, data in pairs(self.supply_change_cache) do
+    if type(data) == "table" and not data.isHidden and data.change ~= 0 then
+      local value = data.change
       local groupText = self:get_localised_string(group_key);
 
       groupText = groupText == "" and group_key or groupText;

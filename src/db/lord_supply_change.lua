@@ -4,6 +4,7 @@ Flexible_unit_caps.lord_supply_change = {
   wh_main_emp_karl_franz = {
     fluc_emp_greatswords = { change = -2, hidden = false },
     fluc_emp_reiksguard = { change = -2, hidden = false },
+    fluc_emp_foot_reiksguard = { change = -2, hidden = true },
   },
   wh2_dlc13_emp_cha_markus_wulfhart = {
     fluc_emp_huntsmen = { change = -2, hidden = false },

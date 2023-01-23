@@ -1,5 +1,5 @@
 ---@type table<string, string>
-Flexible_unit_caps.unit_caps_group_overwriting = {
+Flexible_unit_caps.units_group_parent_ai = {
   fluc_skv_lightning = "fluc_skv_artillery",
   fluc_skv_mortars = "fluc_skv_artillery",
   fluc_skv_catapults = "fluc_skv_artillery",
@@ -17,6 +17,7 @@ Flexible_unit_caps.unit_caps_group_overwriting = {
   fluc_emp_halberdiers = "fluc_emp_spearmen",
   fluc_emp_crossbowmen = "fluc_emp_archers",
   fluc_emp_huntsmen = "fluc_emp_archers",
+  fluc_emp_handgunners = "fluc_emp_archers",
   fluc_emp_artillery_wagon = "fluc_emp_artillery",
   fluc_emp_demigryph = "fluc_emp_knights_other",
   fluc_emp_knight_white_wolf = "fluc_emp_knights_other",

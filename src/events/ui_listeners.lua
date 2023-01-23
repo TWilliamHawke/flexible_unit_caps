@@ -141,8 +141,8 @@ function Flexible_unit_caps:add_ui_listeners()
       cm:callback(function()
         local character = self:get_character_from_unit_panel();
         if character and character:has_military_force() then
-          self:set_tooltip_for_army_upkeep(character);
           self:set_all_army_panel_tooltips(character);
+          self:set_tooltip_for_army_upkeep(character);
         end
 
       end, 0.5, self.ui_debounce_key);
@@ -169,8 +169,8 @@ function Flexible_unit_caps:add_ui_listeners()
         self:set_tooltip_for_finance_button(faction);
         local character = self:get_character_from_unit_panel();
         if character and character:has_military_force() then
-          self:set_tooltip_for_army_upkeep(character);
           self:set_all_army_panel_tooltips(character);
+          self:set_tooltip_for_army_upkeep(character);
         end
 
       end, 0.2);
@@ -194,8 +194,8 @@ function Flexible_unit_caps:add_ui_listeners()
         self:set_tooltip_for_finance_button(faction)
         local character = self:get_character_from_unit_panel();
         if character and character:has_military_force() then
-          self:set_tooltip_for_army_upkeep(character);
           self:set_all_army_panel_tooltips(character);
+          self:set_tooltip_for_army_upkeep(character);
         end
       end, 0.2, self.ui_debounce_key);
 
