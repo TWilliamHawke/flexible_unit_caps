@@ -42,7 +42,6 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord)
   end
 
   if is_uicomponent(component) then
-    ---@diagnostic disable-next-line: missing-parameter, param-type-mismatch
     component:SetTooltipText(tooltip_text, true);
   end
 end

@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 local PAI_DIFF = {
   [1] = { 1, 90 },
   [0] = { 2, 60 },
@@ -9,83 +10,104 @@ local PAI_DIFF = {
 local PAI_TIMEOUT = nil;
 local PAI_COUNT = nil;
 local enable_log = true;
-local enable_debug = false;
 local pai_main_effect = "pai_bonus_dynamic";
 local pai_aggressive_effect = "pai_aggressive_buff";
 local pai_special_effect = "pai_special_effects";
-local relation_threshold = -50;
 
-local PAI_EFFECTS_VALUES = {
-  ["upkeep_first_turn"] = 0,
-  ["upkeep_per_level"] = -5,
-  ["unit_exp_first_turn"] = 0,
-  ["unit_exp_per_level"] = 30,
-  ["research_first_turn"] = 0,
-  ["research_per_level"] = 25,
-  ["lord_exp_first_turn"] = 25,
-  ["lord_exp_per_level"] = 25,
-  ["growth_first_turn"] = 25,
-  ["growth_per_level"] = 25,
-  ["horde_growth_per_level"] = 5,
-  ["horde_growth_first_turn"] = -5,
-}
-
--- research buff doesn't apply for tomb kings
--- so it doesn't include here
-local PAI_EFFECTS_DB = {
-  { "upkeep", "wh_main_effect_force_all_campaign_upkeep", "faction_to_force_own" },
-  { "growth", "wh_main_effect_province_growth_building", "faction_to_province_own" },
-  { "unit_exp", "wh3_dlc20_effect_xp_gain_all_units", "faction_to_force_own" },
-  { "lord_exp", "wh3_main_effect_character_campaign_experience_mod", "faction_to_character_own" },
-  { "horde_growth", "wh_main_effect_hordebuilding_growth_core", "faction_to_force_own" },
-}
-
-local PAI_ENDGAME_EFFECTS = {
-  wh_main_dwf_dwarfs = "wh3_main_ie_scripted_endgame_grudge_too_far",
-  wh_dlc05_wef_wood_elves = "wh3_main_ie_scripted_endgame_wild_hunt",
-  wh2_dlc09_tmb_tomb_kings = "wh3_main_ie_scripted_endgame_black_pyramid_region_tomb_kings",
-  wh_main_vmp_vampire_counts = "wh3_main_ie_scripted_endgame_vampires_rise",
-  wh2_main_skv_skaven = "wh3_main_ie_scripted_endgame_vermintide",
-  wh_main_grn_greenskins = "wh3_main_ie_scripted_endgame_waaagh",
-}
-
-local PAI_EFFECTS_MCM = {
-  { "upkeep", "b_" },
-  { "growth", "c_" },
-  { "unit_exp", "d_" },
-  { "research", "e_" },
-  { "lord_exp", "f_" },
-  { "horde_growth", "g_" },
-}
-
-local PAI_AGRESSIVE_PERSONALITIES = {
-  wh_main_dwf_dwarfs = "pai_dwarf_aggressive",
-  wh_main_emp_empire = "pai_empire_aggressive",
-  wh_main_grn_greenskins = "pai_greenskin_aggressive",
-  wh2_main_skv_skaven = "pai_skaven_aggressive",
-  wh2_dlc09_tmb_tomb_kings = "pai_tombking_aggressive",
-  wh_main_vmp_vampire_counts = "pai_vampire_aggressive",
-  wh_dlc05_wef_wood_elves = "pai_woodelf_aggressive",
-  wh_main_brt_bretonnia = "pai_bretonnia_aggressive",
-  wh_dlc08_nor_norsca = "pai_norsca_aggressive",
-  wh_main_chs_chaos = "pai_chaos_aggressive",
-  wh2_main_hef_high_elves = "pai_high_elves_aggressive",
-  wh2_main_def_dark_elves = "pai_dark_elves_aggressive",
-  wh2_main_lzd_lizardmen = "pai_lizardmen_aggressive",
-  wh2_dlc11_cst_vampire_coast = "pai_vcoast_aggressive",
-  wh3_main_ksl_kislev = "pai_kislev_aggressive",
-  wh3_main_cth_cathay = "pai_cathay_aggressive",
-  wh3_main_ogr_ogre_kingdoms = "pai_ogres_aggressive",
-  wh3_main_kho_khorne = "pai_khorne_aggressive",
-  wh3_main_nur_nurgle = "pai_nurgle_aggressive",
-  wh3_main_tze_tzeentch = "pai_tzeench_aggressive",
-  wh3_main_sla_slaanesh = "pai_slaanesh_aggressive",
-}
 
 local PAI_SPECIAL_EFFECTS = {
   wh2_main_skv_clan_eshin = {
     "wh2_dlc14_faction_trait_snikch_recruitment_cost_increase", "faction_to_force_own", -200
   }
+}
+
+local major_factions = {
+  ["wh2_dlc09_skv_clan_rictus"] = true,
+  ["wh2_dlc09_tmb_exiles_of_nehek"] = true,
+  ["wh2_dlc09_tmb_followers_of_nagash"] = true,
+  ["wh2_dlc09_tmb_khemri"] = true,
+  ["wh2_dlc09_tmb_lybaras"] = true,
+  ["wh2_dlc11_cst_noctilus"] = true,
+  ["wh2_dlc11_cst_pirates_of_sartosa"] = true,
+  ["wh2_dlc11_cst_the_drowned"] = true,
+  ["wh2_dlc11_cst_vampire_coast"] = true,
+  ["wh2_dlc11_def_the_blessed_dread"] = true,
+  ["wh2_dlc11_vmp_the_barrow_legion"] = true,
+  ["wh2_dlc12_lzd_cult_of_sotek"] = true,
+  ["wh2_dlc13_emp_golden_order"] = true,
+  ["wh2_dlc13_emp_the_huntmarshals_expedition"] = true,
+  ["wh2_dlc13_lzd_spirits_of_the_jungle"] = true,
+  ["wh2_dlc14_brt_chevaliers_de_lyonesse"] = true,
+  ["wh2_dlc15_grn_bonerattlaz"] = true,
+  ["wh2_dlc15_grn_broken_axe"] = true,
+  ["wh2_dlc15_hef_imrik"] = true,
+  ["wh2_dlc16_wef_drycha"] = true,
+  ["wh2_dlc16_wef_sisters_of_twilight"] = true,
+  ["wh2_dlc17_bst_malagor"] = true,
+  ["wh2_dlc17_bst_taurox"] = true,
+  ["wh2_dlc17_dwf_thorek_ironbrow"] = true,
+  ["wh2_dlc17_lzd_oxyotl"] = true,
+  ["wh2_main_def_cult_of_pleasure"] = true,
+  ["wh2_main_def_hag_graef"] = true,
+  ["wh2_main_def_har_ganeth"] = true,
+  ["wh2_main_def_naggarond"] = true,
+  ["wh2_main_hef_avelorn"] = true,
+  ["wh2_main_hef_eataine"] = true,
+  ["wh2_main_hef_nagarythe"] = true,
+  ["wh2_main_hef_order_of_loremasters"] = true,
+  ["wh2_main_hef_yvresse"] = true,
+  ["wh2_main_lzd_hexoatl"] = true,
+  ["wh2_main_lzd_itza"] = true,
+  ["wh2_main_lzd_last_defenders"] = true,
+  ["wh2_main_lzd_tlaqua"] = true,
+  ["wh2_main_skv_clan_eshin"] = true,
+  ["wh2_main_skv_clan_mors"] = true,
+  ["wh2_main_skv_clan_moulder"] = true,
+  ["wh2_main_skv_clan_pestilens"] = true,
+  ["wh2_main_skv_clan_skryre"] = true,
+  ["wh2_twa03_def_rakarth"] = true,
+  ["wh3_dlc20_chs_azazel"] = true,
+  ["wh3_dlc20_chs_festus"] = true,
+  ["wh3_dlc20_chs_kholek"] = true,
+  ["wh3_dlc20_chs_sigvald"] = true,
+  ["wh3_dlc20_chs_valkia"] = true,
+  ["wh3_dlc20_chs_vilitch"] = true,
+  ["wh3_main_chs_shadow_legion"] = true,
+  ["wh3_main_cth_the_northern_provinces"] = true,
+  ["wh3_main_cth_the_western_provinces"] = true,
+  ["wh3_main_dae_daemon_prince"] = true,
+  ["wh3_main_dwf_the_ancestral_throng"] = true,
+  ["wh3_main_emp_cult_of_sigmar"] = true,
+  ["wh3_main_kho_exiles_of_khorne"] = true,
+  ["wh3_main_ksl_the_great_orthodoxy"] = true,
+  ["wh3_main_ksl_the_ice_court"] = true,
+  ["wh3_main_ksl_ursun_revivalists"] = true,
+  ["wh3_main_nur_poxmakers_of_nurgle"] = true,
+  ["wh3_main_ogr_disciples_of_the_maw"] = true,
+  ["wh3_main_ogr_goldtooth"] = true,
+  ["wh3_main_sla_seducers_of_slaanesh"] = true,
+  ["wh3_main_tze_oracles_of_tzeentch"] = true,
+  ["wh3_main_vmp_caravan_of_blue_roses"] = true,
+  ["wh3_prologue_kislev_expedition"] = true,
+  ["wh_dlc03_bst_beastmen"] = true,
+  ["wh_dlc05_bst_morghur_herd"] = true,
+  ["wh_dlc05_wef_argwylon"] = true,
+  ["wh_dlc05_wef_wood_elves"] = true,
+  ["wh_dlc08_nor_norsca"] = true,
+  ["wh_dlc08_nor_wintertooth"] = true,
+  ["wh_main_brt_bordeleaux"] = true,
+  ["wh_main_brt_bretonnia"] = true,
+  ["wh_main_brt_carcassonne"] = true,
+  ["wh_main_chs_chaos"] = true,
+  ["wh_main_dwf_dwarfs"] = true,
+  ["wh_main_dwf_karak_izor"] = true,
+  ["wh_main_dwf_karak_kadrin"] = true,
+  ["wh_main_emp_empire"] = true,
+  ["wh_main_grn_crooked_moon"] = true,
+  ["wh_main_grn_greenskins"] = true,
+  ["wh_main_grn_orcs_of_the_bloody_hand"] = true,
+  ["wh_main_vmp_schwartzhafen"] = true,
+  ["wh_main_vmp_vampire_counts"] = true,
 }
 
 --logging function.
@@ -94,7 +116,7 @@ local function PAILOG(text)
     return;
   end
 
-  local logFile = io.open("progressive_ai_bonus.txt", "a");
+  local logFile = io.open("progressive_ai.txt", "a");
   if (logFile == nil) then return end
   logFile:write("PAI:  " .. tostring(text) .. "  \n")
   logFile:flush()
@@ -108,7 +130,7 @@ local function PAINEWLOG()
   local logTimeStamp = os.date("%d, %m %Y %X")
   --# assume logTimeStamp: string
 
-  local popLog = io.open("progressive_ai_bonus.txt", "w+")
+  local popLog = io.open("progressive_ai.txt", "w+")
   if (popLog == nil) then return end
 
   popLog:write("NEW LOG [" .. logTimeStamp .. "] \n")
@@ -125,67 +147,6 @@ local function get_pai_params()
     local difficulty = cm:model():combined_difficulty_level();
     return PAI_DIFF[difficulty][1], PAI_DIFF[difficulty][2];
   end
-end
-
----@param faction FACTION_SCRIPT_INTERFACE
----@param tier integer
-local function replace_personality(faction, tier)
-  local player_faction = cm:get_human_factions()[1]; ---@type string
-  local culture = faction:culture();
-  local personality = PAI_AGRESSIVE_PERSONALITIES[culture];
-  if not personality then return end
-
-  local relations_to_player = faction:diplomatic_attitude_towards(player_faction);
-  local faction_name = faction:name();
-  if relations_to_player > relation_threshold then return end
-
-  local chance = math.min(math.floor(relations_to_player / relation_threshold), tier);
-  if cm:random_number(100) > chance then return end
-
-  cm:force_change_cai_faction_personality(faction_name, personality);
-
-  local effect_bundle = cm:create_new_custom_effect_bundle(pai_aggressive_effect);
-  for _, data in pairs(PAI_EFFECTS_DB) do
-    local prefix = data[1]
-    local value = PAI_EFFECTS_VALUES[prefix .. "_per_level"]
-    if value ~= 0 then
-      effect_bundle:add_effect(data[2], data[3], value);
-    end
-  end
-
-
-  cm:apply_custom_effect_bundle_to_faction(effect_bundle, faction);
-
-
-  PAILOG(faction:name() .. " has changed personality");
-
-
-end
-
-local function update_effect(faction, tier)
-  cm:remove_effect_bundle(pai_main_effect, faction:name());
-
-
-  local effect_bundle = cm:create_new_custom_effect_bundle(pai_main_effect);
-  PAILOG("Start effect creating");
-
-  for _, data in pairs(PAI_EFFECTS_DB) do
-    local prefix = data[1]
-    local value = PAI_EFFECTS_VALUES[prefix .. "_per_level"] * tier + PAI_EFFECTS_VALUES[prefix .. "_first_turn"]
-    if value ~= 0 then
-      effect_bundle:add_effect(data[2], data[3], value);
-    end
-  end
-
-  if faction:subculture() ~= "wh2_dlc09_sc_tmb_tomb_kings" then
-    effect_bundle:add_effect(
-      "wh_main_effect_technology_research_points_mod",
-      "faction_to_faction_own_unseen",
-      PAI_EFFECTS_VALUES["research_per_level"] * tier + PAI_EFFECTS_VALUES["research_first_turn"]);
-  end
-  cm:apply_custom_effect_bundle_to_faction(effect_bundle, faction);
-  PAILOG("APPLY TIER" .. tier .. " BONUS TO FACTION " .. tostring(faction:name()));
-
 end
 
 local function apply_special_effect(faction)
@@ -209,18 +170,13 @@ core:add_listener(
   ---@param context FactionTurnStart
   function(context)
     local faction = context:faction();
-    local culture = faction:culture();
-    local endgame_effect = PAI_ENDGAME_EFFECTS[culture];
     local faction_name = faction:name();
 
-    if endgame_effect and faction:has_effect_bundle(endgame_effect) then
-      if faction:has_effect_bundle(pai_aggressive_effect) then
-        cm:remove_effect_bundle(pai_aggressive_effect, faction:name());
-      end
-      if faction:has_effect_bundle(pai_main_effect) then
-        cm:remove_effect_bundle(pai_main_effect, faction:name());
-      end
-      return;
+    if faction:has_effect_bundle(pai_aggressive_effect) then
+      cm:remove_effect_bundle(pai_aggressive_effect, faction:name());
+    end
+    if faction:has_effect_bundle(pai_main_effect) then
+      cm:remove_effect_bundle(pai_main_effect, faction:name());
     end
 
     local this_turn = cm:model():turn_number();
@@ -228,59 +184,15 @@ core:add_listener(
     local tier = math.floor(this_turn / timeout);
     tier = math.min(tier, maxtier);
 
-    if not faction:has_effect_bundle(pai_main_effect) or (this_turn % timeout == 0) then
-      update_effect(faction, tier)
-
-      if PAI_SPECIAL_EFFECTS[faction_name] and not faction:has_effect_bundle(pai_special_effect) then
-        apply_special_effect(faction)
-      end
+    local potential = 80 + 80 * tier;
+    if major_factions[faction_name] then
+      potential = potential + 80;
     end
 
+    cm:faction_set_potential_modifier(faction, potential);
 
-    if this_turn % 2 ~= 0 then return end
-    if faction:is_vassal() then return end
-    if faction:has_effect_bundle(pai_aggressive_effect) then return end
-    replace_personality(faction, tier);
-
-  end,
-  true
-);
-
-core:add_listener(
-  "PAI_Potential_test",
-  "SettlementSelected",
-  ---@param context SettlementSelected
-  ---@return boolean
-  function(context)
-    return enable_debug and not context:garrison_residence():faction():is_human();
-  end,
-  ---@param context SettlementSelected
-  function(context)
-    local faction = context:garrison_residence():faction();
-    cm:faction_set_potential_modifier(faction, 500);
-    PAILOG("done for "..faction:name())
-  end,
-  true
-)
-
-core:add_listener(
-  "PAI_FactionTurnStart_test",
-  "FactionTurnStart",
-  function(context)
-    local faction = context:faction()
-    return faction:is_human() and enable_debug == true;
-  end,
-  function(context)
-    local faction = context:faction();
-    local this_turn = cm:model():turn_number();
-
-    local maxtier, timeout = get_pai_params();
-
-    if not faction:has_effect_bundle(pai_main_effect) or (this_turn % timeout == 0) then
-      local tier = math.floor(this_turn / timeout);
-      tier = math.min(tier, maxtier);
-
-      update_effect(faction, 5)
+    if PAI_SPECIAL_EFFECTS[faction_name] and not faction:has_effect_bundle(pai_special_effect) then
+      apply_special_effect(faction)
     end
 
   end,
@@ -290,20 +202,6 @@ core:add_listener(
 local function init_mcm(context)
   local mct = context:mct()
   local pai_mcm_options = mct:get_mod_by_key("progressive_ai_bonuses")
-
-  local a_max_tiers = pai_mcm_options:get_option_by_key("a_max_tiers")
-  PAI_COUNT = a_max_tiers:get_finalized_setting()
-
-  local a_tier_interval = pai_mcm_options:get_option_by_key("a_tier_interval")
-  PAI_TIMEOUT = a_tier_interval:get_finalized_setting()
-
-  for _, data in pairs(PAI_EFFECTS_MCM) do
-    local base_option = pai_mcm_options:get_option_by_key(data[2] .. data[1] .. "_first_turn")
-    PAI_EFFECTS_VALUES[data[1] .. "_first_turn"] = base_option:get_finalized_setting()
-
-    local option_per_turn = pai_mcm_options:get_option_by_key(data[2] .. data[1] .. "_per_level")
-    PAI_EFFECTS_VALUES[data[1] .. "_per_level"] = option_per_turn:get_finalized_setting()
-  end
 
 end
 

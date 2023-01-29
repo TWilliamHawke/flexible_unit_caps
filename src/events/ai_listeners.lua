@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 function Flexible_unit_caps:add_ai_listeners()
   core:add_listener(
     "fluc_FactionTurnStart_ai",
@@ -7,8 +8,7 @@ function Flexible_unit_caps:add_ai_listeners()
       local culture = faction:culture();
       return not faction:is_human() and
           (
-          ---@diagnostic disable-next-line: undefined-field
-          cm:faction_has_campaign_feature(faction:name(), "additional_army_upkeep") or culture == "wh_main_brt_bretonnia"
+          self:faction_has_supply_lines(faction) or culture == "wh_main_brt_bretonnia"
           )
     end,
     -- true,
@@ -31,8 +31,7 @@ function Flexible_unit_caps:add_ai_listeners()
       local culture = faction:culture();
       return not faction:is_human() and faction:region_list():num_items() > 0 and
           (
-          ---@diagnostic disable-next-line: undefined-field
-          cm:faction_has_campaign_feature(faction:name(), "additional_army_upkeep") or culture == "wh_main_brt_bretonnia"
+          self:faction_has_supply_lines(faction) or culture == "wh_main_brt_bretonnia"
           )
     end,
     -- true,

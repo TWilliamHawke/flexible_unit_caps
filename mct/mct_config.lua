@@ -33,10 +33,13 @@ flexible_unit_caps:set_description(loc_prefix.."mod_desc", true)
 flexible_unit_caps:set_log_file_path("flexible_unit_caps_log.txt")
 flexible_unit_caps:set_author("TWilliam")
 
+local first_section = flexible_unit_caps:get_section_by_key ("default")
+first_section:set_localised_text ("Supply Lines", false)
+
 local player_effect = flexible_unit_caps:add_new_option("a_player_effect", "slider")
 player_effect:set_text(loc_prefix.."b_player_effect_text", true)
 player_effect:set_tooltip_text(loc_prefix.."b_player_effect_tt", true)
-player_effect:slider_set_min_max(0, 20)
+player_effect:slider_set_min_max(1, 20)
 player_effect:set_default_value(5)
 player_effect:slider_set_step_size(1)
 
@@ -48,7 +51,7 @@ ai_effect:set_default_value(0)
 ai_effect:slider_set_step_size(1)
 
 local unit_caps_section = flexible_unit_caps:add_new_section("n_unit_caps_section")
-unit_caps_section:set_localised_text("Unit_caps")
+unit_caps_section:set_localised_text("Unit Caps")
 
 local player_unit_caps = flexible_unit_caps:add_new_option("a_player_unit_caps", "dropdown")
 player_unit_caps:set_text("Unit Caps for Player")
@@ -101,4 +104,3 @@ log_level:set_text(loc_prefix.."f_enable_logging_text", true)
 log_level:set_tooltip_text(loc_prefix.."f_enable_logging_tt", true)
 
 -- TODO add tooltips fo new options
--- TODO change first category name

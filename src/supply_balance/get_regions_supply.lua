@@ -25,7 +25,7 @@ function Flexible_unit_caps:get_regions_supply(faction)
           local building_name = building:name();
 
           if j == 0 then --main building
-            supply_form_regions = supply_form_regions - self:get_main_building_cost(building)
+            supply_form_regions = supply_form_regions - self:get_main_building_cost(building, climate_penalty)
           else
             local building_supply = self:get_bulding_supply_balance(building_name, climate_penalty);
             if building_supply < 0 then

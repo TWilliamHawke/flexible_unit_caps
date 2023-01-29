@@ -7,7 +7,7 @@ function Flexible_unit_caps:add_player_listeners()
     "FactionTurnStart",
     function(context)
       local faction = context:faction()
-      return self:faction_has_supply_lines(faction)
+      return faction:is_human() and self:faction_has_supply_lines(faction)
     end,
     -- true,
     function(context)
@@ -25,7 +25,7 @@ function Flexible_unit_caps:add_player_listeners()
     "FactionTurnEnd",
     function(context)
       local faction = context:faction()
-      return self:faction_has_supply_lines(faction)
+      return faction:is_human() and self:faction_has_supply_lines(faction)
     end,
     -- true,
     function(context)
@@ -77,7 +77,7 @@ function Flexible_unit_caps:add_player_listeners()
     "ComponentLClickUp",
     function(context)
       local faction = cm:model():world():whose_turn_is_it()
-      return (UIComponent(context.component):Id() == "button_hire_imperial" and self:faction_has_supply_lines(faction))
+      return (UIComponent(context.component):Id() == "button_hire_imperial" and faction:is_human() and self:faction_has_supply_lines(faction))
     end,
     function(_)
       local faction = cm:model():world():whose_turn_is_it()
@@ -95,7 +95,7 @@ function Flexible_unit_caps:add_player_listeners()
     "ComponentLClickUp",
     function(context)
       local faction = cm:model():world():whose_turn_is_it()
-      return (UIComponent(context.component):Id() == "button_hire_renown" and self:faction_has_supply_lines(faction))
+      return (UIComponent(context.component):Id() == "button_hire_renown" and faction:is_human() and self:faction_has_supply_lines(faction))
     end,
     function(_)
       local faction = cm:model():world():whose_turn_is_it()
@@ -113,7 +113,7 @@ function Flexible_unit_caps:add_player_listeners()
     "FactionJoinsConfederation",
     function(context)
       local faction = context:confederation();
-      return self:faction_has_supply_lines(faction)
+      return faction:is_human() and self:faction_has_supply_lines(faction)
     end,
     function(context)
       local faction = context:confederation();
@@ -132,7 +132,7 @@ function Flexible_unit_caps:add_player_listeners()
     "MilitaryForceCreated",
     function(context)
       local faction = context:military_force_created():faction();
-      return self:faction_has_supply_lines(faction)
+      return faction:is_human() and self:faction_has_supply_lines(faction)
     end,
     function(context)
       local faction = context:military_force_created():faction();
@@ -153,7 +153,7 @@ function Flexible_unit_caps:add_player_listeners()
     "RegionFactionChangeEvent",
     function(context)
       local faction = context:region():owning_faction();
-      return (self:faction_has_supply_lines(faction))
+      return faction:is_human() and self:faction_has_supply_lines(faction)
     end,
     function(context)
       self:log("======================");
@@ -170,7 +170,7 @@ function Flexible_unit_caps:add_player_listeners()
     "CharacterCreated",
     function(context)
       local faction = context:character():faction();
-      return (self:faction_has_supply_lines(faction))
+      return faction:is_human() and self:faction_has_supply_lines(faction)
     end,
     function(context)
       local character = context:character();
@@ -235,7 +235,7 @@ function Flexible_unit_caps:add_player_listeners()
     "UnitDisbanded",
     function(context)
       local faction = context:unit():faction()
-      return self:faction_has_supply_lines(faction)
+      return faction:is_human() and self:faction_has_supply_lines(faction)
     end,
     function(context)
       local faction_name = context:unit():faction():name();

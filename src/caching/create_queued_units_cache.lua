@@ -12,8 +12,8 @@ function Flexible_unit_caps:create_queued_units_cache(units_holder, cache)
       while ui_component do
         local component_name = ui_component:Id();
         local queued_unit_name = self:get_queued_unit_name(ui_component);
-        ui_component = find_uicomponent(units_holder, "QueuedLandUnit " .. iteration_index);
         iteration_index = iteration_index + 1;
+        ui_component = find_uicomponent(units_holder, "QueuedLandUnit " .. iteration_index);
 
         return queued_unit_name, component_name;
       end

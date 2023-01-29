@@ -143,7 +143,10 @@ Flexible_unit_caps.building_unit_bonus = {
     ["wh_dlc06_special_savage_orc_camp_wurrzag_1"] = 1,
     ["wh_dlc06_special_savage_orc_camp_wurrzag_2"] = 2,
     ["wh_dlc06_special_savage_orc_camp_wurrzag_3"] = 3,
-    --
+    ["frb_dark_land_building_1"] = 2,
+    ["frb_dark_land_building_2"] = 3,
+    ["frb_dark_land_building_3"] = 4,
+    ["frb_dark_land_building_4"] = 5,
   --special emp
     ["wh_main_kislev_worship_1"] = 3,
     ["wh_main_kislev_worship_2"] = 4,

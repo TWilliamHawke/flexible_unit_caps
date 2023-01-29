@@ -1,7 +1,6 @@
 ---@type table<string, string>
 Flexible_unit_caps.units_group_parent_ai = {
   fluc_skv_lightning = "fluc_skv_artillery",
-  fluc_skv_mortars = "fluc_skv_artillery",
   fluc_skv_catapults = "fluc_skv_artillery",
   fluc_def_cold_one_chariot = "fluc_def_chariots",
   fluc_def_scourgerunner = "fluc_def_chariots",
@@ -10,6 +9,8 @@ Flexible_unit_caps.units_group_parent_ai = {
   fluc_dwf_artillery_gun = "fluc_dwf_artillery",
   fluc_dwf_flying_machine = "fluc_dwf_war_machines",
   fluc_dwf_land_machine = "fluc_dwf_war_machines",
+  fluc_dwf_rangers = "fluc_dwf_quarrellers",
+  fluc_dwf_thunderers = "fluc_dwf_quarrellers",
   fluc_grn_wagon = "fluc_grn_chariots",
   fluc_hef_lion_chariots = "fluc_hef_chariots",
   fluc_grn_wyverns = "fluc_grn_other_monsters",

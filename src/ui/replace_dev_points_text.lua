@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 ---@param ui_component UIC
 ---@param climate_penalty integer
 function Flexible_unit_caps:replace_dev_points_text(ui_component, climate_penalty)
@@ -14,7 +15,6 @@ function Flexible_unit_caps:replace_dev_points_text(ui_component, climate_penalt
   dev_points:SetVisible(true);
   dev_points_text:SetVisible(true);
 
-  ---@diagnostic disable-next-line: undefined-field
   dev_points_text:SetText(self:try_add_plus(supply_balance_change));
 end
 

@@ -74,8 +74,12 @@ Flexible_unit_caps.skill_supply_change = {
   wh_dlc06_grn_wurrzag_da_great_prophet = {
     fluc_grn_trolls = { -2, false, "wh2_dlc15_skill_unique_grn_wurrzag_colossal_warpaint" },
     fluc_grn_giants = { -2, false, "wh2_dlc15_skill_unique_grn_wurrzag_colossal_warpaint" },
-    fluc_def_hydra = { -2, false, "wh2_dlc15_skill_unique_grn_wurrzag_colossal_warpaint" },
+    fluc_grn_other_monsters = { -2, false, "wh2_dlc15_skill_unique_grn_wurrzag_colossal_warpaint" },
     fluc_grn_arachnarok = { -2, false, "wh2_dlc15_skill_unique_grn_wurrzag_colossal_warpaint" },
+    fluc_all_rare_creatures = { -1, true, "wh2_dlc15_skill_unique_grn_wurrzag_colossal_warpaint" },
+  },
+  frb_warboss_lord = {
+    fluc_grn_black_orcs = { -1, false, "frb_warboss_lord_black_orc_superiority" },
   },
   ws_grn_tinitt_foureyes = {
     fluc_grn_arachnarok = { -2, false, "ws_skill_tinitt_foureyes_ancient_behemoths" },

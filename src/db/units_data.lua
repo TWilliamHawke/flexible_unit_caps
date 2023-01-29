@@ -957,7 +957,7 @@ Flexible_unit_caps.units_data = {
     ["wh_main_grn_art_doom_diver_catapult"]  = { 2, "fluc_grn_artillery"},
     ["wh_main_grn_art_goblin_rock_lobber"]  = { 2, "fluc_grn_artillery"},
     -- elite
-    ["wh2_dlc15_grn_mon_feral_hydra_waaagh_0"]  = { 3, "fluc_grn_wyverns"},
+    ["wh2_dlc15_grn_mon_feral_hydra_waaagh_0"]  = { 3, "fluc_grn_other_monsters"},
     ["wh2_dlc15_grn_mon_wyvern_waaagh_0"]  = { 3, "fluc_grn_wyverns"},
     ["wh_main_grn_mon_giant"]  = { 3, "fluc_grn_giants"},
     ["wh2_dlc15_grn_mon_rogue_idol_0"]  = { 4, "fluc_grn_giants"},
@@ -2612,6 +2612,11 @@ Flexible_unit_caps.units_data = {
     ["emp_maiden_sigmar"]  = { 2, "none"},
     ["emp_nuns"]  = { 0, "fluc_emp_flagellants"},
     ["emp_nuns_ror"]  = { 1, "fluc_emp_flagellants"},
+    --dark land orcs
+    ["frb_dark_land_orc_boyz"]  = { 1, "fluc_grn_boyz"},
+    ["frb_dark_land_orc_boyz_big_uns"]  = { 2, "fluc_grn_big_uns"},
+    ["frb_scrap_shooters"]  = { 2, "fluc_grn_orc_archers"},
+    ["frb_dark_land_drake"]  = { 3, "fluc_grn_other_monsters"},
   --South Dwarfs
     --core
     ["engineer_land_mine"]  = { 0, "none"},

@@ -1,6 +1,7 @@
 ---@param building BUILDING_SCRIPT_INTERFACE
----@return integer
-function Flexible_unit_caps:get_main_building_cost(building)
+---@param climate_penalty integer
+---@return integer main_building_cost
+function Flexible_unit_caps:get_main_building_cost(building, climate_penalty)
   local main_building_level = building:building_level()
   local main_building_superchain = building:superchain()
   local main_building_chain = building:chain();
@@ -17,9 +18,9 @@ function Flexible_unit_caps:get_main_building_cost(building)
 
   -- 1 for tier 1-3, 2 for tier 4, 3 for tier 5
   if main_building_level == 5 then
-    return 2 * self.big_city_penalty + 1;
+    return 2 * math.max(2 + climate_penalty, 0) + 1;
   elseif main_building_level == 4 then
-    return self.big_city_penalty + 1;
+    return math.max(2 + climate_penalty, 0) + 1;
   else
     return 1
   end

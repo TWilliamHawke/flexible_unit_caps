@@ -48,8 +48,7 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, text_key, unit
 
   supply_text = string.gsub(supply_text, "SRW_consume", self:get_localised_string(text_key));
 
-  return string.gsub(supply_text, "SRW_Cost", tostring(unit_cost_with_cap)) .. unit_group_text .. "\n";
+  return string.gsub(supply_text, "SRW_Cost", tostring(unit_cost_with_cap)) .. unit_group_text;
 end
 
 --TODO replace all srw_ prefixes with fluc_
---BUG fix \n\n\n for new unit

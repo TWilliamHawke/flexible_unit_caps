@@ -15,10 +15,10 @@ function Flexible_unit_caps:set_tooltip_for_unit_in_queue(component, lord)
     local group_capacity = self:get_unit_cap_from_cache(self.queued_units_cache, unit_group);
 
     return unit_index, group_capacity;
-end);
+  end);
 
   self:logDebug("CONSTRUCT SUPPLY TEXT FUNCTION IS FINISHED");
 
-  self:finalize_unit_tooltip(component, supply_text, "||");
+  self:finalize_unit_tooltip(component, supply_text .. "\n", "||");
 
 end
