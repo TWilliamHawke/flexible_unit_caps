@@ -7,7 +7,7 @@ function Flexible_unit_caps:set_tooltip_for_unit_in_queue(component, lord)
   local component_name = component:Id();
   self:logDebug("CONSTRUCT SUPPLY TEXT FUNCTION IS STARTED");
 
-  local supply_text = self:construct_unit_supply_text(unit_name, "SRW_unit_consume_future", function(unit_group)
+  local supply_text = self:construct_unit_supply_text(unit_name, "fluc_unit_consume_future", function(unit_group)
     local units_in_army = self:get_units_count_from_cache(self.selected_force_units_cache, unit_group);
     local _, unit_index_in_queue = self:get_units_count_from_cache(self.queued_units_cache, unit_group,
       component_name);

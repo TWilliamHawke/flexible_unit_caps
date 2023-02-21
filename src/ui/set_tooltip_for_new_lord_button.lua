@@ -34,17 +34,17 @@ function Flexible_unit_caps:set_tooltip_for_new_lord_button(component)
   self:logDebug("future supply penalty is " .. tostring(future_supply_penalty))
 
 
-  local tooltip_text = self:get_localised_string("SRW_new_lord_supply_balance") ..
+  local tooltip_text = self:get_localised_string("fluc_new_lord_supply_balance") ..
       supply_balance ..
-      self:get_localised_string("SRW_new_lord_decrease") ..
+      self:get_localised_string("fluc_new_lord_decrease") ..
       supply_decreasing ..
-      self:get_localised_string("SRW_new_lord_consumption") .. tostring(future_supply_penalty - current_supply_penalty)
+      self:get_localised_string("fluc_new_lord_consumption") .. tostring(future_supply_penalty - current_supply_penalty)
 
   self:logDebug("tooltip text finished")
   self:logDebug("---------------------")
 
   if future_supply_penalty > 20 then
-    tooltip_text = tooltip_text .. self:get_localised_string("SRW_new_lord_suggestion")
+    tooltip_text = tooltip_text .. self:get_localised_string("fluc_new_lord_suggestion")
   end
 
   if is_uicomponent(component) then

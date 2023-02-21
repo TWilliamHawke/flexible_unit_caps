@@ -5,7 +5,7 @@ function Flexible_unit_caps:apply_upkeep_penalty(faction)
   local effect_target = "force_to_force_own_factionwide";
   local faction_name = faction:name()
 
-
+--TODO replace srw_ prefix with fluc_
   if faction:has_effect_bundle(effects_bundle_key) then
     self:logDebug("remove old effect")
     cm:remove_effect_bundle(effects_bundle_key, faction_name);

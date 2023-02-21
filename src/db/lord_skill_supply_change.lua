@@ -74,7 +74,7 @@ Flexible_unit_caps.skill_supply_change = {
   wh_dlc06_grn_wurrzag_da_great_prophet = {
     fluc_grn_trolls = { -2, false, "wh2_dlc15_skill_unique_grn_wurrzag_colossal_warpaint" },
     fluc_grn_giants = { -2, false, "wh2_dlc15_skill_unique_grn_wurrzag_colossal_warpaint" },
-    fluc_grn_other_monsters = { -2, false, "wh2_dlc15_skill_unique_grn_wurrzag_colossal_warpaint" },
+    fluc_grn_other_monsters = { -2, true, "wh2_dlc15_skill_unique_grn_wurrzag_colossal_warpaint" },
     fluc_grn_arachnarok = { -2, false, "wh2_dlc15_skill_unique_grn_wurrzag_colossal_warpaint" },
     fluc_all_rare_creatures = { -1, true, "wh2_dlc15_skill_unique_grn_wurrzag_colossal_warpaint" },
   },

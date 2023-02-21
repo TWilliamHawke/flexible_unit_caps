@@ -22,8 +22,8 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord)
   end
 
   --construct tooltip
-  local tooltip_text = self:get_localised_string("SRW_army_suply_cost");
-  tooltip_text = string.gsub(tooltip_text, "SRW_Cost", tostring(army_supply));
+  local tooltip_text = self:get_localised_string("fluc_army_suply_cost");
+  tooltip_text = string.gsub(tooltip_text, "FLUC_SUPPLY", tostring(army_supply));
 
   local units_list_text = "";
 
@@ -38,7 +38,7 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord)
   end
 
   if units_list_text ~= "" then
-    tooltip_text = tooltip_text .. self:get_localised_string("SRW_army_tooltip_explanation") .. units_list_text;
+    tooltip_text = tooltip_text .. self:get_localised_string("fluc_army_tooltip_explanation") .. units_list_text;
   end
 
   if is_uicomponent(component) then

@@ -19,8 +19,8 @@ function Flexible_unit_caps:set_agent_tooltip(component, character)
   end
 
 
-  local supply_text = self:get_localised_string("SRW_agent_supply_cost")
-  supply_text = string.gsub(supply_text, "SRW_Cost", agent_supply_cost);
+  local supply_text = self:get_localised_string("fluc_agent_supply_cost")
+  supply_text = string.gsub(supply_text, "FLUC_SUPPLY", agent_supply_cost);
 
 
   self:finalize_unit_tooltip(component, self:form_yellow_line(supply_text), "\n")

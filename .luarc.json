@@ -28,5 +28,6 @@
     "workspace.library": [
         "lib"
     ],
-    "workspace.useGitIgnore": true
+    "workspace.useGitIgnore": true,
+    "runtime.version": "Lua 5.4"
 }

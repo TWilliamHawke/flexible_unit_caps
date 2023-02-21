@@ -7,8 +7,8 @@ function Flexible_unit_caps:create_negative_sb_effect(faction, supply_balance)
 
   local additional_supply = Flexible_unit_caps:calculate_supply_penalty(-supply_balance, num_of_armies);
 
-  local supply_balance_bundle_name = "srw_bundle_supply_balance_negative";
-  local supply_balance_effect_name = "srw_supply_balance_points";
+  local supply_balance_bundle_name = "fluc_bundle_supply_balance_negative";
+  local supply_balance_effect_name = "fluc_supply_balance_points";
 
   if self:get_game_language() == "RU" then
     supply_balance_effect_name = supply_balance_effect_name.."_ru";

@@ -25,8 +25,8 @@ function Flexible_unit_caps:construct_treasury_tooltip(faction)
     common.set_context_value("supply_lines_upkeep_value", upkeep_per_army)
   end
 
-  local supply_text = self:get_localised_string("SRW_treasury_tooltip_supply")
-  supply_text = string.gsub(supply_text, "SRW_supply", tostring(supply_points))
+  local supply_text = self:get_localised_string("fluc_treasury_tooltip_supply")
+  supply_text = string.gsub(supply_text, "FLUC_SUPPLY", tostring(supply_points))
 
   local supply_balance_text = ""
 
@@ -43,7 +43,7 @@ function Flexible_unit_caps:construct_treasury_tooltip(faction)
   end
 
   if self.enable_supply_balance and not (culture == "wh_dlc05_sc_wef_wood_elves") then
-    supply_balance_text = self:get_localised_string("SRW_supply_balance_text");
+    supply_balance_text = self:get_localised_string("fluc_supply_balance_text");
     supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_settlements", region_supply);
     supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_military", buildings_supply);
     supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_garrisons", garrisons_supply);
@@ -53,10 +53,10 @@ function Flexible_unit_caps:construct_treasury_tooltip(faction)
     supply_balance_text = supply_balance_text .. create_supply_source_text("fluc_supply_source_total", supply_balance);
   end
 
-  local tooltip_text = self:get_localised_string("SRW_treasury_tooltip_main") ..
+  local tooltip_text = self:get_localised_string("fluc_treasury_tooltip_main") ..
       supply_balance_text .. "\n" ..
       supply_text ..
-      self:get_localised_string("SRW_treasury_tooltip_upkeep") .. tostring(upkeep_percent) .. "%";
+      self:get_localised_string("fluc_treasury_tooltip_upkeep") .. tostring(upkeep_percent) .. "%";
 
   self:logDebug("-------------");
   self:logDebug("Constructor IS FINISHED");
