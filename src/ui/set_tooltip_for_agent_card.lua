@@ -5,8 +5,9 @@ function Flexible_unit_caps:set_agent_tooltip(component, character)
 
   if character:has_military_force() then
     local charlist = character:military_force():character_list()
-    local agent_number = component:Id():match("(%d+)") or 0
-    if (tonumber(agent_number) >= charlist:num_items()) then return end
+    local agent_number = component:Id():match("(%d+)")
+    agent_number = tonumber(agent_number) or 0;
+    if (agent_number >= charlist:num_items()) then return end
 
     local character = charlist:item_at(agent_number);
     if not character then return end
@@ -23,7 +24,5 @@ function Flexible_unit_caps:set_agent_tooltip(component, character)
   supply_text = string.gsub(supply_text, "FLUC_SUPPLY", agent_supply_cost);
 
 
-  self:finalize_unit_tooltip(component, self:form_yellow_line(supply_text), "\n")
+  self:finalize_unit_tooltip(component, self:form_yellow_line(supply_text), "||")
 end
-
---BUG fix agent card tooltip

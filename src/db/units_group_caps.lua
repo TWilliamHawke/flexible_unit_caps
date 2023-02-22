@@ -1,7 +1,7 @@
 ---@type table<string, { [1]: group_unit_cap, [2]: ai_replacer }>
 Flexible_unit_caps.unit_group_caps = {
   --TODO add tomb kings and beastmen groups
-  --TODO update groups for most factions (incl parents)
+  --TODO update groups for cathay vampires bretonnia wood and dark elves
   --TODO add localisation for new groups
   fluc_unknown = { 15, "" }, --
   fluc_all_cavalry = { 8, "" },
@@ -183,8 +183,8 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_nor_marauders = { 15, "" },
   fluc_nor_skinwolves = { 4, "wh_main_nor_mon_chaos_warhounds_0" },
   fluc_nor_trolls = { 6, "wh_main_nor_inf_chaos_marauders_0" },
-  fluc_skv_abomination = { 4, "wh2_main_skv_inf_stormvermin_0" },
   --Skaven
+  fluc_skv_abomination = { 4, "wh2_main_skv_inf_stormvermin_0" },
   fluc_skv_artillery = { 6, "wh2_main_skv_inf_night_runners_0" },
   fluc_skv_brood_horror = { 4, "wh2_dlc16_skv_mon_wolf_rats_0" },
   fluc_skv_catapults = { 0, "" }, --overwrited by fluc_skv_artillery

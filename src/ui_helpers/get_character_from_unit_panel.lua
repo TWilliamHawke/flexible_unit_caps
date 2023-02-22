@@ -1,5 +1,4 @@
 ---@return CHARACTER_SCRIPT_INTERFACE | nil
----@return boolean | nil character_is_found
 function Flexible_unit_caps:get_character_from_unit_panel()
   local ui_manager = cm:get_campaign_ui_manager();
   if not ui_manager:is_panel_open("units_panel") then return end
@@ -12,7 +11,5 @@ function Flexible_unit_caps:get_character_from_unit_panel()
   if character:is_null_interface() then return end
   if not character:faction():is_human() then return end
 
-  local char_is_lord = character:has_military_force();
-
-  return character, char_is_lord;
+  return character;
 end

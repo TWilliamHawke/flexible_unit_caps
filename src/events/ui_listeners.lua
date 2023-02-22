@@ -2,7 +2,6 @@
 -- UI Listeners start HERE
 --========================
 function Flexible_unit_caps:add_ui_listeners()
-
   core:add_listener(
     "fluc_click_on_queued_unit",
     "ComponentLClickUp",
@@ -13,12 +12,14 @@ function Flexible_unit_caps:add_ui_listeners()
       if string.find(context.string, "QueuedLandUnit") then
         cm:remove_callback(self.ui_debounce_key)
         cm:callback(function()
+          if not self:player_faction_has_suply_lines() then return end
+
           self:log("UNIT REMOVED FROM QUEUE")
           local character = self:get_character_from_unit_panel();
           if character and character:has_military_force() then
             self:set_all_army_panel_tooltips(character);
           end
-          end, 0.2, self.ui_debounce_key);
+        end, 0.2, self.ui_debounce_key);
       end
     end,
     true
@@ -31,15 +32,17 @@ function Flexible_unit_caps:add_ui_listeners()
       return cm:get_campaign_ui_manager():is_panel_open("mercenary_recruitment");
     end,
     function(context)
-      if string.find(context.string, "option") then
-        cm:callback(function()
-          self:log("ALLIES UNITS PANEL SWITCHED")
-          local character = self:get_character_from_unit_panel();
-          if character and character:has_military_force() then
-            self:set_all_army_panel_tooltips(character);
-          end
-          end, 0.2);
-      end
+      if not string.find(context.string, "option") then return end
+
+      cm:callback(function()
+        if not self:player_faction_has_suply_lines() then return end
+
+        self:log("ALLIES UNITS PANEL SWITCHED")
+        local character = self:get_character_from_unit_panel();
+        if character and character:has_military_force() then
+          self:set_all_army_panel_tooltips(character);
+        end
+      end, 0.2);
     end,
     true
   );
@@ -59,6 +62,8 @@ function Flexible_unit_caps:add_ui_listeners()
 
       cm:remove_callback(self.ui_debounce_key)
       cm:callback(function()
+        if not self:player_faction_has_suply_lines() then return end
+
         self:log("UNIT ADDED TO QUEUE")
         local character = self:get_character_from_unit_panel();
         if character and character:has_military_force() then
@@ -69,14 +74,15 @@ function Flexible_unit_caps:add_ui_listeners()
     true
   );
 
-  --TODO add construction menu event
   core:add_listener(
     "fluc_building_browser_open",
     "PanelOpenedCampaign",
     function(context)
-      return context.string == "building_browser";
+      return self.enable_supply_balance and context.string == "building_browser";
     end,
     function()
+      if not self:player_faction_has_suply_lines() then return end
+
       local player_culture = cm:get_local_faction_culture();
       local chain_list_key = player_culture == "wh3_main_nur_nurgle" and "cyclic_chain_list" or "chain_list"
 
@@ -94,7 +100,6 @@ function Flexible_unit_caps:add_ui_listeners()
         for _, building_category in uic_pairs(building_categories) do
           local building_chain_list = find_uicomponent(building_category, chain_list_key);
           if building_chain_list then
-
             for _, chain in uic_pairs(building_chain_list) do
               local building_list = find_uicomponent(chain, "slot_parent");
 
@@ -105,7 +110,6 @@ function Flexible_unit_caps:add_ui_listeners()
           end --of chain list check
         end --of first child loop
       end, 0.5)
-
     end,
     true
   )
@@ -123,12 +127,10 @@ function Flexible_unit_caps:add_ui_listeners()
           self:set_all_army_panel_tooltips(character);
         end
       end, 0.2);
-
     end,
     true
   )
 
-  --BUG doesnt work??
   core:add_listener(
     "fluc_any_panel_closed",
     "PanelClosedCampaign",
@@ -144,9 +146,7 @@ function Flexible_unit_caps:add_ui_listeners()
           self:set_all_army_panel_tooltips(character);
           self:set_tooltip_for_army_upkeep(character);
         end
-
       end, 0.5, self.ui_debounce_key);
-
     end,
     true
   )
@@ -163,23 +163,30 @@ function Flexible_unit_caps:add_ui_listeners()
     function(context)
       local faction = context:character():faction()
       if not self:faction_has_supply_lines(faction) then return end
-      self:log("ARMY SELECTED");
-
+      
       cm:callback(function()
-        self:set_tooltip_for_finance_button(faction);
         local character = self:get_character_from_unit_panel();
-        if character and character:has_military_force() then
+        if not character then return end;
+        if character:has_military_force() then
+          self:log("ARMY SELECTED");
+          self:set_tooltip_for_finance_button(faction);
           self:set_all_army_panel_tooltips(character);
           self:set_tooltip_for_army_upkeep(character);
+        else
+          self:log("Agent SELECTED");
+          local agentCard = find_uicomponent(core:get_ui_root(), "units_panel", "main_units_panel", "units", "AgentUnit 0");
+          if not agentCard then return end
+          self:set_agent_tooltip(agentCard, character);
+
         end
 
       end, 0.2);
-
     end,
     true
   )
+  
   core:add_listener(
-    "fluc_Character_Selected",
+    "fluc_UnitUpgraded",
     "UnitUpgraded",
     function(context)
       return context:unit():faction():is_human();
@@ -198,13 +205,9 @@ function Flexible_unit_caps:add_ui_listeners()
           self:set_tooltip_for_army_upkeep(character);
         end
       end, 0.2, self.ui_debounce_key);
-
     end,
     true
   )
-
-
-
 end
 
 --TODO add new lord button tooltip

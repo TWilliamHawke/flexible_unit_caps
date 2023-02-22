@@ -224,7 +224,7 @@ function Flexible_unit_caps:add_player_listeners()
 
       local force_cqi = force:command_queue_index();
 
-      cm:apply_effect_bundle_to_force(self.loaned_army_effect, tostring(force_cqi), 0);
+      cm:apply_effect_bundle_to_force(self.loaned_army_effect, tostring(force_cqi), 10);
       self:log("Effect applied")
     end,
     true
@@ -262,4 +262,3 @@ function Flexible_unit_caps:add_player_listeners()
 end
 
 --TODO replace click event with unit recruitment debounce
---TODO check events conditions

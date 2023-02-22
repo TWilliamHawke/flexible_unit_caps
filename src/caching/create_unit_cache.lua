@@ -13,12 +13,12 @@ function Flexible_unit_caps:create_units_cache(supply_change_cache, get_iterator
   end
 
   ---@param unit_group string
-  ---@param compinent_name string
-  local function add_component_to_cache(unit_group, compinent_name)
+  ---@param component_name string
+  local function add_component_to_cache(unit_group, component_name)
     add_unit_group_to_cache(unit_group)
     local count = units_group_data[unit_group].count + 1;
     units_group_data[unit_group].count = count;
-    units_group_data[unit_group][compinent_name] = count;
+    units_group_data[unit_group][component_name] = count;
   end
 
   for group in pairs(supply_change_cache) do

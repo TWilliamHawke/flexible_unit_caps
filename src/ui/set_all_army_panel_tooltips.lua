@@ -22,6 +22,7 @@ function Flexible_unit_caps:set_all_army_panel_tooltips(lord)
     elseif string.find(component_id, "LandUnit") then
       self:set_tooltip_for_unit_in_army(unit_card, lord);
     elseif string.find(component_id, "AgentUnit") then
+      self:log("tooltip for agent")
       self:set_agent_tooltip(unit_card, lord);
     end
   end
@@ -30,16 +31,18 @@ function Flexible_unit_caps:set_all_army_panel_tooltips(lord)
   local recruitment_options = find_uicomponent(core:get_ui_root(), "units_panel", "recruitment_options");
 
   local local_recruitment = find_uicomponent(recruitment_options, "recruitment_listbox", "local1", "list_box");
-  self:apply_callback_to_children(local_recruitment, self:set_tooltip_for_new_unit("_recruitable", lord))
+  self:apply_callback_to_children(local_recruitment, self:set_tooltip_for_new_unit("_recruitable", lord));
+
+  local local_recruitment = find_uicomponent(recruitment_options, "recruitment_listbox", "local2", "list_box");
+  self:apply_callback_to_children(local_recruitment, self:set_tooltip_for_new_unit("_recruitable", lord));
 
   local global_recruitment = find_uicomponent(recruitment_options, "recruitment_listbox", "global", "list_box");
-  self:apply_callback_to_children(global_recruitment, self:set_tooltip_for_new_unit("_recruitable", lord))
+  self:apply_callback_to_children(global_recruitment, self:set_tooltip_for_new_unit("_recruitable", lord));
 
   local mercenaries = find_uicomponent(recruitment_options, "mercenary_display", "frame", "list_box");
-  self:apply_callback_to_children(mercenaries, self:set_tooltip_for_new_unit("_mercenary", lord))
+  self:apply_callback_to_children(mercenaries, self:set_tooltip_for_new_unit("_mercenary", lord));
 
   local allied_units = find_uicomponent(recruitment_options, "allied_recuitment_display", "unit_list", "allied_unit_list");
-  self:apply_callback_to_children(allied_units, self:set_tooltip_for_new_unit("_recruitable", lord))
+  self:apply_callback_to_children(allied_units, self:set_tooltip_for_new_unit("_recruitable", lord));
 
-  --TODO check black arks and vcoast ships
 end
