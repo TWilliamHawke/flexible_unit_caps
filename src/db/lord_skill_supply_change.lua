@@ -143,7 +143,8 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_vmp_ghost_cav = { -1, false, "mixu_vmp_bloodline_fallen_knight_special_2_brothers_in_death" },
   },
   Treeman = {
-    fluc_wef_trees = { -1, false, "wh_dlc05_skill_wef_ancient_treeman_unique_damage_resistance_treekin" },
+    fluc_wef_treekin = { -1, false, "wh_dlc05_skill_wef_ancient_treeman_unique_damage_resistance_treekin" },
+    fluc_wef_treemen = { -1, false, "wh_dlc05_skill_wef_ancient_treeman_unique_damage_resistance_treekin" },
   },
   roy_zoat_lord = {
     fluc_wef_zoats = { -1, false, "roy_zoat_lord_army_defense_zoats" },

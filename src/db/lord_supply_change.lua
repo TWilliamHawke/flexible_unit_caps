@@ -189,10 +189,13 @@ Flexible_unit_caps.lord_supply_change = {
   wh_dlc08_nor_wulfrik = {
     fluc_nor_marauders = { change = -2, hidden = false },
     fluc_nor_berserkers = { change = -2, hidden = true },
+    fluc_nor_marauder_champions = { change = -2, hidden = true },
     fluc_nor_mammoths = { change = -2, hidden = false },
   },
   wh_dlc08_nor_throgg = {
-    fluc_nor_trolls = { change = -2, hidden = false },
+    fluc_grn_trolls = { change = -2, hidden = false },
+    fluc_nor_trolls = { change = -2, hidden = true },
+    fluc_chs_trolls = { change = -2, hidden = true },
   },
   nor_egil_styrbjorn = {
     fluc_nor_berserkers = { change = -2, hidden = false },
@@ -206,7 +209,8 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_wef_stag_cav = { change = -2, hidden = false },
   },
   dlc05_wef_durthu = {
-    fluc_wef_trees = { change = -2, hidden = false },
+    fluc_wef_treekin = { change = -2, hidden = false },
+    fluc_wef_treemen = { change = -2, hidden = false },
     fluc_wef_dryads = { change = -2, hidden = false },
   },
   wh2_dlc16_wef_sisters_of_twilight = {
@@ -217,7 +221,8 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_all_flying_units = { change = -2, hidden = true },
   },
   wh2_dlc16_wef_drycha = {
-    fluc_wef_trees = { change = -2, hidden = false },
+    fluc_wef_treekin = { change = -2, hidden = false },
+    fluc_wef_treemen = { change = -2, hidden = false },
     fluc_wef_feral = { change = -2, hidden = false },
     fluc_wef_dryads = { change = -2, hidden = false },
   },
@@ -423,7 +428,8 @@ Flexible_unit_caps.lord_supply_change = {
   wh3_main_cth_miao_ying = {
     fluc_cth_archers = { change = -1, hidden = false },
     fluc_cth_crossbowmen = { change = -1, hidden = false },
-    fluc_cth_gunners = { change = -1, hidden = false },
+    fluc_cth_hail_gunners = { change = -1, hidden = false },
+    fluc_cth_crain_gunners = { change = -1, hidden = false },
     fluc_cth_artillery = { change = -1, hidden = false },
   },
   wh3_main_cth_zhao_ming = {
@@ -451,20 +457,15 @@ Flexible_unit_caps.lord_supply_change = {
   },
   wh3_main_dae_belakor = {
     fluc_chs_daemons = { change = -1, hidden = false },
-    fluc_chs_exalted_daemons = { change = -1, hidden = false },
     fluc_chs_greater_daemons = { change = -1, hidden = false },
-    fluc_kho_daemons = { change = -1, hidden = true },
-    fluc_sla_daemons = { change = -1, hidden = true },
-    fluc_nur_daemons = { change = -1, hidden = true },
-    fluc_tze_daemons = { change = -1, hidden = true },
-    fluc_kho_exalted_daemons = { change = -1, hidden = true },
-    fluc_kho_greater_daemons = { change = -1, hidden = true },
-    fluc_sla_exalted_daemons = { change = -1, hidden = true },
-    fluc_sla_greater_daemons = { change = -1, hidden = true },
-    fluc_nur_exalted_daemons = { change = -1, hidden = true },
-    fluc_nur_greater_daemons = { change = -1, hidden = true },
-    fluc_tze_exalted_daemons = { change = -1, hidden = true },
-    fluc_tze_greater_daemons = { change = -1, hidden = true },
+    fluc_kho_bloodletters = { change = -1, hidden = true },
+    fluc_sla_daemonette = { change = -1, hidden = true },
+    fluc_nur_plaguebearers = { change = -1, hidden = true },
+    fluc_tze_pink_horrors = { change = -1, hidden = true },
+    fluc_kho_bloodthirster = { change = -1, hidden = true },
+    fluc_sla_keeper = { change = -1, hidden = true },
+    fluc_nur_unclean_one = { change = -1, hidden = true },
+    fluc_tze_lord_of_change = { change = -1, hidden = true },
   },
 
 }

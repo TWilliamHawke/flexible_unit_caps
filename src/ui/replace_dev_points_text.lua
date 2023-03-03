@@ -19,4 +19,3 @@ function Flexible_unit_caps:replace_dev_points_text(ui_component, climate_penalt
 end
 
 --TODO replace with custom icon
---TODO add tooltips for mct options

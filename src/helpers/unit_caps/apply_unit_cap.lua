@@ -19,5 +19,3 @@ function Flexible_unit_caps:apply_unit_cap(base_cost, lord_cost, unit_pos, unit_
 
   return math.max(base_cost_with_cap - (base_cost - lord_cost), 0)
 end
-
---TODO add weak and harsh mode for unit cap
