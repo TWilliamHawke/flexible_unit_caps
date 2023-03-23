@@ -10,7 +10,11 @@ function Flexible_unit_caps:set_all_army_panel_tooltips(lord)
   self.queued_units_cache = self:create_queued_units_cache(unitList, self.supply_change_cache);
   self.selected_force_units_cache = self:create_force_cache(force, self.supply_change_cache);
 
-  --TODO add tooltip for lord card
+  local faction = lord:faction();
+  local supply_balance = self:get_supply_balance(faction);
+  local supply_penalty = self:get_supply_penalty(faction, supply_balance);
+
+  self:set_tooltip_for_army_upkeep(lord, supply_penalty);
 
   for _, unit_card in uic_pairs(unitList) do
     local component_id = unit_card:Id();
@@ -18,7 +22,9 @@ function Flexible_unit_caps:set_all_army_panel_tooltips(lord)
     if string.find(component_id, "QueuedLandUnit") then
       self:set_tooltip_for_unit_in_queue(unit_card, lord);
       -- elseif string.find(component_id, "temp_merc_") then
-      --   self:set_queued_unit_tooltip(unit_card, "temp_merc_"); --dont work now
+      --   self:set_queued_unit_tooltip(unit_card, "temp_merc_"); --doesnt work now
+    elseif component_id == "LandUnit 0" then
+      self:set_tooltip_for_lord_icon(unit_card, supply_penalty);
     elseif string.find(component_id, "LandUnit") then
       self:set_tooltip_for_unit_in_army(unit_card, lord);
     elseif string.find(component_id, "AgentUnit") then

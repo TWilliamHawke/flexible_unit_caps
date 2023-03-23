@@ -311,7 +311,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_sla_keeper = { 4, "wh3_main_sla_inf_daemonette_1" },
   fluc_sla_knights = { 4, "wh3_dlc20_chs_cav_marauder_horsemen_msla_javelins" },
   fluc_sla_fiends = { 4, "wh3_main_sla_inf_marauders_0" },
-  fluc_sla_seekers = { 4, "wh3_main_sla_inf_marauders_0" },
+  fluc_sla_seekers = { 4, "wh3_main_sla_cav_hellstriders_0" },
   fluc_sla_soul_grinder = { 4, "wh3_main_sla_mon_spawn_of_slaanesh_0" },
   fluc_sla_spawn = { 6, "wh3_dlc20_chs_inf_forsaken_msla" },
   --Nurgle

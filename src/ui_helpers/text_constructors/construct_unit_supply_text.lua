@@ -51,3 +51,4 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, text_key, unit
   return string.gsub(supply_text, "FLUC_SUPPLY", tostring(unit_cost_with_cap)) .. unit_group_text;
 end
 
+--TODO add option to hide base_cast_text

@@ -11,6 +11,7 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_kho_soul_grinder = "fluc_all_rare_creatures",
   fluc_kho_bloodthirster = "fluc_all_rare_creatures",
   fluc_kho_spawn = "fluc_chs_spawn",
+  --tzeench
   fluc_tze_furies = "fluc_all_flying_units",
   fluc_tze_horsemen = "fluc_all_cavalry",
   fluc_tze_hounds = "fluc_chs_hounds",
@@ -24,6 +25,7 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_tze_soul_grinder = "fluc_all_rare_creatures",
   fluc_tze_lord_of_change = "fluc_all_rare_creatures",
   fluc_tze_spawn = "fluc_chs_spawn",
+  --slaanesh
   fluc_sla_furies = "fluc_all_flying_units",
   fluc_sla_horsemen = "fluc_all_cavalry",
   fluc_sla_forsaken = "fluc_chs_forsaken",
@@ -31,9 +33,11 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_sla_chosen = "fluc_all_heavy_infantry",
   fluc_sla_war_machines = "fluc_all_chariots_war_machines",
   fluc_sla_knights = "fluc_all_cavalry",
+  fluc_sla_seekers = "fluc_all_cavalry",
   fluc_sla_soul_grinder = "fluc_all_rare_creatures",
   fluc_sla_keeper = "fluc_all_rare_creatures",
   fluc_sla_spawn = "fluc_chs_spawn",
+  --nurgle
   fluc_nur_furies = "fluc_all_flying_units",
   fluc_nur_horsemen = "fluc_all_cavalry",
   fluc_nur_hounds = "fluc_chs_hounds",
@@ -119,6 +123,7 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_emp_huntsmen = "fluc_all_missiles",
   fluc_emp_handgunners = "fluc_all_missiles",
   fluc_emp_knight_white_wolf = "fluc_all_cavalry",
+  fluc_emp_reiksguard = "fluc_all_cavalry",
   fluc_emp_knights_emp = "fluc_all_cavalry",
   fluc_emp_knights_orders = "fluc_all_cavalry",
   fluc_emp_magic_machines = "fluc_all_chariots_war_machines",

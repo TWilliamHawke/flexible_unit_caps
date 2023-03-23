@@ -1,11 +1,10 @@
 ---@param faction FACTION_SCRIPT_INTERFACE
 function Flexible_unit_caps:apply_upkeep_penalty(faction)
-  local effects_bundle_key = "SRW_upkeep_global"
+  local effects_bundle_key = "fluc_upkeep_global"
   local effect_key = "wh_main_effect_force_all_campaign_upkeep";
   local effect_target = "force_to_force_own_factionwide";
   local faction_name = faction:name()
 
---TODO replace srw_ prefix with fluc_
   if faction:has_effect_bundle(effects_bundle_key) then
     self:logDebug("remove old effect")
     cm:remove_effect_bundle(effects_bundle_key, faction_name);

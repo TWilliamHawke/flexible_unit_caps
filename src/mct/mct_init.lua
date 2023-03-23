@@ -5,7 +5,7 @@ function Flexible_unit_caps:mct_init(context)
 
   self.player_supply_custom_mult = settings.a_player_effect;
   self.ai_supply_mult = settings.c_ai_effect;
-  self.log_level = settings.f_enable_logging;
+  self.log_level = tonumber(settings.f_enable_logging);
   self.basic_lord_supply = settings.b_lord_supply;
   self.basic_unit_supply = settings.a_unit_supply;
   self.use_harsh_mode = settings.b_unit_caps_penalty == "harsh";

@@ -26,7 +26,8 @@ Flexible_unit_caps = {
     game_lang = nil,
     queued_units_cache = {}, ---@type UnitsCache
     selected_force_units_cache = {}, ---@type UnitsCache
-    supply_change_cache = {} ---@type Supply_change_cache
+    supply_change_cache = {}, ---@type Supply_change_cache
+    building_tooltip_text = nil,
 }
 
 --TODO check config without mct
