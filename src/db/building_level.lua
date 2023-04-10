@@ -196,7 +196,6 @@ Flexible_unit_caps.building_unit_bonus = {
     ["wh_main_special_jmw_tolscano_estate"] = 4,
     ["wh_main_ulric_worship_2"] = 4,
     ["wh_main_morr_worship_3"] = 5,
-    ["wh_main_special_great_temple_of_ulric"] = 5,
     ["wh_main_special_jmw_high_temple_manaan"] = 5,
     ["wh_main_special_jmw_high_temple_taal"] = 5,
     ["wh_main_special_jmw_temple_manaan_3"] = 5,
@@ -872,6 +871,9 @@ Flexible_unit_caps.building_unit_bonus = {
     ["wh_main_nor_port_3"] = 1,
     ["wh_twa03_special_albion_port_def_1"] = 1,
     ["wh_twa03_special_albion_port_def_2"] = 1,
+    ["wh_main_chs_port_1"] = 1,
+    ["wh_main_chs_port_2"] = 1,
+    ["wh_main_chs_port_3"] = 1,
   --Cathay
     ["wh3_main_cth_artillery_1"] = 3,
     ["wh3_main_cth_artillery_2"] = 4,

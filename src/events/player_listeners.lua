@@ -42,7 +42,6 @@ function Flexible_unit_caps:add_player_listeners()
     "ComponentLClickUp",
     function(context)
       return (context.string == "button_raise_dead" and self:player_faction_has_suply_lines())
-
     end,
     function(_)
       local faction = cm:model():world():whose_turn_is_it()
@@ -200,7 +199,6 @@ function Flexible_unit_caps:add_player_listeners()
       if faction:is_human() and faction:culture() == "wh3_main_ogr_ogre_kingdoms" then
         self:reapply_supply_balance_effect(faction)
         self:set_tooltip_for_finance_button(faction);
-
       end
     end,
     true
@@ -216,15 +214,16 @@ function Flexible_unit_caps:add_player_listeners()
     function(context)
       self:log("Army loaned")
       local force = context:character():military_force();
-      if not force then return end;
+      if not force then return end
       local faction = context:original_faction();
       if faction and faction:is_human() then return end
 
-      if force:has_effect_bundle(self.loaned_army_effect) then return end;
+      if force:has_effect_bundle(self.loaned_army_effect) then return end
 
       local force_cqi = force:command_queue_index();
 
-      cm:apply_effect_bundle_to_force(self.loaned_army_effect, tostring(force_cqi), 10);
+      ---@diagnostic disable-next-line: param-type-mismatch
+      cm:apply_effect_bundle_to_force(self.loaned_army_effect, force_cqi, 10);
       self:log("Effect applied")
     end,
     true
@@ -246,19 +245,15 @@ function Flexible_unit_caps:add_player_listeners()
         local faction = cm:get_faction(faction_name);
 
         if faction then
-
           self:log("======================");
           self:log("UNIT DISBANDED");
           self:apply_upkeep_penalty(faction);
           self:reapply_supply_balance_effect(faction);
         end
       end, 0.2, self.main_debounce_key);
-
     end,
     true
   );
-
-
 end
 
 --TODO replace click event with unit recruitment debounce

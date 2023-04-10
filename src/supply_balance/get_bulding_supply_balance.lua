@@ -9,7 +9,7 @@ function Flexible_unit_caps:get_bulding_supply_balance(building_key, climate_pen
   local supply_balance_change = self.building_unit_bonus[building_key];
   if not supply_balance_change then return 0 end
 
-  supply_balance_change = math.min(supply_balance_change, self.max_balance_per_buildings)
+  supply_balance_change = math.min(supply_balance_change, self.max_balance_per_buildings + climate_penalty)
 
-  return math.max(0, supply_balance_change + climate_penalty);
+  return math.max(0, supply_balance_change);
 end;

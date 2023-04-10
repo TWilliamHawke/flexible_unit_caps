@@ -187,7 +187,7 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_skv_monsters = "fluc_all_cavalry",
   fluc_skv_mortars = "fluc_all_long_range",
   fluc_skv_ratlings = "fluc_all_missiles",
-  fluc_skv_stormvermin = "fluc_all_cavalry",
+  fluc_skv_stormvermin = "fluc_all_heavy_infantry",
   --Vampire counts
   fluc_vmp_black_knights = "fluc_all_cavalry",
   fluc_vmp_blood_knights = "fluc_all_cavalry",

@@ -81,7 +81,14 @@ function Flexible_unit_caps:add_ui_listeners()
       return self.enable_supply_balance and context.string == "building_browser";
     end,
     function()
-      self:add_info_to_building_browser();
+      local ok, err = pcall(function()
+        self:add_info_to_building_browser();
+      end);
+      
+      if not ok then
+        self:logCore(tostring(err));
+      end
+      
     end,
     true
   )
