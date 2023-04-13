@@ -302,6 +302,11 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_def_hydra = { change = -2, hidden = true },
     fluc_def_monsters = { change = -2, hidden = false },
     fluc_def_medusa = { change = -2, hidden = true },
+    fluc_all_rare_creatures = { change = -2, hidden = true },
+    fluc_all_flying_units = { change = -2, hidden = true },
+    fluc_wef_feral = { change = -2, hidden = true },
+    fluc_def_harpies = { change = -2, hidden = true },
+    fluc_def_manticores = { change = -2, hidden = true },
   },
   def_tullaris_dreadbringer = {
     fluc_def_witch_elves = { change = -2, hidden = false },

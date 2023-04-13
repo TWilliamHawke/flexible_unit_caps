@@ -1,4 +1,3 @@
---TODO add chaos furies and forest units
 ---@type table<string, {[1]: number, [2]: string}>
 Flexible_unit_caps.units_data = {
   --Kislev
@@ -1039,7 +1038,7 @@ Flexible_unit_caps.units_data = {
     ["wh_dlc05_wef_inf_glade_guard_2"]  = { 1, "fluc_wef_archers"},
     ["wh_dlc05_wef_cav_hawk_riders_0"]  = { 1, "fluc_wef_hawks"},
     ["wh2_dlc16_wef_mon_feral_manticore"]  = { 1, "fluc_wef_feral"},
-    ["wh2_dlc16_wef_mon_hawks_0"]  = { 1, "fluc_wef_feral"},
+    ["wh2_dlc16_wef_mon_hawks_0"]  = { 1, "fluc_wef_hawks"},
     ["wh_dlc05_wef_inf_wardancers_0"]  = { 1, "fluc_wef_wardancers"},
     ["wh_dlc05_wef_inf_wardancers_1"]  = { 1, "fluc_wef_wardancers"},
     ["wh_dlc05_wef_inf_wildwood_rangers_0"]  = { 1, "fluc_wef_rangers"},
@@ -1055,6 +1054,8 @@ Flexible_unit_caps.units_data = {
     ["wh2_dlc16_wef_inf_bladesingers_0"]  = { 2, "fluc_wef_wardancers"},
     -- elite
     ["wh_dlc05_wef_inf_waywatchers_0"]  = { 3, "fluc_wef_waywatchers"},
+    ["wh3_main_monster_feral_bears"]  = { 2, "fluc_wef_feral"},
+    ["wh3_main_monster_feral_ice_bears"]  = { 3, "fluc_wef_feral"},
     ["wh_dlc05_wef_forest_dragon_0"]  = { 3, "fluc_wef_dragons"},
     ["wh2_dlc16_wef_mon_zoats"]  = { 3, "fluc_wef_zoats"},
     ["wh2_dlc16_wef_cav_great_stag_knights_0"]  = { 3, "fluc_wef_stag_cav"},
@@ -1257,9 +1258,9 @@ Flexible_unit_caps.units_data = {
     ["wh2_main_def_cav_dark_riders_2"]  = { 1, "fluc_def_dark_riders"},
     ["wh2_main_def_inf_bleakswords_0"]  = { 0, "fluc_def_bleakswords"},
     ["wh2_main_def_inf_dreadspears_0"]  = { 0, "fluc_def_dreadspears"},
-    ["wh2_main_def_inf_harpies"]  = { 0, "fluc_def_monsters"},
-    ["wh2_twa03_def_mon_wolves_0"]  = { 0, "fluc_def_monsters"},
-    ["wh_twa03_def_inf_squig_explosive_0"]  = { 0, "fluc_def_monsters"},
+    ["wh2_main_def_inf_harpies"]  = { 0, "fluc_def_harpies"},
+    ["wh2_twa03_def_mon_wolves_0"]  = { 0, "fluc_wef_feral"},
+    ["wh_twa03_def_inf_squig_explosive_0"]  = { 0, "fluc_grn_squig"},
     -- special
     ["wh2_main_def_inf_darkshards_0"]  = { 1, "fluc_def_darkshards"},
     ["wh2_main_def_inf_darkshards_1"]  = { 1, "fluc_def_darkshards"},
@@ -1267,7 +1268,7 @@ Flexible_unit_caps.units_data = {
     ["wh2_main_def_inf_black_ark_corsairs_0"]  = { 1, "fluc_def_corsairs"},
     ["wh2_main_def_inf_black_ark_corsairs_1"]  = { 1, "fluc_def_corsairs"},
     ["wh2_main_def_inf_witch_elves_0"]  = { 1, "fluc_def_witch_elves"},
-    ["wh2_dlc10_def_mon_feral_manticore_0"]  = { 1, "fluc_def_monsters"},
+    ["wh2_dlc10_def_mon_feral_manticore_0"]  = { 1, "fluc_def_manticores"},
     ["wh2_main_def_cav_cold_one_chariot"]  = { 1, "fluc_def_cold_one_chariot"},
     ["wh2_main_def_cav_cold_one_knights_0"]  = { 1, "fluc_def_cold_one"},
     -- rare
@@ -1278,8 +1279,9 @@ Flexible_unit_caps.units_data = {
     ["wh2_main_def_cav_cold_one_knights_1"]  = { 2, "fluc_def_cold_one"},
     -- elite
     ["wh2_main_def_inf_shades_1"]  = { 3, "fluc_def_shades"},
+    ["wh2_twa03_grn_mon_wyvern_0"]  = { 3, "fluc_grn_wyverns"},
     ["wh2_main_def_inf_shades_2"]  = { 3, "fluc_def_shades"},
-    ["wh2_twa03_def_mon_war_mammoth_0"]  = { 3, "fluc_def_monsters"},
+    ["wh2_twa03_def_mon_war_mammoth_0"]  = { 3, "fluc_nor_mammoths"},
     ["wh2_dlc14_def_mon_bloodwrack_medusa_0"]  = { 3, "fluc_def_medusa"},
     ["wh2_dlc14_def_veh_bloodwrack_shrine_0"]  = { 3, "fluc_def_medusa"},
     ["wh2_main_def_mon_war_hydra"]  = { 3, "fluc_def_hydra"},
@@ -1288,7 +1290,7 @@ Flexible_unit_caps.units_data = {
     ["wh2_main_def_inf_har_ganeth_executioners_0"]  = { 3, "fluc_def_executioners"},
     ["wh2_main_def_inf_black_guard_0"]  = { 3, "fluc_def_black_guard"},
     --ROR
-    ["wh2_dlc14_def_inf_harpies_ror_0"]  = { 0, "fluc_def_monsters"},
+    ["wh2_dlc14_def_inf_harpies_ror_0"]  = { 0, "fluc_def_harpies"},
     ["wh2_dlc10_def_inf_the_hellebronai_ror_0"]  = { 0, "fluc_def_dreadspears"},
     ["wh2_dlc10_def_inf_the_bolt_fiends_ror_0"]  = { 1, "fluc_def_darkshards"},
     ["wh2_dlc10_def_inf_sisters_of_the_singing_doom_ror_0"]  = { 1, "fluc_def_witch_elves"},
@@ -1639,7 +1641,7 @@ Flexible_unit_caps.units_data = {
     ["wh2_jmw_hef_inf_cothiquan_worshippers"]  = { 2, "fluc_hef_sea_guard"},
     ["wh2_jmw_hef_inf_spears_dabbarloc"]  = { 2, "fluc_hef_sea_guard"},
     ["wh2_jmw_hef_inf_wardens_annulii_mountains"]  = { 1, "none"},
-    ["wh2_jmw_hef_mon_forest_dragon"]  = { 3, "fluc_wef_dragons"},
+    ["wh2_jmw_hef_mon_forest_dragon"]  = { 3, "fluc_hef_dragons"},
     ["wh2_jmw_hef_mon_griffin_riders"]  = { 4, "fluc_hef_swordsmen"},
     --ann
     ["wh2_main_hef_inf_spearmen_griffong"]  = { 0, "fluc_hef_spearmen"},
