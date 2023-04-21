@@ -2,7 +2,7 @@
 Flexible_unit_caps.unit_group_caps = {
   --TODO add tomb kings and beastmen groups
   fluc_unknown = { 15, "" }, --
-  fluc_all_cavalry = { 8, "" },
+  fluc_all_cavalry = { 10, "" },
   fluc_all_chariots_war_machines = { 8, "" },
   fluc_all_flying_units = { 8, "" },
   fluc_all_heavy_infantry = { 10, "" },
@@ -10,6 +10,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_all_missiles = { 10, "" },
   fluc_all_rare_creatures = { 8, "" }, --single entities
   fluc_tmb_tomb_kings = { 8, "" }, --allied
+  fluc_all_monstrous_units = {10, ""},
   --Bretonnia(ai only)
   fluc_brt_artillery = { 4, "wh_main_brt_inf_men_at_arms" },
   fluc_brt_flying = { 4, "wh_dlc07_brt_inf_battle_pilgrims_0" },
@@ -142,7 +143,8 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_hef_dragon_princes = { 4, "wh2_main_hef_cav_ellyrian_reavers_0" },
   fluc_hef_eagles = { 6, "" },
   fluc_hef_lion_chariots = { 4, "wh2_main_hef_inf_spearmen_0" },
-  fluc_hef_lions = { 8, "wh2_dlc15_hef_inf_rangers_0" },
+  fluc_hef_lion_inf = { 8, "wh2_dlc15_hef_inf_rangers_0" },
+  fluc_hef_lions = { 6, "wh2_dlc15_hef_inf_rangers_0" },
   fluc_hef_mistwalkers = { 8, "wh2_main_hef_inf_spearmen_0" },
   fluc_hef_phoenix_guard = { 6, "wh2_dlc15_hef_inf_silverin_guard_0" },
   fluc_hef_phoenixes = { 4, "wh2_main_hef_mon_great_eagle" },
@@ -172,10 +174,10 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_lzd_teranodons = { 6, "wh2_main_lzd_inf_skink_cohort_1" },
   fluc_lzd_troglodons = { 4, "wh2_main_lzd_inf_skink_cohort_1" },
   --Norsca
-  fluc_nor_berserkers = { 6, "wh_dlc08_nor_inf_marauder_spearman_0" },
+  fluc_nor_berserkers = { 8, "wh_dlc08_nor_inf_marauder_spearman_0" },
   fluc_nor_dinos = { 4, "wh_main_nor_mon_chaos_warhounds_0" },
   fluc_nor_chariots = { 4, "wh_dlc08_nor_inf_marauder_spearman_0" },
-  fluc_nor_fimirs = { 4, "wh_dlc08_nor_inf_marauder_spearman_0" },
+  fluc_nor_fimirs = { 6, "wh_dlc08_nor_inf_marauder_spearman_0" },
   fluc_nor_flying_beasts = { 4, "wh_main_nor_mon_chaos_warhounds_0" },
   fluc_nor_giants = { 4, "wh_main_nor_mon_chaos_trolls" },
   fluc_nor_horsemen = { 6, "wh_main_nor_inf_chaos_marauders_0" },
@@ -184,7 +186,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_nor_marauders = { 10, "" },
   fluc_nor_marauder_hunters = { 6, "wh_main_nor_inf_chaos_marauders_0" },
   fluc_nor_marauder_champions = { 6, "wh_main_nor_inf_chaos_marauders_0" },
-  fluc_nor_skinwolves = { 4, "wh_main_nor_mon_chaos_warhounds_0" },
+  fluc_nor_skinwolves = { 6, "wh_main_nor_mon_chaos_warhounds_0" },
   fluc_nor_trolls = { 6, "wh_main_nor_inf_chaos_marauders_0" },
   --Skaven
   fluc_skv_abomination = { 4, "wh2_main_skv_inf_stormvermin_0" },
@@ -203,7 +205,8 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_skv_neck_cutters = { 4, "wh2_main_skv_inf_clanrats_1" },
   fluc_skv_plague_monks = { 6, "wh2_main_skv_inf_clanrats_1" },
   fluc_skv_ratlings = { 4, "wh2_main_skv_inf_night_runners_0" },
-  fluc_skv_ratogres = { 4, "wh2_dlc16_skv_mon_wolf_rats_0" },
+  fluc_skv_ratogre_mutants = { 4, "wh2_dlc16_skv_mon_wolf_rats_0" },
+  fluc_skv_ratogres = { 6, "wh2_dlc16_skv_mon_wolf_rats_0" },
   fluc_skv_slaves = { 10, "" },
   fluc_skv_stormfiend = { 4, "wh2_main_skv_mon_rat_ogres" },
   fluc_skv_stormvermin = { 8, "wh2_main_skv_inf_clanrats_0" },
@@ -367,4 +370,22 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_chs_chosen = { 4, "wh_main_chs_inf_chaos_warriors_0" },
   fluc_chs_daemons = { 8, "" }, --tooltip only
   fluc_chs_greater_daemons = { 4, "" }, --tooltip only
+  --Chaos dwarfs
+  fluc_chd_labourers = { 10, "" },
+  fluc_chd_hobgoblins = { 10, "" },
+  fluc_chd_hobgoblin_archers = { 6, "wh3_dlc23_chd_inf_hobgoblin_cutthroats" },
+  fluc_chd_hobgoblin_raiders = { 6, "wh3_dlc23_chd_inf_hobgoblin_cutthroats" },
+  fluc_chd_warriors = { 8, "" },
+  fluc_chd_infernal_guard = { 6, "wh3_dlc23_chd_inf_chaos_dwarf_warriors" },
+  fluc_chd_blunderbusses = { 6, "fluc_chd_hobgoblin_archers" },
+  fluc_chd_fireglaves = { 4, "fluc_chd_hobgoblin_archers" },
+  fluc_chd_ironsworn = { 4, "wh3_dlc23_chd_inf_chaos_dwarf_warriors" },
+  fluc_chd_bull_centaurs = { 4, "wh3_dlc23_chd_cav_hobgoblin_wolf_raiders_spears" },
+  fluc_chd_mortires = { 4, "wh3_dlc23_chd_veh_iron_daemon" },
+  fluc_chd_cannons = { 4, "wh3_dlc23_chd_veh_iron_daemon" },
+  fluc_chd_irondaemons = { 4, "wh3_dlc23_chd_inf_chaos_dwarf_warriors" },
+  fluc_chd_taurus = { 4, "wh3_dlc23_chd_inf_chaos_dwarf_warriors_great_weapons" },
+  fluc_chd_fireborn = { 6, "wh3_dlc23_chd_inf_chaos_dwarf_warriors_great_weapons" },
+  fluc_chd_destroyer = { 4, "fluc_chd_destroyer" },
+  
 }

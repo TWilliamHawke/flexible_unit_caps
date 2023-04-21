@@ -8,9 +8,11 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_kho_chosen = "fluc_all_heavy_infantry",
   fluc_kho_war_machines = "fluc_all_chariots_war_machines",
   fluc_kho_knights = "fluc_all_cavalry",
+  fluc_kho_crushers = "fluc_all_cavalry",
   fluc_kho_soul_grinder = "fluc_all_rare_creatures",
   fluc_kho_bloodthirster = "fluc_all_rare_creatures",
-  fluc_kho_spawn = "fluc_chs_spawn",
+  fluc_kho_spawn = "fluc_all_monstrous_units",
+  fluc_kho_khornataurs = "fluc_all_monstrous_units",
   --tzeench
   fluc_tze_furies = "fluc_all_flying_units",
   fluc_tze_horsemen = "fluc_all_cavalry",
@@ -24,7 +26,7 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_tze_knights = "fluc_all_cavalry",
   fluc_tze_soul_grinder = "fluc_all_rare_creatures",
   fluc_tze_lord_of_change = "fluc_all_rare_creatures",
-  fluc_tze_spawn = "fluc_chs_spawn",
+  fluc_tze_spawn = "fluc_all_monstrous_units",
   --slaanesh
   fluc_sla_furies = "fluc_all_flying_units",
   fluc_sla_horsemen = "fluc_all_cavalry",
@@ -36,7 +38,8 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_sla_seekers = "fluc_all_cavalry",
   fluc_sla_soul_grinder = "fluc_all_rare_creatures",
   fluc_sla_keeper = "fluc_all_rare_creatures",
-  fluc_sla_spawn = "fluc_chs_spawn",
+  fluc_sla_spawn = "fluc_all_monstrous_units",
+  fluc_sla_fiends = "fluc_all_monstrous_units",
   --nurgle
   fluc_nur_furies = "fluc_all_flying_units",
   fluc_nur_horsemen = "fluc_all_cavalry",
@@ -48,7 +51,9 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_nur_knights = "fluc_all_cavalry",
   fluc_nur_soul_grinder = "fluc_all_rare_creatures",
   fluc_nur_unclean_one = "fluc_all_rare_creatures",
-  fluc_nur_spawn = "fluc_chs_spawn",
+  fluc_nur_spawn = "fluc_all_monstrous_units",
+  fluc_chs_spawn = "fluc_all_monstrous_units",
+  fluc_chs_dragon_ogres = "fluc_all_monstrous_units",
   fluc_chs_furies = "fluc_all_flying_units",
   fluc_chs_giants = "fluc_all_rare_creatures",
   fluc_chs_champions = "fluc_all_heavy_infantry",
@@ -65,6 +70,8 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_ogr_stonehorn = "fluc_all_rare_creatures",
   fluc_ogr_leadbelchers = "fluc_all_long_range",
   fluc_ogr_artillery = "fluc_all_long_range",
+  fluc_ogr_sabretusk = "fluc_all_monstrous_units",
+  fluc_ogr_gorgers = "fluc_all_monstrous_units",
   --lizardmen
   fluc_lzd_coatl = "fluc_all_rare_creatures",
   fluc_lzd_cold_one = "fluc_all_cavalry",
@@ -72,6 +79,7 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_lzd_dread_saurian = "fluc_all_rare_creatures",
   fluc_lzd_stegadons = "fluc_all_rare_creatures",
   fluc_lzd_troglodons = "fluc_all_rare_creatures",
+  fluc_lzd_kroxigors = "fluc_all_monstrous_units",
   --hight elves
   fluc_hef_archers = "fluc_all_missiles",
   fluc_hef_chariots = "fluc_all_chariots_war_machines",
@@ -84,6 +92,10 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_hef_silver_helms = "fluc_all_cavalry",
   fluc_hef_stealth_archers = "fluc_all_missiles",
   fluc_hef_avelorn = "fluc_all_missiles",
+  fluc_hef_lions = "fluc_all_monstrous_units",
+  fluc_hef_lion_inf = "fluc_all_heavy_infantry",
+  fluc_hef_swordmasters = "fluc_all_heavy_infantry",
+  fluc_hef_phoenix_guard = "fluc_all_heavy_infantry",
   --greenskins
   fluc_grn_arachnarok = "fluc_all_rare_creatures",
   fluc_grn_artillery = "fluc_all_long_range",
@@ -97,6 +109,7 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_grn_other_monsters = "fluc_all_rare_creatures",
   fluc_grn_savage_boar = "fluc_all_cavalry",
   fluc_grn_wyverns = "fluc_all_flying_units",
+  fluc_grn_trolls = "fluc_all_monstrous_units",
   --Dwarfs
   fluc_dwf_artillery = "fluc_all_long_range",
   fluc_dwf_artillery_classic = "fluc_all_long_range",
@@ -150,6 +163,7 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_cst_prometheans_missile = "fluc_all_cavalry",
   fluc_cst_terrorgheist = "fluc_all_flying_units",
   fluc_cst_bats = "fluc_all_flying_units",
+  fluc_cst_mournguls = "fluc_all_monstrous_units",
   --def
   fluc_def_artillery = "fluc_all_long_range",
   fluc_def_black_guard = "fluc_all_heavy_infantry",
@@ -176,8 +190,12 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_nor_horsemen = "fluc_all_cavalry",
   fluc_nor_marauder_champions = "fluc_all_heavy_infantry",
   fluc_nor_mammoths = "fluc_all_rare_creatures",
+  fluc_nor_fimirs = "fluc_all_monstrous_units",
+  fluc_nor_skinwolves = "fluc_all_monstrous_units",
+  fluc_nor_trolls = "fluc_all_monstrous_units",
   --skaven
   fluc_skv_abomination = "fluc_all_rare_creatures",
+  fluc_skv_ratogre_mutants = "fluc_all_rare_creatures",
   fluc_skv_artillery = "fluc_all_long_range",
   fluc_skv_brood_horror = "fluc_all_rare_creatures",
   fluc_skv_catapults = "fluc_all_long_range",
@@ -190,6 +208,8 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_skv_mortars = "fluc_all_long_range",
   fluc_skv_ratlings = "fluc_all_missiles",
   fluc_skv_stormvermin = "fluc_all_heavy_infantry",
+  fluc_skv_ratogres = "fluc_all_monstrous_units",
+  fluc_skv_stormfiend = "fluc_all_monstrous_units",
   --Vampire counts
   fluc_vmp_black_knights = "fluc_all_cavalry",
   fluc_vmp_blood_knights = "fluc_all_cavalry",
@@ -208,6 +228,8 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_wef_stag_cav = "fluc_all_cavalry",
   fluc_wef_treemen = "fluc_all_rare_creatures",
   fluc_wef_waywatchers = "fluc_all_missiles",
+  fluc_wef_treekin = "fluc_all_monstrous_units",
+  fluc_wef_zoats = "fluc_all_monstrous_units",
   --Kislev
   fluc_ksl_streltsi = "fluc_all_missiles",
   fluc_ksl_horse_raiders = "fluc_all_cavalry",
@@ -231,6 +253,17 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_cth_artillery = "fluc_all_long_range",
   fluc_cth_longma = "fluc_all_flying_units",
   fluc_cth_terracotta = "fluc_all_rare_creatures",
-
-
+  --Chorf
+  fluc_chd_hobgoblin_archers = "fluc_all_missiles",
+  fluc_chd_hobgoblin_raiders = "fluc_all_cavalry",
+  fluc_chd_bull_centaurs = "fluc_all_cavalry",
+  fluc_chd_infernal_guard = "fluc_all_heavy_infantry",
+  fluc_chd_ironsworn = "fluc_all_heavy_infantry",
+  fluc_chd_fireglaves = "fluc_all_missiles",
+  fluc_chd_mortires = "fluc_all_long_range",
+  fluc_chd_cannons = "fluc_all_long_range",
+  fluc_chd_irondaemons = "fluc_all_chariots_war_machines",
+  fluc_chd_taurus = "fluc_all_flying_units",
+  fluc_chd_destroyer = "fluc_all_rare_creatures",
+  fluc_chd_fireborn = "fluc_all_monstrous_units",
 }

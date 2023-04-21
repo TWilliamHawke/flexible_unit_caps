@@ -196,6 +196,7 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_grn_trolls = { change = -2, hidden = false },
     fluc_nor_trolls = { change = -2, hidden = true },
     fluc_chs_trolls = { change = -2, hidden = true },
+    fluc_all_monstrous_units = { change = -2, hidden = true },
   },
   nor_egil_styrbjorn = {
     fluc_nor_berserkers = { change = -2, hidden = false },
@@ -241,6 +242,7 @@ Flexible_unit_caps.lord_supply_change = {
   },
   wh2_main_hef_prince_alastar = {
     fluc_hef_lions = { change = -2, hidden = false },
+    fluc_hef_lion_inf = { change = -2, hidden = false },
     fluc_hef_lion_chariots = { change = -2, hidden = true },
   },
   wh2_dlc10_hef_alarielle = {
@@ -337,6 +339,7 @@ Flexible_unit_caps.lord_supply_change = {
   },
   wh2_dlc16_skv_throt_the_unclean = {
     fluc_skv_ratogres = { change = -2, hidden = true },
+    fluc_skv_ratogre_mutants = { change = -2, hidden = true },
     fluc_skv_abomination = { change = -2, hidden = true },
     fluc_skv_brood_horror = { change = -2, hidden = true },
     fluc_skv_stormfiend = { change = -1, hidden = true },

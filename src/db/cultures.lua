@@ -9,4 +9,5 @@ Flexible_unit_caps.forcetype_exclusions = {
 	CARAVAN = true,
 	SUPPORT_ARMY = true,
 	EMP_CARAVAN = true,
+	CONVOY = true,
 };

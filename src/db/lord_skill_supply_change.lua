@@ -168,6 +168,7 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_hef_dragon_princes = { -1, false, "wh2_main_skill_hef_dedication_vaul" },
     fluc_hef_dragons = { -1, false, "wh2_main_skill_hef_dedication_addaioth" },
     fluc_hef_lions = { -1, false, "wh2_main_skill_hef_dedication_kurnous" },
+    fluc_hef_lion_inf = { -1, false, "wh2_main_skill_hef_dedication_kurnous" },
     fluc_hef_lion_chariots = { -1, true, "wh2_main_skill_hef_dedication_hukon" },
     fluc_hef_chariots = { -1, false, "wh2_main_skill_hef_dedication_hukon" },
     fluc_hef_spearmen = { -1, false, "wh2_main_skill_hef_dedication_isha" },
@@ -181,6 +182,7 @@ Flexible_unit_caps.skill_supply_change = {
   AK_aislinn = {
     fluc_hef_sea_guard = { -2, false, "wh2_main_skill_hef_dedication_mathlann" },
     fluc_hef_lions = { -1, false, "AK_aislinn_unique_king" },
+    fluc_hef_lion_inf = { -1, false, "AK_aislinn_unique_king" },
   },
   wh2_main_def_morathi = {
     fluc_def_doomfire = { -2, false, "wh2_main_skill_def_morathi_unique_3_3" },
