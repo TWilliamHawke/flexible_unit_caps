@@ -9,7 +9,7 @@ function Flexible_unit_caps:get_supply_penalty(faction, supply_balance)
   end
 
   local force_list = faction:military_force_list();
-  local num_of_armies = self:get_armies_count(force_list);
+  local num_of_armies = self:get_armies_count(force_list, self.no_balance_lords);
 
   return self:calculate_supply_penalty(0 - supply_balance, num_of_armies)
 

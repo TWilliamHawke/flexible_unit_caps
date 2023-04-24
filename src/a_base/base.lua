@@ -25,6 +25,7 @@ Flexible_unit_caps = {
     block_scripts = false,
     game_lang = nil,
     queued_units_cache = {}, ---@type UnitsCache
+    character_panel_lords = {},
     selected_force_units_cache = {}, ---@type UnitsCache
     supply_change_cache = {}, ---@type Supply_change_cache
     building_tooltip_text = nil,

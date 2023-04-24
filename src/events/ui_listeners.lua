@@ -84,11 +84,10 @@ function Flexible_unit_caps:add_ui_listeners()
       local ok, err = pcall(function()
         self:add_info_to_building_browser();
       end);
-      
+
       if not ok then
         self:logCore(tostring(err));
       end
-      
     end,
     true
   )
@@ -122,6 +121,74 @@ function Flexible_unit_caps:add_ui_listeners()
   )
 
   core:add_listener(
+    "fluc_character_panel_open",
+    "PanelOpenedCampaign",
+    function(context)
+      return context.string == "character_panel";
+    end,
+    function()
+      local lord_list = find_uicomponent(core:get_ui_root(), "character_panel", "lord_parent", "list_box");
+
+      self:apply_callback_to_children(lord_list, function(component)
+        local id = component:Id();
+
+        if type(id) == "string" and id:len() > 0 then
+          self.character_panel_lords[id] = true
+        end
+      end)
+
+      cm:callback(function()
+        self:set_new_lord_text()
+      end, 0.2);
+    end,
+    true
+  )
+
+  core:add_listener(
+    "fluc_character_panel_updated",
+    "ComponentLClickUp",
+    function(context)
+      local is_lord = self.character_panel_lords[context.string]
+      is_lord = is_lord or context.string == "button_create_army"
+      return is_lord and cm:get_campaign_ui_manager():is_panel_open("character_panel");
+    end,
+    ---@param context any
+    function(context)
+      cm:callback(function()
+        self:set_new_lord_text()
+      end, 0.2);
+    end,
+    true
+  );
+
+  core:add_listener(
+    "fluc_character_panel_clicked",
+    "ComponentLClickUp",
+    function(context)
+      local is_lord_button = context.string == "button_create_army"
+      return is_lord_button and cm:get_campaign_ui_manager():is_panel_open("character_panel");
+    end,
+    ---@param context any
+    function(context)
+      cm:callback(function()
+        self:set_new_lord_text();
+
+        local lord_list = find_uicomponent(core:get_ui_root(), "character_panel", "lord_parent", "list_box");
+
+        self:apply_callback_to_children(lord_list, function(component)
+          local id = component:Id();
+
+          if type(id) == "string" and id:len() > 0 then
+            self.character_panel_lords[id] = true
+          end
+        end)
+      end, 0.2);
+    end,
+    true
+  );
+
+
+  core:add_listener(
     "fluc_any_panel_closed",
     "PanelClosedCampaign",
     function()
@@ -152,27 +219,27 @@ function Flexible_unit_caps:add_ui_listeners()
     function(context)
       local faction = context:character():faction()
       if not self:faction_has_supply_lines(faction) then return end
-      
+
       cm:callback(function()
         local character = self:get_character_from_unit_panel();
-        if not character then return end;
+        if not character then return end
+        ;
         if character:has_military_force() then
           self:log("ARMY SELECTED");
           self:set_tooltip_for_finance_button(faction);
           self:set_all_army_panel_tooltips(character);
         else
           self:log("Agent SELECTED");
-          local agentCard = find_uicomponent(core:get_ui_root(), "units_panel", "main_units_panel", "units", "AgentUnit 0");
+          local agentCard = find_uicomponent(core:get_ui_root(), "units_panel", "main_units_panel", "units",
+          "AgentUnit 0");
           if not agentCard then return end
           self:set_agent_tooltip(agentCard, character);
-
         end
-
       end, 0.2);
     end,
     true
   )
-  
+
   core:add_listener(
     "fluc_UnitUpgraded",
     "UnitUpgraded",
@@ -196,5 +263,3 @@ function Flexible_unit_caps:add_ui_listeners()
     true
   )
 end
-
---TODO add new lord button tooltip
