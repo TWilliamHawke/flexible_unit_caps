@@ -236,6 +236,7 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_hef_swordsmen = { change = -2, hidden = true },
     fluc_hef_sea_guard = { change = -1, hidden = false },
     fluc_hef_silver_helms = { change = -2, hidden = false },
+    fluc_all_missiles = { change = -1, hidden = true },
   },
   wh2_dlc10_hef_alith_anar = {
     fluc_hef_stealth_archers = { change = -2, hidden = false },

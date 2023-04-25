@@ -5,22 +5,22 @@
 function Flexible_unit_caps:construct_unit_supply_text(unit_name, text_key, unit_count_callback)
 
   local lord_cost, base_cost = self:get_unit_supply_params(unit_name, self.supply_change_cache);
-  local unit_group, parent_unit_group = self:get_unit_group(unit_name);
-  local unit_index, group_capacity = unit_count_callback(unit_group);
+  local unit_groups = self:get_unit_group(unit_name);
+  local full_unit_group_text = "";
+  local unit_cost_with_cap = 0;
 
-  local unit_cost_with_cap = self:apply_unit_cap(base_cost, lord_cost, unit_index, group_capacity);
-
-  local unit_group_text = self:construct_unit_group_text(unit_group, group_capacity);
-
-  if parent_unit_group ~= "" then
-    local unit_index, group_capacity = unit_count_callback(parent_unit_group);
-
+  for _, group in ipairs(unit_groups) do
+    local unit_index, group_capacity = unit_count_callback(group);
     local unit_supply = self:apply_unit_cap(base_cost, lord_cost, unit_index, group_capacity);
     unit_cost_with_cap = math.max(unit_cost_with_cap, unit_supply)
-    unit_group_text = unit_group_text ..
-        "\n" .. self:construct_unit_group_text(parent_unit_group, group_capacity);
-  end
+    local unit_group_text = self:construct_unit_group_text(group, group_capacity);
 
+    if full_unit_group_text == "" then
+      full_unit_group_text = full_unit_group_text..unit_group_text;
+    else
+      full_unit_group_text = full_unit_group_text.."\n"..unit_group_text;
+    end
+  end
 
   local start_text_key = "fluc_unit_supply_cost_zero";
   if unit_cost_with_cap == 1 then
@@ -49,5 +49,5 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, text_key, unit
 
   supply_text = string.gsub(supply_text, "FLUC_CONSUME", self:get_localised_string(text_key));
 
-  return string.gsub(supply_text, "FLUC_SUPPLY", tostring(unit_cost_with_cap)) .. unit_group_text;
+  return string.gsub(supply_text, "FLUC_SUPPLY", tostring(unit_cost_with_cap)) .. full_unit_group_text;
 end

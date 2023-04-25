@@ -175,6 +175,7 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_hef_archers = { -1, false, "wh2_main_skill_hef_dedication_isha" },
     fluc_hef_avelorn = { -1, false, "wh2_main_skill_hef_dedication_isha" },
     fluc_hef_sea_guard = { -1, false, "wh2_main_skill_hef_dedication_mathlann" },
+    fluc_all_missiles = { -1, false, "wh2_main_skill_hef_dedication_mathlann" },
   },
   wh2_dlc10_hef_alarielle = {
     fluc_hef_trees = { -1, false, "wh2_dlc10_skill_hef_alarielle_fire_and_blood_4" },

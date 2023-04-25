@@ -22,33 +22,36 @@ function Flexible_unit_caps:create_units_cache(supply_change_cache, get_iterator
   end
 
   for group in pairs(supply_change_cache) do
-    local parent_group = self.units_group_parent_player[group];
+    local parent_groups = self.units_group_parent_player[group];
     add_unit_group_to_cache(group);
 
-    if parent_group then
-      add_unit_group_to_cache(parent_group);
+    if parent_groups and type(parent_groups) == "table" then
+      for _, parent_group in ipairs(parent_groups) do
+        add_unit_group_to_cache(parent_group);
+      end
     end
   end
 
+  --iterate through unit cards
   for unit_key, component_name in get_iterator() do
-    local unit_group, parent_group = self:get_unit_group(unit_key);
+    local unit_groups = self:get_unit_group(unit_key);
 
-    if unit_group ~= "" then
-      add_component_to_cache(unit_group, component_name);
-    end
-
-    if parent_group ~= "" then
-      add_component_to_cache(parent_group, component_name);
+    for _, group in pairs(unit_groups) do
+      add_component_to_cache(group, component_name);
     end
   end
 
   --increace parent unit cap if its bellow children cap
   for group, data in pairs(units_group_data) do
-    local parent_group = self.units_group_parent_player[group];
+    local parent_groups = self.units_group_parent_player[group];
 
-    if parent_group and units_group_data[parent_group] then
-      local parent_cap = units_group_data[parent_group].cap;
-      units_group_data[parent_group].cap = math.max(data.cap, parent_cap);
+    if parent_groups and type(parent_groups) == "table" then
+      for _, parent_group in ipairs(parent_groups) do
+        if units_group_data[parent_group] then
+          local parent_cap = units_group_data[parent_group].cap;
+          units_group_data[parent_group].cap = math.max(data.cap, parent_cap);
+        end
+      end
     end
   end
 
