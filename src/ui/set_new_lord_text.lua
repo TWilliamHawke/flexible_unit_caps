@@ -22,8 +22,6 @@ function Flexible_unit_caps:set_new_lord_text()
   local future_army_count = current_army_count + 1
   local supply_decreasing = current_army_count
 
-  self:logCore("current_army_count "..tostring(current_army_count))
-
   local current_supply_penalty = 0
   if supply_balance < 0 then
     current_supply_penalty = self:calculate_supply_penalty(supply_balance * -1, current_army_count) * current_army_count

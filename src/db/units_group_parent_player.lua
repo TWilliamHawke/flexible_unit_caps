@@ -27,6 +27,7 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_tze_soul_grinder = "fluc_all_rare_creatures",
   fluc_tze_lord_of_change = "fluc_all_rare_creatures",
   fluc_tze_spawn = "fluc_all_monstrous_units",
+  fluc_tze_pink_horrors = "fluc_all_missiles",
   --slaanesh
   fluc_sla_furies = "fluc_all_flying_units",
   fluc_sla_horsemen = "fluc_all_cavalry",
@@ -52,6 +53,8 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_nur_soul_grinder = "fluc_all_rare_creatures",
   fluc_nur_unclean_one = "fluc_all_rare_creatures",
   fluc_nur_spawn = "fluc_all_monstrous_units",
+  fluc_nur_flies = "fluc_all_flying_units",
+  --undivided
   fluc_chs_spawn = "fluc_all_monstrous_units",
   fluc_chs_dragon_ogres = "fluc_all_monstrous_units",
   fluc_chs_furies = "fluc_all_flying_units",

@@ -110,6 +110,10 @@ log_level:add_dropdown_values(logging_options)
 log_level:set_text(loc_prefix.."f_enable_logging_text", true)
 log_level:set_tooltip_text(loc_prefix.."f_enable_logging_tt", true)
 
+local show_base_supply = flexible_unit_caps:add_new_option("show_base_supply", "checkbox")
+show_base_supply:set_text("Show base unit supply", false)
+show_base_supply:set_tooltip_text("Show base unit supply cost if its current supply cost differs from the base value", true)
+
 if player_effect.set_is_global then
   player_effect:set_is_global(true)
   ai_effect:set_is_global(true)
@@ -117,5 +121,6 @@ if player_effect.set_is_global then
   unit_caps_mode:set_is_global(true)
   ai_unit_caps:set_is_global(true)
   enable_balance:set_is_global(true)
+  show_base_supply:set_is_global(true)
 
 end

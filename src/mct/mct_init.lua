@@ -8,6 +8,7 @@ function Flexible_unit_caps:mct_init(context)
   self.log_level = tonumber(settings.f_enable_logging);
   self.basic_lord_supply = settings.b_lord_supply;
   self.basic_unit_supply = settings.a_unit_supply;
+  self.show_base_supply = settings.show_base_supply;
   self.use_harsh_mode = settings.b_unit_caps_penalty == "harsh";
 
   local player_cap = tonumber(settings.a_player_unit_caps);

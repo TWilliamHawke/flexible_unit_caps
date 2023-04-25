@@ -17,3 +17,4 @@
 ---@field a_unit_supply string
 ---@field c_ai_unit_caps string
 ---@field b_lord_supply integer
+---@field show_base_supply boolean

@@ -3,6 +3,7 @@ Flexible_unit_caps = {
     ui_debounce_key = "fluc_debounce_ui",
     main_debounce_key = "fluc_debounce_main",
     loaned_army_effect = "FLUC_loaned_army",
+    show_base_supply = false,
   --main
     ai_supply_mult = 0,
     player_supply_custom_mult = -1,

@@ -32,6 +32,7 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, text_key, unit
   local supply_text = self:get_localised_string(start_text_key);
 
   local function create_base_cost_text()
+    if not self.show_base_supply then return "" end
     local base_cost_text = self:get_localised_string("fluc_base_cost_text");
     return string.gsub(base_cost_text, "FLUC_SUPPLY", tostring(base_cost));
   end
@@ -50,5 +51,3 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, text_key, unit
 
   return string.gsub(supply_text, "FLUC_SUPPLY", tostring(unit_cost_with_cap)) .. unit_group_text;
 end
-
---TODO add option to hide base_cast_text
