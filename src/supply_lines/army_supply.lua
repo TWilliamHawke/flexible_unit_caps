@@ -25,7 +25,7 @@ function Flexible_unit_caps:get_army_supply(force, supply_penalty)
 
       for _, group in ipairs(unit_groups) do
         local unit_cap = self:get_unit_cap_from_cache(unit_cache, group);
-        local _, unit_index = self:get_units_count_from_cache(unit_cache, group, tostring(j))
+        local _, unit_index = self:get_units_count_from_cache(unit_cache, group, tostring(j + 1))
         temp_unit_supply = self:apply_unit_cap(base_cost, lord_cost, unit_index, unit_cap);
         unit_supply = math.max(unit_supply, temp_unit_supply)
       end

@@ -167,3 +167,28 @@ core:add_listener(
   end,
   true
 );
+
+core:add_listener(
+  "PAI_FactionTurnStart_test",
+  "FlexibleUnitCapsInit",
+  true,
+  ---@param context FlexibleUnitCapsInit
+  function(context)
+
+    local ok, err = pcall(function()
+      local fluc_api = context:api();
+      fluc_api:add_unit_group("my_group", 5, "")
+      fluc_api:set_unit_data("wh_main_emp_inf_swordsmen", 0, "my_group")
+      fluc_api:add_lord_skill_discount("wh_main_emp_karl_franz", "fluc_emp_artillery", -1, "wh_main_skill_emp_lord_battle_hold_the_line")
+      fluc_api:add_unit_group_discount("wh_main_emp_karl_franz", "fluc_emp_halberdiers", -1)
+      fluc_api:set_military_building_level("wh_main_emp_barracks_1", 5)
+    end);
+  
+    if not ok then
+      PAILOG(tostring(err));
+    end
+  
+  end,
+  true
+);
+

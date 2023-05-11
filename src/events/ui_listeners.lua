@@ -148,9 +148,12 @@ function Flexible_unit_caps:add_ui_listeners()
     "fluc_character_panel_updated",
     "ComponentLClickUp",
     function(context)
+      if not cm:get_campaign_ui_manager():is_panel_open("character_panel") then
+        return false
+      end
+
       local is_lord = self.character_panel_lords[context.string]
-      is_lord = is_lord or context.string == "button_create_army"
-      return is_lord and cm:get_campaign_ui_manager():is_panel_open("character_panel");
+      return is_lord or context.string == "button_create_army" or string.find(context.string, "general_candidate_")
     end,
     ---@param context any
     function(context)

@@ -23,6 +23,12 @@ function Flexible_unit_caps:mct_init(context)
   self.walls_reduces_balance = supply_balance_diff > 1 and true or false;
   self.big_empire_penalty_start = supply_balance_diff > 2 and 50 or 999;
 
+  self.show_base_supply = settings.show_base_supply;
+
+  if settings.force_english then
+    self.game_lang = "EN"
+  end
+
   self:logDebug("Ai supply now is " .. tostring(self.ai_supply_mult));
 
 end

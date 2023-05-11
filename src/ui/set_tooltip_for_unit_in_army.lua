@@ -27,7 +27,7 @@ function Flexible_unit_caps:set_tooltip_for_unit_in_army(component, lord)
   local supply_text = self:construct_unit_supply_text(unit_name, "fluc_unit_consume_present",
     function(unit_group)
       local _, unit_index = self:get_units_count_from_cache(
-        self.selected_force_units_cache, unit_group, tostring(index));
+        self.selected_force_units_cache, unit_group, tostring(index + 1));
       local group_capacity = self:get_unit_cap_from_cache(self.selected_force_units_cache, unit_group);
 
       return unit_index, group_capacity;

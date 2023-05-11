@@ -7,6 +7,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_all_flying_units = { 8, "" },
   fluc_all_heavy_infantry = { 10, "" },
   fluc_all_long_range = { 8, "" }, -- includes artillery
+  fluc_all_short_range = { 8, "" },
   fluc_all_missiles = { 10, "" },
   fluc_all_rare_creatures = { 8, "" }, --single entities
   fluc_tmb_tomb_kings = { 8, "" }, --allied

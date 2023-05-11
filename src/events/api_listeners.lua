@@ -21,10 +21,9 @@ function Flexible_unit_caps:add_api_listeners()
     )
   end
   self:logCore("added events")
-
-end;
+end
 
 function Flexible_unit_caps:trigger_api_event()
-  core:trigger_custom_event("SupplyLinesReworkInit", {["api"] = Flexible_caps_api});
+  core:trigger_custom_event("FlexibleUnitCapsInit", { ["api"] = Flexible_caps_api });
   self:logCore("api event has triggered");
-end;
+end

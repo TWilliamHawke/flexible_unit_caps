@@ -18,3 +18,11 @@
 ---@field c_ai_unit_caps string
 ---@field b_lord_supply integer
 ---@field show_base_supply boolean
+---@field force_english boolean
+
+do
+	---@class FlexibleUnitCapsInit
+	local FlexibleUnitCapsInit = {}
+	---@return Flexible_caps_api
+	function FlexibleUnitCapsInit:api() end
+end

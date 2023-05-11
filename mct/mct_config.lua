@@ -6,32 +6,32 @@ local mct = get_mct();
 if not mct then return end;
 
 local unit_caps_size_options = {
-  { key = "-1", text = "Disable", tt = "", default = false },
-  { key = "25", text = "25%", tt = "Affects only if unit cap less then 10", default = false },
-  { key = "50", text = "50%", tt = "Affects only if unit cap less then 10", default = false },
-  { key = "75", text = "75%", tt = "Affects only if unit cap less then 10", default = false },
-  { key = "100", text = "100%", tt = "", default = false },
-  { key = "125", text = "125%", tt = "", default = false },
-  { key = "150", text = "150%", tt = "", default = false },
+  { key = "-1", text = "Disable", tt = "", is_default = false },
+  { key = "25", text = "25%", tt = "Affects only if unit cap less then 10", is_default = false },
+  { key = "50", text = "50%", tt = "Affects only if unit cap less then 10", is_default = false },
+  { key = "75", text = "75%", tt = "Affects only if unit cap less then 10", is_default = false },
+  { key = "100", text = "100%", tt = "", is_default = false },
+  { key = "125", text = "125%", tt = "", is_default = false },
+  { key = "150", text = "150%", tt = "", is_default = false },
 }
 
 local supply_balance_options = {
-  { key = "0", text = "Disable", tt = "", default = true },
-  { key = "1", text = "Easy", tt = "Garrison buildings doesn'reduces the Supply Reserves", default = false },
-  { key = "2", text = "Normal", tt = "Default settings. Recommended for Ogres and Warriors of Chaos", default = false },
-  { key = "3", text = "Hard", tt = "All settlemants above 50th will be reduce supply reserves by 2 instead of 1", default = false },
+  { key = "0", text = "Disable", tt = "", is_default = true },
+  { key = "1", text = "Easy", tt = "Garrison buildings doesn'reduces the Supply Reserves", is_default = false },
+  { key = "2", text = "Normal", tt = "Default settings. Recommended for Ogres and Warriors of Chaos", is_default = false },
+  { key = "3", text = "Hard", tt = "All settlemants above 50th will be reduce supply reserves by 2 instead of 1", is_default = false },
 }
 
 local unit_caps_penalty_options = {
-  { key = "weak", text = "Weak", tt = "Only units above cap will require more supply", default = true },
-  { key = "harsh", text = "Harsh", tt = "All units of this type will require more supply", default = false },
+  { key = "weak", text = "Weak", tt = "Only units above cap will require more supply", is_default = true },
+  { key = "harsh", text = "Harsh", tt = "All units of this type will require more supply", is_default = false },
 }
 
 local logging_options = {
-  { key = "0", text = "Disable", tt = "", default = true },
-  { key = "1", text = "Player Only", tt = "Only player faction info will be logged", default = false },
-  { key = "2", text = "AI only", tt = "Both player and AI faction info will be logged", default = false },
-  { key = "3", text = "Debug", tt = "Additional debug info will be logged", default = false },
+  { key = "0", text = "Disable", tt = "", is_default = true },
+  { key = "1", text = "Player Only", tt = "Only player faction info will be logged", is_default = false },
+  { key = "2", text = "AI only", tt = "Both player and AI faction info will be logged", is_default = false },
+  { key = "3", text = "Debug", tt = "Additional debug info will be logged", is_default = false },
 }
 
 ModLog("supply_lines_rework")
@@ -114,6 +114,10 @@ local show_base_supply = flexible_unit_caps:add_new_option("show_base_supply", "
 show_base_supply:set_text("Show base unit supply", false)
 show_base_supply:set_tooltip_text("Show base unit supply cost if its current supply cost differs from the base value", true)
 
+local force_english = flexible_unit_caps:add_new_option("force_english", "checkbox")
+force_english:set_text("Forse english tooltips", false)
+force_english:set_tooltip_text("Use this if you have empty tooltips", true)
+
 if player_effect.set_is_global then
   player_effect:set_is_global(true)
   ai_effect:set_is_global(true)
@@ -122,5 +126,6 @@ if player_effect.set_is_global then
   ai_unit_caps:set_is_global(true)
   enable_balance:set_is_global(true)
   show_base_supply:set_is_global(true)
+  force_english:set_is_global(true)
 
 end

@@ -5,11 +5,11 @@ First of all, you need to subscribe on __SupplyLinesReworkInit__ event. This wor
 
 ```lua
 core:add_listener(
-  "Your Event Name",
-  "SupplyLinesReworkInit",
+  "Your_Listener_Name",
+  "FlexibleUnitCapsInit",
   true,
   function(context)
-    local supply_lines_rw = context:api();
+    local fluc_api = context:api();
 
     --Paste your code here
 
