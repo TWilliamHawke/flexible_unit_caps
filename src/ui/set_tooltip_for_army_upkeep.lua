@@ -1,8 +1,6 @@
 ---@param lord CHARACTER_SCRIPT_INTERFACE
 ---@param supply_penalty integer
 function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord, supply_penalty)
-  local component = find_uicomponent(core:get_ui_root(), "units_panel", "dy_upkeep");
-  if not component then return end
 
   local force = lord:military_force();
 
@@ -38,7 +36,6 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord, supply_penalty)
     tooltip_text = tooltip_text .. self:get_localised_string("fluc_army_tooltip_explanation") .. units_list_text;
   end
 
-  if is_uicomponent(component) then
-    component:SetTooltipText(tooltip_text, true);
-  end
+  self:create_supply_counter(tostring(army_supply), tooltip_text)
+
 end

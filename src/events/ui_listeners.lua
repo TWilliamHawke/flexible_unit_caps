@@ -226,22 +226,40 @@ function Flexible_unit_caps:add_ui_listeners()
       cm:callback(function()
         local character = self:get_character_from_unit_panel();
         if not character then return end
-        ;
+
         if character:has_military_force() then
           self:log("ARMY SELECTED");
           self:set_tooltip_for_finance_button(faction);
           self:set_all_army_panel_tooltips(character);
         else
           self:log("Agent SELECTED");
-          local agentCard = find_uicomponent(core:get_ui_root(), "units_panel", "main_units_panel", "units",
-          "AgentUnit 0");
-          if not agentCard then return end
-          self:set_agent_tooltip(agentCard, character);
+          local tooltip_text, agent_supply = self:construct_agent_tooltip(character);
+          self:create_supply_counter(tostring(agent_supply), tooltip_text)
         end
       end, 0.2);
     end,
     true
   )
+
+  core:add_listener(
+    "fluc_ai_Character_Selected",
+    "CharacterSelected",
+    ---@param context CharacterSelected
+    ---@return boolean
+    function(context)
+      return not context:character():faction():is_human();
+    end,
+    ---@param context CharacterSelected
+    function(context)
+      cm:callback(function()
+        local component = find_uicomponent(core:get_ui_root(), "units_panel", "main_units_panel", "icon_list", "fluc_supply")
+        if not component then return end
+        component:SetVisible(false)
+      end, 0.2);
+    end,
+    true
+  )
+
 
   core:add_listener(
     "fluc_UnitUpgraded",
