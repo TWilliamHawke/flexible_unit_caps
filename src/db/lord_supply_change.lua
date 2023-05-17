@@ -204,7 +204,9 @@ Flexible_unit_caps.lord_supply_change = {
   },
   thm_skeggi_losterikson = {
     fluc_nor_marauders = { change = -2, hidden = false },
-    fluc_nor_dinos = { change = -2, hidden = false },
+    fluc_lzd_bastiladons = { change = -2, hidden = false },
+    fluc_lzd_stegadons = { change = -2, hidden = false },
+    fluc_lzd_carnosaurs = { change = -2, hidden = false },
   },
   dlc05_wef_orion = {
     fluc_wef_stag_cav = { change = -2, hidden = false },
@@ -216,7 +218,9 @@ Flexible_unit_caps.lord_supply_change = {
   },
   wh2_dlc16_wef_sisters_of_twilight = {
     fluc_wef_dragons = { change = -2, hidden = false },
-    fluc_wef_archers = { change = -2, hidden = false },
+    fluc_all_missiles = { change = -2, hidden = true },
+    fluc_wef_deepwood_scouts = { change = -2, hidden = false },
+    fluc_wef_glade_guard = { change = -2, hidden = false },
     fluc_wef_waywatchers = { change = -2, hidden = false },
     fluc_wef_hawks = { change = -2, hidden = false },
     fluc_all_flying_units = { change = -2, hidden = true },
@@ -236,7 +240,6 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_hef_swordsmen = { change = -2, hidden = true },
     fluc_hef_sea_guard = { change = -1, hidden = false },
     fluc_hef_silver_helms = { change = -2, hidden = false },
-    fluc_all_missiles = { change = -1, hidden = true },
   },
   wh2_dlc10_hef_alith_anar = {
     fluc_hef_stealth_archers = { change = -2, hidden = false },
@@ -261,10 +264,11 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_hef_mistwalkers = { change = -2, hidden = false },
     fluc_hef_spearmen = { change = -1, hidden = false },
     fluc_hef_swordsmen = { change = -1, hidden = false },
-
+    fluc_hef_sea_guard = { change = -1, hidden = false },
   },
   hef_korhil = {
     fluc_hef_lions = { change = -2, hidden = false },
+    fluc_hef_lion_inf = { change = -2, hidden = false },
     fluc_hef_lion_chariots = { change = -2, hidden = true },
   },
   hef_belannaer = {
@@ -334,6 +338,7 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_skv_jezzails = { change = -2, hidden = false },
     fluc_skv_warpfire_thrower = { change = -2, hidden = false },
     fluc_skv_stormfiend = { change = -1, hidden = false },
+    fluc_skv_weapon_teams = { change = -2, hidden = true },
   },
   wh2_dlc14_skv_deathmaster_snikch = {
     fluc_skv_missile_runners = { change = -2, hidden = false },
@@ -345,6 +350,8 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_skv_brood_horror = { change = -2, hidden = true },
     fluc_skv_stormfiend = { change = -1, hidden = true },
     fluc_skv_monsters = { change = -2, hidden = false },
+    fluc_all_monstrous_units = { change = -1, hidden = true },
+    fluc_all_rare_creatures = { change = -1, hidden = true },
   },
   Thom_vulkan_moltskin_searflesh = {
     fluc_skv_warpfire_thrower = { change = -2, hidden = false },
@@ -362,6 +369,8 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_skv_catapults = { change = -2, hidden = true },
     fluc_skv_lightning = { change = -2, hidden = true },
     fluc_skv_artillery = { change = -2, hidden = false },
+    fluc_skv_weapon_teams = { change = -1, hidden = true },
+    fluc_all_long_range = { change = -1, hidden = true },
   },
   clan_vrritkin_lord_trikstab = {
     fluc_skv_artillery = { change = -2, hidden = false },

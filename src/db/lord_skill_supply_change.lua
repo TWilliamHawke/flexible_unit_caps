@@ -150,8 +150,10 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_wef_zoats = { -1, false, "roy_zoat_lord_army_defense_zoats" },
   },
   wef_daith = {
-    fluc_wef_archers = { -2, false, "mixu_wef_daith_special_quality_arrows" },
+    fluc_wef_glade_guard = { -2, false, "mixu_wef_daith_special_quality_arrows" },
+    fluc_wef_deepwood_scouts = { -2, false, "mixu_wef_daith_special_quality_arrows" },
     fluc_wef_waywatchers = { -2, false, "mixu_wef_daith_special_quality_arrows" },
+    fluc_all_missiles = { -1, true, "mixu_wef_daith_special_quality_arrows" },
   },
   wh_dlc08_nor_wulfrik = {
     fluc_nor_skinwolves = { -1, false, "wh_dlc08_skill_nor_wulfrik_battle_fervent_creatures" },
@@ -175,7 +177,6 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_hef_archers = { -1, false, "wh2_main_skill_hef_dedication_isha" },
     fluc_hef_avelorn = { -1, false, "wh2_main_skill_hef_dedication_isha" },
     fluc_hef_sea_guard = { -1, false, "wh2_main_skill_hef_dedication_mathlann" },
-    fluc_all_missiles = { -1, false, "wh2_main_skill_hef_dedication_mathlann" },
   },
   wh2_dlc10_hef_alarielle = {
     fluc_hef_trees = { -1, false, "wh2_dlc10_skill_hef_alarielle_fire_and_blood_4" },
@@ -264,16 +265,16 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_cst_mobs_melee = { -2, false, "wh2_dlc11_skill_cst_luthor_unique_1" },
     fluc_cst_depth_guard = { -2, false, "wh2_dlc11_skill_cst_luthor_unique_1" },
     fluc_cst_mobs_missile = { -2, false, "wh2_dlc11_skill_cst_luthor_unique_3" },
-    fluc_cst_prometheans_missile = { -2, false, "wh2_dlc11_skill_cst_luthor_unique_3" },
+    fluc_cst_prometheans = { -2, false, "wh2_dlc11_skill_cst_luthor_unique_3" },
     fluc_cst_artillery = { -1, false, "wh2_dlc11_skill_cst_lord_crime_3" },
   },
   Pirate = {
     fluc_cst_artillery = { -1, false, "wh2_dlc11_skill_cst_lord_crime_3" },
   },
   wh2_dlc11_cst_aranessa = {
-    fluc_cst_prometheans_melee = { -2, false, "wh2_dlc11_skill_cst_aranessa_unique_2" },
-    fluc_cst_prometheans_missile = { -2, true, "wh2_dlc11_skill_cst_aranessa_unique_2" },
-    fluc_cst_leviathan = { -2, false, "wh2_dlc11_skill_cst_aranessa_unique_4" },
+    fluc_cst_prometheans = { -2, false, "wh2_dlc11_skill_cst_aranessa_unique_2" },
+    fluc_cst_leviathan = { -2, false, "wh2_dlc11_skill_cst_aranessa_unique_2" },
+    fluc_cst_artillery = { -2, false, "wh2_dlc11_skill_cst_aranessa_unique_4" },
   },
   wh2_dlc11_cst_noctilus = {
     fluc_cst_droppers = { -2, false, "wh2_dlc11_skill_cst_noctilus_unique_4" },

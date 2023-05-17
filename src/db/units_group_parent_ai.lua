@@ -24,4 +24,7 @@ Flexible_unit_caps.units_group_parent_ai = {
   fluc_emp_knight_white_wolf = "fluc_emp_knights_other",
   fluc_emp_knights_emp = "fluc_emp_knights_other",
   fluc_emp_blazing_sun = "fluc_emp_knights_other",
+  fluc_wef_glade_guard = "fluc_wef_archers",
+  fluc_wef_deepwood_scouts = "fluc_wef_archers",
+  fluc_wef_waywatchers = "fluc_wef_archers",
 }
