@@ -16,8 +16,7 @@ function Flexible_unit_caps:add_info_to_building_browser()
     local building_categories = find_uicomponent(core:get_ui_root(), "building_browser", "category_list");
 
     for _, building_category in uic_pairs(building_categories) do
-      local is_major = not not string.match(building_category:Id(), "wh_main_set_settlement_major")
-
+      local is_major = not not string.match(building_category:Id(), "wh_main_set_settlement_major") or not not string.match(building_category:Id(), "chd_settlement_tower")
       local building_chain_list = find_uicomponent(building_category, chain_list_key);
       if building_chain_list then
         for _, chain in uic_pairs(building_chain_list) do

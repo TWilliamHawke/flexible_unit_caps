@@ -12,9 +12,6 @@ function Flexible_unit_caps:set_new_lord_text()
   local faction = cm:get_local_faction();
   if not self:faction_has_supply_lines(faction) then return end
 
-  local culture = faction:subculture();
-  if culture == "wh_dlc05_sc_wef_wood_elves" then return end
-
   local supply_balance = self:get_supply_balance(faction)
 
   local force_list = faction:military_force_list();

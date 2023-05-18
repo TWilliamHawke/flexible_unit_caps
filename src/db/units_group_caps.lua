@@ -407,7 +407,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_chs_greater_daemons = { 4, "" }, --tooltip only
   --Chaos dwarfs
   fluc_chd_labourers = { 10, "" },
-  fluc_chd_hobgoblins = { 10, "" },
+  fluc_chd_hobgoblins = { 8, "" },
   fluc_chd_hobgoblin_archers = { 6, "wh3_dlc23_chd_inf_hobgoblin_cutthroats" },
   fluc_chd_hobgoblin_raiders = { 6, "wh3_dlc23_chd_inf_hobgoblin_cutthroats" },
   fluc_chd_warriors = { 8, "" },

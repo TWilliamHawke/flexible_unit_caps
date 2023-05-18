@@ -3,8 +3,9 @@
 function Flexible_unit_caps:create_supply_change_cache(force)
   local cache = {}; ---@type Supply_change_cache
   local lord = force:general_character();
+  local faction_culture = force:faction():culture();
 
-  cache.ark_or_camp = self:force_is_black_ark_or_camp(force)
+  cache.ark_or_camp = self.zero_cost_cultures[faction_culture] or self:force_is_black_ark_or_camp(force)
 
   local lord_name = lord:character_subtype_key();
   local lord_alias = self.lord_aliases[lord_name] or lord_name;

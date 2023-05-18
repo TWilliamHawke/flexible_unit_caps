@@ -1143,7 +1143,7 @@ Flexible_unit_caps.units_data = {
     ["wh_dlc08_nor_mon_war_mammoth_0"]  = { 3, "fluc_nor_mammoths"},
     ["wh_dlc08_nor_mon_war_mammoth_1"]  = { 4, "fluc_nor_mammoths"},
     ["wh_dlc08_nor_mon_war_mammoth_2"]  = { 4, "fluc_nor_mammoths"},
-    ["wh_main_chs_art_hellcannon_n"]  = { 4, "fluc_all_long_range"},
+    ["wh_main_chs_art_hellcannon_n"]  = { 4, "fluc_chd_cannons"},
     -- ROR
     ["wh_pro04_nor_inf_chaos_marauders_ror_0"]  = { 0, "fluc_nor_marauders"},
     ["wh_pro04_nor_mon_marauder_warwolves_ror_0"]  = { 0, "fluc_nor_hounds"},
@@ -1180,7 +1180,7 @@ Flexible_unit_caps.units_data = {
     ["wh_main_chs_cav_chaos_knights_0"]  = { 3, "fluc_chs_knights"},
     ["wh_main_chs_cav_chaos_knights_1"]  = { 3, "fluc_chs_knights"},
     ["wh_dlc06_chs_inf_aspiring_champions_0"]  = { 4, "fluc_chs_champions"},
-    ["wh_main_chs_art_hellcannon"]  = { 3, "fluc_chs_war_machines"},
+    ["wh_main_chs_art_hellcannon"]  = { 3, "fluc_chd_cannons"},
     ["wh_dlc01_chs_mon_dragon_ogre"]  = { 3, "fluc_chs_dragon_ogres"},
     ["wh_dlc01_chs_mon_dragon_ogre_shaggoth"]  = { 4, "fluc_chs_shaggoths"},
     ["wh_dlc01_chs_inf_chosen_2"]  = { 3, "fluc_chs_chosen"},
@@ -1192,7 +1192,7 @@ Flexible_unit_caps.units_data = {
     ["wh_pro04_chs_inf_forsaken_ror_0"]  = { 1, "fluc_chs_forsaken"},
     ["wh_pro04_chs_cav_chaos_knights_ror_0"]  = { 2, "fluc_chs_knights"},
     ["wh_pro04_chs_inf_chaos_warriors_ror_0"]  = { 2, "fluc_sla_warriors"},
-    ["wh_pro04_chs_art_hellcannon_ror_0"]  = { 3, "fluc_chs_war_machines"},
+    ["wh_pro04_chs_art_hellcannon_ror_0"]  = { 3, "fluc_chd_cannons"},
     ["wh_pro04_chs_mon_dragon_ogre_ror_0"]  = { 3, "fluc_chs_dragon_ogres"},
     --============================================================
   --Bretonnia(ai only)

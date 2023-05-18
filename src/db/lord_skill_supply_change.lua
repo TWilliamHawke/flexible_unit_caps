@@ -311,6 +311,27 @@ Flexible_unit_caps.skill_supply_change = {
   wh3_main_ksl_boris = {
     fluc_ksl_tzar_guard = { -2, false, "wh3_main_skill_ksl_boris_unique_04" },
     fluc_ksl_elemental = { -2, false, "wh3_main_skill_ksl_boris_unique_elemental_bear_regen" },
-  }
+  },
+  Daemonsmith = {
+    fluc_chd_bull_centaurs = { -1, false, "wh3_dlc23_skill_chd_sorcerer_prophet_voice_of_hashut"},
+    fluc_chd_taurus = { -1, false, "wh3_dlc23_skill_chd_sorcerer_prophet_voice_of_hashut"},
+    fluc_chd_fireborn = { -1, false, "wh3_dlc23_skill_chd_sorcerer_prophet_voice_of_hashut"},
+    fluc_chd_destroyer = { -1, false, "wh3_dlc23_skill_chd_sorcerer_prophet_voice_of_hashut"},
+  },
+  wh3_dlc23_chd_overseer = {
+    fluc_chd_warriors = { -1, false, "wh3_dlc23_skill_chd_overseer_armourer"},
+    fluc_chd_infernal_guard = { -1, false, "wh3_dlc23_skill_chd_overseer_armourer"},
+    fluc_chd_blunderbusses = { -1, false, "wh3_dlc23_skill_chd_overseer_armourer"},
+    fluc_chd_fireglaves = { -1, false, "wh3_dlc23_skill_chd_overseer_armourer"},
+    fluc_chd_ironsworn = { -1, false, "wh3_dlc23_skill_chd_overseer_armourer"},
+    fluc_chd_hobgoblins = { -1, false, "wh3_dlc23_skill_chd_overseer_harsh_master"},
+    fluc_chd_hobgoblin_archers = { -1, false, "wh3_dlc23_skill_chd_overseer_harsh_master"},
+    fluc_chd_hobgoblin_raiders = { -1, false, "wh3_dlc23_skill_chd_overseer_harsh_master"},
+  },
+  wh3_dlc23_chd_drazhoath = {
+    fluc_chd_ironsworn = { -2, false, "wh3_dlc23_skill_chd_drazhoath_we_are_legion"},
+    fluc_chd_infernal_guard = { -2, false, "wh3_dlc23_skill_chd_drazhoath_we_are_legion"},
+    fluc_chd_fireglaves = { -2, false, "wh3_dlc23_skill_chd_drazhoath_we_are_legion"},
+  },
 
 }

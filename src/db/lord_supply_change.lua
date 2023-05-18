@@ -485,5 +485,18 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_nur_unclean_one = { change = -1, hidden = true },
     fluc_tze_lord_of_change = { change = -1, hidden = true },
   },
+  wh3_dlc23_chd_astragoth = {
+    fluc_chd_bull_centaurs = { change = -2, hidden = false },
+  },
+  wh3_dlc23_chd_drazhoath = {
+    fluc_chd_destroyer = { change = -2, hidden = false },
+    fluc_chd_fireborn = { change = -2, hidden = false },
+  },
+  wh3_dlc23_chd_zhatan = {
+    fluc_chd_mortires = { change = -2, hidden = false },
+    fluc_chd_cannons = { change = -2, hidden = false },
+    fluc_chd_irondaemons = { change = -2, hidden = false },
+    fluc_all_long_range = { change = -1, hidden = true },
+  },
 
 }

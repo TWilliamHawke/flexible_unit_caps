@@ -4,11 +4,9 @@
 function Flexible_unit_caps:construct_treasury_tooltip(faction)
   self:logDebug("Constructor IS STARTED");
 
-  local culture = faction:subculture();
   local force_list = faction:military_force_list();
   local upkeep_percent, supply_points = self:get_player_faction_supply(faction);
-  local supply_balance, region_supply, buildings_supply, ogre_camps_supply, army_supply, garrisons_supply = self:
-      get_supply_balance(faction)
+  local supply_balance, region_supply, buildings_supply, ogre_camps_supply, army_supply, garrisons_supply = self:get_supply_balance(faction)
 
   local armies_count = 0
 
@@ -42,7 +40,7 @@ function Flexible_unit_caps:construct_treasury_tooltip(faction)
     end
   end
 
-  if self.enable_supply_balance and not (culture == "wh_dlc05_sc_wef_wood_elves") then
+  if self.enable_supply_balance then
     supply_balance_text = self:get_localised_string("fluc_supply_balance_text");
     supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_settlements", region_supply);
     supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_military", buildings_supply);

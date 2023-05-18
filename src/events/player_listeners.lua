@@ -43,7 +43,7 @@ function Flexible_unit_caps:add_player_listeners()
     function(context)
       return (context.string == "button_raise_dead" and self:player_faction_has_suply_lines())
     end,
-    function(_)
+    function()
       local faction = cm:model():world():whose_turn_is_it()
       cm:callback(function()
         self:log("======================");
@@ -60,7 +60,7 @@ function Flexible_unit_caps:add_player_listeners()
     function(context)
       return (context.string == "button_hire_blessed" and self:player_faction_has_suply_lines())
     end,
-    function(_)
+    function()
       local faction = cm:model():world():whose_turn_is_it()
       cm:callback(function()
         self:log("======================");
@@ -78,7 +78,7 @@ function Flexible_unit_caps:add_player_listeners()
       local faction = cm:model():world():whose_turn_is_it()
       return (UIComponent(context.component):Id() == "button_hire_imperial" and faction:is_human() and self:faction_has_supply_lines(faction))
     end,
-    function(_)
+    function()
       local faction = cm:model():world():whose_turn_is_it()
       cm:callback(function()
         self:log("======================");
@@ -96,7 +96,7 @@ function Flexible_unit_caps:add_player_listeners()
       local faction = cm:model():world():whose_turn_is_it()
       return (UIComponent(context.component):Id() == "button_hire_renown" and faction:is_human() and self:faction_has_supply_lines(faction))
     end,
-    function(_)
+    function()
       local faction = cm:model():world():whose_turn_is_it()
       cm:callback(function()
         self:log("======================");
@@ -155,11 +155,14 @@ function Flexible_unit_caps:add_player_listeners()
       return faction:is_human() and self:faction_has_supply_lines(faction)
     end,
     function(context)
-      self:log("======================");
-      self:log("SETTLEMENT CAPTURED")
       local faction = context:region():owning_faction();
-      self:reapply_supply_balance_effect(faction)
-      self:set_tooltip_for_finance_button(faction);
+
+      cm:callback(function()
+        self:log("======================");
+        self:log("SETTLEMENT CAPTURED")
+        self:reapply_supply_balance_effect(faction)
+        self:set_tooltip_for_finance_button(faction);
+      end, 0.5)
     end,
     true
   );
@@ -174,10 +177,10 @@ function Flexible_unit_caps:add_player_listeners()
     function(context)
       local character = context:character();
       if not cm:char_is_agent(character) then return end
+      local faction = context:character():faction();
 
       self:log("======================");
       self:log("AGENT Recruted")
-      local faction = context:character():faction();
       self:apply_upkeep_penalty(faction)
       self:set_tooltip_for_finance_button(faction);
     end,
@@ -212,11 +215,11 @@ function Flexible_unit_caps:add_player_listeners()
     end,
     ---@param context CharacterLoanedEvent | CharacterEvent
     function(context)
-      self:log("Army loaned")
       local force = context:character():military_force();
       if not force then return end
       local faction = context:original_faction();
       if faction and faction:is_human() then return end
+      self:log("Army loaned")
 
       if force:has_effect_bundle(self.loaned_army_effect) then return end
 

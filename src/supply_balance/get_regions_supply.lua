@@ -8,9 +8,11 @@ function Flexible_unit_caps:get_regions_supply(faction)
   local supply_from_buildings = 0;
   local regions_list = faction:region_list()
   local supply_form_garrisons = 0;
+  local culture = faction:culture()
+  local penalty_start = self.weak_settlements[culture] and 999 or self.big_empire_penalty_start
 
   for i = 0, regions_list:num_items() - 1 do
-    if i >= self.big_empire_penalty_start then
+    if i >= penalty_start then
       supply_form_regions = supply_form_regions - 1;
     end
 

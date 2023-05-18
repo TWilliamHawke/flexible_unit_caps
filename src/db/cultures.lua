@@ -11,3 +11,15 @@ Flexible_unit_caps.forcetype_exclusions = {
 	EMP_CARAVAN = true,
 	CONVOY = true,
 };
+
+Flexible_unit_caps.zero_cost_cultures = {
+  wh_main_brt_bretonnia = true,
+  wh3_dlc23_chd_chaos_dwarfs = true,
+}
+
+Flexible_unit_caps.weak_settlements = {
+  wh3_dlc23_chd_chaos_dwarfs = true,
+  wh_dlc05_wef_wood_elves = true,
+  wh3_main_ogr_ogre_kingdoms = true,
+  wh_main_chs_chaos = true,
+}
