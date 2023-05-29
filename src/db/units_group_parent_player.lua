@@ -156,9 +156,10 @@ Flexible_unit_caps.units_group_parent_player = {
   --bretonnia
   fluc_brt_artillery = {"fluc_all_long_range"},
   fluc_brt_flying = {"fluc_all_flying_units"},
-  fluc_brt_grail = {"fluc_all_cavalry"},
-  fluc_brt_questing = {"fluc_all_cavalry"},
-  fluc_brt_realm = {"fluc_all_cavalry"},
+  fluc_brt_grail = {"fluc_all_cavalry", "fluc_brt_grail_vow" },
+  fluc_brt_guardians = {"fluc_all_cavalry", "fluc_brt_grail_vow" },
+  fluc_brt_questing = {"fluc_all_cavalry", "fluc_brt_questing_vow" },
+  fluc_brt_realm = {"fluc_all_cavalry", "fluc_brt_knight_vow"},
   fluc_brt_yeomen = {"fluc_all_cavalry"},
   fluc_brt_squires = {"fluc_all_heavy_infantry"},
   fluc_brt_peasant_bowmen = {"fluc_all_missiles"},

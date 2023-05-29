@@ -498,5 +498,36 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_chd_irondaemons = { change = -2, hidden = false },
     fluc_all_long_range = { change = -1, hidden = true },
   },
+  wh_main_brt_louen_leoncouer = {
+    fluc_brt_knight_vow = { change = -1, hidden = false },
+    fluc_brt_questing_vow = { change = -1, hidden = false },
+    fluc_brt_grail_vow = { change = -1, hidden = true },
+    fluc_all_cavalry = { change = -3, hidden = true },
+  },
+  wh_dlc07_brt_alberic = {
+    fluc_brt_realm = { change = -3, hidden = false },
+    fluc_brt_squires = { change = -2, hidden = false },
+    fluc_all_cavalry = { change = -3, hidden = true },
+  },
+  wh_dlc07_brt_fay_enchantress = {
+    fluc_brt_piligrims = { change = -2, hidden = false },
+    fluc_brt_grail = { change = -3, hidden = false },
+    fluc_all_cavalry = { change = -3, hidden = true },
+  },
+  wh2_dlc14_brt_repanse = {
+    fluc_brt_questing = { change = -3, hidden = false },
+    fluc_brt_questing_vow = { change = -1, hidden = false },
+    fluc_all_cavalry = { change = -3, hidden = true },
+  },
+  wh_dlc07_brt_prophetess_beasts = {
+    fluc_all_cavalry = { change = -3, hidden = true },
+  },
+  wh_dlc07_brt_prophetess_heavens = {
+    fluc_all_cavalry = { change = -3, hidden = true },
+  },
+  wh_dlc07_brt_prophetess_life = {
+    fluc_all_cavalry = { change = -3, hidden = true },
+  }
+
 
 }

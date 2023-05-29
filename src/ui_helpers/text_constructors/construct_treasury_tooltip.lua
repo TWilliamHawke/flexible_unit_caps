@@ -6,7 +6,7 @@ function Flexible_unit_caps:construct_treasury_tooltip(faction)
 
   local force_list = faction:military_force_list();
   local upkeep_percent, supply_points = self:get_player_faction_supply(faction);
-  local supply_balance, region_supply, buildings_supply, ogre_camps_supply, army_supply, garrisons_supply = self:get_supply_balance(faction)
+  local supply_balance, balance_data = self:get_supply_balance(faction)
 
   local armies_count = 0
 
@@ -42,12 +42,9 @@ function Flexible_unit_caps:construct_treasury_tooltip(faction)
 
   if self.enable_supply_balance then
     supply_balance_text = self:get_localised_string("fluc_supply_balance_text");
-    supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_settlements", region_supply);
-    supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_military", buildings_supply);
-    supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_garrisons", garrisons_supply);
-    supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_forces", army_supply);
-    supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_camps", ogre_camps_supply);
-    --total line should always shown despite 0 value
+    for key, value in pairs(balance_data) do
+      supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_"..key, value);
+    end
     supply_balance_text = supply_balance_text .. create_supply_source_text("fluc_supply_source_total", supply_balance);
   end
 

@@ -26,9 +26,9 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_bst_razorgors = { 6, "" },
   fluc_bst_spawns = { 6, "" },
   fluc_bst_ungors = { 10, "" },
-  --Bretonnia(ai only)
+  --Bretonnia
   fluc_brt_artillery = { 4, "wh_main_brt_inf_men_at_arms" },
-  fluc_brt_flying = { 4, "wh_dlc07_brt_inf_battle_pilgrims_0" },
+  fluc_brt_flying = { 6, "wh_dlc07_brt_inf_battle_pilgrims_0" },
   fluc_brt_grail = { 4, "wh_dlc07_brt_inf_foot_squires_0" },
   fluc_brt_militia = { 10, "" },
   fluc_brt_questing = { 4, "wh_dlc07_brt_inf_foot_squires_0" },
@@ -38,6 +38,11 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_brt_realm = { 4, "wh_main_brt_cav_mounted_yeomen_0" },
   fluc_brt_squires = { 6, "wh_main_brt_inf_men_at_arms" },
   fluc_brt_yeomen = { 6, "wh_main_brt_inf_spearmen_at_arms" },
+  fluc_brt_guardians = { 4, "wh_main_brt_inf_spearmen_at_arms" },
+  fluc_brt_questing_vow = { 6, "wh_main_brt_inf_spearmen_at_arms" },
+  fluc_brt_knight_vow = { 6, "wh_main_brt_inf_spearmen_at_arms" },
+  fluc_brt_grail_vow = { 6, "wh_main_brt_inf_spearmen_at_arms" },
+
   --Vampire Coast
   fluc_cst_artillery = { 4, "wh2_dlc11_cst_inf_zombie_gunnery_mob_2" },
   fluc_cst_dogs = { 6, "" },
