@@ -16,9 +16,9 @@ function Flexible_unit_caps:set_player_upkeep_mod()
   elseif difficulty == -1 then
     self.player_supply_custom_mult = 4;					-- hard
   elseif difficulty == -2 then
-    self.player_supply_custom_mult = 5;			-- very hard
+    self.player_supply_custom_mult = 6;			-- very hard
   elseif difficulty == -3 then
-    self.player_supply_custom_mult = 5;			-- legendary
+    self.player_supply_custom_mult = 6;			-- legendary
   end;
 end;
 

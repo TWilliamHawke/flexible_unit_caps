@@ -12,8 +12,9 @@ function Flexible_unit_caps:get_ai_faction_supply(faction)
 
   for i = 0, force_list:num_items() - 1 do
     local force = force_list:item_at(i);
+    local force_type = force:force_type():key();
 
-    if not force:is_armed_citizenry() and force:has_general() then
+    if not force:is_armed_citizenry() and force:has_general() and not self.forcetype_exclusions[force_type] then
       self:logAI("--------");
       self:logAI("CHECK ARMY #"..tostring(i));
       faction_supply = faction_supply + self:get_ai_army_supply(force);

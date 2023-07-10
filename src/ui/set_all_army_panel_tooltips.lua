@@ -13,14 +13,14 @@ function Flexible_unit_caps:set_all_army_panel_tooltips(lord)
   local faction = lord:faction();
   local supply_balance = self:get_supply_balance(faction);
   local supply_penalty = self:get_supply_penalty(faction, supply_balance);
+  local queued_units = { supply = 0 }
 
-  self:set_tooltip_for_army_upkeep(lord, supply_penalty);
-
+  
   for _, unit_card in uic_pairs(unitList) do
     local component_id = unit_card:Id();
-
+    
     if string.find(component_id, "QueuedLandUnit") then
-      self:set_tooltip_for_unit_in_queue(unit_card, lord);
+      self:set_tooltip_for_unit_in_queue(unit_card, queued_units);
       -- elseif string.find(component_id, "temp_merc_") then
       --   self:set_queued_unit_tooltip(unit_card, "temp_merc_"); --doesnt work now
     elseif component_id == "LandUnit 0" then
@@ -32,6 +32,8 @@ function Flexible_unit_caps:set_all_army_panel_tooltips(lord)
       self:set_agent_tooltip(unit_card, lord);
     end
   end
+
+  self:set_tooltip_for_army_upkeep(lord, supply_penalty, queued_units.supply);
 
   if not cm:get_campaign_ui_manager():is_panel_open("recruitment_options") then return end
   local recruitment_options = find_uicomponent(core:get_ui_root(), "units_panel", "recruitment_options");

@@ -10,7 +10,9 @@ function Flexible_unit_caps:replace_unit(unit_key, unit_group, commander)
 
   local char_cqi = commander:command_queue_index();
 
-  self:logAI("Try to replace \""..unit_key.."\" with \""..replacer)
+  if self.log_level == -1 then
+    self:logCore("Try to replace \""..unit_key.."\" with \""..replacer)
+  end
   cm:remove_unit_from_character(cm:char_lookup_str(char_cqi), unit_key);
   cm:grant_unit_to_character(cm:char_lookup_str(char_cqi), replacer);
 

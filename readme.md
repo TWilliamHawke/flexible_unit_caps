@@ -55,12 +55,12 @@ Add support for new unit. Without this unit will be marked as unknown. Also allo
 __Parameters:__
 __unit_key:__ unit id from main_units_table
 __supply_points:__ defines how much supply points will consume this unit. Depends on unit quality. Recommended values: from 0 (militia) to 4 (dragon)
-__unit_group:__ unit group that will be used for unit cap. You can find already existing groups in src/db/units_group_caps.lua or create your own group (don't forget to add localisation)
+__unit_group:__ unit group that will be used for unit cap. You can find already existing groups in src/db/units_group_caps.lua or create your own group (don't forget to add localisation). Notice that the first unit group should be race specific
 
 __Example:__
 ```lua
 --Carroburg Swordsmen will consume 3 supply points and will belong to greatswords group
-flexible_unit_caps:set_unit_data("emp_inf_carroburg_greatswords", 3, "srw_emp_greatswords")
+flexible_unit_caps:set_unit_data("emp_inf_carroburg_greatswords", 3, "fluc_emp_greatswords")
 ```
 ---
 __flexible_unit_caps:add_unit_group_discount(lord_key, unit_group, value)__
@@ -74,9 +74,9 @@ __value:__ how much supply cost for units in this group will change in this lord
 __Example:__
 ```lua
 --all stegadons in Kroq Gar army will consume 1 supply points less
-flexible_unit_caps:add_unit_group_discount("wh2_main_lzd_kroq_gar", "srw_lzd_stegadons", -1)
+flexible_unit_caps:add_unit_group_discount("wh2_main_lzd_kroq_gar", "fluc_lzd_stegadons", -1)
 --all saurus in Tehenhauin army will consume 2 additional supply points per unit
-flexible_unit_caps:add_unit_group_discount("wh2_dlc12_lzd_tehenhauin", "srw_lzd_saurus", 2)
+flexible_unit_caps:add_unit_group_discount("wh2_dlc12_lzd_tehenhauin", "fluc_lzd_saurus", 2)
 ```
 
 ---

@@ -20,7 +20,6 @@ Flexible_unit_caps.skill_supply_change = {
   },
   mixu_elspeth_von_draken = {
     fluc_emp_artillery = { -2, false, "mixu_emp_elspeth_von_draken_special_guns_of_nuln" },
-    fluc_emp_artillery_wagon = { -2, true, "mixu_emp_elspeth_von_draken_special_guns_of_nuln" },
   },
   emp_cha_helborg = {
     fluc_emp_reiksguard = { -1, false, "skill_emp_lord_unique_campaign_kurt_helborg_grand_order" },

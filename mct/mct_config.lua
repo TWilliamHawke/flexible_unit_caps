@@ -23,7 +23,7 @@ local supply_balance_options = {
 }
 
 local unit_caps_penalty_options = {
-  { key = "weak", text = "Weak", tt = "Only units above cap will require more supply", is_default = true },
+  { key = "weak", text = "Soft", tt = "Only units above cap will require more supply", is_default = true },
   { key = "harsh", text = "Harsh", tt = "All units of this type will require more supply", is_default = false },
 }
 
@@ -32,6 +32,7 @@ local logging_options = {
   { key = "1", text = "Player Only", tt = "Only player faction info will be logged", is_default = false },
   { key = "2", text = "AI only", tt = "Both player and AI faction info will be logged", is_default = false },
   { key = "3", text = "Debug", tt = "Additional debug info will be logged", is_default = false },
+  { key = "-1", text = "Ai unit caps", tt = "olny info about replaced units will be logged", is_default = false },
 }
 
 ModLog("supply_lines_rework")

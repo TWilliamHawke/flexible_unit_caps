@@ -12,9 +12,10 @@ Flexible_unit_caps.free_agents = {
   ["wh2_dlc13_emp_hunter_rodrik_l_anguille"] = true,
   ["wh2_dlc16_skv_ghoritch"] = true,
   ["wh2_dlc16_wef_coeddil"] = true,
-  ["wh2_dlc10_hef_alarielle"] = true,
+  ["wh2_dlc16_wef_ariel"] = true,
   ["wh_pro02_vmp_isabella_von_carstein_hero"] = true,
   ["wh_dlc04_vmp_vlad_von_carstein_hero"] = true,
   ["wh3_dlc23_chd_gorduz_backstabber"] = true,
   ["wh3_dlc23_neu_ulrika"] = true,
+  ["wh3_pro11_chs_cha_harald_hammerstorm"] = true,
 }

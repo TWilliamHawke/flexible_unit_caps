@@ -9,7 +9,9 @@ Flexible_unit_caps.forcetype_exclusions = {
 	CARAVAN = true,
 	SUPPORT_ARMY = true,
 	EMP_CARAVAN = true,
+	MAR_CARAVAN = true,
 	CONVOY = true,
+	NWC_CONVOYS = true,
 };
 
 Flexible_unit_caps.zero_cost_cultures = {

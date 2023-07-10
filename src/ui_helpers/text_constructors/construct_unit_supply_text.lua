@@ -2,10 +2,10 @@
 ---@param text_key string
 ---@param unit_count_callback fun(unit_group: string) : number, number
 ---@return string
+---@return integer unit_cost_with_cap
 function Flexible_unit_caps:construct_unit_supply_text(unit_name, text_key, unit_count_callback)
 
-  local lord_cost, base_cost = self:get_unit_supply_params(unit_name, self.supply_change_cache);
-  local unit_groups = self:get_unit_group(unit_name);
+  local lord_cost, base_cost, unit_groups = self:get_unit_supply_params(unit_name, self.supply_change_cache);
   local full_unit_group_text = "";
   local unit_cost_with_cap = 0;
 
@@ -49,5 +49,5 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, text_key, unit
 
   supply_text = string.gsub(supply_text, "FLUC_CONSUME", self:get_localised_string(text_key));
 
-  return string.gsub(supply_text, "FLUC_SUPPLY", tostring(unit_cost_with_cap)) .. full_unit_group_text;
+  return string.gsub(supply_text, "FLUC_SUPPLY", tostring(unit_cost_with_cap)) .. full_unit_group_text, unit_cost_with_cap;
 end

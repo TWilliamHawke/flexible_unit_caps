@@ -30,11 +30,13 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_emp_blazing_sun = { change = -2, hidden = false },
     fluc_emp_knights_emp = { change = -2, hidden = false },
     fluc_emp_reiksguard = { change = -2, hidden = false },
+    fluc_emp_knights_orders = { change = -2, hidden = true },
   },
   emp_wolfram_hertwig = {
     fluc_emp_knights_emp = { change = -2, hidden = false },
     fluc_emp_blazing_sun = { change = -2, hidden = false },
     fluc_emp_reiksguard = { change = -2, hidden = false },
+    fluc_emp_knights_orders = { change = -2, hidden = true },
   },
   emp_aldebrand_ludenhof = {
     fluc_emp_handgunners = { change = -2, hidden = false },
