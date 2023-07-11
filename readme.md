@@ -34,7 +34,7 @@ __Example:__
 flexible_unit_caps:log("Hello World")
 ```
 ---
-__flexible_unit_caps:add_unit_group(group_key, unit_cap, ai_replacer, ...parent_groups)__
+__flexible_unit_caps:add_unit_group(group_key, unit_cap, ai_replacer, ...parent_groups)__  
 Add params for new unit group
 
 __Parameters:__  
