@@ -9,7 +9,10 @@ function Flexible_unit_caps:get_character_from_unit_panel()
   local character_cqi = units_panel:GetContextObjectId("CcoCampaignCharacter")
   local character = cm:get_character_by_cqi(tonumber(character_cqi) or -1);
   if character:is_null_interface() then return end
-  if not character:faction():is_human() then return end
+  local faction = character:faction();
+  if not faction:is_human() then return end
+
+  if faction:name() ~= cm:get_local_faction(true):name() then return end
 
   return character;
 end

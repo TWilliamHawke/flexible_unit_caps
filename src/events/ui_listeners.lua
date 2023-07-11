@@ -128,7 +128,7 @@ function Flexible_unit_caps:add_ui_listeners()
   )
 
   core:add_listener(
-    "fluc_character_panel_open",
+    "fluc_hire_lord_open",
     "PanelOpenedCampaign",
     function(context)
       return context.string == "character_panel";
@@ -152,7 +152,7 @@ function Flexible_unit_caps:add_ui_listeners()
   )
 
   core:add_listener(
-    "fluc_character_panel_updated",
+    "fluc_hire_lord_panel_updated",
     "ComponentLClickUp",
     function(context)
       if not cm:get_campaign_ui_manager():is_panel_open("character_panel") then

@@ -38,71 +38,25 @@ function Flexible_unit_caps:add_player_listeners()
   );
 
   core:add_listener(
-    "fluc_RaiseDead",
-    "ComponentLClickUp",
+    "fluc_UnitCreated",
+    "UnitCreated",
+    ---@param context UnitCreated
+    ---@return boolean
     function(context)
-      return (context.string == "button_raise_dead" and self:player_faction_has_suply_lines())
+      local faction = context:unit():faction();
+      return faction:is_human() and self:faction_has_supply_lines(faction)
     end,
-    function()
-      local faction = cm:model():world():whose_turn_is_it()
-      cm:callback(function()
-        self:log("======================");
-        self:log("APPLY UPKEEP (RAISE DEAD)");
-        self:apply_upkeep_penalty(faction)
-      end, 0.1);
-    end,
-    true
-  );
+    ---@param context UnitCreated
+    function(context)
+      local faction = context:unit():faction();
+      local faction_name = faction:name();
+      cm:remove_callback(self.main_debounce_key..faction_name)
 
-  core:add_listener(
-    "fluc_Hire_Blessed",
-    "ComponentLClickUp",
-    function(context)
-      return (context.string == "button_hire_blessed" and self:player_faction_has_suply_lines())
-    end,
-    function()
-      local faction = cm:model():world():whose_turn_is_it()
       cm:callback(function()
         self:log("======================");
-        self:log("APPLY UPKEEP (HIRE BLESSED)");
+        self:log("APPLY UPKEEP (Unit Created)");
         self:apply_upkeep_penalty(faction)
-      end, 0.1);
-    end,
-    true
-  );
-
-  core:add_listener(
-    "fluc_Hire_Imperial",
-    "ComponentLClickUp",
-    function(context)
-      local faction = cm:model():world():whose_turn_is_it()
-      return (UIComponent(context.component):Id() == "button_hire_imperial" and faction:is_human() and self:faction_has_supply_lines(faction))
-    end,
-    function()
-      local faction = cm:model():world():whose_turn_is_it()
-      cm:callback(function()
-        self:log("======================");
-        self:log("APPLY UPKEEP (HIRE IMPERIAL)");
-        self:apply_upkeep_penalty(faction)
-      end, 0.1);
-    end,
-    true
-  );
-
-  core:add_listener(
-    "fluc_Hire_Renown",
-    "ComponentLClickUp",
-    function(context)
-      local faction = cm:model():world():whose_turn_is_it()
-      return (UIComponent(context.component):Id() == "button_hire_renown" and faction:is_human() and self:faction_has_supply_lines(faction))
-    end,
-    function()
-      local faction = cm:model():world():whose_turn_is_it()
-      cm:callback(function()
-        self:log("======================");
-        self:log("APPLY UPKEEP (HIRE ROR)");
-        self:apply_upkeep_penalty(faction)
-      end, 0.1);
+      end, 0.2, self.main_debounce_key..faction_name);
     end,
     true
   );
@@ -242,7 +196,7 @@ function Flexible_unit_caps:add_player_listeners()
     function(context)
       local faction_name = context:unit():faction():name();
 
-      cm:remove_callback(self.main_debounce_key)
+      cm:remove_callback(self.main_debounce_key..faction_name)
 
       cm:callback(function()
         local faction = cm:get_faction(faction_name);
@@ -253,10 +207,9 @@ function Flexible_unit_caps:add_player_listeners()
           self:apply_upkeep_penalty(faction);
           self:reapply_supply_balance_effect(faction);
         end
-      end, 0.2, self.main_debounce_key);
+      end, 0.2, self.main_debounce_key..faction_name);
     end,
     true
   );
 end
 
---TODO replace click event with unit recruitment debounce
