@@ -138,8 +138,8 @@ Flexible_unit_caps.units_data = {
     ["wh3_main_cth_inf_jade_warriors_0"]  = { 1, "fluc_cth_jade_warriors"},
     ["wh3_main_cth_inf_jade_warriors_1"]  = { 1, "fluc_cth_jade_warriors"},
     --rare
-    ["wh3_main_cth_veh_sky_junk_0"]  = { 2, "fluc_cth_war_machines"},
-    ["wh3_main_cth_veh_sky_lantern_0"]  = { 2, "fluc_cth_war_machines"},
+    ["wh3_main_cth_veh_sky_junk_0"]  = { 2, "fluc_cth_war_machines", "fluc_all_flying_units", "fluc_all_long_range"},
+    ["wh3_main_cth_veh_sky_lantern_0"]  = { 2, "fluc_cth_war_machines", "fluc_all_flying_units", "fluc_all_long_range"},
     ["wh3_main_cth_veh_war_compass_0"]  = { 2, "fluc_cth_war_machines"},
     --elite
     ["wh3_main_cth_cav_jade_longma_riders_0"]  = { 3, "fluc_cth_longma"},
@@ -1155,7 +1155,7 @@ Flexible_unit_caps.units_data = {
     ["wh_dlc08_nor_mon_war_mammoth_0"]  = { 3, "fluc_nor_mammoths"},
     ["wh_dlc08_nor_mon_war_mammoth_1"]  = { 4, "fluc_nor_mammoths"},
     ["wh_dlc08_nor_mon_war_mammoth_2"]  = { 4, "fluc_nor_mammoths"},
-    ["wh_main_chs_art_hellcannon_n"]  = { 4, "fluc_chd_cannons"},
+    ["wh_main_chs_art_hellcannon_n"]  = { 4, "fluc_chd_hellcannon"},
     -- ROR
     ["wh_pro04_nor_inf_chaos_marauders_ror_0"]  = { 0, "fluc_nor_marauders", "fluc_all_ror" },
     ["wh_pro04_nor_mon_marauder_warwolves_ror_0"]  = { 0, "fluc_nor_hounds", "fluc_all_ror" },
@@ -1192,7 +1192,7 @@ Flexible_unit_caps.units_data = {
     ["wh_main_chs_cav_chaos_knights_0"]  = { 3, "fluc_chs_knights"},
     ["wh_main_chs_cav_chaos_knights_1"]  = { 3, "fluc_chs_knights"},
     ["wh_dlc06_chs_inf_aspiring_champions_0"]  = { 4, "fluc_chs_champions"},
-    ["wh_main_chs_art_hellcannon"]  = { 3, "fluc_chd_cannons"},
+    ["wh_main_chs_art_hellcannon"]  = { 3, "fluc_chd_hellcannon"},
     ["wh_dlc01_chs_mon_dragon_ogre"]  = { 3, "fluc_chs_dragon_ogres"},
     ["wh_dlc01_chs_mon_dragon_ogre_shaggoth"]  = { 4, "fluc_chs_shaggoths"},
     ["wh_dlc01_chs_inf_chosen_2"]  = { 3, "fluc_chs_chosen"},
@@ -1204,7 +1204,7 @@ Flexible_unit_caps.units_data = {
     ["wh_pro04_chs_inf_forsaken_ror_0"]  = { 1, "fluc_chs_forsaken", "fluc_all_ror" },
     ["wh_pro04_chs_cav_chaos_knights_ror_0"]  = { 2, "fluc_chs_knights", "fluc_all_ror" },
     ["wh_pro04_chs_inf_chaos_warriors_ror_0"]  = { 2, "fluc_sla_warriors", "fluc_all_ror" },
-    ["wh_pro04_chs_art_hellcannon_ror_0"]  = { 3, "fluc_chd_cannons", "fluc_all_ror" },
+    ["wh_pro04_chs_art_hellcannon_ror_0"]  = { 3, "fluc_chd_hellcannon", "fluc_all_ror" },
     ["wh_pro04_chs_mon_dragon_ogre_ror_0"]  = { 3, "fluc_chs_dragon_ogres", "fluc_all_ror" },
     --============================================================
   --Bretonnia(ai only)

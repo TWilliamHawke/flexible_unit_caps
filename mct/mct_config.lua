@@ -116,7 +116,7 @@ show_base_supply:set_text("Show base unit supply", false)
 show_base_supply:set_tooltip_text("Show base unit supply cost if its current supply cost differs from the base value", true)
 
 local force_english = flexible_unit_caps:add_new_option("force_english", "checkbox")
-force_english:set_text("Forse english tooltips", false)
+force_english:set_text("Force english tooltips", false)
 force_english:set_tooltip_text("Use this if you have empty tooltips", true)
 
 if player_effect.set_is_global then

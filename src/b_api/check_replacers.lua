@@ -1,4 +1,5 @@
 cm:add_first_tick_callback(function()
+  --doesn't work in api function (too early)
   for unit_group, replacer in pairs(Flexible_caps_api.replacers) do
 
     if not cco("CcoMainUnitRecord", replacer):Call("Key") then

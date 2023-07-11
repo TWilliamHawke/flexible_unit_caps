@@ -1,4 +1,4 @@
-function Flexible_caps_api:set_unit_data(unit_key, unit_value, unit_group)
+function Flexible_caps_api:set_unit_data(unit_key, unit_value, ...)
   if (type(unit_value) ~= "number" or unit_value == nil) then
     self:handle_error("ERROR: Second argument in set_unit_data method should be a number")
     return;
@@ -14,9 +14,15 @@ function Flexible_caps_api:set_unit_data(unit_key, unit_value, unit_group)
     return;
   end;
 
-  if(unit_group == nil or unit_group == "") then
-    unit_group = "none";
-  end;
+  local unit_data = { unit_value }
 
-  Flexible_unit_caps.units_data[unit_key] = {unit_value, unit_group}
+  if arg and #arg > 0 then
+    for i = 1, #arg do
+      table.insert(unit_data, arg[i])
+    end
+  else
+    table.insert(unit_data, "none")
+  end
+
+  Flexible_unit_caps.units_data[unit_key] = unit_data;
 end;
