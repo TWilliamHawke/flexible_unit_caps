@@ -23,10 +23,10 @@ After this use methods that listed bellow to add support for new units, lords an
 
 Methods:
 ---
-__flexible_unit_caps:log(text)__
+__flexible_unit_caps:log(text)__  
 Add new string into "supply_lines_rework_log.txt" file
 
-__Parameters:__
+__Parameters:__  
 __text:__ any string 
 
 __Example:__
@@ -37,10 +37,10 @@ flexible_unit_caps:log("Hello World")
 __flexible_unit_caps:add_unit_group(group_key, unit_cap, ai_replacer, ...parent_groups)__
 Add params for new unit group
 
-__Parameters:__
-__group_key:__ your id for new unit group. Should have a localisation
-__unit_cap:__ defines how much units of this group can be recruited by player without penalty. Recommended values: from 4 to 10
-__ai_replacer:__ id for the unit from main_units_table that will be used to replace units from this group if AI recruits them over the limit. Can be an empty string
+__Parameters:__  
+__group_key:__ your id for new unit group. Should have a localisation  
+__unit_cap:__ defines how much units of this group can be recruited by player without penalty. Recommended values: from 4 to 10  
+__ai_replacer:__ id for the unit from main_units_table that will be used to replace units from this group if AI recruits them over the limit. Can be an empty string  
 __parent_groups:__ zero or more additional arguments to define the unit group(s) that will include this unit group. You can find existing groups [here](src/db/units_group_caps.lua)
 
 
@@ -52,12 +52,12 @@ flexible_unit_caps:add_unit_group("my_emp_nuln_ironsides", 4, "wh_main_emp_inf_h
 flexible_unit_caps:add_unit_group("my_halfling_militia", 10, "")
 ```
 ---
-__flexible_unit_caps:set_unit_data(unit_key, supply_points, ...unit_groups)__
+__flexible_unit_caps:set_unit_data(unit_key, supply_points, ...unit_groups)__  
 Add support for new unit. Without this unit will be marked as unknown. Also allows to change values for units which already included in the mod's database
 
-__Parameters:__
-__unit_key:__ unit id from main_units_table
-__supply_points:__ defines how much supply points will consume this unit. Depends on unit quality. Recommended values: from 0 (militia) to 4 (super elite)
+__Parameters:__  
+__unit_key:__ unit id from main_units_table  
+__supply_points:__ defines how much supply points will consume this unit. Depends on unit quality. Recommended values: from 0 (militia) to 4 (super elite)  
 __unit_groups:__ at least one additional argument must be provided to define the unit groups that will be used for unit cap. You can find existing groups [here](src/db/units_group_caps.lua) or create your own group. It is important to note that the first unit group should be race-specific.
 
 __Example:__
@@ -66,12 +66,12 @@ __Example:__
 flexible_unit_caps:set_unit_data("emp_inf_carroburg_greatswords", 3, "fluc_emp_greatswords", "fluc_all_ror")
 ```
 ---
-__flexible_unit_caps:add_unit_group_discount(lord_key, unit_group, value)__
+__flexible_unit_caps:add_unit_group_discount(lord_key, unit_group, value)__  
 Changes supply cost unit cap for selected units group in this lord's army. Doesn't require any lord skills
 
-__Parameters:__
-__lord_key:__ lord id from agent_subtypes_tables
-__unit_group:__ You can find existing groups [here](src/db/units_group_caps.lua) or use your own group
+__Parameters:__  
+__lord_key:__ lord id from agent_subtypes_tables  
+__unit_group:__ You can find existing groups [here](src/db/units_group_caps.lua) or use your own group  
 __value:__ how much supply cost for units in this group will change in this lord's army. Negative value - less points, positive value - more points
 
 __Example:__
@@ -83,13 +83,13 @@ flexible_unit_caps:add_unit_group_discount("wh2_dlc12_lzd_tehenhauin", "fluc_lzd
 ```
 
 ---
-__flexible_unit_caps:add_lord_skill_discount(lord_key, unit_group, value, lord_skill_key)__
+__flexible_unit_caps:add_lord_skill_discount(lord_key, unit_group, value, lord_skill_key)__  
 Changes supply cost and unit cap for selected units group in this lord's army if lord has special skill
 
-__Parameters:__
-__lord_key:__ lord id from agent_subtypes_tables
-__unit_group:__ You can find existing groups [here](src/db/units_group_caps.lua) or use your own group
-__value:__ how much supply cost for units in this group will change in this lord's army. Negative value - less points, positive value - more points
+__Parameters:__  
+__lord_key:__ lord id from agent_subtypes_tables  
+__unit_group:__ You can find existing groups [here](src/db/units_group_caps.lua) or use your own group  
+__value:__ how much supply cost for units in this group will change in this lord's army. Negative value - less points, positive value - more points  
 __lord_skill_key:__ lord's skill id from character_skills_tables
 
 __Example:__
@@ -100,11 +100,11 @@ fluc:add_lord_skill_discount("wh_main_emp_balthasar_gelt", "fluc_all_long_range"
 
 ---
 
-__flexible_unit_caps:set_military_building_level(building_key, settlement_level)__
+__flexible_unit_caps:set_military_building_level(building_key, settlement_level)__  
 Use this if your mod add new military building (red or blue)
 
-__Parameters:__
-__building_key:__ building id from building_levels_tables
+__Parameters:__  
+__building_key:__ building id from building_levels_tables  
 __settlement_level:__ level of settlement which is required for this building
 
 __Example:__
@@ -115,10 +115,10 @@ fluc:set_military_building_level("my_armory_2", 4),
 ```
 
 ---
-__flexible_unit_caps:add_garrison_building(building_key)__
+__flexible_unit_caps:add_garrison_building(building_key)__  
 Use this if your mod add special walls/garrison building
 
-__Parameters:__
+__Parameters:__  
 __building_key:__ building id from building_levels_tables
 
 __Example:__
