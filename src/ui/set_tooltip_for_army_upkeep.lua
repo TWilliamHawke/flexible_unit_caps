@@ -1,9 +1,10 @@
 ---@param lord CHARACTER_SCRIPT_INTERFACE
 ---@param supply_penalty integer
-function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord, supply_penalty, queued_units_supply)
+---@param caches {}
+function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord, supply_penalty, queued_units_supply, caches)
   local force = lord:military_force();
 
-  local army_supply, future_army_supply = self:get_army_supply(force, supply_penalty);
+  local army_supply, future_army_supply = self:get_army_supply(force, supply_penalty, caches.queued_units_cache);
   local lord_name = lord:character_subtype_key();
   local char_list = force:character_list();
   future_army_supply = future_army_supply + queued_units_supply;
@@ -24,7 +25,7 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord, supply_penalty, qu
 
   local units_list_text = "";
 
-  for group_key, data in pairs(self.supply_change_cache) do
+  for group_key, data in pairs(caches.supply_change_cache.supply_change) do
     if type(data) == "table" and not data.isHidden and data.change ~= 0 then
       local value = data.change
       local groupText = self:get_localised_string(group_key);

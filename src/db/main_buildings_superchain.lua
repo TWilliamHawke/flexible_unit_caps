@@ -27,4 +27,5 @@ Flexible_unit_caps.free_settlement_chains = {
   --wh_dlc05_settlement_wef_outpost = true,
   wh_dlc05_wef_oak_of_ages = true,
   wh3_dlc23_chd_settlement_outpost = true,
+  wh_main_BRETONNIA_settlement_minor = true,
 }

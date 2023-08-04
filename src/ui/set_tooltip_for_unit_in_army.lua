@@ -1,6 +1,7 @@
 ---@param component UIC
 ---@param lord CHARACTER_SCRIPT_INTERFACE
-function Flexible_unit_caps:set_tooltip_for_unit_in_army(component, lord)
+---@param caches {}
+function Flexible_unit_caps:set_tooltip_for_unit_in_army(component, lord, caches)
   local waagh_marker = find_uicomponent(component, "waaagh_unit_marker")
   if waagh_marker and waagh_marker:Visible() then
     local supply_text = self:get_localised_string("fluc_unit_supply_cost_zero");
@@ -27,11 +28,11 @@ function Flexible_unit_caps:set_tooltip_for_unit_in_army(component, lord)
   local supply_text = self:construct_unit_supply_text(unit_name, "fluc_unit_consume_present",
     function(unit_group)
       local _, unit_index = self:get_units_count_from_cache(
-        self.selected_force_units_cache, unit_group, tostring(index + 1));
-      local group_capacity = self:get_unit_cap_from_cache(self.selected_force_units_cache, unit_group);
+        caches.selected_force_units_cache, unit_group, tostring(index + 1));
+      local group_capacity = self:get_unit_cap_from_cache(caches.selected_force_units_cache, unit_group);
 
       return unit_index, group_capacity;
-    end);
+    end, caches);
 
   self:finalize_unit_tooltip(component, supply_text .. "\n", "||")
 end

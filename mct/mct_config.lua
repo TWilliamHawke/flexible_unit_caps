@@ -16,9 +16,9 @@ local unit_caps_size_options = {
 }
 
 local supply_balance_options = {
-  { key = "0", text = "Disable", tt = "", is_default = true },
+  { key = "0", text = "Disable", tt = "", is_default = false },
   { key = "1", text = "Easy", tt = "Garrison buildings doesn'reduces the Supply Reserves", is_default = false },
-  { key = "2", text = "Normal", tt = "Default settings. Recommended for Ogres and Warriors of Chaos", is_default = false },
+  { key = "2", text = "Normal", tt = "Default settings. Recommended for Ogres and Warriors of Chaos", is_default = true },
   { key = "3", text = "Hard", tt = "All settlemants above 50th will be reduce supply reserves by 2 instead of 1", is_default = false },
 }
 
@@ -34,8 +34,6 @@ local logging_options = {
   { key = "3", text = "Debug", tt = "Additional debug info will be logged", is_default = false },
   { key = "-1", text = "Ai unit caps", tt = "olny info about replaced units will be logged", is_default = false },
 }
-
-ModLog("supply_lines_rework")
 
 local flexible_unit_caps = mct:register_mod("flexible_unit_caps")
 flexible_unit_caps:set_title(loc_prefix.."mod_title", true)

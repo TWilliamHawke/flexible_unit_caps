@@ -48,13 +48,14 @@ function Flexible_unit_caps:add_player_listeners()
     end,
     ---@param context UnitCreated
     function(context)
-      local faction = context:unit():faction();
-      local faction_name = faction:name();
+      local faction_name = context:unit():faction():name();
       cm:remove_callback(self.main_debounce_key..faction_name)
 
       cm:callback(function()
         self:log("======================");
         self:log("APPLY UPKEEP (Unit Created)");
+        local faction = cm:get_faction(faction_name)
+        self:set_tooltip_for_finance_button(faction)
         self:apply_upkeep_penalty(faction)
       end, 0.2, self.main_debounce_key..faction_name);
     end,
@@ -75,6 +76,7 @@ function Flexible_unit_caps:add_player_listeners()
         self:log("APPLY UPKEEP (CONFEDERATION)");
         self:apply_upkeep_penalty(faction);
         self:reapply_supply_balance_effect(faction)
+        self:set_tooltip_for_finance_button(faction)
       end, 0.1);
     end,
     true
@@ -174,10 +176,12 @@ function Flexible_unit_caps:add_player_listeners()
       local faction = context:original_faction();
       if faction and faction:is_human() then return end
       self:log("Army loaned")
-
-      if force:has_effect_bundle(self.loaned_army_effect) then return end
-
       local force_cqi = force:command_queue_index();
+
+      if force:has_effect_bundle(self.loaned_army_effect) then
+        ---@diagnostic disable-next-line: param-type-mismatch
+        cm:remove_effect_bundle_from_force(self.loaned_army_effect, force_cqi);
+      end
 
       ---@diagnostic disable-next-line: param-type-mismatch
       cm:apply_effect_bundle_to_force(self.loaned_army_effect, force_cqi, 10);

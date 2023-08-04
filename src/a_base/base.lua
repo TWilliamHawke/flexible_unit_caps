@@ -10,11 +10,10 @@ Flexible_unit_caps = {
     basic_unit_supply = 0,
     basic_lord_supply = 0,
   --balance
-    enable_supply_balance = false,
+    enable_supply_balance = true,
     walls_reduces_balance = true,
     max_balance_per_buildings = 3,
     big_empire_penalty_start = 999,
-    big_city_penalty = 2,
   --unit cap
     player_unit_cap_mult = 1,
     ai_unit_cap_mult = 1.25,
@@ -24,9 +23,6 @@ Flexible_unit_caps = {
   --Cached values
     game_lang = nil,
     character_panel_lords = {},
-    queued_units_cache = {}, ---@type UnitsCache
-    selected_force_units_cache = {}, ---@type UnitsCache
-    supply_change_cache = {}, ---@type Supply_change_cache
     building_tooltip_text = nil,
 }
 

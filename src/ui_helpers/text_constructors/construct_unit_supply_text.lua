@@ -1,11 +1,12 @@
 ---@param unit_name string
 ---@param text_key string
 ---@param unit_count_callback fun(unit_group: string) : number, number
+---@param caches {}
 ---@return string
 ---@return integer unit_cost_with_cap
-function Flexible_unit_caps:construct_unit_supply_text(unit_name, text_key, unit_count_callback)
+function Flexible_unit_caps:construct_unit_supply_text(unit_name, text_key, unit_count_callback, caches)
 
-  local lord_cost, base_cost, unit_groups = self:get_unit_supply_params(unit_name, self.supply_change_cache);
+  local lord_cost, base_cost, unit_groups = self:get_unit_supply_params(unit_name, caches.supply_change_cache);
   local full_unit_group_text = "";
   local unit_cost_with_cap = 0;
 
@@ -13,7 +14,10 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, text_key, unit
     local unit_index, group_capacity = unit_count_callback(group);
     local unit_supply = self:apply_unit_cap(base_cost, lord_cost, unit_index, group_capacity);
     unit_cost_with_cap = math.max(unit_cost_with_cap, unit_supply)
-    local unit_group_text = self:construct_unit_group_text(group, group_capacity);
+    local units_in_army = self:get_units_count_from_cache(caches.selected_force_units_cache, group)
+    local units_in_queue = self:get_units_count_from_cache(caches.queued_units_cache, group)
+
+    local unit_group_text = self:construct_unit_group_text(group, group_capacity, units_in_army, units_in_queue);
 
     if full_unit_group_text == "" then
       full_unit_group_text = full_unit_group_text..unit_group_text;

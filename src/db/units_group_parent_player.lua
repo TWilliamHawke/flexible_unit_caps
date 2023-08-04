@@ -28,6 +28,7 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_tze_lord_of_change = {"fluc_all_flying_units", "fluc_all_rare_creatures"},
   fluc_tze_spawn = {"fluc_all_monstrous_units"},
   fluc_tze_pink_horrors = {"fluc_all_missiles"},
+  fluc_tze_flamers = {"fluc_all_short_range"},
   --slaanesh
   fluc_sla_furies = {"fluc_all_flying_units"},
   fluc_sla_horsemen = {"fluc_all_cavalry", "fluc_all_missiles"},
@@ -258,7 +259,7 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_ksl_ice_guard = {"fluc_all_missiles"},
   fluc_ksl_bear_riders = {"fluc_all_cavalry"},
   fluc_ksl_kossars = {"fluc_all_missiles"},
-  fluc_ksl_armored_kossars = {"fluc_all_short_range"},
+  fluc_ksl_armored_kossars = {"fluc_all_hybrid_infantry"},
   --Cathay
   fluc_cth_archers = {"fluc_all_missiles"},
   fluc_cth_horsemen = {"fluc_all_cavalry"},

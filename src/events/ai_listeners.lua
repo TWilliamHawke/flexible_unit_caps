@@ -5,11 +5,7 @@ function Flexible_unit_caps:add_ai_listeners()
     "FactionTurnStart",
     function(context)
       local faction = context:faction()
-      local culture = faction:culture();
-      return not faction:is_human() and
-          (
-          self:faction_has_supply_lines(faction) or culture == "wh_main_brt_bretonnia"
-          )
+      return not faction:is_human() and self:faction_has_supply_lines(faction)
     end,
     -- true,
     function(context)
@@ -27,12 +23,8 @@ function Flexible_unit_caps:add_ai_listeners()
     "fluc_Unit_caps_ai",
     "FactionTurnStart",
     function(context)
-      local faction = context:faction();
-      local culture = faction:culture();
-      return not faction:is_human() and faction:region_list():num_items() > 0 and
-          (
-          self:faction_has_supply_lines(faction) or culture == "wh_main_brt_bretonnia"
-          )
+      local faction = context:faction()
+      return not faction:is_human() and self:faction_has_supply_lines(faction)
     end,
     -- true,
     function(context)

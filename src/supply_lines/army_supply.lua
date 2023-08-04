@@ -1,8 +1,9 @@
 ---@param force MILITARY_FORCE_SCRIPT_INTERFACE
 ---@param supply_penalty integer
+---@param queued_units_cache UnitsCache
 ---@return integer this_army_supply
 ---@return integer future_army_supply
-function Flexible_unit_caps:get_army_supply(force, supply_penalty)
+function Flexible_unit_caps:get_army_supply(force, supply_penalty, queued_units_cache)
 
   local unit_list = force:unit_list();
   local lord = force:general_character();
@@ -31,7 +32,7 @@ function Flexible_unit_caps:get_army_supply(force, supply_penalty)
         unit_supply = math.max(unit_supply, temp_unit_supply)
 
         if self.use_harsh_mode then
-          local queued_units_count = self:get_units_count_from_cache(self.queued_units_cache, group)
+          local queued_units_count = self:get_units_count_from_cache(queued_units_cache, group)
           unit_index = unit_index + queued_units_count;
           temp_unit_supply = self:apply_unit_cap(base_cost, lord_cost, unit_index, unit_cap);
           future_unit_supply = math.max(future_unit_supply, temp_unit_supply)

@@ -6,14 +6,17 @@ function Flexible_unit_caps:create_supply_change_cache(force)
   local faction_culture = force:faction():culture();
 
   cache.ark_or_camp = self.zero_cost_cultures[faction_culture] or self:force_is_black_ark_or_camp(force)
+  cache.cap_change = {};
+  cache.supply_change = {};
 
   local lord_name = lord:character_subtype_key();
   local lord_alias = self.lord_aliases[lord_name] or lord_name;
-  local skills_supply_changes = {}; ---@type Supply_change_cache
+  local skills_supply_changes = {}; ---@type Simple_cache
 
   if self.lord_supply_change[lord_name] then
     for key, data in pairs(self.lord_supply_change[lord_name]) do
-      cache[key] = { change = data.change, isHidden = data.hidden };
+      cache.supply_change[key] = { change = data.change, isHidden = data.hidden };
+      cache.cap_change[key] = data.change;
     end --of loop
   end
 
@@ -30,10 +33,16 @@ function Flexible_unit_caps:create_supply_change_cache(force)
 
   --concat tables
   for key, data in pairs(skills_supply_changes) do
-    if (cache[key] == nil) then
-      cache[key] = data;
+    if (cache.supply_change[key] == nil) then
+      cache.supply_change[key] = data;
     else
-      cache[key].change = cache[key].change + data.change;
+      cache.supply_change[key].change = cache.supply_change[key].change + data.change;
+    end
+
+    if (cache.cap_change[key] == nil) then
+      cache.cap_change[key] = data.change;
+    else
+      cache.cap_change[key] = cache.cap_change[key] + data.change;
     end
   end
 

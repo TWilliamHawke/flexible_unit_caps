@@ -7,8 +7,7 @@ function Flexible_unit_caps:create_units_cache(supply_change_cache, get_iterator
   ---@param unit_group string
   local function add_unit_group_to_cache(unit_group)
     if units_group_data[unit_group] then return end
-    local supply_change = self:get_supply_change_from_cache(supply_change_cache, unit_group)
-    local unit_cap = self:get_unit_max_capacity(unit_group, supply_change);
+    local unit_cap = self:get_unit_max_capacity(unit_group, supply_change_cache);
     units_group_data[unit_group] = { cap = unit_cap, count = 0 };
   end
 
