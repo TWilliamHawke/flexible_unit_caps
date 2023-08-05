@@ -27,4 +27,5 @@ Flexible_unit_caps.units_group_parent_ai = {
   fluc_wef_glade_guard = "fluc_wef_archers",
   fluc_wef_deepwood_scouts = "fluc_wef_archers",
   fluc_wef_waywatchers = "fluc_wef_archers",
+  fluc_brt_realm = "fluc_brt_errant",
 }

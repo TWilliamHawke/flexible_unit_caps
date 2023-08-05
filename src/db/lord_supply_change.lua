@@ -512,7 +512,8 @@ Flexible_unit_caps.lord_supply_change = {
   },
   wh_dlc07_brt_fay_enchantress = {
     fluc_brt_piligrims = { change = -2, hidden = false },
-    fluc_brt_grail = { change = -3, hidden = false },
+    fluc_brt_grail_vow = { change = -1, hidden = true },
+    fluc_brt_guardians = { change = -3, hidden = false },
   },
   wh2_dlc14_brt_repanse = {
     fluc_brt_questing = { change = -3, hidden = false },

@@ -29,7 +29,9 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_bst_ungors = { 10, "" },
   --Bretonnia
   fluc_brt_artillery = { 4, "wh_main_brt_inf_men_at_arms" },
-  fluc_brt_flying = { 6, "wh_dlc07_brt_inf_battle_pilgrims_0" },
+  fluc_brt_errant = { 4, "wh_main_brt_inf_men_at_arms" },
+  fluc_brt_pegasus = { 4, "wh_dlc07_brt_inf_battle_pilgrims_0" },
+  fluc_brt_hippogryph = { 4, "wh_main_brt_cav_pegasus_knights" },
   fluc_brt_grail = { 4, "wh_dlc07_brt_inf_foot_squires_0" },
   fluc_brt_militia = { 10, "" },
   fluc_brt_questing = { 4, "wh_dlc07_brt_inf_foot_squires_0" },

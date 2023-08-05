@@ -20,6 +20,7 @@ Flexible_unit_caps = {
     use_harsh_mode = false,
     MIN_UNIT_CAP = 1,
     LORD_FACTOR_CAP_MULT = -0.3, --transform supply discount into unit cap
+    UNLIMITED_CAP = -99,
   --Cached values
     game_lang = nil,
     character_panel_lords = {},

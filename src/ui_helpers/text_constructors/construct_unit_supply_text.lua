@@ -20,8 +20,8 @@ function Flexible_unit_caps:construct_unit_supply_text(unit_name, text_key, unit
     local unit_group_text = self:construct_unit_group_text(group, group_capacity, units_in_army, units_in_queue);
 
     if full_unit_group_text == "" then
-      full_unit_group_text = full_unit_group_text..unit_group_text;
-    else
+      full_unit_group_text = unit_group_text;
+    elseif unit_group_text ~= "" then
       full_unit_group_text = full_unit_group_text.."\n"..unit_group_text;
     end
   end
