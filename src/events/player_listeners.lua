@@ -7,7 +7,7 @@ function Flexible_unit_caps:add_player_listeners()
     "FactionTurnStart",
     function(context)
       local faction = context:faction()
-      return faction:is_human() and self:faction_has_supply_lines(faction)
+      return faction:is_human()
     end,
     -- true,
     function(context)
@@ -25,7 +25,7 @@ function Flexible_unit_caps:add_player_listeners()
     "FactionTurnEnd",
     function(context)
       local faction = context:faction()
-      return faction:is_human() and self:faction_has_supply_lines(faction)
+      return faction:is_human()
     end,
     -- true,
     function(context)
@@ -44,7 +44,7 @@ function Flexible_unit_caps:add_player_listeners()
     ---@return boolean
     function(context)
       local faction = context:unit():faction();
-      return faction:is_human() and self:faction_has_supply_lines(faction)
+      return faction:is_human()
     end,
     ---@param context UnitCreated
     function(context)
@@ -67,7 +67,7 @@ function Flexible_unit_caps:add_player_listeners()
     "FactionJoinsConfederation",
     function(context)
       local faction = context:confederation();
-      return faction:is_human() and self:faction_has_supply_lines(faction)
+      return faction:is_human()
     end,
     function(context)
       local faction = context:confederation();
@@ -195,7 +195,7 @@ function Flexible_unit_caps:add_player_listeners()
     "UnitDisbanded",
     function(context)
       local faction = context:unit():faction()
-      return faction:is_human() and self:faction_has_supply_lines(faction)
+      return faction:is_human()
     end,
     function(context)
       local faction_name = context:unit():faction():name();

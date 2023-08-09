@@ -12,8 +12,6 @@ function Flexible_unit_caps:add_ui_listeners()
       if string.find(context.string, "QueuedLandUnit") then
         cm:remove_callback(self.ui_debounce_key)
         cm:callback(function()
-          if not self:player_faction_has_suply_lines() then return end
-
           self:log("UNIT REMOVED FROM QUEUE")
           local character = self:get_character_from_unit_panel();
           if character and character:has_military_force() then
@@ -35,8 +33,6 @@ function Flexible_unit_caps:add_ui_listeners()
       if not string.find(context.string, "option") then return end
 
       cm:callback(function()
-        if not self:player_faction_has_suply_lines() then return end
-
         self:log("ALLIES UNITS PANEL SWITCHED")
         local character = self:get_character_from_unit_panel();
         if character and character:has_military_force() then
@@ -62,8 +58,6 @@ function Flexible_unit_caps:add_ui_listeners()
 
       cm:remove_callback(self.ui_debounce_key)
       cm:callback(function()
-        if not self:player_faction_has_suply_lines() then return end
-
         self:log("UNIT ADDED TO QUEUE")
         local character = self:get_character_from_unit_panel();
         if character and character:has_military_force() then
@@ -202,7 +196,7 @@ function Flexible_unit_caps:add_ui_listeners()
     "fluc_any_panel_closed",
     "PanelClosedCampaign",
     function()
-      return self:player_faction_has_suply_lines();
+      return true;
     end,
     function()
       cm:remove_callback(self.ui_debounce_key)
@@ -228,7 +222,6 @@ function Flexible_unit_caps:add_ui_listeners()
     ---@param context CharacterSelected
     function(context)
       local faction = context:character():faction()
-      if not self:faction_has_supply_lines(faction) then return end
 
       cm:callback(function()
         local character = self:get_character_from_unit_panel();
@@ -276,7 +269,6 @@ function Flexible_unit_caps:add_ui_listeners()
     end,
     function(context)
       local faction = context:unit():faction()
-      if not self:faction_has_supply_lines(faction) then return end
       cm:remove_callback(self.ui_debounce_key)
 
       cm:callback(function()

@@ -14,6 +14,12 @@ end;
 ---@param character CHARACTER_SCRIPT_INTERFACE
 ---@return integer
 function Flexible_unit_caps:get_this_agent_supply(character)
+  local faction = character:faction();
+
+  if self:faction_has_army_cap(faction) then
+    return 0
+  end
+
   local base_agent_supply_cost = self:get_base_agent_supply(character)
   local agent_type = character:character_subtype_key();
 

@@ -25,3 +25,8 @@ Flexible_unit_caps.weak_settlements = {
   wh3_main_ogr_ogre_kingdoms = true,
   wh_main_chs_chaos = true,
 }
+
+Flexible_unit_caps.special_effects = {
+  wh2_dlc09_tmb_tomb_kings = "fluc_tmb_all_ritual_cost",
+  wh_dlc03_bst_beastmen = "fluc_bst_all_ritual_cost",
+}

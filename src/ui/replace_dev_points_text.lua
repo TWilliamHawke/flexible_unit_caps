@@ -2,22 +2,12 @@
 ---@param ui_component UIC
 ---@param climate_penalty integer
 ---@param is_major boolean
-function Flexible_unit_caps:replace_dev_points_text(ui_component, climate_penalty, is_major)
+function Flexible_unit_caps:replace_dev_points_text(ui_component, climate_penalty, is_major, chain)
   local building_id = string.gsub(ui_component:Id(), "CcoBuildingLevelRecord", "");
   local supply_balance_change = 0;
 
   if is_major then
-    local building_level = building_id:match("%d$")
-
-    if not building_level then
-      building_level = building_id:match("%d_a")
-      building_level = building_level and building_level:sub(0, -3) or 0;
-    end
-    building_level = tonumber(building_level) or 0;
-
-    if building_level > 3 then
-      supply_balance_change = (3 - building_level) * math.max(2 + climate_penalty, 0)
-    end
+    supply_balance_change = self:get_major_building_change(building_id, chain, climate_penalty);
   else
     supply_balance_change = self:get_bulding_supply_balance(building_id, climate_penalty);
   end

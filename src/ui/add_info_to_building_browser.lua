@@ -20,11 +20,10 @@ function Flexible_unit_caps:add_info_to_building_browser()
       local building_chain_list = find_uicomponent(building_category, chain_list_key);
       if building_chain_list then
         for _, chain in uic_pairs(building_chain_list) do
-          is_major = is_major and not chain:Id():match("_gate_") and not chain:Id():match("_empire_fort")
           local building_list = find_uicomponent(chain, "slot_parent");
 
           for _, building in uic_pairs(building_list) do
-            self:replace_dev_points_text(building, climate_penalty, is_major);
+            self:replace_dev_points_text(building, climate_penalty, is_major, chain:Id());
           end
         end --of second child loop
       end --of chain list check

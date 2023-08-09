@@ -8,6 +8,8 @@ function Flexible_unit_caps:get_player_faction_supply(faction)
   local force_list = faction:military_force_list();
   local supply_balance = self:get_supply_balance(faction);
   local supply_penalty = self:get_supply_penalty(faction, supply_balance);
+  local culture = faction:culture();
+  local effect_mult = self.special_effects[culture] and 3 or 1;
 
   if upkeep_mult == 0 then
     return 0, 0, supply_balance;
@@ -22,7 +24,7 @@ function Flexible_unit_caps:get_player_faction_supply(faction)
       end; --of army check
   end; --of force_list loop
 
-  local upkeep_penalty = self:get_upkeep_from_supply(faction_supply_points, upkeep_mult);
+  local upkeep_penalty = self:get_upkeep_from_supply(faction_supply_points * effect_mult, upkeep_mult);
 
   self:log("-----------");
   self:log("TOTAL SUPPLY FOR FACTION: "..tostring(faction_supply_points));

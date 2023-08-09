@@ -6,7 +6,7 @@ function Flexible_unit_caps:create_supply_change_cache(force)
   local faction_culture = force:faction():culture();
   local unlimited_group = self.unlimited_unit_groups[faction_culture];
 
-  cache.ark_or_camp = self.zero_cost_cultures[faction_culture] or self:force_is_black_ark_or_camp(force)
+  cache.ark_or_camp = self.zero_cost_cultures[faction_culture] or self:force_is_black_ark_or_camp(force) or self:faction_is_horde(force:faction())
   cache.cap_change = {};
   cache.supply_change = {};
 
