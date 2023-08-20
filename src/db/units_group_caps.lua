@@ -256,7 +256,9 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_tmb_ushabti = { 6, "" },
   fluc_tmb_vampires = { 8, "" },
   fluc_tmb_warriors = { 8, "" },
-
+  fluc_tmb_ghouls = { 8, "" },
+  fluc_tmb_beasts = { 8, "" },
+  fluc_tmb_hexwraiths = { 4, "" },
   --Vampire counts
   fluc_vmp_black_knights = { 4, "wh_main_vmp_inf_skeleton_warriors_0" },
   fluc_vmp_blood_knights = { 4, "wh_main_vmp_cav_black_knights_0" },

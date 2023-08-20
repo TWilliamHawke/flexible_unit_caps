@@ -332,5 +332,47 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_chd_infernal_guard = { -2, false, "wh3_dlc23_skill_chd_drazhoath_we_are_legion"},
     fluc_chd_fireglaves = { -2, false, "wh3_dlc23_skill_chd_drazhoath_we_are_legion"},
   },
+  wh2_dlc09_tmb_khalida = {
+    fluc_tmb_stalkers = { -2, false, "wh2_dlc09_skill_tmb_khalida_unique_4"},
+    fluc_tmb_necropolis_knights = { -2, false, "wh2_dlc09_skill_tmb_khalida_unique_4"},
+    fluc_tmb_archers = { -1, false, "wh2_dlc09_skill_tmb_god_blessing_3"},
+  },
+  wh2_dlc09_tmb_settra = {
+    fluc_tmb_tomb_guard = { -1, false, "wh2_dlc09_skill_tmb_god_blessing_0" },
+    fluc_tmb_chariots = { -1, false, "wh2_dlc09_skill_tmb_god_blessing_0" },
+  },
+  wh2_dlc09_tmb_arkhan = {
+    fluc_tmb_artillery = { -1, false, "wh2_dlc09_skill_tmb_god_blessing_2" },
+  },
+  tomb_king = {
+    fluc_tmb_archers = { -1, false, "wh2_dlc09_skill_tmb_god_blessing_3"},
+    fluc_tmb_stalkers= { -1, false, "wh2_dlc09_skill_tmb_god_blessing_3"},
+    fluc_tmb_tomb_guard = { -1, false, "wh2_dlc09_skill_tmb_god_blessing_0" },
+    fluc_tmb_chariots = { -1, false, "wh2_dlc09_skill_tmb_god_blessing_0" },
+    fluc_tmb_artillery = { -1, false, "wh2_dlc09_skill_tmb_god_blessing_2" },
+    fluc_tmb_ushabti = { -1, false, "wh2_dlc09_skill_tmb_god_blessing_1" },
+  },
+  wh2_dlc09_tmb_khatep = {
+    fluc_tmb_ushabti = { -1, false, "wh2_dlc09_skill_tmb_god_blessing_1" },
+    fluc_tmb_chariots = { -1, false, "wh2_dlc09_skill_tmb_khatep_unique_2" },
+    fluc_tmb_horsemen = { -1, false, "wh2_dlc09_skill_tmb_khatep_unique_2" },
+    fluc_tmb_tomb_guard = { -1, false, "wh2_dlc09_skill_tmb_khatep_unique_3" },
+  },
+  wh_dlc03_bst_khazrak = {
+    fluc_bst_gors = { -1, false, "wh2_dlc17_bst_khazrak_unique_drakwald_hordes" },
+    fluc_bst_harpies = { -1, false, "wh2_dlc17_bst_khazrak_unique_houndmaster" },
+    fluc_bst_hounds = { -1, false, "wh2_dlc17_bst_khazrak_unique_houndmaster" },
+    fluc_bst_manticores = { -1, false, "wh2_dlc17_bst_khazrak_unique_houndmaster" },
+  },
+  wh2_dlc17_bst_taurox = {
+    fluc_all_rare_creatures = { -1, true, "wh2_dlc17_skill_bst_taurox_unique_titans_of_the_deep_forest" },
+    fluc_bst_giants = { -2, false, "wh2_dlc17_skill_bst_taurox_unique_titans_of_the_deep_forest" },
+    fluc_bst_jabberslythes = { -2, false, "wh2_dlc17_skill_bst_taurox_unique_titans_of_the_deep_forest" },
+    fluc_bst_cygors = { -2, false, "wh2_dlc17_skill_bst_taurox_unique_titans_of_the_deep_forest" },
+  },
+  wh_dlc05_bst_morghur = {
+    fluc_bst_centigors = { -2, true, "wh_dlc03_skill_bst_morghur_unique_upgraded_spawn_1" },
+    fluc_bst_jabberslythes = { -2, true, "wh_dlc03_skill_bst_morghur_unique_upgraded_spawn_1" },
+  },
 
 }

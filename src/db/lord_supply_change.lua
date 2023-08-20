@@ -519,5 +519,36 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_brt_questing = { change = -3, hidden = false },
     fluc_brt_questing_vow = { change = -1, hidden = false },
   },
+  wh2_dlc09_tmb_arkhan = {
+    fluc_tmb_vampires = { change = -1, hidden = false },
+    fluc_tmb_ghouls = { change = -1, hidden = true },
+    fluc_tmb_beasts = { change = -1, hidden = true },
+    fluc_tmb_hexwraiths = { change = -3, hidden = true },
+    },
+  wh2_dlc09_tmb_khalida = {
+    fluc_tmb_archers = { change = -1, hidden = false }
+  },
+  wh2_dlc09_tmb_khatep = {
 
+  },
+  wh2_dlc09_tmb_settra = {
+    fluc_tmb_tomb_guard = { change = -1, hidden = false },
+    fluc_tmb_chariots = { change = -1, hidden = false },
+  },
+  wh2_dlc17_bst_doombull = {
+    fluc_bst_minotaurs = { change = -1, hidden = false },
+  },
+  wh2_dlc17_bst_taurox = {
+    fluc_bst_minotaurs = { change = -2, hidden = false },
+  },
+  wh_dlc05_bst_morghur = {
+    fluc_bst_spawns = { change = -2, hidden = false },
+  },
+  wh_dlc03_bst_malagor = {
+    fluc_bst_harpies = { change = -2, hidden = false },
+  },
+  wh_dlc03_bst_khazrak = {
+    fluc_bst_bestigors = { change = -2, hidden = false },
+    fluc_bst_razorgors = { change = -2, hidden = false },
+  },
 }

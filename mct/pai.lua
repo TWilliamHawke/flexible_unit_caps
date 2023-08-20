@@ -12,6 +12,30 @@ local enable_log = true;
 local enable_debug = false;
 local pai_effect_name = "pai_bonus_dynamic"
 
+local excluded_minors = {
+  wh_main_dwf_zhufbar = true,
+  wh_main_grn_bloody_spearz = true,
+  wh_main_vmp_rival_sylvanian_vamps = true,
+  wh_main_grn_necksnappers = true,
+  wh3_dlc21_cst_dead_flag_fleet = true,
+  wh3_main_ogr_fleshgreeders = true,
+  wh_main_grn_teef_snatchaz = true,
+  wh2_dlc11_cst_vampire_coast_rebels = true,
+  wh2_main_def_ssildra_tor = true,
+  wh2_main_skv_clan_septik = true,
+  wh2_dlc15_skv_clan_kreepus = true,
+  wh_main_emp_stirland = true,
+  wh_main_emp_averland = true,
+  rebels = true,
+  wh2_dlc11_cst_rogue_bleak_coast_buccaneers = true,
+  wh2_dlc11_cst_rogue_boyz_of_the_forbidden_coast = true,
+  wh2_dlc11_cst_rogue_freebooters_of_port_royale = true,
+  wh2_dlc11_cst_rogue_grey_point_scuttlers = true,
+  wh2_dlc11_cst_rogue_terrors_of_the_dark_straights = true,
+  wh2_dlc11_cst_rogue_the_churning_gulf_raiders = true,
+  wh2_dlc11_cst_rogue_tyrants_of_the_black_ocean= true,
+}
+
 local evil_cultures = {
   wh2_dlc11_cst_vampire_coast = true,
   wh2_main_def_dark_elves = true,
@@ -27,11 +51,12 @@ local evil_cultures = {
   wh_main_chs_chaos = true,
   wh_main_grn_greenskins = true,
   wh_main_vmp_vampire_counts = true,
+  wh3_main_ogr_ogre_kingdoms = true,
 }
 
 local evil_ai_factions = {
   wh2_dlc16_wef_drycha = true,
-  wh3_main_ogr_thunderguts = true,
+  wh2_dlc09_tmb_followers_of_nagash = true,
 }
 
 local PAI_EFFECTS_VALUES = {
@@ -224,7 +249,6 @@ local mapZones = {
       "wh3_dlc21_nor_wyrmkins",
       "wh3_main_cth_eastern_river_lords",
       "wh3_dlc21_vmp_jiangshi_rebels",
-      "wh3_dlc21_cst_dead_flag_fleet",
       "wh3_main_grn_dimned_sun",
       "wh2_main_skv_clan_eshin",
       "wh3_main_cth_celestial_loyalists",
@@ -252,7 +276,6 @@ local mapZones = {
       "wh3_dlc20_nor_yusak",
       "wh3_main_chs_khazag",
       "wh3_dlc23_chd_zhatan",
-      "wh3_main_ogr_fleshgreeders",
       "wh3_dlc20_nor_dolgan",
     },
     neighbors = {
@@ -344,25 +367,23 @@ local mapZones = {
   dwarfland = {
     factions = {
       "wh_main_dwf_karak_azul",
-      "wh_main_grn_necksnappers",
       "wh_main_dwf_karak_azul",
       "wh_main_grn_red_fangs",
       "wh2_main_skv_clan_mors",
       "wh3_main_skv_clan_verms",
-      "wh_main_grn_bloody_spearz",
+      "wh2_dlc15_skv_clan_volkn",
       "wh_main_dwf_dwarfs",
       "wh_main_grn_crooked_moon",
     },
     neighbors = {
       "southern_realms",
-      "world_edge",
-      "east_southlands"
+      "south_darklands",
     },
     all_neighbors = {
       "southern_realms",
       "world_edge",
-      "east_southlands",
-      "badlands"
+      "badlands",
+      "south_darklands",
     },
   },
   badlands = {
@@ -370,9 +391,7 @@ local mapZones = {
       "wh_main_dwf_barak_varr",
       "wh2_dlc16_grn_creeping_death",
       "wh_main_grn_scabby_eye",
-      "wh_main_grn_teef_snatchaz",
       "wh_main_grn_orcs_of_the_bloody_hand",
-      "wh_main_grn_teef_snatchaz",
       "wh_main_grn_top_knotz",
       "wh3_main_ie_vmp_sires_of_mourkain",
       "wh3_main_kho_exiles_of_khorne",
@@ -427,13 +446,11 @@ local mapZones = {
     },
     neighbors = {
       "southern_wastes",
-      "dwarfland",
       "west_southlands",
       "south_darklands"
     },
     all_neighbors = {
       "southern_wastes",
-      "dwarfland",
       "west_southlands",
       "south_darklands",
       "badlands",
@@ -480,7 +497,6 @@ local mapZones = {
       "wh_main_brt_bordeleaux",
       "wh2_main_lzd_xlanhuapec",
       "wh2_dlc11_cst_vampire_coast",
-      "wh2_dlc11_cst_vampire_coast_rebels",
       "wh2_main_skv_clan_spittel",
     },
     neighbors = {
@@ -519,7 +535,6 @@ local mapZones = {
   naggarond = {
     factions = {
       "wh2_dlc17_bst_taurox",
-      "wh2_main_def_ssildra_tor",
       "wh2_dlc16_skv_clan_gritus",
       "wh2_main_def_bleak_holds",
       "wh2_main_def_cult_of_pleasure",
@@ -530,7 +545,6 @@ local mapZones = {
       "wh2_main_def_clar_karond",
       "wh2_main_def_the_forgebound",
       "wh3_main_dwf_the_ancestral_throng",
-      "wh2_main_skv_clan_septik",
       "wh2_main_def_naggarond",
       "wh2_main_def_the_forgebound",
       "wh2_dlc11_cst_the_drowned",
@@ -538,14 +552,12 @@ local mapZones = {
       "wh2_main_hef_nagarythe",
     },
     neighbors = {
-      "central_america",
       "ulthuan",
     },
     all_neighbors = {
       "central_america",
       "ulthuan",
       "north_naggarond",
-      "norsca"
     },
   },
   north_naggarond = {
@@ -622,7 +634,6 @@ local mapZones = {
     neighbors = {
       "kislev",
       "dwarfland",
-      "world_edge",
       "south_darklands"
     },
     all_neighbors = {
@@ -637,7 +648,7 @@ local mapZones = {
   world_edge = {
     factions = {
       "wh_main_grn_red_eye",
-      "wh_main_dwf_zhufbar",
+      --"wh_main_dwf_zhufbar",
       "wh_main_dwf_karak_kadrin",
       "wh3_main_ogr_rock_skulls",
       "wh2_dlc15_grn_bonerattlaz",
@@ -657,7 +668,6 @@ local mapZones = {
   },
   southern_realms = {
     factions = {
-      --morgul
       "wh_dlc05_bst_morghur_herd",
       "wh_main_teb_border_princes",
       "wh3_main_ogr_disciples_of_the_maw",
@@ -667,6 +677,7 @@ local mapZones = {
       "wh_main_grn_broken_nose",
       "wh2_main_skv_clan_skryre",
       "wh_main_teb_estalia",
+      "wh_dlc05_wef_wood_elves",
     },
     neighbors = {
       "empire",
@@ -705,8 +716,6 @@ local mapZones = {
   empire = {
     factions = {
       "wh_main_vmp_schwartzhafen",
-      "wh_main_emp_stirland",
-      "wh_main_emp_averland",
       "wh_main_grn_black_venom",
       "wh_main_dwf_karak_hirn",
       "wh2_dlc13_emp_golden_order",
@@ -727,12 +736,12 @@ local mapZones = {
       "wh_main_grn_skullsmasherz",
       "wh_dlc03_bst_beastmen",
       "wh_main_emp_ostland",
+      "wh_dlc05_wef_argwylon",
     },
     neighbors = {
       "southern_realms",
       "bretonnia",
       "kislev",
-      "world_edge",
     },
     all_neighbors = {
       "southern_realms",
@@ -757,6 +766,8 @@ local mapZones = {
       "wh_main_brt_bretonnia",
       "wh2_dlc11_vmp_the_barrow_legion",
       "wh_main_dwf_karak_ziflin",
+      "wh_dlc05_wef_argwylon",
+      "wh_dlc05_wef_wood_elves",
     },
     neighbors = {
       "ulthuan",
@@ -818,12 +829,12 @@ local mapZones = {
     neighbors = {
       "empire",
       "kislev",
-      "naggarond"
+      "bretonnia"
     },
     all_neighbors = {
+      "bretonnia",
       "empire",
       "kislev",
-      "naggarond",
       "archaon_zone",
       "mid_wastes",
       "north_naggarond",
@@ -849,6 +860,7 @@ local mapZones = {
       "empire",
       "archaon_zone",
       "mid_wastes",
+      "world_edge",
       "norsca"
     },
   },
@@ -856,8 +868,6 @@ local mapZones = {
     factions = {
       "wh_dlc05_wef_torgovann",
       "wh_dlc05_wef_wydrioth",
-      "wh_dlc05_wef_wood_elves",
-      "wh_dlc05_wef_argwylon",
     },
     neighbors = {
       "empire",
@@ -971,15 +981,20 @@ end
 ---comment
 ---@param faction FACTION_SCRIPT_INTERFACE
 local function set_random_potential(faction)
+  local faction_name = faction:name();
+  if excluded_minors[faction_name] then return end
   local factions = cm:get_campaign_name() == "wh3_main_chaos" and chaos_major or major_factions
-  local is_major = not not factions[faction:name()]
+  local is_major = not not factions[faction_name]
 
   local potential = is_major and 0 or 100;
+
+  --40% chance that major faction get -80 to potential
+  --60% chance that minor faction get +50 to potential instead of +100
   local treshols = is_major and 40 or 60;
-  local negative_random = is_major and -80 or -50
+  local negative_random = is_major and -80 or -50;
   local random_factor = cm:random_number() <= treshols and negative_random or 0
 
-  if potential + random_factor > 0 then
+  if potential + random_factor > 60 then
     PAILOG("good luck for " .. faction:name())
   elseif potential + random_factor < -60 then
     PAILOG("bad luck for " .. faction:name())
@@ -1072,6 +1087,9 @@ end
 
 local function apply_effect_for_factions(region_name, buff_evil)
   local arr = mapZones[region_name] and mapZones[region_name].factions;
+  local prefix = buff_evil and "evil" or "good";
+  PAILOG("===")
+  PAILOG(prefix.." races will be dominate in " .. region_name)
 
   if not arr then return end
 
@@ -1095,30 +1113,28 @@ local function apply_effect_for_factions(region_name, buff_evil)
         cm:faction_set_potential_modifier(faction, -100);
         PAILOG("bad luck for " .. faction_name)
       elseif not is_major and buff_this then
+        local potential_buff = cm:random_number(3) > 2 and 100 or 60
         ---@diagnostic disable-next-line: undefined-field
-        cm:faction_set_potential_modifier(faction, 100);
+        cm:faction_set_potential_modifier(faction, potential_buff);
         PAILOG("good luck for " .. faction_name)
       end
     end
   end
 end
 
-local function apply_effect_for_regions(arr, player_is_evil)
-  if #arr > 1 then
-    arr = random_sort(arr);
+local function apply_effect_for_regions(region_list, player_is_evil)
+  if #region_list > 1 then
+    region_list = random_sort(region_list);
   end
 
-  if #arr > 0 then
-    PAILOG("bad luck for " .. arr[1])
-    apply_effect_for_factions(arr[1], not player_is_evil)
+  if #region_list > 0 then
+    apply_effect_for_factions(region_list[1], not player_is_evil)
   end
-  if #arr > 1 then
-    PAILOG("good luck for " .. arr[2])
-    apply_effect_for_factions(arr[2], player_is_evil)
+  if #region_list > 1 then
+    apply_effect_for_factions(region_list[2], player_is_evil)
   end
-  if #arr > 2 then
-    PAILOG("bad luck for " .. arr[3])
-    apply_effect_for_factions(arr[3], not player_is_evil)
+  if #region_list > 2 then
+    apply_effect_for_factions(region_list[3], not player_is_evil)
   end
 end
 
@@ -1175,6 +1191,7 @@ function apply_random_potential()
 
   apply_effect_for_regions(first_neighbors, player_is_evil)
   apply_effect_for_regions(second_neighbors, player_is_evil)
+  PAILOG("=======")
 end
 
 cm:add_first_tick_callback(function()

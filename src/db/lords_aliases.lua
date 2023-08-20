@@ -54,4 +54,12 @@ Flexible_unit_caps.lord_aliases = {
   ["wh3_dlc23_chd_daemonsmith_sorcerer_fire"] = "Daemonsmith",
   ["wh3_dlc23_chd_daemonsmith_sorcerer_hashut"] = "Daemonsmith",
   ["wh3_dlc23_chd_daemonsmith_sorcerer_metal"] = "Daemonsmith",
+  --Tomb kings
+  ["wh2_dlc09_tmb_tomb_king"] = "tomb_king",
+  ["wh2_dlc09_tmb_tomb_king_alkhazzar_ii"] = "tomb_king",
+  ["wh2_dlc09_tmb_tomb_king_lahmizzash"] = "tomb_king",
+  ["wh2_dlc09_tmb_tomb_king_rakhash"] = "tomb_king",
+  ["wh2_dlc09_tmb_tomb_king_setep"] = "tomb_king",
+  ["wh2_dlc09_tmb_tomb_king_thutep"] = "tomb_king",
+  ["wh2_dlc09_tmb_tomb_king_wakhaf"] = "tomb_king",
 }

@@ -24,11 +24,17 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord, supply_penalty, qu
   tooltip_text = string.gsub(tooltip_text, "FLUC_SUPPLY", tostring(army_supply));
 
   local units_list_text = "";
+  local empty_cache = { cap_change = {} }
 
   for group_key, data in pairs(caches.supply_change_cache.supply_change) do
     if type(data) == "table" and not data.isHidden and data.change ~= 0 then
-      local value = data.change
+      local value = data.change;
       local groupText = self:get_localised_string(group_key);
+
+      if caches.supply_change_cache.ark_or_camp then
+        value = self:get_unit_max_capacity(group_key, caches.supply_change_cache)
+        value = value - self:get_unit_max_capacity(group_key, empty_cache);
+      end
 
       groupText = groupText == "" and group_key or groupText;
       units_list_text = units_list_text .. "\n[[col:yellow]]" .. groupText .. ":[[/col]] " .. self:try_add_plus(value);
@@ -36,7 +42,12 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord, supply_penalty, qu
   end
 
   if units_list_text ~= "" then
-    tooltip_text = tooltip_text .. self:get_localised_string("fluc_army_tooltip_explanation") .. units_list_text;
+    local loc_key = "fluc_army_tooltip_explanation";
+    if caches.queued_units_cache.ark_or_camp then
+      loc_key = "fluc_army_tooltip_explanation_cap"
+    end
+  
+    tooltip_text = tooltip_text .. self:get_localised_string(loc_key) .. units_list_text;
   end
 
   if future_army_supply > army_supply then

@@ -295,6 +295,7 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_tmb_carrions = {"fluc_all_flying_units"},
   fluc_tmb_giants = {"fluc_all_long_range", "fluc_all_rare_creatures"},
   fluc_tmb_horsemen = {"fluc_all_cavalry"},
+  fluc_tmb_hexwraiths = {"fluc_all_cavalry"},
   fluc_tmb_hierotitans = {"fluc_all_rare_creatures"},
   fluc_tmb_necropolis_knights = {"fluc_all_monstrous_units", "fluc_all_cavalry"},
   fluc_tmb_scorpions = {"fluc_all_rare_creatures"},

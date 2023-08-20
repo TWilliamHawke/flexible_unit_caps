@@ -3,7 +3,12 @@ function Flexible_unit_caps:apply_upkeep_penalty(faction)
   local effects_bundle_key = "fluc_upkeep_global";
   local culture = faction:culture();
   local effect_key = self.special_effects[culture] or "wh_main_effect_force_all_campaign_upkeep";
-  local effect_target = "force_to_force_own_factionwide";
+  local effect_target = "faction_to_force_own_unseen";
+
+  if self.special_effects[culture] then
+    effect_target = "faction_to_faction_own_unseen";
+  end
+
   local faction_name = faction:name()
 
   if faction:has_effect_bundle(effects_bundle_key) then
