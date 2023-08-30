@@ -13,19 +13,19 @@ local enable_debug = false;
 local pai_effect_name = "pai_bonus_dynamic"
 
 local excluded_minors = {
-  wh_main_dwf_zhufbar = true,
+  wh_main_dwf_zhufbar = true,--start enemy for Vlad
   wh_main_grn_bloody_spearz = true,
-  wh_main_vmp_rival_sylvanian_vamps = true,
+  wh_main_vmp_rival_sylvanian_vamps = true, --start enemy for Vlad
   wh_main_grn_necksnappers = true,
-  wh3_dlc21_cst_dead_flag_fleet = true,
-  wh3_main_ogr_fleshgreeders = true,
-  wh_main_grn_teef_snatchaz = true,
-  wh2_dlc11_cst_vampire_coast_rebels = true,
-  wh2_main_def_ssildra_tor = true,
-  wh2_main_skv_clan_septik = true,
+  wh3_dlc21_cst_dead_flag_fleet = true, --start enemy for lokhir
+  wh_main_grn_teef_snatchaz = true, --start enemy for Skarsik
+  wh2_dlc11_cst_vampire_coast_rebels = true, --start enemy for Luthor Harkon
+  wh2_main_def_ssildra_tor = true, --start enemy for Morathi
+  wh2_main_skv_clan_septik = true,--start enemy for Malekit
   wh2_dlc15_skv_clan_kreepus = true,
   wh_main_emp_stirland = true,
   wh_main_emp_averland = true,
+  wh2_dlc15_dwf_clan_helhein = true, --start enemy for Imrik
   rebels = true,
   wh2_dlc11_cst_rogue_bleak_coast_buccaneers = true,
   wh2_dlc11_cst_rogue_boyz_of_the_forbidden_coast = true,
@@ -350,6 +350,7 @@ local mapZones = {
       "wh3_dlc23_chd_legion_of_azgorh",
       "wh3_main_grn_moon_howlerz",
       "wh2_dlc09_skv_clan_rictus",
+      "wh3_main_ogr_fleshgreeders",
     },
     neighbors = {
       "dwarfland",

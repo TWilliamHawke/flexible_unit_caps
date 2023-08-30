@@ -29,6 +29,8 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_tze_spawn = {"fluc_all_monstrous_units"},
   fluc_tze_pink_horrors = {"fluc_all_missiles"},
   fluc_tze_flamers = {"fluc_all_short_range"},
+  fluc_tze_cockatrice = {"fluc_all_flying_units", "fluc_all_rare_creatures"},
+  fluc_tze_vortex_beast = {"fluc_all_rare_creatures"},
   --slaanesh
   fluc_sla_furies = {"fluc_all_flying_units"},
   fluc_sla_horsemen = {"fluc_all_cavalry", "fluc_all_missiles"},
@@ -257,10 +259,11 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_ksl_war_sled = {"fluc_all_chariots_war_machines"},
   fluc_ksl_artillery = {"fluc_all_long_range"},
   fluc_ksl_elemental = {"fluc_all_rare_creatures"},
-  fluc_ksl_ice_guard = {"fluc_all_missiles"},
+  fluc_ksl_ice_guard = {"fluc_all_hybrid_infantry"},
   fluc_ksl_bear_riders = {"fluc_all_cavalry"},
-  fluc_ksl_kossars = {"fluc_all_missiles"},
   fluc_ksl_armored_kossars = {"fluc_all_hybrid_infantry"},
+  fluc_ksl_ambushers = {"fluc_all_missiles"},
+  fluc_ksl_incarnate_elemental = {"fluc_all_rare_creatures"},
   --Cathay
   fluc_cth_archers = {"fluc_all_missiles"},
   fluc_cth_horsemen = {"fluc_all_cavalry"},
@@ -272,8 +275,10 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_cth_crain_gunners = {"fluc_all_long_range"},
   fluc_cth_artillery = {"fluc_all_long_range"},
   fluc_cth_longma = {"fluc_all_cavalry", "fluc_all_flying_units"},
+  fluc_cth_crowmen = {"fluc_all_flying_units"},
   fluc_cth_terracotta = {"fluc_all_rare_creatures"},
-  --Chorf
+  fluc_cth_lions = {"fluc_all_rare_creatures"},
+  --Chorf  
   fluc_chd_hobgoblin_archers = {"fluc_all_missiles"},
   fluc_chd_hobgoblin_raiders = {"fluc_all_cavalry"},
   fluc_chd_bull_centaurs = {"fluc_all_cavalry", "fluc_all_monstrous_units"},

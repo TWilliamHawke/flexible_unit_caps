@@ -7,16 +7,16 @@ function Flexible_unit_caps:replace_unit_caps_force(force)
 
   for j = 0, unit_list:num_items() - 1 do
     local unit = unit_list:item_at(j);
-    local key = unit:unit_key();
+    local unit_key = unit:unit_key();
 
     if unit:unit_class() ~= "com" then
-      local unit_group = self:get_ai_unit_cap_group(key);
+      local unit_group = self:get_ai_unit_cap_group(unit_key);
       if (unit_groups[unit_group] ~= nil) then
         local unit_cap = unit_groups[unit_group][1];
         local unit_count = unit_groups[unit_group][2] + 1;
 
         if (unit_count > unit_cap) then
-          table.insert(units_for_replace, { key, unit_group })
+          table.insert(units_for_replace, { unit_key, unit_group })
         else
           unit_groups[unit_group][2] = unit_count;
         end
