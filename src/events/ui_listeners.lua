@@ -229,8 +229,13 @@ function Flexible_unit_caps:add_ui_listeners()
 
         if character:has_military_force() then
           self:log("ARMY SELECTED");
-          self:set_tooltip_for_finance_button(faction);
-          self:set_all_army_panel_tooltips(character);
+          local force = character:military_force();
+          if self:force_needs_supply(force) then
+            self:set_tooltip_for_finance_button(faction);
+            self:set_all_army_panel_tooltips(character);
+          else
+            self:hide_supply_counter()
+          end
         else
           self:log("Agent SELECTED");
           local tooltip_text, agent_supply = self:construct_agent_tooltip(character);
@@ -249,13 +254,8 @@ function Flexible_unit_caps:add_ui_listeners()
     function(context)
       return not context:character():faction():is_human();
     end,
-    ---@param context CharacterSelected
-    function(context)
-      cm:callback(function()
-        local component = find_uicomponent(core:get_ui_root(), "units_panel", "main_units_panel", "icon_list", "fluc_supply")
-        if not component then return end
-        component:SetVisible(false)
-      end, 0.2);
+    function()
+      self:hide_supply_counter()
     end,
     true
   )

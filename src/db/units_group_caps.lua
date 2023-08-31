@@ -186,7 +186,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_emp_taal_cult = { 4, "wh_main_emp_inf_swordsmen" },
   fluc_emp_tank = { 4, "wh_main_emp_inf_greatswords" },
   fluc_emp_ulric_cult = { 6, "" },
-  fluc_emp_wagon = { 4, "wh_main_emp_inf_spearmen_1" },
+  fluc_emp_wagon = { 6, "wh_main_emp_inf_spearmen_1" },
   --Greenskins
   fluc_grn_arachnarok = { 4, "wh_main_grn_mon_trolls" },
   fluc_grn_artillery = { 4, "wh_main_grn_inf_orc_boyz" },
@@ -239,11 +239,12 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_ksl_ice_guard = { 6, "wh3_main_ksl_inf_kossars_0" },
   fluc_ksl_incarnate_elemental = { 4, "wh3_main_ksl_mon_snow_leopard_0" },
   fluc_ksl_kossars = { 10, "" },
+  fluc_ksl_kossars_spears = { 8, "" },
   fluc_ksl_leopards = { 4, "wh3_main_ksl_cav_horse_raiders_0" },
   fluc_ksl_streltsi = { 6, "wh3_main_ksl_inf_kossars_0" },
   fluc_ksl_things = { 6, "wh3_main_ksl_cav_horse_raiders_0" },
   fluc_ksl_tzar_guard = { 6, "wh3_main_ksl_inf_kossars_0" },
-  fluc_ksl_war_sled = { 4, "wh3_main_ksl_cav_horse_raiders_0" },
+  fluc_ksl_war_sled = { 6, "wh3_main_ksl_cav_horse_raiders_0" },
   fluc_ksl_winged_lancers = { 4, "wh3_main_ksl_cav_horse_raiders_0" },
   --Khorne
   fluc_kho_bloodletters = { 8, "wh3_dlc20_chs_inf_forsaken_mkho" },

@@ -408,7 +408,7 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_lzd_kroxigors = { change = -2, hidden = false },
   },
   wh2_dlc12_lzd_tehenhauin = {
-    fluc_lzd_skinks = { change = -1, hidden = false },
+    fluc_lzd_skinks = { change = -2, hidden = false },
   },
   wh2_dlc17_lzd_oxyotl = {
     fluc_lzd_chameleons = { change = -2, hidden = false },
@@ -441,9 +441,6 @@ Flexible_unit_caps.lord_supply_change = {
   },
   wh3_main_ksl_katarin = {
     fluc_ksl_ice_guard = { change = -2, hidden = false },
-  },
-  wh3_main_ksl_kostaltyn = {
-    fluc_ksl_kossars = { change = -1, hidden = false },
   },
   wh3_main_cth_miao_ying = {
     fluc_cth_archers = { change = -1, hidden = false },

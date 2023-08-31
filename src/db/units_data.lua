@@ -2,12 +2,12 @@
 Flexible_unit_caps.units_data = {
   --Kislev
     --core
-    ["wh3_main_ksl_inf_kossars_0"]  = { 0, "fluc_ksl_kossars", "fluc_all_missiles"},
-    ["wh3_main_ksl_inf_kossars_1"]  = { 0, "fluc_ksl_kossars", "fluc_all_hybrid_infantry"},
+    ["wh3_main_ksl_inf_kossars_0"]  = { 0, "fluc_ksl_kossars"},
+    ["wh3_main_ksl_inf_kossars_1"]  = { 0, "fluc_ksl_kossars_spears"},
     ["wh3_main_pro_ksl_inf_kossars_0"]  = { 0, "fluc_ksl_kossars"},
-    ["wh3_main_pro_ksl_inf_kossars_1"]  = { 0, "fluc_ksl_kossars"},
+    ["wh3_main_pro_ksl_inf_kossars_1"]  = { 0, "fluc_ksl_kossars_spears"},
     ["wh3_main_ksl_inf_kossars_tutorial_0"]  = { 0, "fluc_ksl_kossars"},
-    ["wh3_main_ksl_inf_kossars_tutorial_1"]  = { 0, "fluc_ksl_kossars"},
+    ["wh3_main_ksl_inf_kossars_tutorial_1"]  = { 0, "fluc_ksl_kossars_spears"},
     ["wh3_main_ksl_cav_horse_archers_0"]  = { 0, "fluc_ksl_horse_raiders"},
     ["wh3_main_ksl_cav_horse_raiders_0"]  = { 0, "fluc_ksl_horse_raiders"},
     ["wh3_main_pro_ksl_cav_horse_raiders_0"]  = { 0, "fluc_ksl_horse_raiders"},

@@ -17,7 +17,7 @@ function Flexible_unit_caps:add_unknown_unit_to_db(unit_key)
     unit_name = string.gsub(unit_name, "%s?%(.*", "");
   end
 
-  local unit_cap = 10 - math.min(supply_cost, 2) * 2;
+  local unit_cap = 10 - math.min(supply_cost, 3) * 2;
   self.units_data[unit_key][2] = unit_name;
 
   --is cavalry

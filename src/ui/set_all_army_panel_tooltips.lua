@@ -4,8 +4,6 @@ function Flexible_unit_caps:set_all_army_panel_tooltips(lord)
   if not unitList then return end
 
   local force = lord:military_force();
-  if not self:force_needs_supply(force) then return end
-
   local caches = {}
 
   caches.supply_change_cache = self:create_supply_change_cache(force);
