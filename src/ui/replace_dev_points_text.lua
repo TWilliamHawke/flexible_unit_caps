@@ -45,5 +45,6 @@ function Flexible_unit_caps:replace_dev_points_text(ui_component, climate_penalt
     self.building_tooltip_text = self:get_localised_string("fluc_building_text") or ""
   end
 
+  ---@diagnostic disable-next-line: missing-parameter, param-type-mismatch
   fluc_points:SetTooltipText(self.building_tooltip_text, true)
 end

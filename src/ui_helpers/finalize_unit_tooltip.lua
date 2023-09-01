@@ -13,6 +13,7 @@ function Flexible_unit_caps:finalize_unit_tooltip(component, supply_text, regexp
 
   local final_text = string.gsub(old_text, regexp, "\n" .. supply_text .. regexp, 1)
 
+  ---@diagnostic disable-next-line: missing-parameter, param-type-mismatch
   component:SetTooltipText(final_text, true)
 
 end

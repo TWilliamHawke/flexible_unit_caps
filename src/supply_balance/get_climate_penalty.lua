@@ -2,6 +2,7 @@
 ---@param faction FACTION_SCRIPT_INTERFACE
 ---@return integer
 function Flexible_unit_caps:get_climate_penalty(region_key, faction)
+  ---@diagnostic disable-next-line: redundant-parameter
   local region = cm:get_region(region_key)
 
   if not region or region:is_null_interface() then

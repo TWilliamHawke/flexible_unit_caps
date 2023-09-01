@@ -75,13 +75,7 @@ function Flexible_unit_caps:add_ui_listeners()
       return self.enable_supply_balance and context.string == "building_browser";
     end,
     function()
-      local ok, err = pcall(function()
-        self:add_info_to_building_browser();
-      end);
-
-      if not ok then
-        self:logCore(tostring(err));
-      end
+      self:add_info_to_building_browser();
     end,
     true
   )
@@ -92,14 +86,7 @@ function Flexible_unit_caps:add_ui_listeners()
       return self.enable_supply_balance and cm:get_campaign_ui_manager():is_panel_open("building_browser");
     end,
     function()
-      local ok, err = pcall(function()
-        self:add_info_to_building_browser();
-      end);
-      
-      if not ok then
-        self:logCore(tostring(err));
-      end
-      
+      self:add_info_to_building_browser();
     end,
     true
   )

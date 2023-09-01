@@ -235,5 +235,12 @@ Flexible_unit_caps.garrison_buildings = {
     ["wh3_main_dae_garrison_major_3"] = true,
     ["wh3_main_dae_garrison_minor_1"] = true,
     ["wh3_main_dae_garrison_minor_2"] = true,
-
+    ["teb_garrison_small_1"] = true,
+    ["teb_garrison_small_2"] = true,
+    ["teb_garrison_small_3"] = true,
+    ["teb_garrison_big_1"] = true,
+    ["teb_garrison_big_2"] = true,
+    ["teb_garrison_big_3"] = true,
+    ["teb_garrison_big_4"] = true,
+    ["teb_garrison_big_5"] = true,
 }

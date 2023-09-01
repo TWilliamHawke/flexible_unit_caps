@@ -6,6 +6,10 @@ function Flexible_unit_caps:get_bulding_supply_balance(building_key, climate_pen
     return -1
   end
 
+  if not self.building_unit_bonus[building_key] then
+    self:add_unknown_building(building_key)
+  end
+
   local supply_balance_change = self.building_unit_bonus[building_key];
   if not supply_balance_change then return 0 end
 
