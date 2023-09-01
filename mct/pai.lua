@@ -520,7 +520,7 @@ local mapZones = {
       "wh3_dlc20_sla_keepers_of_bliss",
       "wh2_main_lzd_hexoatl",
       "wh2_main_nor_skeggi",
-      "wh3_dlc20_sla_keepers_of_bliss",
+      "wh3_dlc24_cth_the_celestial_court",
     },
     neighbors = {
       "naggarond",
@@ -551,6 +551,7 @@ local mapZones = {
       "wh2_dlc11_cst_the_drowned",
       "wh2_main_def_karond_kar",
       "wh2_main_hef_nagarythe",
+      "wh3_dlc24_ksl_daughters_of_the_forest",
     },
     neighbors = {
       "ulthuan",
@@ -738,6 +739,7 @@ local mapZones = {
       "wh_dlc03_bst_beastmen",
       "wh_main_emp_ostland",
       "wh_dlc05_wef_argwylon",
+      "wh3_dlc24_tze_the_deceivers",
     },
     neighbors = {
       "southern_realms",
@@ -803,7 +805,6 @@ local mapZones = {
     neighbors = {
       "bretonnia",
       "naggarond",
-      "central_america"
     },
     all_neighbors = {
       "bretonnia",

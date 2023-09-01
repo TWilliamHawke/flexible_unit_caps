@@ -548,4 +548,14 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_bst_bestigors = { change = -2, hidden = false },
     fluc_bst_razorgors = { change = -2, hidden = false },
   },
+  wh3_dlc24_cth_yuan_bo = {
+    fluc_cth_lions = { change = -2, hidden = false },
+    fluc_cth_crowmen = { change = -2, hidden = false },
+  },
+  wh3_dlc24_ksl_mother_ostankya  = {
+    fluc_wef_spiders = { change = -2, hidden = false },
+    fluc_wef_feral = { change = -2, hidden = false },
+  },
+  --fluc_wef_spiders
+  -- wh3_dlc24_tze_the_changeling
 }

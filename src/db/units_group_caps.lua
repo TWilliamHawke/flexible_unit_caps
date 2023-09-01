@@ -27,6 +27,8 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_bst_razorgors = { 6, "" },
   fluc_bst_spawns = { 6, "" },
   fluc_bst_ungors = { 10, "" },
+  fluc_bst_incarnate_elemental = { 4, "" },
+  fluc_bst_tzaangors = { 8, "" },
   --Bretonnia
   fluc_brt_artillery = { 4, "wh_main_brt_inf_men_at_arms" },
   fluc_brt_errant = { 4, "wh_main_brt_inf_men_at_arms" },
@@ -436,6 +438,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_wef_light_cav = { 6, "wh_dlc05_wef_inf_glade_guard_0" },
   fluc_wef_rangers = { 6, "wh_dlc05_wef_inf_eternal_guard_1" },
   fluc_wef_sisters_thorn = { 4, "wh_dlc05_wef_inf_eternal_guard_1" },
+  fluc_wef_spiders = { 6, "" },
   fluc_wef_stag_cav = { 4, "wh_dlc05_wef_inf_eternal_guard_1" },
   fluc_wef_treekin = { 6, "wh_dlc05_wef_inf_dryads_0" },
   fluc_wef_treemen = { 4, "wh_dlc05_wef_inf_dryads_0" },

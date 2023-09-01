@@ -371,8 +371,19 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_bst_cygors = { -2, false, "wh2_dlc17_skill_bst_taurox_unique_titans_of_the_deep_forest" },
   },
   wh_dlc05_bst_morghur = {
-    fluc_bst_centigors = { -2, true, "wh_dlc03_skill_bst_morghur_unique_upgraded_spawn_1" },
-    fluc_bst_jabberslythes = { -2, true, "wh_dlc03_skill_bst_morghur_unique_upgraded_spawn_1" },
+    fluc_bst_centigors = { -2, false, "wh_dlc03_skill_bst_morghur_unique_upgraded_spawn_1" },
+    fluc_bst_jabberslythes = { -2, false, "wh_dlc03_skill_bst_morghur_unique_upgraded_spawn_1" },
   },
-
+  wh3_dlc24_ksl_mother_ostankya = {
+    fluc_ksl_incarnate_elemental = { -2, false, "wh3_dlc24_skill_node_ksl_ostankya_top_line_3" },
+    fluc_ksl_things = { -2, false, "wh3_dlc24_skill_node_ksl_ostankya_top_line_3" },
+    --bears
+    --spiders
+    --bats
+  },
+  wh3_dlc24_tze_the_changeling = {
+    fluc_tze_forsaken = { -2, false, "wh3_dlc24_skill_tze_changeling_top_3" },
+    fluc_tze_spawn = { -2, false, "wh3_dlc24_skill_tze_changeling_top_3" },
+    fluc_tze_vortex_beast = { -2, false, "wh3_dlc24_skill_tze_changeling_top_3" },
+  },
 }

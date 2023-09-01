@@ -321,4 +321,5 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_bst_manticores = {"fluc_all_rare_creatures", "fluc_all_flying_units"},
   fluc_bst_raiders = {"fluc_all_missiles"},
   fluc_bst_spawns = {"fluc_all_monstrous_units"},
+  fluc_bst_incarnate_elemental = {"fluc_all_rare_creatures"},
 }
