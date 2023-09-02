@@ -43,10 +43,10 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord, supply_penalty, qu
 
   if units_list_text ~= "" then
     local loc_key = "fluc_army_tooltip_explanation";
-    if caches.queued_units_cache.ark_or_camp then
+    if caches.supply_change_cache.ark_or_camp then
       loc_key = "fluc_army_tooltip_explanation_cap"
     end
-  
+
     tooltip_text = tooltip_text .. self:get_localised_string(loc_key) .. units_list_text;
   end
 

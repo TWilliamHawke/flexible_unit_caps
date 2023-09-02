@@ -1,3 +1,4 @@
+---@diagnostic disable: redundant-parameter
 ---@param force MILITARY_FORCE_SCRIPT_INTERFACE
 ---@return Supply_change_cache cache
 function Flexible_unit_caps:create_supply_change_cache(force)

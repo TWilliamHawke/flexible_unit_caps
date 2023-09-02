@@ -164,9 +164,15 @@ local major_factions = {
   ["wh3_dlc23_chd_astragoth"] = true,
   ["wh3_dlc23_chd_legion_of_azgorh"] = true,
   ["wh3_dlc23_chd_zhatan"] = true,
+  ["wh3_dlc24_cth_the_celestial_court"] = true,
+  ["wh3_dlc24_ksl_daughters_of_the_forest"] = true,
+  ["wh3_dlc24_tze_the_deceivers"] = true,
 }
 
 local chaos_major = {
+  ["wh3_dlc24_tze_the_deceivers"] = true,
+  ["wh3_dlc24_ksl_daughters_of_the_forest"] = true,
+  ["wh3_dlc24_cth_the_celestial_court"] = true,
   ["wh3_dlc20_chs_azazel"] = true,
   ["wh3_dlc20_chs_festus"] = true,
   ["wh3_dlc20_chs_kholek"] = true,

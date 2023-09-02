@@ -263,10 +263,11 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_ksl_kossars_spears = {"fluc_all_hybrid_infantry"},
   fluc_ksl_elemental = {"fluc_all_rare_creatures"},
   fluc_ksl_ice_guard = {"fluc_all_hybrid_infantry"},
-  fluc_ksl_bear_riders = {"fluc_all_cavalry"},
+  fluc_ksl_bear_riders = {"fluc_all_cavalry", "fluc_all_monstrous_units"},
   fluc_ksl_armored_kossars = {"fluc_all_hybrid_infantry"},
   fluc_ksl_ambushers = {"fluc_all_missiles"},
   fluc_ksl_incarnate_elemental = {"fluc_all_rare_creatures"},
+  fluc_ksl_things = {"fluc_all_monstrous_units"},
   --Cathay
   fluc_cth_archers = {"fluc_all_missiles"},
   fluc_cth_horsemen = {"fluc_all_cavalry"},

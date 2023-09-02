@@ -2,6 +2,11 @@
 -- UI Listeners start HERE
 --========================
 function Flexible_unit_caps:add_ui_listeners()
+  cm:add_post_first_tick_callback(function()
+    local faction = cm:get_local_faction();
+    Flexible_unit_caps:set_tooltip_for_finance_button(faction);
+  end)
+
   core:add_listener(
     "fluc_click_on_queued_unit",
     "ComponentLClickUp",
@@ -208,8 +213,6 @@ function Flexible_unit_caps:add_ui_listeners()
     end,
     ---@param context CharacterSelected
     function(context)
-      local faction = context:character():faction()
-
       cm:callback(function()
         local character = self:get_character_from_unit_panel();
         if not character then return end
@@ -218,8 +221,8 @@ function Flexible_unit_caps:add_ui_listeners()
           self:log("ARMY SELECTED");
           local force = character:military_force();
           if self:force_needs_supply(force) then
-            self:set_tooltip_for_finance_button(faction);
             self:set_all_army_panel_tooltips(character);
+            self:set_tooltip_for_finance_button(cm:get_local_faction());
           else
             self:hide_supply_counter()
           end

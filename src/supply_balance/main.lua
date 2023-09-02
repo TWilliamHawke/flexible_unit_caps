@@ -17,7 +17,7 @@ function Flexible_unit_caps:get_supply_balance(faction)
     forces = -army_supply,
   }
 
-  if not self.enable_supply_balance or not self:faction_has_supply_lines(faction) then
+  if not self:faction_has_supply_balance(faction) then
     total_balance = 0;
   end
 

@@ -1,3 +1,4 @@
+---@diagnostic disable: redundant-parameter
 ---@param building_id string
 ---@param building_chain string
 ---@param climate_penalty integer
@@ -8,16 +9,12 @@ function Flexible_unit_caps:get_major_building_change(building_id, building_chai
   end
 
   if building_chain:match("_gate_") or building_chain:match("_empire_fort") then
-    return 1
+    return -1;
   end
 
-  local building_level = building_id:match("%d$")
+  local building_level = common.get_context_value("CcoBuildingLevelRecord", building_id, "Level") or 1;
   local supply_balance_change = -1;
 
-  if not building_level then
-    building_level = building_id:match("%d_a")
-    building_level = building_level and building_level:sub(0, -3) or 0;
-  end
   building_level = tonumber(building_level) or 0;
 
   if building_level > 3 then

@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 ---@param faction FACTION_SCRIPT_INTERFACE
 ---@param supply_balance integer
 function Flexible_unit_caps:create_negative_sb_effect(faction, supply_balance)
@@ -19,6 +20,9 @@ function Flexible_unit_caps:create_negative_sb_effect(faction, supply_balance)
   local supply_balance_effect_bundle = cm:create_new_custom_effect_bundle(supply_balance_bundle_name);
 	supply_balance_effect_bundle:add_effect("wh_main_effect_force_all_campaign_recruitment_cost_all", "faction_to_force_own", recruitment_cost);
 	supply_balance_effect_bundle:add_effect(supply_balance_effect_name, "faction_to_region_own_unseen", additional_supply);
+	supply_balance_effect_bundle:add_effect("fluc_all_replenishment_hidden", "faction_to_general_own_enemy_territory", -recruitment_cost);
+	supply_balance_effect_bundle:add_effect("fluc_all_replenishment_hidden", "faction_to_general_own_neutral_territory", -recruitment_cost);
+	supply_balance_effect_bundle:add_effect("fluc_all_replenishment", "faction_to_faction_own", -recruitment_cost);
   supply_balance_effect_bundle:set_duration(0);
 
   cm:apply_custom_effect_bundle_to_faction(supply_balance_effect_bundle, faction);

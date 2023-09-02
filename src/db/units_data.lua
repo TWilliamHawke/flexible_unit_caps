@@ -313,6 +313,7 @@ Flexible_unit_caps.units_data = {
     ["wh3_main_tze_inf_pink_horrors_0"]  = { 2, "fluc_tze_pink_horrors"},
     ["wh3_main_tze_mon_flamers_0"]  = { 2, "fluc_tze_flamers"},
     ["wh3_main_pro_tze_mon_flamers_0"]  = { 2, "fluc_tze_flamers"},
+    ["wh3_main_tze_veh_burning_chariot_0"]  = { 2, "fluc_tze_war_machines"},
     --elite
     ["wh3_main_tze_cav_doom_knights_0"]  = { 3, "fluc_tze_doom_knights"},
     ["wh3_main_tze_mon_exalted_flamers_0"]  = { 3, "fluc_tze_flamers"},
@@ -321,7 +322,6 @@ Flexible_unit_caps.units_data = {
     ["wh3_dlc20_chs_cav_chaos_knights_mtze_lances"]  = { 3, "fluc_tze_knights"},
     ["wh3_main_pro_tze_cav_chaos_knights_0"]  = { 3, "fluc_tze_knights"},
     ["wh3_main_tze_cav_chaos_knights_0"]  = { 3, "fluc_tze_knights"},
-    ["wh3_main_tze_veh_burning_chariot_0"]  = { 3, "fluc_tze_war_machines"},
     ["wh3_dlc20_chs_inf_chosen_mtze"]  = { 4, "fluc_tze_chosen"},
     ["wh3_dlc20_chs_inf_chosen_mtze_halberds"]  = { 4, "fluc_tze_chosen"},
     ["wh3_main_tze_mon_soul_grinder_0"]  = { 4, "fluc_tze_soul_grinder"},

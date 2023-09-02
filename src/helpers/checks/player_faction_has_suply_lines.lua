@@ -1,4 +1,4 @@
----@diagnostic disable: undefined-field
+---@diagnostic disable: undefined-field, return-type-mismatch, redundant-parameter
 ---@param faction FACTION_SCRIPT_INTERFACE
 ---@return boolean
 function Flexible_unit_caps:faction_has_supply_lines(faction)

@@ -21,6 +21,7 @@ function Flexible_unit_caps:construct_treasury_tooltip(faction)
 
   if armies_count > 1 then
     local upkeep_per_army = upkeep_percent / (armies_count - 1);
+  ---@diagnostic disable-next-line: missing-parameter, param-type-mismatch
     common.set_context_value("supply_lines_upkeep_value", upkeep_per_army)
   end
 
@@ -41,7 +42,7 @@ function Flexible_unit_caps:construct_treasury_tooltip(faction)
     end
   end
 
-  if self.enable_supply_balance and not self:faction_has_army_cap(faction) then
+  if self:faction_has_supply_balance(faction) then
     supply_balance_text = self:get_localised_string("fluc_supply_balance_text");
     for key, value in pairs(balance_data) do
       supply_balance_text = add_supply_source(supply_balance_text, "fluc_supply_source_"..key, value);
