@@ -52,5 +52,8 @@ function Flexible_unit_caps:create_supply_change_cache(force)
     cache.cap_change[unlimited_group] = self.UNLIMITED_CAP;
   end
 
+  --remove heroes
+  cache.supply_change["fluc_all_heroes"] = { change = 0, isHidden = true }
+
   return cache;
 end

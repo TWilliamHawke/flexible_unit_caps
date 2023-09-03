@@ -29,7 +29,7 @@ function Flexible_unit_caps:set_all_army_panel_tooltips(lord)
       self:set_tooltip_for_unit_in_army(unit_card, lord, caches);
     elseif string.find(component_id, "AgentUnit") then
       self:log("tooltip for agent")
-      self:set_agent_tooltip(unit_card, lord);
+      self:set_agent_tooltip(unit_card, lord, caches);
     end
   end
 

@@ -1,5 +1,6 @@
 ---@type table<string, {[1]: number, [2]: string, [3]: string | nil}>
 Flexible_unit_caps.units_data = {
+    ["fluc_any_hero"]  = { 4, "fluc_all_heroes"},
   --Kislev
     --core
     ["wh3_main_ksl_inf_kossars_0"]  = { 0, "fluc_ksl_kossars"},

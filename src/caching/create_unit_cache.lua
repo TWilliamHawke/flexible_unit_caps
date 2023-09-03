@@ -20,7 +20,7 @@ function Flexible_unit_caps:create_units_cache(supply_change_cache, get_iterator
     units_group_data[unit_group][component_name] = count;
   end
 
-  for group in pairs(supply_change_cache) do
+  for group in pairs(supply_change_cache.cap_change) do
     local parent_groups = self.units_group_parent_player[group];
     add_unit_group_to_cache(group);
 

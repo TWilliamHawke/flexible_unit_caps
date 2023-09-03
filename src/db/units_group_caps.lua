@@ -1,6 +1,7 @@
 ---@type table<string, { [1]: group_unit_cap, [2]: ai_replacer }>
 Flexible_unit_caps.unit_group_caps = {
   fluc_unknown = { 15, "" }, --
+  fluc_all_heroes = { 4, "" },
   fluc_all_cavalry = { 10, "" },
   fluc_all_chariots_war_machines = { 8, "" },
   fluc_all_flying_units = { 8, "" },
