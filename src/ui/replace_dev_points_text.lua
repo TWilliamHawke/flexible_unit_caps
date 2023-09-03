@@ -3,6 +3,9 @@
 ---@param climate_penalty integer
 ---@param is_major boolean
 function Flexible_unit_caps:replace_dev_points_text(ui_component, climate_penalty, is_major, chain)
+  local region_key = ui_component:GetContextObjectId("CcoCampaignSettlement")
+
+  if not region_key then return end
   local building_id = string.gsub(ui_component:Id(), "CcoBuildingLevelRecord", "");
   local supply_balance_change = 0;
 
