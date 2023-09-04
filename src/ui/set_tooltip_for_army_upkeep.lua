@@ -27,26 +27,25 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord, supply_penalty, qu
   local empty_cache = { cap_change = {} }
 
   for group_key, data in pairs(caches.supply_change_cache.supply_change) do
-    if type(data) == "table" and not data.isHidden and data.change ~= 0 then
-      local value = data.change;
+    if type(data) == "table" and not data.isHidden then
+      local cost_change = data.change;
       local groupText = self:get_localised_string(group_key);
 
-      if caches.supply_change_cache.ark_or_camp then
-        value = self:get_unit_max_capacity(group_key, caches.supply_change_cache)
-        value = value - self:get_unit_max_capacity(group_key, empty_cache);
-      end
+      local cap_change = self:get_unit_max_capacity(group_key, caches.supply_change_cache)
+      cap_change = cap_change - self:get_unit_max_capacity(group_key, empty_cache);
 
-      groupText = groupText == "" and group_key or groupText;
-      units_list_text = units_list_text .. "\n[[col:yellow]]" .. groupText .. ":[[/col]] " .. self:try_add_plus(value);
+      if cap_change ~= 0 or cost_change ~= 0 then
+        units_list_text = units_list_text .. "\n[[col:yellow]]" .. groupText .. ":[[/col]] " .. self:try_add_plus(cap_change);
+
+        if not caches.supply_change_cache.ark_or_camp and cost_change ~= 0 then
+          units_list_text = units_list_text .. " | "..self:try_add_plus(cost_change)
+        end
+      end
     end
   end
 
   if units_list_text ~= "" then
-    local loc_key = "fluc_army_tooltip_explanation";
-    if caches.supply_change_cache.ark_or_camp then
-      loc_key = "fluc_army_tooltip_explanation_cap"
-    end
-
+    local loc_key = "fluc_army_tooltip_explanation_cap";
     tooltip_text = tooltip_text .. self:get_localised_string(loc_key) .. units_list_text;
   end
 

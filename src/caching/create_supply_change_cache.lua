@@ -53,7 +53,7 @@ function Flexible_unit_caps:create_supply_change_cache(force)
   end
 
   --remove heroes
-  cache.supply_change["fluc_all_heroes"] = { change = 0, isHidden = true }
+  cache.supply_change["fluc_all_heroes"] = { change = 0, isHidden = false }
 
   return cache;
 end

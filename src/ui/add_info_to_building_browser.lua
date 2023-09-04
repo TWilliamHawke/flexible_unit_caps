@@ -1,5 +1,5 @@
 function Flexible_unit_caps:add_info_to_building_browser()
-  if not self:player_faction_has_suply_lines() then return end
+  if not self:player_faction_has_suply_reserves() then return end
 
   local player_culture = cm:get_local_faction_culture();
   local chain_list_key = player_culture == "wh3_main_nur_nurgle" and "cyclic_chain_list" or "chain_list"

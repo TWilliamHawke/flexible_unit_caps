@@ -190,6 +190,7 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_def_dark_riders = { -2, false, "wh2_main_skill_def_morathi_unique_3_3" },
     fluc_def_shades = { -2, false, "wh2_main_skill_def_morathi_unique_3_3" },
     fluc_def_scourgerunner = { -2, false, "wh2_main_skill_def_morathi_unique_3_3" },
+    fluc_all_heroes = { -2, false, "wh2_main_skill_def_morathi_unique_3_3" },
   },
   wh2_dlc14_def_high_beastmaster = {
     fluc_def_cold_one = { -1, false, "wh2_dlc14_skill_def_beastmaster_cold_ones" },
@@ -226,6 +227,7 @@ Flexible_unit_caps.skill_supply_change = {
   Skink = {
     fluc_lzd_cold_one = { -1, false, "wh2_dlc12_skill_lzd_skink_chief_unique_3" },
     fluc_lzd_teranodons = { -1, false, "wh2_dlc12_skill_lzd_skink_chief_unique_3" },
+    fluc_all_heroes = { -1, false, "wh2_dlc12_skill_lzd_skink_chief_unique_5" },
   },
   Kroxi = {
     fluc_lzd_kroxigors = { -2, false, "wh2_dlc13_skill_lzd_ancient_kroxigor_unique_3",
@@ -385,5 +387,17 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_tze_forsaken = { -2, false, "wh3_dlc24_skill_tze_changeling_top_3" },
     fluc_tze_spawn = { -2, false, "wh3_dlc24_skill_tze_changeling_top_3" },
     fluc_tze_vortex_beast = { -2, false, "wh3_dlc24_skill_tze_changeling_top_3" },
+  },
+  wh3_dlc20_sla_azazel = {
+    fluc_all_heroes = { -2, false, "wh3_dlc20_skill_chs_azazel_unique_drive_for_perfection" },
+  },
+  wh3_dlc24_cth_lord_magistrate_reserves = {
+    fluc_all_heroes = { -1, false, "wh3_dlc24_skill_cth_lord_magistrate_promoted_on_merit" },
+  },
+  wh3_main_cth_lord_magistrate_yang = {
+    fluc_all_heroes = { -1, false, "wh3_dlc24_skill_cth_lord_magistrate_promoted_on_merit" },
+  },
+  wh3_main_cth_lord_magistrate_yin = {
+    fluc_all_heroes = { -1, false, "wh3_dlc24_skill_cth_lord_magistrate_promoted_on_merit" },
   },
 }

@@ -18,12 +18,9 @@ function Flexible_unit_caps:set_agent_tooltip(component, character, caches)
     self:logDebug("Selected agent rank is " .. tostring(character:rank()))
   end
 
-  
   local _, unit_index = self:get_units_count_from_cache(
     caches.selected_force_units_cache, "fluc_all_heroes", tostring(agent_number + 2));
   local group_capacity = self:get_unit_cap_from_cache(caches.selected_force_units_cache, "fluc_all_heroes");
-
-  self:logCore(component:Id().." at index "..tostring(unit_index).." has cap "..tostring(group_capacity));
 
 
   local supply_text = self:construct_agent_tooltip(character, unit_index, group_capacity)

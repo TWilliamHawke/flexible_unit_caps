@@ -183,7 +183,7 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_vmp_grave_guard = { change = -2, hidden = false },
   },
   wh_pro02_vmp_isabella_von_carstein = {
-    fluc_vmp_vampiress = { change = -2, hidden = false },
+    fluc_all_heroes = { change = -2, hidden = false },
   },
   wh2_dlc11_vmp_bloodline_lahmian = {
     fluc_vmp_lahmian = { change = -2, hidden = false },
@@ -330,6 +330,7 @@ Flexible_unit_caps.lord_supply_change = {
   },
   wh2_main_skv_queek_headtaker = {
     fluc_skv_stormvermin = { change = -2, hidden = false },
+    fluc_all_heroes = { change = -2, hidden = false },
   },
   wh2_main_skv_lord_skrolk = {
     fluc_skv_catapults = { change = -2, hidden = false },
@@ -344,6 +345,7 @@ Flexible_unit_caps.lord_supply_change = {
   },
   wh2_dlc14_skv_deathmaster_snikch = {
     fluc_skv_missile_runners = { change = -2, hidden = false },
+    fluc_all_heroes = { change = -2, hidden = false },
   },
   wh2_dlc16_skv_throt_the_unclean = {
     fluc_skv_ratogres = { change = -2, hidden = true },
@@ -501,7 +503,7 @@ Flexible_unit_caps.lord_supply_change = {
   wh_main_brt_louen_leoncouer = {
     fluc_brt_knight_vow = { change = -1, hidden = false },
     fluc_brt_questing_vow = { change = -1, hidden = false },
-    fluc_brt_grail_vow = { change = -1, hidden = true },
+    fluc_brt_grail_vow = { change = -1, hidden = false },
   },
   wh_dlc07_brt_alberic = {
     fluc_brt_realm = { change = -3, hidden = false },
@@ -521,7 +523,7 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_tmb_ghouls = { change = -1, hidden = true },
     fluc_tmb_beasts = { change = -1, hidden = true },
     fluc_tmb_hexwraiths = { change = -3, hidden = true },
-    },
+  },
   wh2_dlc09_tmb_khalida = {
     fluc_tmb_archers = { change = -1, hidden = false }
   },
