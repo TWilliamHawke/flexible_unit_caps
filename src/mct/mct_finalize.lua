@@ -1,6 +1,6 @@
 function Flexible_unit_caps:mct_finalize()
 
-  local faction = cm:get_local_faction();
+  local faction = cm:get_local_faction(true);
   if not self:faction_has_supply_lines(faction) then
     self.player_supply_custom_mult = 0
   else

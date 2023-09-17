@@ -3,7 +3,7 @@
 --========================
 function Flexible_unit_caps:add_ui_listeners()
   cm:add_post_first_tick_callback(function()
-    local faction = cm:get_local_faction();
+    local faction = cm:get_local_faction(true);
     Flexible_unit_caps:set_tooltip_for_finance_button(faction);
   end)
 
@@ -195,8 +195,20 @@ function Flexible_unit_caps:add_ui_listeners()
 
       cm:callback(function()
         local character = self:get_character_from_unit_panel();
-        if character and character:has_military_force() then
-          self:set_all_army_panel_tooltips(character);
+        if not character then return end
+
+        if character:has_military_force() then
+          self:log("PanelClosed");
+          local force = character:military_force();
+          if self:force_needs_supply(force) then
+            self:set_all_army_panel_tooltips(character);
+            self:set_tooltip_for_finance_button(cm:get_local_faction(true));
+          else
+            self:hide_supply_counter()
+          end
+        else
+          local tooltip_text, agent_supply = self:construct_agent_tooltip(character);
+          self:create_supply_counter(tostring(agent_supply), tooltip_text)
         end
       end, 0.5, self.ui_debounce_key);
     end,
@@ -222,7 +234,7 @@ function Flexible_unit_caps:add_ui_listeners()
           local force = character:military_force();
           if self:force_needs_supply(force) then
             self:set_all_army_panel_tooltips(character);
-            self:set_tooltip_for_finance_button(cm:get_local_faction());
+            self:set_tooltip_for_finance_button(force:faction());
           else
             self:hide_supply_counter()
           end

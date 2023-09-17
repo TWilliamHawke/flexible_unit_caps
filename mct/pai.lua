@@ -23,8 +23,6 @@ local excluded_minors = {
   wh2_main_def_ssildra_tor = true, --start enemy for Morathi
   wh2_main_skv_clan_septik = true,--start enemy for Malekit
   wh2_dlc15_skv_clan_kreepus = true,
-  wh_main_emp_stirland = true,
-  wh_main_emp_averland = true,
   wh2_dlc15_dwf_clan_helhein = true, --start enemy for Imrik
   rebels = true,
   wh2_dlc11_cst_rogue_bleak_coast_buccaneers = true,
@@ -202,6 +200,22 @@ local chaos_major = {
 }
 
 local mapZones = {
+  wood_elf = {
+    factions = {
+      "wh_dlc05_wef_torgovann",
+      "wh_dlc05_wef_wydrioth",
+    },
+    neighbors = {
+      "south_empire",
+      "bretonnia",
+      "southern_realms"
+    },
+    all_neighbors = {
+      "south_empire",
+      "bretonnia",
+      "southern_realms"
+    },
+  },
   khuresh = {
     factions = {
       "cr_hef_gate_guards",
@@ -662,12 +676,12 @@ local mapZones = {
       "wh2_dlc15_grn_bonerattlaz",
     },
     neighbors = {
-      "empire",
+      "south_empire",
       "kislev",
       "dwarfland"
     },
     all_neighbors = {
-      "empire",
+      "south_empire",
       "kislev",
       "dwarfland",
       "archaon_zone",
@@ -688,12 +702,12 @@ local mapZones = {
       "wh_dlc05_wef_wood_elves",
     },
     neighbors = {
-      "empire",
+      "south_empire",
       "bretonnia",
       "dwarfland"
     },
     all_neighbors = {
-      "empire",
+      "south_empire",
       "bretonnia",
       "dwarfland",
       "badlands",
@@ -723,16 +737,8 @@ local mapZones = {
   },
   empire = {
     factions = {
-      "wh_main_vmp_schwartzhafen",
       "wh_main_grn_black_venom",
-      "wh_main_dwf_karak_hirn",
-      "wh2_dlc13_emp_golden_order",
-      "wh_main_emp_wissenland",
       "wh_main_emp_empire",
-      "wh_main_emp_talabecland",
-      "wh_main_emp_ostermark",
-      "wh2_dlc15_skv_clan_kreepus",
-      "wh2_dlc16_wef_drycha",
       "wh_main_emp_talabecland",
       "wh_main_emp_middenland",
       "wh_main_emp_hochland",
@@ -744,20 +750,45 @@ local mapZones = {
       "wh_main_grn_skullsmasherz",
       "wh_dlc03_bst_beastmen",
       "wh_main_emp_ostland",
-      "wh_dlc05_wef_argwylon",
-      "wh3_dlc24_tze_the_deceivers",
     },
     neighbors = {
-      "southern_realms",
+      "south_empire",
       "bretonnia",
       "kislev",
     },
     all_neighbors = {
-      "southern_realms",
+      "south_empire",
       "bretonnia",
       "kislev",
-      "world_edge",
       "norsca",
+    },
+  },
+  south_empire = {
+    factions = {
+      "wh_main_emp_empire",
+      "wh_main_emp_talabecland",
+      "wh_main_vmp_schwartzhafen",
+      "wh_main_dwf_karak_hirn",
+      "wh2_dlc13_emp_golden_order",
+      "wh_main_emp_wissenland",
+      "wh_main_emp_ostermark",
+      "wh2_dlc15_skv_clan_kreepus",
+      "wh2_dlc16_wef_drycha",
+      "wh_dlc05_wef_argwylon",
+      "wh3_dlc24_tze_the_deceivers",
+      "wh_main_emp_stirland",
+      "wh_main_emp_averland",
+    },
+    neighbors = {
+      "southern_realms",
+      "empire",
+      "kislev",
+    },
+    all_neighbors = {
+      "southern_realms",
+      "empire",
+      "kislev",
+      "world_edge",
     },
   },
   bretonnia = {
@@ -821,7 +852,6 @@ local mapZones = {
   },
   norsca = {
     factions = {
-      --belakor
       "wh3_main_chs_shadow_legion",
       "wh_dlc08_nor_vanaheimlings",
       "wh3_dlc20_tze_the_sightless",
@@ -862,30 +892,16 @@ local mapZones = {
       "wh_main_nor_baersonling",
     },
     neighbors = {
-      "empire"
+      "empire",
+      "south_empire",
     },
     all_neighbors = {
       "empire",
+      "south_empire",
       "archaon_zone",
       "mid_wastes",
       "world_edge",
       "norsca"
-    },
-  },
-  wood_elf = {
-    factions = {
-      "wh_dlc05_wef_torgovann",
-      "wh_dlc05_wef_wydrioth",
-    },
-    neighbors = {
-      "empire",
-      "bretonnia",
-      "southern_realms"
-    },
-    all_neighbors = {
-      "empire",
-      "bretonnia",
-      "southern_realms"
     },
   },
 
@@ -1147,8 +1163,9 @@ local function apply_effect_for_regions(region_list, player_is_evil)
 end
 
 function apply_random_potential()
-  if cm:turn_number() ~= 1 then return end
+  if cm:get_campaign_name() == "wh3_main_chaos" then return end
   local player_faction = cm:get_local_faction():name();
+  if player_faction == "wh3_dlc24_tze_the_deceivers" then return end
   local player_culture = cm:get_local_faction():culture()
   local player_is_evil = evil_cultures[player_culture] or false;
   local player_region = get_region_by_faction(player_faction);
@@ -1202,7 +1219,7 @@ function apply_random_potential()
   PAILOG("=======")
 end
 
-cm:add_first_tick_callback(function()
+cm:add_first_tick_callback_new(function()
   local ok, err = pcall(function()
     apply_random_potential();
   end)

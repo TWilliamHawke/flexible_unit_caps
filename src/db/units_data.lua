@@ -1229,7 +1229,7 @@ Flexible_unit_caps.units_data = {
     ["wh_dlc07_brt_art_blessed_field_trebuchet_0"]  = { 3, "fluc_brt_artillery"},
     ["wh_dlc07_brt_cav_grail_guardians_0"]  = { 4, "fluc_brt_guardians"},
     ["wh_dlc07_brt_cav_royal_pegasus_knights_0"]  = { 3, "fluc_brt_pegasus", "fluc_brt_questing_vow"},
-    ["wh_dlc07_brt_cav_royal_hippogryph_knights_0"]  = { 4, "fluc_brt_hippogryph", "fluc_brt_grail_vow"},
+    ["wh_dlc07_brt_cav_royal_hippogryph_knights_0"]  = { 4, "fluc_brt_hippogryph" },
     ["wh_main_brt_cav_grail_knights"]  = { 3, "fluc_brt_grail"},
     -- ROR
     ["wh_pro04_brt_inf_battle_pilgrims_ror_0"]  = { 1, "fluc_brt_piligrims", "fluc_all_ror" },

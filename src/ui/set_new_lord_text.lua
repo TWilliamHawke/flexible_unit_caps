@@ -9,7 +9,7 @@ function Flexible_unit_caps:set_new_lord_text()
 
   if not line1 or not line2 then return end
 
-  local faction = cm:get_local_faction();
+  local faction = cm:get_local_faction(true);
   if not self:faction_has_supply_lines(faction) then return end
 
   local supply_balance = self:get_supply_balance(faction)

@@ -6,7 +6,7 @@ function Flexible_unit_caps:faction_has_supply_lines(faction)
 end;
 
 function Flexible_unit_caps:player_faction_has_suply_reserves()
-  local faction = cm:get_local_faction();
+  local faction = cm:get_local_faction(true);
 
   return self:faction_has_supply_balance(faction)
 end;
