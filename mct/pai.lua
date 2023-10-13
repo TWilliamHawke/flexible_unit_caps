@@ -72,6 +72,12 @@ local PAI_EFFECTS_VALUES = {
   ["horde_growth_first_turn"] = 5,
 }
 
+local player_region_owerride = {
+  ["wh_main_emp_empire"] = "empire",
+  ["wh_dlc05_wef_argwylon"] = "wood_elf",
+  ["wh_dlc05_wef_wood_elves"] = "wood_elf"
+}
+
 local major_factions = {
   ["wh2_dlc09_skv_clan_rictus"] = true,
   ["wh2_dlc09_tmb_exiles_of_nehek"] = true,
@@ -1082,6 +1088,10 @@ core:add_listener(
 );
 
 local function get_region_by_faction(faction)
+  if player_region_owerride[faction] then
+    return player_region_owerride[faction]
+  end
+
   for region, data in pairs(mapZones) do
     for i = 1, #data.factions do
       if data.factions[i] == faction then
@@ -1109,6 +1119,18 @@ local function random_sort(t)
   return new_t;
 end
 
+---comment
+---@param faction FACTION_SCRIPT_INTERFACE
+---@return boolean
+local function get_faction_is_evil(faction)
+  local faction_name = faction:name();
+  local culture = faction:culture();
+  local faction_is_evil = evil_ai_factions[faction_name]
+      or evil_cultures[culture] or false;
+
+  return faction_is_evil;
+end
+
 local function apply_effect_for_factions(region_name, buff_evil)
   local arr = mapZones[region_name] and mapZones[region_name].factions;
   local prefix = buff_evil and "evil" or "good";
@@ -1123,14 +1145,12 @@ local function apply_effect_for_factions(region_name, buff_evil)
     local faction_name = arr[i]
     local faction = cm:get_faction(faction_name)
 
-    if faction then
+    if faction and not faction:is_human() then
       update_effect(faction, tier);
-      local culture = faction:culture();
-      local faction_is_evil = evil_ai_factions[faction_name]
-          or evil_cultures[culture] or false;
+      local faction_is_evil = get_faction_is_evil(faction);
       local buff_this = buff_evil == faction_is_evil;
       local factions = cm:get_campaign_name() == "wh3_main_chaos" and chaos_major or major_factions
-      local is_major = not not factions[faction:name()];
+      local is_major = not not factions[faction_name];
 
       if is_major and not buff_this then
         ---@diagnostic disable-next-line: undefined-field
@@ -1186,7 +1206,7 @@ function apply_random_potential()
     local faction_name = factions_in_zone[i];
     local faction = cm:get_faction(faction_name);
 
-    if faction and faction_name ~= player_faction then
+    if faction and not faction:is_human() then
       update_effect(faction, tier)
     end
   end

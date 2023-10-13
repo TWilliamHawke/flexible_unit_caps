@@ -302,6 +302,8 @@ Flexible_unit_caps.skill_supply_change = {
   wh3_dlc20_tze_vilitch = {
     fluc_tze_spawn = { -2, false, "wh3_dlc20_skill_chs_vilitch_unique_twist_of_fate" },
     fluc_tze_forsaken = { -2, false, "wh3_dlc20_skill_chs_vilitch_unique_twist_of_fate" },
+    fluc_chs_forsaken = { -2, false, "wh3_dlc20_skill_chs_vilitch_unique_twist_of_fate" },
+    fluc_tze_vortex_beast = { -2, false, "wh3_dlc20_skill_chs_vilitch_unique_twist_of_fate" },
   },
   wh3_main_tze_kairos = {
     fluc_tze_greater_daemons = { -2, false, "wh3_main_skill_tze_kairos_self_4" },
