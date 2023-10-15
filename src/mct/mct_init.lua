@@ -4,7 +4,7 @@ function Flexible_unit_caps:mct_init(context)
   local settings = fluc_mct:get_settings() ---@type Fluc_mct_config
 
   self.player_supply_custom_mult = settings.a_player_effect;
-  self.ai_supply_mult = settings.c_ai_effect;
+  self.ai_supply_mult = settings.b_ai_effect;
   self.log_level = tonumber(settings.f_enable_logging);
   self.basic_lord_supply = settings.b_lord_supply;
   self.basic_unit_supply = settings.a_unit_supply;
