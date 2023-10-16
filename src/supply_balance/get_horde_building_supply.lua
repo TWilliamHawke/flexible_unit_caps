@@ -1,3 +1,4 @@
+---@diagnostic disable: redundant-parameter
 ---@param force MILITARY_FORCE_SCRIPT_INTERFACE
 function Flexible_unit_caps:get_horde_building_supply(force)
   local cqi = force:general_character():command_queue_index();

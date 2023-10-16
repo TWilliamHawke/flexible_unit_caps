@@ -15,7 +15,7 @@
 ---@field b_unit_caps_penalty "weak" | "harsh"
 ---@field f_enable_logging integer
 ---@field a_supply_balance_diff string
----@field c_ai_effect integer
+---@field b_ai_effect integer
 ---@field a_unit_supply string
 ---@field c_ai_unit_caps string
 ---@field b_lord_supply integer

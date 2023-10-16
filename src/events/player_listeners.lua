@@ -208,8 +208,8 @@ function Flexible_unit_caps:add_player_listeners()
         if faction then
           self:log("======================");
           self:log("UNIT DISBANDED");
-          self:apply_upkeep_penalty(faction);
           self:reapply_supply_balance_effect(faction);
+          self:apply_upkeep_penalty(faction);
         end
       end, 0.2, self.main_debounce_key..faction_name);
     end,
