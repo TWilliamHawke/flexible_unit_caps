@@ -14,6 +14,7 @@ Flexible_unit_caps = {
     walls_reduces_balance = true,
     max_balance_per_buildings = 3,
     big_empire_penalty_start = 999,
+    max_balance_per_army = 8,
   --unit cap
     player_unit_cap_mult = 1,
     ai_unit_cap_mult = 1.25,

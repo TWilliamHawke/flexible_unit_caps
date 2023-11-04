@@ -4,7 +4,7 @@
 function Flexible_unit_caps:get_armies_total_cost(faction)
   local force_list = faction:military_force_list();
   local armies_total_cost = 0;
-  local army_cost = 0;
+  local next_army_cost = 0;
   local ogre_camps_supply = 0;
 
   for i = 0, force_list:num_items() - 1 do
@@ -17,8 +17,8 @@ function Flexible_unit_caps:get_armies_total_cost(faction)
 
     if self:force_needs_supply(force, self.no_balance_lords) then
 
-      armies_total_cost = armies_total_cost + army_cost;
-      army_cost = army_cost + 1
+      armies_total_cost = armies_total_cost + next_army_cost;
+      next_army_cost = math.min(next_army_cost + 1, self.max_balance_per_army);
     end --of army check
   end --of force list loop
 
