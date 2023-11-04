@@ -16,7 +16,7 @@ function Flexible_unit_caps:set_new_lord_text()
   local force_list = faction:military_force_list();
   local current_army_count = self:get_armies_count(force_list, self.no_balance_lords)
   local future_army_count = current_army_count + 1
-  local supply_decreasing = current_army_count
+  local supply_decreasing = math.min(current_army_count, self.max_balance_per_army);
 
   local current_supply_penalty = 0
   if supply_balance < 0 then

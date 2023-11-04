@@ -4,8 +4,8 @@
 function Flexible_unit_caps:create_negative_sb_effect(faction, supply_balance)
   local force_list = faction:military_force_list();
   local num_of_armies = Flexible_unit_caps:get_armies_count(force_list, self.no_balance_lords)
-  local recruitment_cost = math.ceil(supply_balance * (num_of_armies^0.75))
-  local replenishment = math.ceil(-supply_balance * (num_of_armies^0.5))
+  local recruitment_cost = math.ceil(-supply_balance * (num_of_armies^0.75))
+  local replenishment = math.ceil(supply_balance * (num_of_armies^0.3))
 
   local additional_supply = Flexible_unit_caps:calculate_supply_penalty(-supply_balance, num_of_armies);
 

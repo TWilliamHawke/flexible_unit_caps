@@ -208,6 +208,7 @@ function Flexible_unit_caps:add_player_listeners()
         if faction then
           self:log("======================");
           self:log("UNIT DISBANDED");
+          self:set_tooltip_for_finance_button(cm:get_local_faction(true));
           self:reapply_supply_balance_effect(faction);
           self:apply_upkeep_penalty(faction);
         end
