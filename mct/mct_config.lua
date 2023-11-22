@@ -66,6 +66,13 @@ player_unit_caps:set_text("Unit Caps for Player")
 player_unit_caps:add_dropdown_values(unit_caps_size_options)
 player_unit_caps:set_default_value("100")
 
+local hero_cap = flexible_unit_caps:add_new_option("a_hero_cap", "slider");
+hero_cap:set_text("Cap for heroes")
+hero_cap:set_tooltip_text("Number of heroes that you can attach to army without penalty. Some lords like Isabella can increase this value. 0 or -1 means no cap")
+hero_cap:slider_set_min_max(-1, 20)
+hero_cap:set_default_value(4)
+hero_cap:slider_set_step_size(1)
+
 local unit_caps_mode = flexible_unit_caps:add_new_option("b_unit_caps_penalty", "dropdown")
 unit_caps_mode:set_text("Penalty for exceeding the cap")
 unit_caps_mode:add_dropdown_values(unit_caps_penalty_options)
@@ -90,7 +97,7 @@ settings_section:set_localised_text("Advanced settings")
 local unit_base_supply = flexible_unit_caps:add_new_option("a_unit_supply", "slider")
 unit_base_supply:set_text(loc_prefix.."c_c_unit_supply_text", true)
 unit_base_supply:set_tooltip_text(loc_prefix.."c_c_unit_supply_tt", true)
-unit_base_supply:slider_set_min_max(-3, 3)
+unit_base_supply:slider_set_min_max(-5, 3)
 unit_base_supply:set_default_value(0)
 unit_base_supply:slider_set_step_size(1)
 
@@ -126,5 +133,6 @@ if player_effect.set_is_global then
   enable_balance:set_is_global(true)
   show_base_supply:set_is_global(true)
   force_english:set_is_global(true)
+  hero_cap:set_is_global(true)
 
 end

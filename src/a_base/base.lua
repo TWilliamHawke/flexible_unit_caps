@@ -3,6 +3,7 @@ Flexible_unit_caps = {
     ui_debounce_key = "fluc_debounce_ui",
     main_debounce_key = "fluc_debounce_main",
     loaned_army_effect = "FLUC_loaned_army",
+    heroes_unit_group = "fluc_all_heroes",
     show_base_supply = false,
   --main
     ai_supply_mult = 0,
@@ -16,6 +17,7 @@ Flexible_unit_caps = {
     big_empire_penalty_start = 999,
     max_balance_per_army = 8,
   --unit cap
+    hero_cap = 4,
     player_unit_cap_mult = 1,
     ai_unit_cap_mult = 1.25,
     use_harsh_mode = false,

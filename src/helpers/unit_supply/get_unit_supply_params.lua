@@ -13,7 +13,7 @@ function Flexible_unit_caps:get_unit_supply_params(unit_name, supply_change_cach
   local unit_data = self.units_data[unit_name];
 
   local base_unit_cost = unit_data[1] or 0;
-  base_unit_cost = base_unit_cost + self.basic_unit_supply;
+  base_unit_cost = math.max(base_unit_cost + self.basic_unit_supply, 0);
   local lord_supply_change = 0;
 
   for i = 1, #unit_groups do

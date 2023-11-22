@@ -21,6 +21,7 @@
 ---@field b_lord_supply integer
 ---@field show_base_supply boolean
 ---@field force_english boolean
+---@field a_hero_cap integer
 
 do
 	---@class FlexibleUnitCapsInit

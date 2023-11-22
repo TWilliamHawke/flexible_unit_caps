@@ -20,7 +20,7 @@ function Flexible_unit_caps:set_tooltip_for_unit_in_queue(component, queued_unit
 
   self:logDebug("CONSTRUCT SUPPLY TEXT FUNCTION IS FINISHED");
   queued_units.supply = queued_units.supply + unit_cost
-  self:finalize_unit_tooltip(component, supply_text .. "\n", "||");
+  self:finalize_unit_tooltip(component, supply_text, "||");
 
   return unit_cost;
 end

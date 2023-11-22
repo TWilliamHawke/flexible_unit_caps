@@ -34,5 +34,5 @@ function Flexible_unit_caps:set_tooltip_for_unit_in_army(component, lord, caches
       return unit_index, group_capacity;
     end, caches);
 
-  self:finalize_unit_tooltip(component, supply_text .. "\n", "||")
+  self:finalize_unit_tooltip(component, supply_text, "||")
 end

@@ -16,6 +16,7 @@ function Flexible_unit_caps:mct_init(context)
 
   self.player_unit_cap_mult = player_cap == -1 and -1 or player_cap / 100;
   self.ai_unit_cap_mult = ai_cap == -1 and -1 or ai_cap / 100;
+  self.hero_cap = settings.a_hero_cap;
 
   local supply_balance_diff = tonumber(settings.a_supply_balance_diff);
 

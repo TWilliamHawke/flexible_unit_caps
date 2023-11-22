@@ -2,7 +2,6 @@
 ---@param character CHARACTER_SCRIPT_INTERFACE
 ---@param caches {}
 function Flexible_unit_caps:set_agent_tooltip(component, character, caches)
-  local agent_supply_cost = 0;
   local agent_number = component:Id():match("(%d+)")
   agent_number = tonumber(agent_number) or 0;
 
@@ -19,8 +18,12 @@ function Flexible_unit_caps:set_agent_tooltip(component, character, caches)
   end
 
   local _, unit_index = self:get_units_count_from_cache(
-    caches.selected_force_units_cache, "fluc_all_heroes", tostring(agent_number + 2));
-  local group_capacity = self:get_unit_cap_from_cache(caches.selected_force_units_cache, "fluc_all_heroes");
+    caches.selected_force_units_cache, self.heroes_unit_group, tostring(agent_number + 2));
+  local group_capacity = self:get_unit_cap_from_cache(caches.selected_force_units_cache, self.heroes_unit_group);
+
+  if self.hero_cap < 1 then
+    group_capacity = 19;
+  end
 
 
   local supply_text = self:construct_agent_tooltip(character, unit_index, group_capacity)
