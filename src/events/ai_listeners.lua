@@ -5,9 +5,9 @@ function Flexible_unit_caps:add_ai_listeners()
     "FactionTurnStart",
     function(context)
       local faction = context:faction()
-      return not faction:is_human() and self:faction_has_supply_lines(faction)
+      return not faction:is_human() and
+      faction:name() ~= "rebels" and self:faction_has_supply_lines(faction)
     end,
-    -- true,
     function(context)
       local faction = context:faction();
       self:logAI("--------");
@@ -22,9 +22,11 @@ function Flexible_unit_caps:add_ai_listeners()
   core:add_listener(
     "fluc_Unit_caps_ai",
     "FactionTurnStart",
+    ---@param context FactionTurnStart
     function(context)
       local faction = context:faction()
-      return not faction:is_human() and self:faction_has_supply_lines(faction)
+      return not faction:is_human() and faction:region_list():num_items() > 0 and
+      faction:name() ~= "rebels" and self:faction_has_supply_lines(faction)
     end,
     -- true,
     function(context)

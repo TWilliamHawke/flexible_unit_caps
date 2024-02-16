@@ -178,9 +178,11 @@ Flexible_unit_caps.lord_supply_change = {
   },
   wh_main_vmp_mannfred_von_carstein = {
     fluc_vmp_black_knights = { change = -2, hidden = false },
+    fluc_vmp_grave_guard = { change = -2, hidden = false },
   },
   wh_dlc04_vmp_helman_ghorst = {
-    fluc_vmp_grave_guard = { change = -2, hidden = false },
+    fluc_vmp_ghouls = { change = -2, hidden = false },
+    fluc_vmp_zombies = { change = -2, hidden = false },
   },
   wh_pro02_vmp_isabella_von_carstein = {
     fluc_all_heroes = { change = -2, hidden = false },

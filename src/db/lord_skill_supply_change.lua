@@ -3,7 +3,7 @@
 ---@type table<string, table<string, lord_skill_data >>
 Flexible_unit_caps.skill_supply_change = {
   --empire
-  wh2_dlc13_emp_cha_huntsmarshal_0 = {
+  wh2_dlc13_emp_cha_huntsmarshal = {
     fluc_emp_huntsmen = { -1, false, "wh2_dlc13_skill_emp_hunts_marshal_unique_1" },
     fluc_emp_archers = { -1, false, "wh2_dlc13_skill_emp_hunts_marshal_unique_1" },
     fluc_emp_greatswords = { -1, false, "wh2_dlc13_skill_emp_hunts_marshal_unique_0" },
