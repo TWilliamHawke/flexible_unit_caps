@@ -12,6 +12,7 @@ Flexible_unit_caps.units_data = {
     ["wh3_main_ksl_cav_horse_archers_0"]  = { 0, "fluc_ksl_horse_raiders"},
     ["wh3_main_ksl_cav_horse_raiders_0"]  = { 0, "fluc_ksl_horse_raiders"},
     ["wh3_main_pro_ksl_cav_horse_raiders_0"]  = { 0, "fluc_ksl_horse_raiders"},
+    ["wh3_dlc24_ksl_inf_kislevite_warriors"]  = { 0, "fluc_ksl_warriors"},
     --special
     ["wh3_main_ksl_inf_armoured_kossars_0"]  = { 1, "fluc_ksl_armored_kossars"},
     ["wh3_main_ksl_inf_armoured_kossars_1"]  = { 1, "fluc_ksl_armored_kossars"},
@@ -22,6 +23,7 @@ Flexible_unit_caps.units_data = {
     ["wh3_main_ksl_mon_snow_leopard_0"]  = { 1, "fluc_ksl_leopards"},
     ["wh3_main_pro_ksl_inf_streltsi_0"]  = { 1, "fluc_ksl_streltsi"},
     ["wh3_main_ksl_inf_streltsi_0"]  = { 1, "fluc_ksl_streltsi"},
+    ["wh3_dlc24_ksl_inf_akshina_ambushers"]  = { 1, "fluc_ksl_ambushers"},
     --rare
     ["wh3_main_ksl_inf_tzar_guard_0"]  = { 2, "fluc_ksl_tzar_guard"},
     ["wh3_main_ksl_inf_tzar_guard_1"]  = { 2, "fluc_ksl_tzar_guard"},
@@ -31,8 +33,8 @@ Flexible_unit_caps.units_data = {
     ["wh3_main_ksl_veh_light_war_sled_0"]  = { 2, "fluc_ksl_war_sled"},
     ["wh3_dlc24_ksl_mon_the_things_in_the_woods"]  = { 2, "fluc_ksl_things"},
     --elite
-    ["wh3_dlc24_ksl_inf_akshina_ambushers"]  = { 3, "fluc_ksl_ambushers"},
     ["wh3_main_pro_ksl_veh_little_grom_0"]  = { 3, "fluc_ksl_artillery"},
+    ["wh3_dlc24_ksl_mon_frost_wyrm"]  = { 3, "fluc_ksl_frost_wyrm"},
     ["wh3_main_ksl_veh_little_grom_0"]  = { 3, "fluc_ksl_artillery"},
     ["wh3_main_ksl_mon_elemental_bear_0"]  = { 3, "fluc_ksl_elemental"},
     ["wh3_main_ksl_inf_ice_guard_0"]  = { 3, "fluc_ksl_ice_guard"},
@@ -100,7 +102,7 @@ Flexible_unit_caps.units_data = {
     ["wh3_dlc23_chd_cav_hobgoblin_wolf_raiders_spears"]  = { 1, "fluc_chd_hobgoblin_raiders"},
     --rare
     ["wh3_dlc23_chd_mon_kdaai_fireborn"]  = { 2, "fluc_chd_fireborn"},
-    ["wh3_dlc23_chd_mon_lammasu"]  = { 2, "fluc_chd_taurus"},
+    ["wh3_dlc23_chd_mon_lammasu"]  = { 2, "fluc_chd_lammasu"},
     ["wh3_dlc23_chd_inf_chaos_dwarf_blunderbusses"]  = { 2, "fluc_chd_blunderbusses"},
     ["wh3_dlc23_chd_inf_chaos_dwarf_warriors"]  = { 2, "fluc_chd_warriors"},
     ["wh3_dlc23_chd_inf_chaos_dwarf_warriors_great_weapons"]  = { 2, "fluc_chd_warriors"},
@@ -153,6 +155,8 @@ Flexible_unit_caps.units_data = {
     ["wh3_main_cth_veh_sky_junk_0"]  = { 2, "fluc_cth_war_machines", "fluc_all_flying_units", "fluc_all_long_range"},
     ["wh3_main_cth_veh_sky_lantern_0"]  = { 2, "fluc_cth_war_machines", "fluc_all_flying_units", "fluc_all_long_range"},
     --elite
+    ["wh3_dlc24_cth_mon_celestial_lion"]  = { 3, "fluc_cth_celestian_lions"},
+    ["wh3_dlc24_cth_mon_great_moon_bird"]  = { 3, "fluc_cth_moon_birds"},
     ["wh3_main_cth_inf_dragon_guard_0"]  = { 3, "fluc_cth_dragon_guard"},
     ["wh3_main_cth_cav_jade_longma_riders_0"]  = { 3, "fluc_cth_longma"},
     ["wh3_main_cth_inf_dragon_guard_crossbowmen_0"]  = { 4, "fluc_cth_crossbowmen"},
@@ -165,7 +169,7 @@ Flexible_unit_caps.units_data = {
     ["wh3_dlc24_cth_inf_onyx_crowmen_ror"]  = { 1, "fluc_cth_crowmen", "fluc_all_ror" },
     ["wh3_dlc24_cth_veh_zhangu_war_drum_ror"]  = { 1, "fluc_cth_war_machines", "fluc_all_ror"},
     ["wh3_dlc24_cth_inf_dragon_guard_crossbowmen_ror"]  = { 4, "fluc_cth_crossbowmen", "fluc_all_ror"},
-    ["wh3_twa06_cth_inf_dragon_guard_ror_0"]  = { 4, "fluc_cth_dragon_guard", "fluc_all_ror" },
+    ["wh3_twa06_cth_inf_dragon_guard_ror_0"]  = { 3, "fluc_cth_dragon_guard", "fluc_all_ror" },
     ["wh3_twa07_cth_cav_jade_longma_riders_ror_0"]  = { 3, "fluc_cth_longma", "fluc_all_ror" },
     ["wh3_twa08_cth_mon_terracotta_sentinel_0_ror"]  = { 4, "fluc_cth_terracotta", "fluc_all_ror" },
   --Khorne
@@ -306,6 +310,7 @@ Flexible_unit_caps.units_data = {
     ["wh3_main_tze_mon_screamers_0"]  = { 1, "fluc_tze_screamers"},
     ["wh3_main_tze_mon_spawn_of_tzeentch_0"]  = { 1, "fluc_tze_spawn"},
     ["wh3_dlc24_tze_inf_tzaangors"]  = { 1, "fluc_tze_tzaangors"},
+    ["wh3_dlc24_tze_inf_centigors_great_weapons"]  = { 1, "fluc_bst_centigors"},
     --rare
     ["wh3_dlc20_chs_cav_chaos_chariot_mtze"]  = { 2, "fluc_tze_war_machines"},
     ["wh3_dlc20_chs_inf_chaos_warriors_mtze"]  = { 2, "fluc_tze_warriors"},
@@ -317,7 +322,8 @@ Flexible_unit_caps.units_data = {
     ["wh3_main_tze_veh_burning_chariot_0"]  = { 2, "fluc_tze_war_machines"},
     --elite
     ["wh3_main_tze_cav_doom_knights_0"]  = { 3, "fluc_tze_doom_knights"},
-    ["wh3_main_tze_mon_exalted_flamers_0"]  = { 3, "fluc_tze_flamers"},
+    ["wh3_main_tze_mon_exalted_flamers_0"]  = { 3, "fluc_tze_flamers", "fluc_all_rare_creatures"},
+    ["wh3_dlc24_tze_mon_flamers_changebringers"]  = { 3, "fluc_tze_flamers", "fluc_all_flying_units"},
     ["wh3_dlc20_chs_mon_warshrine_mtze"]  = { 3, "fluc_tze_war_machines"},
     ["wh3_main_tze_inf_pink_horrors_1"]  = { 3, "fluc_tze_pink_horrors"},
     ["wh3_dlc20_chs_cav_chaos_knights_mtze_lances"]  = { 3, "fluc_tze_knights"},

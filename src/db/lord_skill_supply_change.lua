@@ -91,6 +91,11 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_vmp_varghulf = { -2, false, "wh2_dlc11_skill_vmp_isabella_unique_5" },
     fluc_vmp_terrorgheist = { -2, false, "wh2_dlc11_skill_vmp_isabella_unique_5" },
   },
+  -- wh_pro02_vmp_isabella_von_carstein_hero = {
+  --   fluc_vmp_vargheists = { -1, false, "wh2_dlc11_skill_vmp_isabella_unique_5" },
+  --   fluc_vmp_varghulf = { -1, false, "wh2_dlc11_skill_vmp_isabella_unique_5" },
+  --   fluc_vmp_terrorgheist = { -1, false, "wh2_dlc11_skill_vmp_isabella_unique_5" },
+  -- },
   wh_main_vmp_heinrich_kemmler = {
     fluc_vmp_ghosts = { -2, false, "wh2_dlc17_skill_vmp_heinrich_kemmler_unique_wightblades" },
     fluc_vmp_ghost_cav = { -2, false, "wh2_dlc17_skill_vmp_heinrich_kemmler_unique_wightblades" },

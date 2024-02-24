@@ -187,6 +187,9 @@ Flexible_unit_caps.lord_supply_change = {
   wh_pro02_vmp_isabella_von_carstein = {
     fluc_all_heroes = { change = -2, hidden = false },
   },
+  -- wh_pro02_vmp_isabella_von_carstein_hero = {
+  --   fluc_all_heroes = { change = -2, hidden = false },
+  -- },
   wh2_dlc11_vmp_bloodline_lahmian = {
     fluc_vmp_lahmian = { change = -2, hidden = false },
   },
@@ -459,6 +462,16 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_cth_jade_lancers = { change = -1, hidden = false },
     fluc_cth_longma = { change = -1, hidden = false },
     fluc_cth_terracotta = { change = -1, hidden = false },
+    fluc_cth_lions = { change = -1, hidden = false },
+  },
+  wh3_dlc24_cth_yuan_bo = {
+    fluc_cth_lions = { change = -2, hidden = false },
+    fluc_cth_crowmen = { change = -2, hidden = false },
+    fluc_cth_celestian_lions = { change = -2, hidden = false },
+  },
+  wh3_dlc24_cth_saytang_the_watcher = {
+    fluc_cth_terracotta = { change = -2, hidden = false },
+    fluc_all_rare_creatures = { change = -1, hidden = true },
   },
   wh3_main_ogr_greasus_goldtooth = {
     fluc_ogr_ironguts = { change = -2, hidden = false },
@@ -551,10 +564,6 @@ Flexible_unit_caps.lord_supply_change = {
   wh_dlc03_bst_khazrak = {
     fluc_bst_bestigors = { change = -2, hidden = false },
     fluc_bst_razorgors = { change = -2, hidden = false },
-  },
-  wh3_dlc24_cth_yuan_bo = {
-    fluc_cth_lions = { change = -2, hidden = false },
-    fluc_cth_crowmen = { change = -2, hidden = false },
   },
   wh3_dlc24_ksl_mother_ostankya  = {
     fluc_wef_spiders = { change = -2, hidden = false },

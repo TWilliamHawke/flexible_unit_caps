@@ -20,4 +20,6 @@ Flexible_unit_caps.free_agents = {
   ["wh3_pro11_chs_cha_harald_hammerstorm"] = true,
   ["wh3_dlc24_tze_aekold_helbrass"] = true,
   ["wh3_dlc24_tze_blue_scribes"] = true,
+  ["wh3_dlc24_ksl_the_golden_knight"] = true,
+  ["wh3_dlc24_cth_saytang_the_watcher"] = true,
 }
