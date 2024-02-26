@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 ---@param faction FACTION_SCRIPT_INTERFACE
 function Flexible_unit_caps:apply_upkeep_penalty(faction)
   local effects_bundle_key = "fluc_upkeep_global";
