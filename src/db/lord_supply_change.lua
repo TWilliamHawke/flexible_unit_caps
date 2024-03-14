@@ -461,13 +461,18 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_cth_dragon_guard = { change = -1, hidden = false },
     fluc_cth_jade_lancers = { change = -1, hidden = false },
     fluc_cth_longma = { change = -1, hidden = false },
-    fluc_cth_terracotta = { change = -1, hidden = false },
-    fluc_cth_lions = { change = -1, hidden = false },
+    fluc_cth_terracotta = { change = -1, hidden = true },
+    fluc_cth_lions = { change = -1, hidden = true },
+    fluc_cth_celestian_lions = { change = -1, hidden = true },
+    fluc_cth_moon_birds = { change = -1, hidden = true },
+    fluc_cth_melee_monsters = { change = -1, hidden = false },
   },
   wh3_dlc24_cth_yuan_bo = {
     fluc_cth_lions = { change = -2, hidden = false },
     fluc_cth_crowmen = { change = -2, hidden = false },
     fluc_cth_celestian_lions = { change = -2, hidden = false },
+    fluc_cth_moon_birds = { change = -2, hidden = false },
+    fluc_all_rare_creatures = { change = -1, hidden = true },
   },
   wh3_dlc24_cth_saytang_the_watcher = {
     fluc_cth_terracotta = { change = -2, hidden = false },
@@ -508,6 +513,10 @@ Flexible_unit_caps.lord_supply_change = {
   wh3_dlc23_chd_drazhoath = {
     fluc_chd_destroyer = { change = -2, hidden = false },
     fluc_chd_fireborn = { change = -2, hidden = false },
+  },
+  wh3_dlc23_chd_gorduz_backstabber = {
+    fluc_chd_hobgoblins = { change = -1, hidden = false },
+    fluc_chd_hobgoblin_archers = { change = -1, hidden = false },
   },
   wh3_dlc23_chd_zhatan = {
     fluc_chd_mortires = { change = -2, hidden = false },

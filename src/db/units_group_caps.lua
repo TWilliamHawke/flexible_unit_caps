@@ -120,6 +120,7 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_cth_peasants = { 10, "" },
   fluc_cth_terracotta = { 4, "wh3_main_cth_inf_jade_warriors_1" },
   fluc_cth_war_machines = { 4, "wh3_main_cth_inf_jade_warriors_0" },
+  fluc_cth_melee_monsters = { 4, "" }, --tooltip only
   --Dark Elves
   fluc_def_artillery = { 4, "wh2_main_def_inf_black_ark_corsairs_1" },
   fluc_def_bleakswords = { 8, "" },

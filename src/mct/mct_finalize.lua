@@ -11,4 +11,10 @@ function Flexible_unit_caps:mct_finalize()
   self:set_tooltip_for_finance_button(faction);
 
   self:log("Player supply now is "..tostring(self.player_supply_custom_mult));
+
+  local balance_icon = find_uicomponent(core:get_ui_root(), "hud_campaign", "resources_bar", "treasury_holder_standard", "fluc_balance") or find_uicomponent(core:get_ui_root(), "hud_campaign", "resources_bar", "treasury_holder", "fluc_balance")
+  if balance_icon then
+    balance_icon:SetVisible(self.enable_supply_balance);
+  end
+
 end;

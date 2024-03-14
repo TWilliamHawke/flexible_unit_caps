@@ -1,6 +1,7 @@
 ---@diagnostic disable: redundant-parameter
 ---@param faction FACTION_SCRIPT_INTERFACE
 ---@return string tooltip_text
+---@return integer supply_balance
 function Flexible_unit_caps:construct_treasury_tooltip(faction)
   self:logDebug("Constructor IS STARTED");
 
@@ -64,5 +65,5 @@ function Flexible_unit_caps:construct_treasury_tooltip(faction)
 
   self:logDebug("-------------");
   self:logDebug("Constructor IS FINISHED");
-  return tooltip_text
+  return tooltip_text, supply_balance
 end

@@ -151,7 +151,8 @@ function Flexible_unit_caps:add_ui_listeners()
     ---@param context any
     function(context)
       cm:callback(function()
-        self:set_new_lord_text()
+        self:set_new_lord_text();
+        self:add_lores_to_cache();
       end, 0.2);
     end,
     true
@@ -168,6 +169,7 @@ function Flexible_unit_caps:add_ui_listeners()
     function(context)
       cm:callback(function()
         self:set_new_lord_text();
+        self:add_lores_to_cache();
 
         local lord_list = find_uicomponent(core:get_ui_root(), "character_panel", "lord_parent", "list_box");
 
