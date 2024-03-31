@@ -7,7 +7,9 @@ Flexible_unit_caps.gates_superchain = {
   ["wh2_main_sch_empire_fort"] = 1,
 }
 
-Flexible_unit_caps.free_settlement_chains = {
+Flexible_unit_caps.fixed_chain_cost = {
+  wh3_main_cth_bastion_primary = 1,
+  wh3_dlc23_special_settlement_bastion_chd = 1,
   -- wh3_dlc20_settlement_woc_chaos_altar_special_gate = true,
   -- wh2_main_special_empire_fort_wef = true,
   -- wh2_main_special_fortress_gate_eagle_wef = true,
@@ -15,9 +17,9 @@ Flexible_unit_caps.free_settlement_chains = {
   -- wh2_main_special_fortress_gate_phoenix_wef = true,
   -- wh2_main_special_fortress_gate_unicorn_wef = true,
   -- wh2_main_special_salzenmund_laurelorn_wef = true,
-  wh2_main_wef_oak_of_ages_occupied = true,
+  wh2_main_wef_oak_of_ages_occupied = 0,
   --wh_dlc05_settlement_wef_outpost = true,
-  wh_dlc05_wef_oak_of_ages = true,
-  wh3_dlc23_chd_settlement_outpost = true,
-  wh_main_BRETONNIA_settlement_minor = true,
+  wh_dlc05_wef_oak_of_ages = 0,
+  wh3_dlc23_chd_settlement_outpost = 0,
+  wh_main_BRETONNIA_settlement_minor = 0,
 }

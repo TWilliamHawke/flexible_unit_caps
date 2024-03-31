@@ -7,6 +7,7 @@ function Flexible_unit_caps:replace_dev_points_text(ui_component, climate_penalt
   local supply_balance_change = 0;
 
   if is_major then
+    chain = string.gsub(chain, "CcoBuildingChainRecord", "");
     supply_balance_change = self:get_major_building_change(building_id, chain, climate_penalty);
   else
     supply_balance_change = self:get_bulding_supply_balance(building_id, climate_penalty);

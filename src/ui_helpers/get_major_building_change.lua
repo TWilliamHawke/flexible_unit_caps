@@ -4,8 +4,9 @@
 ---@param climate_penalty integer
 ---@return integer
 function Flexible_unit_caps:get_major_building_change(building_id, building_chain, climate_penalty)
-  if self.free_settlement_chains[building_chain] then
-    return 0
+  self:logCore(building_chain)
+  if self.fixed_chain_cost[building_chain] ~= nil then
+    return -self.fixed_chain_cost[building_chain]
   end
 
   if building_chain:match("_gate_") or building_chain:match("_empire_fort") then

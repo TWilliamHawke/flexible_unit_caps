@@ -7,9 +7,8 @@ function Flexible_unit_caps:get_main_building_cost(building, climate_penalty)
   local main_building_chain = building:chain();
   --local culture = faction:culture()
 
-  --if main_building_chain == "wh3_dlc20_settlement_woc_chaos_altar" or
-  if self.free_settlement_chains[main_building_chain] then
-    return 0;
+  if self.fixed_chain_cost[main_building_chain] ~= nil then
+    return self.fixed_chain_cost[main_building_chain];
   end
 
   if self.gates_superchain[main_building_superchain] then
