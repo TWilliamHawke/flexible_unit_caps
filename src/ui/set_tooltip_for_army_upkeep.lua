@@ -31,6 +31,7 @@ function Flexible_unit_caps:set_tooltip_for_army_upkeep(lord, supply_penalty, qu
       local cost_change = data.change;
       local groupText = self:get_localised_string(group_key);
 
+      --it has very special rounding logic
       local cap_change = self:get_unit_max_capacity(group_key, caches.supply_change_cache)
       cap_change = cap_change - self:get_unit_max_capacity(group_key, empty_cache);
 

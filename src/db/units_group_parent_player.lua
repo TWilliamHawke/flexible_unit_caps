@@ -285,6 +285,7 @@ Flexible_unit_caps.units_group_parent_player = {
   fluc_cth_lions = {"fluc_all_rare_creatures"},
   fluc_cth_celestian_lions = {"fluc_all_flying_units", "fluc_all_rare_creatures"},
   fluc_cth_moon_birds = {"fluc_all_flying_units", "fluc_all_rare_creatures"},
+  fluc_cth_lanterns = {"fluc_all_flying_units", "fluc_all_long_range"},
   --Chorf  
   fluc_chd_hobgoblin_archers = {"fluc_all_missiles"},
   fluc_chd_hobgoblin_raiders = {"fluc_all_cavalry"},

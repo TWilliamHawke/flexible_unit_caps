@@ -454,7 +454,6 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_cth_crossbowmen = { change = -1, hidden = false },
     fluc_cth_hail_gunners = { change = -1, hidden = false },
     fluc_cth_crain_gunners = { change = -1, hidden = false },
-    fluc_cth_artillery = { change = -1, hidden = false },
   },
   wh3_main_cth_zhao_ming = {
     fluc_cth_jade_warriors = { change = -1, hidden = false },
