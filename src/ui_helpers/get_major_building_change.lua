@@ -4,7 +4,6 @@
 ---@param climate_penalty integer
 ---@return integer
 function Flexible_unit_caps:get_major_building_change(building_id, building_chain, climate_penalty)
-  self:logCore(building_chain)
   if self.fixed_chain_cost[building_chain] ~= nil then
     return -self.fixed_chain_cost[building_chain]
   end

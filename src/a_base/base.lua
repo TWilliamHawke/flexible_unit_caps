@@ -28,6 +28,7 @@ Flexible_unit_caps = {
     game_lang = nil,
     character_panel_lords = {},
     building_tooltip_text = nil,
+    port_buildings = {},
 }
 
 --TODO check config without mct
