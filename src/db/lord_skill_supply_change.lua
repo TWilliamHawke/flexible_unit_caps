@@ -9,11 +9,21 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_emp_greatswords = { -1, false, "wh2_dlc13_skill_emp_hunts_marshal_unique_0" },
     fluc_emp_halberdiers = { -1, false, "wh2_dlc13_skill_emp_hunts_marshal_unique_0" },
   },
+  wh3_dlc25_emp_master_engineer = {
+    fluc_emp_landship = { -1, false, "wh3_dlc25_skill_emp_master_engineer_unique_3_2" },
+    fluc_emp_helstorm = { -1, true, "wh3_dlc25_skill_emp_master_engineer_unique_3_2" },
+    fluc_emp_tank = { -1, false, "wh3_dlc25_skill_emp_master_engineer_unique_3_2" },
+    fluc_emp_artillery = { -1, false, "wh3_dlc25_skill_emp_master_engineer_unique_3_2" },
+    fluc_emp_artillery_wagon = { -1, true, "wh3_dlc25_skill_emp_master_engineer_unique_3_2" },
+  },
   wh_main_emp_balthasar_gelt = {
-    fluc_emp_outriders = { -1, false, "wh_dlc08_skill_emp_lord_unique_balthasar_unique_2" },
-    fluc_emp_handgunners = { -1, false, "wh_dlc08_skill_emp_lord_unique_balthasar_unique_2" },
-    fluc_emp_magic_machines = { -1, false, "wh_dlc08_skill_emp_lord_unique_balthasar_unique_3" },
-    fluc_emp_tank = { -1, false, "wh_dlc08_skill_emp_lord_unique_balthasar_unique_3" },
+    fluc_emp_handgunners = { -1, false, "wh_dlc08_skill_emp_lord_unique_balthasar_unique_3" },
+    fluc_emp_free_company = { -1, false, "wh_dlc08_skill_emp_lord_unique_balthasar_unique_3" },
+    fluc_emp_long_rifles = { -1, false, "wh_dlc08_skill_emp_lord_unique_balthasar_unique_3" },
+    fluc_emp_halberdiers = { -1, false, "wh_dlc08_skill_emp_lord_unique_balthasar_unique_6" },
+    fluc_emp_flagellants = { -1, false, "wh_dlc08_skill_emp_lord_unique_balthasar_unique_6" },
+    fluc_emp_greatswords = { -1, false, "wh_dlc08_skill_emp_lord_unique_balthasar_unique_6" },
+    fluc_emp_helstorm = { -2, false, "wh_dlc08_skill_emp_lord_unique_balthasar_unique_2" },
   },
   ulric_grandmaster = {
     fluc_emp_ulric_cult = { -2, false, "ulric_cult_of_ulric_stats" },
@@ -28,21 +38,19 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_emp_handgunners = { -1, false, "skill_emp_lord_unique_campaign_kurt_helborg_reiksguard_supply" },
   },
   wh_pro01_dwf_grombrindal = {
-    fluc_dwf_irondrakes = { -2, false, "wh2_dlc17_dwf_grombrindal_unique_rouse_the_engineers" },
-    fluc_dwf_artillery_classic = { -1, false, "wh2_dlc17_dwf_grombrindal_unique_rouse_the_engineers" },
-    fluc_dwf_artillery_gun = { -1, false, "wh2_dlc17_dwf_grombrindal_unique_rouse_the_engineers" },
-    fluc_dwf_flying_machine = { -2, true, "wh2_dlc17_dwf_grombrindal_unique_rouse_the_engineers" },
+    fluc_dwf_artillery_classic = { -1, true, "wh2_dlc17_dwf_grombrindal_unique_rouse_the_engineers" },
+    fluc_dwf_artillery_gun = { -1, true, "wh2_dlc17_dwf_grombrindal_unique_rouse_the_engineers" },
+    fluc_dwf_artillery_fire = { -1, true, "wh2_dlc17_dwf_grombrindal_unique_rouse_the_engineers" },
+    fluc_dwf_artillery = { -1, false, "wh2_dlc17_dwf_grombrindal_unique_rouse_the_engineers" },
+    fluc_dwf_copters = { -2, true, "wh2_dlc17_dwf_grombrindal_unique_rouse_the_engineers" },
+    fluc_dwf_bombers = { -2, true, "wh2_dlc17_dwf_grombrindal_unique_rouse_the_engineers" },
+    fluc_dwf_thunderbarge = { -2, true, "wh2_dlc17_dwf_grombrindal_unique_rouse_the_engineers" },
     fluc_dwf_land_machine = { -2, true, "wh2_dlc17_dwf_grombrindal_unique_rouse_the_engineers" },
+    fluc_dwf_goblin_hewers = { -2, true, "wh2_dlc17_dwf_grombrindal_unique_rouse_the_engineers" },
     fluc_dwf_war_machines = { -2, false, "wh2_dlc17_dwf_grombrindal_unique_rouse_the_engineers" },
   },
   wh_dlc06_dwf_belegar = {
     fluc_dwf_rangers = { -2, false, "wh2_dlc17_dwf_belegar_unique_tunnel_warfare" },
-  },
-  wh_main_dwf_thorgrim_grudgebearer = {
-    fluc_dwf_artillery_classic = { -2, true, "wh_dlc08_skill_dwf_lord_thorgrim_unique_2" },
-    fluc_dwf_artillery_gun = { -2, true, "wh_dlc08_skill_dwf_lord_thorgrim_unique_2" },
-    fluc_dwf_artillery_fire = { -2, true, "wh_dlc08_skill_dwf_lord_thorgrim_unique_2" },
-    fluc_dwf_artillery = { -2, false, "wh_dlc08_skill_dwf_lord_thorgrim_unique_2" },
   },
   dwf_byrrnoth_grundadrakk = {
     fluc_dwf_artillery_fire = { -2, true, "parte_skill_dwf_byrrnoth_grundadrakk_unique_zul_barag" },
@@ -57,6 +65,15 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_dwf_artillery_fire = { -2, true, "elo_greybeard_automatization" },
     fluc_dwf_artillery_classic = { -2, true, "elo_greybeard_automatization" },
     fluc_dwf_artillery = { -2, false, "wh_dlc08_skill_dwf_lord_thorgrim_unique_2" },
+  },
+  wh3_dlc25_dwf_daemon_slayer = {
+    fluc_dwf_pirates = { -1, false, "wh3_dlc25_dwf_daemon_slayer_personal_3" },
+    fluc_dwf_slayers = { -1, false, "wh3_dlc25_dwf_daemon_slayer_personal_3" },
+  },
+  wh3_dlc25_dwf_malakai_makaisson = {
+    fluc_dwf_pirates = { -1, false, "wh3_dlc25_skill_dwf_malakai_makaisson_unique_2" },
+    fluc_dwf_slayers = { -1, false, "wh3_dlc25_skill_dwf_malakai_makaisson_unique_2" },
+    fluc_dwf_goblin_hewers = { -1, false, "wh3_dlc25_skill_dwf_malakai_makaisson_unique_2" },
   },
   Goblin = {
     fluc_grn_goblins = { -1, false, "wh_dlc06_skill_grn_lord_battle_ard_ladz" },
@@ -406,5 +423,9 @@ Flexible_unit_caps.skill_supply_change = {
   },
   wh3_main_cth_lord_magistrate_yin = {
     fluc_all_heroes = { -1, false, "wh3_dlc24_skill_cth_lord_magistrate_promoted_on_merit" },
+  },
+  wh3_dlc25_nur_epidemius = {
+    fluc_nur_flies = { -2, false, "wh3_dlc25_nur_epidemius_personal_1" },
+    fluc_nur_toads = { -2, false, "wh3_dlc25_nur_epidemius_personal_1" },
   },
 }

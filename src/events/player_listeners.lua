@@ -11,11 +11,17 @@ function Flexible_unit_caps:add_player_listeners()
     end,
     -- true,
     function(context)
-      local faction = context:faction();
-      self:log("======================");
-      self:log("APPLY UPKEEP (TURN START)");
-      self:apply_upkeep_penalty(faction);
-      self:reapply_supply_balance_effect(faction);
+      local faction_name = context:faction():name();
+      cm:remove_callback(self.main_debounce_key..faction_name)
+      self:reapply_supply_balance_effect(context:faction());
+
+      cm:callback(function()
+        self:log("======================");
+        self:log("APPLY UPKEEP (TURN START)");
+        local faction = cm:get_faction(faction_name)
+        self:apply_upkeep_penalty(faction);
+        self:set_tooltip_for_finance_button(faction);
+      end, 0.2, self.main_debounce_key..faction_name);
     end,
     true
   );

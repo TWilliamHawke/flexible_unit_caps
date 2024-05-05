@@ -28,7 +28,7 @@ end
 ---@param faction FACTION_SCRIPT_INTERFACE
 function Flexible_unit_caps:reapply_supply_balance_effect(faction)
   self:remove_supply_balance_effect(faction)
-
+  self:logDebug("old supply effect was removed")
   local supply_balance = self:get_supply_balance(faction)
 
   if supply_balance > 0 then

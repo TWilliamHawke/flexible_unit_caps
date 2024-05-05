@@ -15,9 +15,19 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_emp_free_company = { change = -2, hidden = false },
     fluc_emp_flagellants = { change = -2, hidden = false },
   },
-  wh_main_emp_balthasar_gelt = {
+  wh3_dlc25_emp_elspeth_von_draken = {
     fluc_emp_artillery = { change = -2, hidden = false },
     fluc_emp_artillery_wagon = { change = -2, hidden = true },
+    fluc_emp_free_company = { change = -2, hidden = true },
+    fluc_emp_handgunners = { change = -2, hidden = true },
+    fluc_emp_outriders = { change = -2, hidden = true },
+    fluc_emp_tank = { change = -2, hidden = true },
+    fluc_emp_wagon = { change = -2, hidden = true },
+    fluc_emp_landship = { change = -2, hidden = true },
+    fluc_emp_gunpowder = { change = -2, hidden = false },
+    fluc_emp_long_rifles = { change = -2, hidden = true },
+    fluc_emp_helstorm = { change = -2, hidden = true },
+    fluc_all_long_range = { change = -1, hidden = true },
   },
   ulric_grandmaster = {
     fluc_emp_knight_white_wolf = { change = -2, hidden = false },
@@ -27,16 +37,17 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_emp_knight_white_wolf = { change = -2, hidden = false },
   },
   emp_marius_leitdorf = {
-    fluc_emp_blazing_sun = { change = -2, hidden = false },
     fluc_emp_knights_emp = { change = -2, hidden = false },
     fluc_emp_reiksguard = { change = -2, hidden = false },
     fluc_emp_knights_orders = { change = -2, hidden = true },
   },
   emp_wolfram_hertwig = {
     fluc_emp_knights_emp = { change = -2, hidden = false },
-    fluc_emp_blazing_sun = { change = -2, hidden = false },
     fluc_emp_reiksguard = { change = -2, hidden = false },
     fluc_emp_knights_orders = { change = -2, hidden = true },
+  },
+  wh3_dlc25_emp_theodore_bruckner = {
+    fluc_emp_demigryph = { change = -2, hidden = false },
   },
   emp_aldebrand_ludenhof = {
     fluc_emp_handgunners = { change = -2, hidden = false },
@@ -79,6 +90,21 @@ Flexible_unit_caps.lord_supply_change = {
   },
   wh_main_dwf_ungrim_ironfist = {
     fluc_dwf_slayers = { change = -2, hidden = false },
+    fluc_dwf_goblin_hewers = { change = -2, hidden = false },
+    fluc_dwf_pirates = { change = -2, hidden = false },
+  },
+  wh_pro01_dwf_grombrindal = {
+    fluc_dwf_quarrellers = { change = -2, hidden = false },
+    fluc_dwf_irondrakes = { change = -2, hidden = false },
+  },
+  wh3_dlc25_dwf_malakai_makaisson = {
+    fluc_dwf_bombers = { change = -2, hidden = false },
+    fluc_dwf_copters = { change = -2, hidden = false },
+    fluc_dwf_thunderbarge = { change = -2, hidden = false },
+    fluc_dwf_artillery = { change = -2, hidden = false },
+    fluc_dwf_artillery_classic = { change = -2, hidden = true },
+    fluc_dwf_artillery_fire = { change = -2, hidden = true },
+    fluc_dwf_artillery_gun = { change = -2, hidden = true },
   },
   wh_main_dwf_thorgrim_grudgebearer = {
     fluc_dwf_longbeards = { change = -2, hidden = false },
@@ -89,7 +115,8 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_dwf_quarrellers = { change = -2, hidden = false },
   },
   wh_main_dwf_cha_greybeard = {
-    fluc_dwf_flying_machine = { change = -2, hidden = true },
+    fluc_dwf_copters = { change = -2, hidden = true },
+    fluc_dwf_bombers = { change = -2, hidden = true },
     fluc_dwf_land_machine = { change = -2, hidden = true },
     fluc_dwf_war_machines = { change = -2, hidden = false },
   },
@@ -108,7 +135,8 @@ Flexible_unit_caps.lord_supply_change = {
   },
   dwf_brokk_ironpick = {
     fluc_dwf_irondrakes = { change = -2, hidden = false },
-    fluc_dwf_flying_machine = { change = -2, hidden = false },
+    fluc_dwf_bombers = { change = -2, hidden = false },
+    fluc_dwf_copters = { change = -2, hidden = false },
     fluc_dwf_artillery_fire = { change = -2, hidden = false },
   },
   dwf_rorek_granitehand = {
@@ -120,7 +148,8 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_dwf_miners = { change = -2, hidden = false },
   },
   dwf_bloodline_grimm_burloksson = {
-    fluc_dwf_flying_machine = { change = -2, hidden = false },
+    fluc_dwf_copters = { change = -2, hidden = false },
+    fluc_dwf_bombers = { change = -2, hidden = false },
   },
   wh_main_grn_grimgor_ironhide = {
     fluc_grn_black_orcs = { change = -2, hidden = false },
@@ -484,7 +513,33 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_ogr_gorgers = { change = -2, hidden = false },
   },
   wh3_main_nur_kugath = {
-    fluc_nur_nurglings = { change = -1, hidden = false },
+    fluc_nur_daemons = { change = -1, hidden = false },
+    fluc_nur_beasts = { change = -1, hidden = true },
+    fluc_nur_flies = { change = -1, hidden = true },
+    fluc_nur_furies = { change = -1, hidden = true },
+    fluc_nur_plaguebearers = { change = -1, hidden = true },
+    fluc_nur_soul_grinder = { change = -1, hidden = true },
+    fluc_nur_toads = { change = -1, hidden = true },
+    fluc_nur_unclean_one = { change = -1, hidden = true },
+  },
+  wh3_dlc25_nur_tamurkhan = {
+    fluc_all_heroes = { change = -2, hidden = false },
+    fluc_nur_chosen = { change = -1, hidden = true },
+    fluc_nur_forsaken = { change = -1, hidden = true },
+    fluc_nur_horsemen = { change = -1, hidden = true },
+    fluc_nur_knights = { change = -1, hidden = true },
+    fluc_nur_spawn = { change = -1, hidden = true },
+    fluc_nur_war_machines = { change = -1, hidden = true },
+    fluc_nur_pestigors = { change = -1, hidden = true },
+    fluc_nur_warriors = { change = -1, hidden = true },
+    fluc_nur_ogres = { change = -1, hidden = true },
+    fluc_nur_rot_knights = { change = -1, hidden = true },
+    fluc_nur_trolls = { change = -1, hidden = true },
+    fluc_nur_toad_dragons = { change = -1, hidden = true },
+    fluc_nur_mortals = { change = -1, hidden = false },
+  },
+  wh3_dlc25_nur_epidemius = {
+    fluc_nur_plaguebearers = { change = -2, hidden = false },
   },
   wh_dlc01_chs_kholek_suneater = {
     fluc_chs_dragon_ogres = { change = -2, hidden = false },

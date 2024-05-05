@@ -15,3 +15,8 @@ Flexible_unit_caps.fixed_chain_cost = {
   wh3_dlc23_chd_settlement_outpost = 0,
   wh_main_BRETONNIA_settlement_minor = 0,
 }
+
+Flexible_unit_caps.circular_buildings = {
+  CcoBuildingSetRecordwh3_main_set_nurgle_advanced_mil = true,
+  CcoBuildingSetRecordwh3_main_set_nurgle_basic_mil = true,
+}

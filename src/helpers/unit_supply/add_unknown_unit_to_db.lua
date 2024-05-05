@@ -21,7 +21,8 @@ function Flexible_unit_caps:add_unknown_unit_to_db(unit_key)
   self.units_data[unit_key][2] = unit_name;
 
   --is cavalry
-  if common.get_context_value("CcoMainUnitRecord", unit_key, "UnitLandRecordContext.NumMounts") > 5 then
+  local mounts = common.get_context_value("CcoMainUnitRecord", unit_key, "UnitLandRecordContext.NumMounts") or 0;
+  if mounts > 5 then
     table.insert(self.units_data[unit_key], "fluc_all_cavalry")
     unit_cap = math.min(unit_cap, 6);
   end
@@ -32,10 +33,13 @@ function Flexible_unit_caps:add_unknown_unit_to_db(unit_key)
     unit_cap = math.min(unit_cap, 6);
   end
 
-  --is artillery
+  --charior or artillery
   if common.get_context_value("CcoMainUnitRecord", unit_key, "UnitLandRecordContext.NumEngines") > 1 then
-    table.insert(self.units_data[unit_key], "fluc_all_long_range")
-    self.units_data[unit_key][1] = 3;
+    local unit_group = mounts > 0 and "fluc_all_chariots_war_machines" or "fluc_all_long_range";
+    local unit_supply = mounts > 0 and 2 or 3;
+
+    table.insert(self.units_data[unit_key], unit_group)
+    self.units_data[unit_key][1] = unit_supply;
     unit_cap = math.min(unit_cap, 4);
   end
 

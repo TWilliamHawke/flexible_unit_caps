@@ -22,4 +22,15 @@ Flexible_unit_caps.free_agents = {
   ["wh3_dlc24_tze_blue_scribes"] = true,
   ["wh3_dlc24_ksl_the_golden_knight"] = true,
   ["wh3_dlc24_cth_saytang_the_watcher"] = true,
+  ["wh3_dlc25_emp_theodore_bruckner"] = true,
+  ["wh3_dlc25_neu_gotrek_hero"] = true,
+  ["wh3_dlc25_dwf_garagrim_ironfist"] = true,
+  ["wh2_pro08_neu_felix"] = true,
+  ["wh3_dlc25_nur_exalted_hero_chieftain"] = true,
+  ["wh3_dlc25_nur_bray_shaman_wild_chieftain"] = true,
+  ["wh3_dlc25_nur_castellan_chieftain"] = true,
+  ["wh3_dlc25_nur_fimir_balefiend_shadow_chieftain"] = true,
+  ["wh3_dlc25_nur_kayzk_the_befouled"] = true,
+  ["wh3_dlc25_nur_skin_wolf_werekin_chieftain"] = true,
+
 }
