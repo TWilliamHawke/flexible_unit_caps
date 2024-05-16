@@ -48,7 +48,7 @@ Flexible_unit_caps.lord_aliases = {
   ["wh2_dlc16_wef_malicious_ancient_treeman_beasts"] = "Treeman",
   ["wh2_dlc16_wef_malicious_ancient_treeman_life"] = "Treeman",
   ["wh2_dlc16_wef_malicious_ancient_treeman_shadows"] = "Treeman",
-  ["dlc05_wef_ancient_treeman"] = "Treeman",
+  ["wh_dlc05_wef_ancient_treeman"] = "Treeman",
   --Chaos dwarfs
   ["wh3_dlc23_chd_sorcerer_prophet_death"] = "Daemonsmith",
   ["wh3_dlc23_chd_sorcerer_prophet_fire"] = "Daemonsmith",

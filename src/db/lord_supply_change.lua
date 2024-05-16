@@ -244,10 +244,11 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_lzd_stegadons = { change = -2, hidden = false },
     fluc_lzd_carnosaurs = { change = -2, hidden = false },
   },
-  dlc05_wef_orion = {
+  wh_dlc05_wef_orion = {
     fluc_wef_stag_cav = { change = -2, hidden = false },
+    fluc_wef_great_stag = { change = -2, hidden = false },
   },
-  dlc05_wef_durthu = {
+  wh_dlc05_wef_durthu = {
     fluc_wef_treekin = { change = -2, hidden = false },
     fluc_wef_treemen = { change = -2, hidden = false },
     fluc_wef_dryads = { change = -2, hidden = false },
@@ -537,6 +538,10 @@ Flexible_unit_caps.lord_supply_change = {
     fluc_nur_trolls = { change = -1, hidden = true },
     fluc_nur_toad_dragons = { change = -1, hidden = true },
     fluc_nur_mortals = { change = -1, hidden = false },
+  },
+  wh3_dlc25_nur_kayzk_the_befouled = {
+    fluc_nur_knights = { change = -1, hidden = false },
+    fluc_nur_rot_knights = { change = -1, hidden = false },
   },
   wh3_dlc25_nur_epidemius = {
     fluc_nur_plaguebearers = { change = -2, hidden = false },

@@ -1,9 +1,9 @@
 --keys from db/agent_subtypes_tables
 Flexible_unit_caps.free_agents = {
-  ["dlc06_dwf_master_engineer_ghost"] = true,
-  ["dlc06_dwf_runesmith_ghost"] = true,
-  ["dlc06_dwf_thane_ghost_1"] = true,
-  ["dlc06_dwf_thane_ghost_2"] = true,
+  ["wh_dlc06_dwf_master_engineer_ghost"] = true,
+  ["wh_dlc06_dwf_runesmith_ghost"] = true,
+  ["wh_dlc06_dwf_thane_ghost_1"] = true,
+  ["wh_dlc06_dwf_thane_ghost_2"] = true,
   ["wh2_dlc17_dwf_thane_ghost_artifact"] = true,
   ["wh2_dlc12_lzd_lord_kroak"] = true,
   ["wh2_dlc13_emp_hunter_doctor_hertwig_van_hal"] = true,

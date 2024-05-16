@@ -470,4 +470,5 @@ Flexible_unit_caps.unit_group_caps = {
   fluc_wef_wardancers = { 8, "" },
   fluc_wef_waywatchers = { 6, "wh_dlc05_wef_inf_wildwood_rangers_0" },
   fluc_wef_zoats = { 4, "wh_dlc05_wef_inf_wildwood_rangers_0" },
+  fluc_wef_great_stag =  { 4, "wh_dlc05_wef_cav_wild_riders_0" },
 }
