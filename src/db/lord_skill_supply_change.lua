@@ -92,6 +92,10 @@ Flexible_unit_caps.skill_supply_change = {
     fluc_dwf_slayers = { -1, false, "wh3_dlc25_skill_dwf_malakai_makaisson_unique_2" },
     fluc_dwf_goblin_hewers = { -1, false, "wh3_dlc25_skill_dwf_malakai_makaisson_unique_2" },
   },
+  wh_main_dwf_lord = {
+    fluc_dwf_warriors = { -1, false, "wh3_dlc25_skill_dwf_lord_unique_self_02" },
+    fluc_dwf_longbeards= { -1, false, "wh3_dlc25_skill_dwf_lord_unique_self_02" },
+  },
   Goblin = {
     fluc_grn_goblins = { -1, false, "wh_dlc06_skill_grn_lord_battle_ard_ladz" },
     fluc_grn_goblin_riderz = { -1, true, "wh_dlc06_skill_grn_lord_battle_ard_ladz" },
